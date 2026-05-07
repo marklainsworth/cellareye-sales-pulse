@@ -176,6 +176,48 @@ Priorities should change week to week as the underlying data changes. Don't reus
 ### Footer
 - `{{footer_meta}}` — e.g., "Source: Asana CellarEye Sales Pipeline · Manual render · v0.5"
 
+### Deal data block (drill-down support)
+
+The template contains a JSON block:
+
+```html
+<script id="dealData" type="application/json">
+{{deal_data_json}}
+</script>
+```
+
+Replace `{{deal_data_json}}` with a single JSON object containing all open, won, and lost deals. The JavaScript in the template reads this block to render drill-down detail views when users click the deal counts on Open Pipeline, Closed Won, or Closed Lost rows.
+
+**Schema:**
+
+```json
+{
+  "open":  [{ "name": "...", "first": "...", "last": "...", "channel": "...", "arr": null, "onb": 15000, "stage": "Cold", "notes": "..." }, ...],
+  "won":   [{ "name": "...", "first": "...", "last": "...", "channel": "...", "arr": null, "onb": 529,   "stage": "Closed Won", "notes": "..." }, ...],
+  "lost":  [{ "name": "...", "first": "...", "last": "...", "channel": "...", "arr": null, "onb": 150000, "stage": "Closed Lost", "notes": "..." }, ...]
+}
+```
+
+**Field rules:**
+- `name` — full task name from Asana (string, required)
+- `first` / `last` — contact first/last name from custom fields (string or null if unset)
+- `channel` — channel custom field display value (string or null if unset)
+- `arr` — Open ARR custom field number value (integer or null if unset)
+- `onb` — Onboarding custom field number value (integer or null if unset)
+- `stage` — human-readable stage label: "Cold", "Warm", "Qualified", "Demo", "Proposal", "Stalled", "Closed Won", "Closed Lost"
+- `notes` — full task notes/description (string or null)
+
+**Sorting:**
+- `open` — sort by stage progression (Cold → Warm → Qualified → Demo → Proposal), then by `onb` descending within each stage
+- `won` — sort by `onb` descending
+- `lost` — sort by `onb` descending
+
+**Encoding:**
+- Use `json.dumps(data, ensure_ascii=False)` semantics — keep unicode characters readable
+- Escape any HTML-significant characters in string fields naturally (the JSON encoder handles this)
+- Do not pretty-print with newlines/indentation; one-line JSON is fine and keeps the file smaller
+- Stalled deals are NOT included in any of the three arrays — they are surfaced only in the "Where to Spend Time" panel
+
 ## Output format
 
 Return the complete rendered HTML as a single file. No markdown code fences. No commentary before or after. The output should be valid HTML that opens directly in a browser.
@@ -184,4 +226,8 @@ If you cannot complete the render for any reason (Asana data unavailable, templa
 
 ## Version
 
-This prompt is v1.0. When updating the prompt, increment the version and document the change at the top of this file.
+This prompt is v2.0.
+
+### Changelog
+- v2.0 — Added drill-down support: emit `{{deal_data_json}}` JSON block with all open/won/lost deals so JavaScript drill-down views can render. Header now uses logo image (no eyebrow text). Footer uses logo + "Sales Pulse" text. Font weights bumped one notch (300→400, 400→500, 500→600) for stronger on-screen reading.
+- v1.0 — Initial version. Pulls Asana, calculates metrics, substitutes placeholders.
