@@ -30,7 +30,7 @@
     background: var(--ink);
     color: var(--cream);
     font-family: 'Jost', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 14.5px;
     line-height: 1.55;
     letter-spacing: 0.012em;
@@ -83,11 +83,11 @@
     gap: 32px;
   }
   .header-left .eyebrow {
-    font-size: 10px; font-weight: 500; letter-spacing: 0.32em;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.32em;
     text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
   }
   h1 {
-    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-family: 'Cormorant Garamond', serif; font-weight: 600;
     font-size: 38px; line-height: 1; color: var(--paper);
     letter-spacing: -0.005em;
   }
@@ -122,7 +122,7 @@
   }
   .stage-banner .label {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-style: italic;
     font-size: 16px;
     color: var(--gold);
@@ -209,7 +209,7 @@
   }
   .metric .value {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 26px;
     line-height: 1;
     color: var(--paper);
@@ -221,7 +221,7 @@
   }
   .metric .value .unit {
     font-family: 'Jost', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 13px;
     opacity: 0.55;
     margin-left: 4px;
@@ -248,7 +248,7 @@
   }
   .alert-block strong {
     color: var(--warning);
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     font-size: 10px;
@@ -272,7 +272,7 @@
   }
   .section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 22px;
     color: var(--paper);
   }
@@ -315,7 +315,7 @@
   }
   .stage-card .stage-count {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 28px;
     color: var(--paper);
     line-height: 1;
@@ -359,7 +359,7 @@
   }
   .channel-card .stat .num {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     color: var(--paper);
   }
@@ -452,7 +452,7 @@
   }
   .focus h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 22px;
     color: var(--paper);
     margin-bottom: 18px;
@@ -505,6 +505,216 @@
     color: var(--gold);
     opacity: 0.6;
   }
+
+  /* Drill-down clickable counts */
+  .clickable-count {
+    cursor: pointer;
+    transition: color 0.2s ease;
+    border-bottom: 1px dashed transparent;
+  }
+  .clickable-count:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .clickable-count::after {
+    content: " ›";
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 0.7em;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  /* Drill-down overlay */
+  .drilldown {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--ink);
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(92, 42, 74, 0.45), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(61, 36, 86, 0.4), transparent 60%);
+    overflow-y: auto;
+    z-index: 100;
+  }
+  .drilldown.active { display: block; }
+  .drilldown-wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 32px 48px 96px;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 16px 10px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 32px;
+  }
+  .back-link:hover {
+    background: rgba(200, 184, 154, 0.08);
+    border-color: var(--gold);
+  }
+  .back-arrow { font-size: 14px; }
+  .drilldown h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .drilldown .subtitle {
+    color: var(--gold);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 36px;
+  }
+  .deal-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--gold);
+    border-radius: 4px;
+    padding: 22px 26px;
+    margin-bottom: 16px;
+  }
+  .deal-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .deal-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.2;
+  }
+  .deal-card-stage {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 4px 10px;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    white-space: nowrap;
+    opacity: 0.85;
+  }
+  .deal-card-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px 24px;
+    margin-bottom: 14px;
+  }
+  .deal-field-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.65;
+    margin-bottom: 3px;
+  }
+  .deal-field-value {
+    font-size: 14px;
+    color: var(--cream);
+    font-weight: 400;
+  }
+  .deal-field-value.muted {
+    color: var(--cream);
+    opacity: 0.4;
+    font-style: italic;
+  }
+  .deal-card-notes {
+    border-top: 1px solid var(--rule);
+    padding-top: 12px;
+    font-size: 13px;
+    color: var(--cream);
+    opacity: 0.85;
+    line-height: 1.55;
+    font-style: italic;
+  }
+  .deal-card-notes-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.65;
+    margin-bottom: 5px;
+    font-style: normal;
+  }
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--cream);
+    opacity: 0.5;
+    font-style: italic;
+  }
+  @media print {
+    .drilldown, .clickable-count::after { display: none !important; }
+  }
+
+  /* Logo styles */
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .header-logo img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+  .header-logo .pulse-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-left: 16px;
+    border-left: 1px solid var(--rule);
+    line-height: 1.4;
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+    opacity: 0.85;
+  }
+  .footer-logo .footer-mark-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
 </style>
 </head>
 <body>
@@ -512,7 +722,10 @@
 
 <header>
   <div class="header-left">
-    <div class="eyebrow">CellarEye · Sales Pulse</div>
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
+      <span class="pulse-label">Sales<br>Pulse</span>
+    </div>
     <h1>Pipeline Brief — <em>{{render_date_long}}</em></h1>
   </div>
   <div class="header-right">
@@ -536,7 +749,7 @@
   <div class="metrics-grid">
     <div class="metric">
       <div class="label">Pipeline Total</div>
-      <div class="value">{{open_total_count}} <span class="unit">deals</span></div>
+      <div class="value clickable-count" data-view="open">{{open_total_count}} <span class="unit">deals</span></div>
       <div class="sub">{{open_total_subtext}}</div>
     </div>
     <div class="metric">
@@ -566,7 +779,7 @@
   <div class="metrics-grid">
     <div class="metric">
       <div class="label">Won Deals</div>
-      <div class="value">{{won_count}} <span class="unit">deals</span></div>
+      <div class="value clickable-count" data-view="won">{{won_count}} <span class="unit">deals</span></div>
       <div class="sub">{{won_subtext}}</div>
     </div>
     <div class="metric">
@@ -596,7 +809,7 @@
   <div class="metrics-grid">
     <div class="metric">
       <div class="label">Lost Deals</div>
-      <div class="value">{{lost_count}} <span class="unit">deals</span></div>
+      <div class="value clickable-count" data-view="lost">{{lost_count}} <span class="unit">deals</span></div>
       <div class="sub">{{lost_subtext}}</div>
     </div>
     <div class="metric">
@@ -729,10 +942,135 @@
 </div>
 
 <footer>
-  <div class="footer-mark">CellarEye · Sales Pulse</div>
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
+    <span class="footer-mark-text">Sales Pulse</span>
+  </div>
   <div class="footer-meta">{{footer_meta}}</div>
 </footer>
 
 </div>
+
+<!-- Drill-down view -->
+<div class="drilldown" id="drilldown">
+  <div class="drilldown-wrap">
+    <a class="back-link" id="backLink" href="#">
+      <span class="back-arrow">←</span>
+      <span>Back to Brief</span>
+    </a>
+    <h1 id="drilldownTitle"></h1>
+    <div class="subtitle" id="drilldownSubtitle"></div>
+    <div id="drilldownContent"></div>
+  </div>
+</div>
+
+<!-- Embedded deal data -->
+<script id="dealData" type="application/json">
+{{deal_data_json}}
+</script>
+
+<script>
+(function() {
+  var data = JSON.parse(document.getElementById('dealData').textContent);
+  var drilldown = document.getElementById('drilldown');
+  var titleEl = document.getElementById('drilldownTitle');
+  var subtitleEl = document.getElementById('drilldownSubtitle');
+  var contentEl = document.getElementById('drilldownContent');
+
+  var viewConfig = {
+    open: { title: 'Open Pipeline', subtitle: 'Active deals across all stages', deals: data.open },
+    won: { title: 'Closed Won', subtitle: 'Installed customers', deals: data.won },
+    lost: { title: 'Closed Lost', subtitle: 'Deals that did not move forward', deals: data.lost }
+  };
+
+  function escapeHtml(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, function(c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function renderDeal(d) {
+    var contact = (d.first || '') + ' ' + (d.last || '');
+    contact = contact.trim() || '—';
+    var arr = d.arr ? '$' + d.arr.toLocaleString() : '<span class="muted">not set</span>';
+    var onb = d.onb ? '$' + d.onb.toLocaleString() : '<span class="muted">not set</span>';
+    var channel = d.channel || '<span class="muted">unset</span>';
+    var notes = d.notes ? escapeHtml(d.notes) : '<span class="muted">No notes recorded</span>';
+    return '' +
+      '<div class="deal-card">' +
+        '<div class="deal-card-head">' +
+          '<div class="deal-card-name">' + escapeHtml(d.name) + '</div>' +
+          '<div class="deal-card-stage">' + escapeHtml(d.stage) + '</div>' +
+        '</div>' +
+        '<div class="deal-card-fields">' +
+          '<div><div class="deal-field-label">Contact</div><div class="deal-field-value">' + escapeHtml(contact) + '</div></div>' +
+          '<div><div class="deal-field-label">Channel</div><div class="deal-field-value">' + channel + '</div></div>' +
+          '<div><div class="deal-field-label">ARR</div><div class="deal-field-value">' + arr + '</div></div>' +
+          '<div><div class="deal-field-label">Onboarding</div><div class="deal-field-value">' + onb + '</div></div>' +
+        '</div>' +
+        '<div class="deal-card-notes">' +
+          '<div class="deal-card-notes-label">Notes / Next Step</div>' +
+          notes +
+        '</div>' +
+      '</div>';
+  }
+
+  function showView(viewName) {
+    var cfg = viewConfig[viewName];
+    if (!cfg) return;
+    titleEl.textContent = cfg.title;
+    subtitleEl.textContent = cfg.deals.length + ' deal' + (cfg.deals.length === 1 ? '' : 's') + ' · ' + cfg.subtitle;
+    if (cfg.deals.length === 0) {
+      contentEl.innerHTML = '<div class="empty-state">No deals in this view.</div>';
+    } else {
+      contentEl.innerHTML = cfg.deals.map(renderDeal).join('');
+    }
+    drilldown.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function hideView() {
+    drilldown.classList.remove('active');
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  // Click handlers on the count cells
+  document.querySelectorAll('.clickable-count').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var view = el.getAttribute('data-view');
+      window.location.hash = view;
+    });
+  });
+
+  // Back link
+  document.getElementById('backLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    hideView();
+  });
+
+  // Hash routing (handles browser back button too)
+  function handleHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (viewConfig[hash]) {
+      showView(hash);
+    } else {
+      hideView();
+    }
+  }
+  window.addEventListener('hashchange', handleHash);
+  handleHash();
+
+  // ESC key closes drill-down
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drilldown.classList.contains('active')) {
+      hideView();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
