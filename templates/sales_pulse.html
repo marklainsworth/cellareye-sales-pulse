@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CellarEye — Sales Pulse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1A1424;
+    --plum: #2A1A3E;
+    --aubergine: #3D2456;
+    --bordeaux: #5C2A4A;
+    --rose: #C8A4B8;
+    --gold: #C8B89A;
+    --cream: #F4EDE2;
+    --paper: #FAF6EE;
+    --rule: rgba(200, 184, 154, 0.22);
+    --soft-rule: rgba(244, 237, 226, 0.10);
+    --positive: #9CC4A0;
+    --warning: #D4A574;
+    --neutral: #8B8B9E;
+    --muted: rgba(139, 139, 158, 0.6);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 14.5px;
+    line-height: 1.55;
+    letter-spacing: 0.012em;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(92, 42, 74, 0.45), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(61, 36, 86, 0.4), transparent 60%);
+    background-attachment: fixed;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 56px 48px 96px; }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+  }
+  .header-left .eyebrow {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.32em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif; font-weight: 500;
+    font-size: 38px; line-height: 1; color: var(--paper);
+    letter-spacing: -0.005em;
+  }
+  h1 em { font-style: italic; color: var(--rose); }
+  .header-right {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cream);
+    opacity: 0.65;
+    letter-spacing: 0.05em;
+  }
+  .header-right .stamp {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+    margin-bottom: 4px;
+  }
+
+  .stage-banner {
+    background: rgba(92, 42, 74, 0.20);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 18px 24px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .stage-banner .label {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold);
+  }
+  .stage-banner .text {
+    font-size: 13.5px;
+    color: var(--cream);
+    opacity: 0.85;
+    flex: 1;
+    text-align: center;
+  }
+  .stage-banner .countdown {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--rose);
+    letter-spacing: 0.1em;
+  }
+
+  .row-block {
+    margin-bottom: 18px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+    background: rgba(244, 237, 226, 0.02);
+  }
+  .row-label {
+    padding: 14px 24px;
+    background: rgba(92, 42, 74, 0.35);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .row-label .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--paper);
+  }
+  .row-label .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.75;
+  }
+  .row-label.open { background: rgba(61, 36, 86, 0.45); }
+  .row-label.won { background: rgba(92, 42, 74, 0.55); }
+  .row-label.lost { background: rgba(26, 20, 36, 0.7); }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .metric {
+    padding: 20px 22px 22px;
+    border-right: 1px solid var(--soft-rule);
+  }
+  .metric:last-child { border-right: none; }
+  .metric.cash {
+    background: rgba(200, 184, 154, 0.04);
+    position: relative;
+  }
+  .metric.cash::before {
+    content: 'CASH';
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8px;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    opacity: 0.7;
+  }
+  .metric .label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+    margin-bottom: 8px;
+  }
+  .metric .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--paper);
+    margin-bottom: 6px;
+  }
+  .metric .value.muted-value {
+    color: var(--cream);
+    opacity: 0.4;
+  }
+  .metric .value .unit {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    opacity: 0.55;
+    margin-left: 4px;
+  }
+  .metric .sub {
+    font-size: 11px;
+    color: var(--cream);
+    opacity: 0.6;
+    line-height: 1.4;
+  }
+  .metric .sub.positive { color: var(--positive); opacity: 0.85; }
+  .metric .sub.warning { color: var(--warning); opacity: 0.85; }
+  .metric .sub.error { color: #C97070; opacity: 0.85; }
+
+  .alert-block {
+    background: rgba(212, 165, 116, 0.06);
+    border-left: 2px solid var(--warning);
+    padding: 12px 18px;
+    margin-bottom: 32px;
+    font-size: 12.5px;
+    color: var(--cream);
+    opacity: 0.85;
+    line-height: 1.5;
+  }
+  .alert-block strong {
+    color: var(--warning);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-right: 8px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: 48px 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--soft-rule);
+  }
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--paper);
+  }
+  .section-meta {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .funnel {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .stage-card {
+    background: rgba(244, 237, 226, 0.025);
+    border: 1px solid var(--soft-rule);
+    border-radius: 2px;
+    padding: 14px 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .stage-card.has-most {
+    background: rgba(200, 184, 154, 0.08);
+    border-color: rgba(200, 184, 154, 0.3);
+  }
+  .stage-card .stage-name {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.85;
+    margin-bottom: 8px;
+  }
+  .stage-card .stage-count {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--paper);
+    line-height: 1;
+  }
+  .stage-card .stage-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: var(--rose);
+    opacity: 0.5;
+  }
+
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .channel-card {
+    background: rgba(244, 237, 226, 0.025);
+    border: 1px solid var(--soft-rule);
+    border-radius: 2px;
+    padding: 16px 18px;
+  }
+  .channel-card .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--paper);
+    margin-bottom: 10px;
+  }
+  .channel-card .stats {
+    display: flex;
+    gap: 18px;
+    align-items: baseline;
+  }
+  .channel-card .stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .channel-card .stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--paper);
+  }
+  .channel-card .stat .num.muted { color: var(--cream); opacity: 0.4; }
+  .channel-card .stat .lbl {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  .panel {
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: rgba(244, 237, 226, 0.02);
+    margin-bottom: 24px;
+  }
+  .panel-title {
+    padding: 14px 24px;
+    background: rgba(92, 42, 74, 0.25);
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--paper);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .panel-title .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    font-style: normal;
+  }
+  .deal-row {
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--soft-rule);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+  }
+  .deal-row:last-child { border-bottom: none; }
+  .deal-row .name {
+    font-size: 13.5px;
+    color: var(--paper);
+  }
+  .deal-row .name .contact {
+    color: var(--cream);
+    opacity: 0.6;
+    font-size: 12.5px;
+  }
+  .deal-row .signal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    background: rgba(200, 184, 154, 0.1);
+    color: var(--gold);
+  }
+  .deal-row .signal.hot {
+    background: rgba(212, 165, 116, 0.18);
+    color: var(--warning);
+  }
+  .deal-row .signal.warm {
+    background: rgba(200, 164, 184, 0.12);
+    color: var(--rose);
+  }
+  .deal-row .meta-line {
+    grid-column: 1 / -1;
+    font-size: 11.5px;
+    color: var(--cream);
+    opacity: 0.65;
+    font-style: italic;
+    margin-top: 2px;
+  }
+
+  .focus {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+  .focus h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--paper);
+    margin-bottom: 18px;
+  }
+  .focus ol {
+    list-style: none;
+    counter-reset: focus-counter;
+  }
+  .focus ol li {
+    counter-increment: focus-counter;
+    position: relative;
+    padding: 12px 0 12px 36px;
+    border-bottom: 1px solid var(--soft-rule);
+    font-size: 14px;
+    color: var(--paper);
+  }
+  .focus ol li:last-child { border-bottom: none; }
+  .focus ol li::before {
+    content: counter(focus-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    opacity: 0.7;
+    letter-spacing: 0.05em;
+  }
+  .focus ol li .why {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--cream);
+    opacity: 0.65;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="header-left">
+    <div class="eyebrow">CellarEye · Sales Pulse</div>
+    <h1>Pipeline Brief — <em>{{render_date_long}}</em></h1>
+  </div>
+  <div class="header-right">
+    <div class="stamp">{{version_stamp}}</div>
+    <div>Generated {{render_time}} · {{total_deals_count}} deals tracked</div>
+  </div>
+</header>
+
+<div class="stage-banner">
+  <div class="label">{{company_stage_label}}</div>
+  <div class="text">{{company_stage_text}}</div>
+  <div class="countdown">{{launch_countdown}}</div>
+</div>
+
+<!-- ROW 1: OPEN -->
+<div class="row-block">
+  <div class="row-label open">
+    <span class="name">Open Pipeline</span>
+    <span class="meta">Cold · Warm · Qualified · Demo · Proposal</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Pipeline Total</div>
+      <div class="value">{{open_total_count}} <span class="unit">deals</span></div>
+      <div class="sub">{{open_total_subtext}}</div>
+    </div>
+    <div class="metric">
+      <div class="label">Open ARR</div>
+      <div class="value {{open_arr_value_class}}">{{open_arr_total_formatted}}</div>
+      <div class="sub {{open_arr_dq_class}}">{{open_arr_dq_text}}</div>
+    </div>
+    <div class="metric">
+      <div class="label">Conversion C→Q</div>
+      <div class="value">{{open_conversion_value}}</div>
+      <div class="sub">{{open_conversion_subtext}}</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Onboarding in Pipeline</div>
+      <div class="value">{{open_onboarding_total_formatted}}</div>
+      <div class="sub {{open_onb_dq_class}}">{{open_onb_dq_text}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: WON -->
+<div class="row-block">
+  <div class="row-label won">
+    <span class="name">Closed Won</span>
+    <span class="meta">Signed · Onboarded</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Won Deals</div>
+      <div class="value">{{won_count}} <span class="unit">deals</span></div>
+      <div class="sub">{{won_subtext}}</div>
+    </div>
+    <div class="metric">
+      <div class="label">Signed ARR</div>
+      <div class="value {{won_arr_value_class}}">{{won_arr_total_formatted}}</div>
+      <div class="sub">{{won_arr_subtext}}</div>
+    </div>
+    <div class="metric">
+      <div class="label">Avg Deal Size</div>
+      <div class="value">{{won_avg_deal_formatted}}</div>
+      <div class="sub">{{won_avg_subtext}}</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Onboarding Booked</div>
+      <div class="value">{{won_onboarding_total_formatted}}</div>
+      <div class="sub {{won_onb_dq_class}}">{{won_onb_dq_text}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 3: LOST -->
+<div class="row-block">
+  <div class="row-label lost">
+    <span class="name">Closed Lost</span>
+    <span class="meta">Pattern Detection · Loss Learning</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Lost Deals</div>
+      <div class="value">{{lost_count}} <span class="unit">deals</span></div>
+      <div class="sub">{{lost_subtext}}</div>
+    </div>
+    <div class="metric">
+      <div class="label">Lost ARR</div>
+      <div class="value {{lost_arr_value_class}}">{{lost_arr_total_formatted}}</div>
+      <div class="sub">{{lost_arr_subtext}}</div>
+    </div>
+    <div class="metric">
+      <div class="label">Top Loss Reason</div>
+      <div class="value" style="font-size: 16px;">{{lost_top_reason}}</div>
+      <div class="sub {{lost_reason_dq_class}}">{{lost_reason_subtext}}</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Lost Onboarding</div>
+      <div class="value">{{lost_onboarding_total_formatted}}</div>
+      <div class="sub">{{lost_onb_subtext}}</div>
+    </div>
+  </div>
+</div>
+
+<!-- DATA QUALITY ALERT -->
+<div class="alert-block">
+  <strong>DATA QUALITY:</strong> {{data_quality_summary}}
+</div>
+
+<div class="section-head">
+  <span class="section-num">i</span>
+  <span class="section-title">Pipeline Funnel</span>
+  <span class="section-meta">Counts by Stage</span>
+</div>
+
+<div class="funnel">
+  <div class="stage-card has-most">
+    <div class="stage-name">Cold</div>
+    <div class="stage-count">{{stage_cold_count}}</div>
+    <div class="stage-fill" style="width: {{stage_cold_fill_pct}}%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Warm</div>
+    <div class="stage-count">{{stage_warm_count}}</div>
+    <div class="stage-fill" style="width: {{stage_warm_fill_pct}}%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Qualified</div>
+    <div class="stage-count">{{stage_qualified_count}}</div>
+    <div class="stage-fill" style="width: {{stage_qualified_fill_pct}}%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Demo</div>
+    <div class="stage-count">{{stage_demo_count}}</div>
+    <div class="stage-fill" style="width: {{stage_demo_fill_pct}}%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Proposal</div>
+    <div class="stage-count">{{stage_proposal_count}}</div>
+    <div class="stage-fill" style="width: {{stage_proposal_fill_pct}}%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Stalled</div>
+    <div class="stage-count">{{stage_stalled_count}}</div>
+    <div class="stage-fill" style="width: {{stage_stalled_fill_pct}}%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Won</div>
+    <div class="stage-count">{{stage_won_count}}</div>
+    <div class="stage-fill" style="width: {{stage_won_fill_pct}}%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Lost</div>
+    <div class="stage-count">{{stage_lost_count}}</div>
+    <div class="stage-fill" style="width: {{stage_lost_fill_pct}}%;"></div>
+  </div>
+</div>
+
+<div class="section-head">
+  <span class="section-num">ii</span>
+  <span class="section-title">Open Pipeline by Channel</span>
+  <span class="section-meta">{{open_total_count}} Deals Across {{channels_with_deals_count}} Channels</span>
+</div>
+
+<div class="channel-grid">
+{{#channels}}
+  <div class="channel-card">
+    <div class="name">{{channel_name}}</div>
+    <div class="stats">
+      <div class="stat"><span class="num">{{deal_count}}</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num {{onboarding_value_class}}">{{onboarding_total_formatted}}</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">{{valued_ratio}}</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+{{/channels}}
+</div>
+
+<div class="section-head">
+  <span class="section-num">iii</span>
+  <span class="section-title">Where to Spend Time</span>
+  <span class="section-meta">Threshold-Based Attention</span>
+</div>
+
+<!-- DEALS NEEDING ATTENTION -->
+<div class="panel">
+  <div class="panel-title">
+    Deals Needing Attention
+    <span class="meta">{{needs_attention_meta}}</span>
+  </div>
+{{#needs_attention_deals}}
+  <div class="deal-row">
+    <div class="name">{{deal_name}}{{#contact_name}} <span class="contact">· {{contact_name}}</span>{{/contact_name}}</div>
+    <div class="signal {{signal_class}}">{{signal_text}}</div>
+    <div class="meta-line">{{meta_line}}</div>
+  </div>
+{{/needs_attention_deals}}
+</div>
+
+<div class="alert-block" style="background: rgba(156, 196, 160, 0.06); border-left-color: var(--positive);">
+  <strong style="color: var(--positive);">RULE LOGIC:</strong> {{rule_logic_explainer}}
+</div>
+
+<!-- FOCUS -->
+<div class="focus">
+  <h3>Top 3 Priorities — This Week</h3>
+  <ol>
+{{#priorities}}
+    <li>
+      {{title}}
+      <span class="why">{{why}}</span>
+    </li>
+{{/priorities}}
+  </ol>
+</div>
+
+<footer>
+  <div class="footer-mark">CellarEye · Sales Pulse</div>
+  <div class="footer-meta">{{footer_meta}}</div>
+</footer>
+
+</div>
+</body>
+</html>
