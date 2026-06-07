@@ -854,18 +854,18 @@ opacity: 0.6;
       <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
       <span class="pulse-label">Sales<br>Pulse</span>
     </div>
-    <h1>Pipeline Brief — <em>{{render_date_long}}</em></h1>
+    <h1>Pipeline Brief — <em>Saturday, June 6</em></h1>
   </div>
   <div class="header-right">
-    <div class="stamp">{{version_stamp}}</div>
-    <div>Generated {{render_time}} · {{total_deals_count}} deals tracked</div>
+    <div class="stamp">v0.6 · Live Data</div>
+    <div>Generated 22:30 PT · 46 deals tracked</div>
   </div>
 </header>
 
 <div class="stage-banner">
-  <div class="label">{{company_stage_label}}</div>
-  <div class="text">{{company_stage_text}}</div>
-  <div class="countdown">{{launch_countdown}}</div>
+  <div class="label">Pre-Revenue · Discovery Phase</div>
+  <div class="text">New CEO in seat; Spotted Duck install complete and live. Pricing now populated on 16 of 34 open deals (47%), but most pipeline data is inherited. This week's brief is a starting baseline — once the introductory outreach cycle is complete, the data will reflect real conversations and the weekly read becomes a genuine decision tool. Updates due Friday by noon.</div>
+  <div class="countdown">T+5 days</div>
 </div>
 
 <!-- ROW 1: OPEN -->
@@ -878,23 +878,23 @@ opacity: 0.6;
   <div class="metrics-grid">
     <div class="metric">
       <div class="label">Pipeline Total</div>
-      <div class="value clickable-count" data-view="open">{{open_total_count}} <span class="unit">deals</span></div>
-      <div class="sub">{{open_total_subtext}}</div>
+      <div class="value clickable-count" data-view="open">34 <span class="unit">deals</span></div>
+      <div class="sub">across 5 stages · 6 channels</div>
     </div>
     <div class="metric">
       <div class="label">Open ARR</div>
-      <div class="value {{open_arr_value_class}}">{{open_arr_total_formatted}}</div>
-      <div class="sub {{open_arr_dq_class}}">{{open_arr_dq_text}}</div>
+      <div class="value ">$105,150</div>
+      <div class="sub error">16 of 34 · 47% complete</div>
     </div>
     <div class="metric">
       <div class="label">Conversion C→Q</div>
-      <div class="value">{{open_conversion_value}}</div>
-      <div class="sub">{{open_conversion_subtext}}</div>
+      <div class="value">—</div>
+      <div class="sub">no closed cycles yet</div>
     </div>
     <div class="metric cash">
       <div class="label">Onboarding in Pipeline</div>
-      <div class="value">{{open_onboarding_total_formatted}}</div>
-      <div class="sub {{open_onb_dq_class}}">{{open_onb_dq_text}}</div>
+      <div class="value">$224,788</div>
+      <div class="sub error">16 of 34 · 47% complete</div>
     </div>
   </div>
 </div>
@@ -909,23 +909,23 @@ opacity: 0.6;
   <div class="metrics-grid">
     <div class="metric">
       <div class="label">Won Deals</div>
-      <div class="value clickable-count" data-view="won">{{won_count}} <span class="unit">deals</span></div>
-      <div class="sub">{{won_subtext}}</div>
+      <div class="value clickable-count" data-view="won">2 <span class="unit">deals</span></div>
+      <div class="sub">via Meritage reseller (Dustin Cano)</div>
     </div>
     <div class="metric">
       <div class="label">Signed ARR</div>
-      <div class="value {{won_arr_value_class}}">{{won_arr_total_formatted}}</div>
-      <div class="sub">{{won_arr_subtext}}</div>
+      <div class="value ">$258</div>
+      <div class="sub">Manny + Ron annual subs</div>
     </div>
     <div class="metric">
       <div class="label">Avg Deal Size</div>
-      <div class="value">{{won_avg_deal_formatted}}</div>
-      <div class="sub">{{won_avg_subtext}}</div>
+      <div class="value">$300</div>
+      <div class="sub">DTC collector tier</div>
     </div>
     <div class="metric cash">
       <div class="label">Onboarding Booked</div>
-      <div class="value">{{won_onboarding_total_formatted}}</div>
-      <div class="sub {{won_onb_dq_class}}">{{won_onb_dq_text}}</div>
+      <div class="value">$600</div>
+      <div class="sub positive">2 of 2 · 100% complete</div>
     </div>
   </div>
 </div>
@@ -940,23 +940,23 @@ opacity: 0.6;
   <div class="metrics-grid">
     <div class="metric">
       <div class="label">Lost Deals</div>
-      <div class="value clickable-count" data-view="lost">{{lost_count}} <span class="unit">deals</span></div>
-      <div class="sub">{{lost_subtext}}</div>
+      <div class="value clickable-count" data-view="lost">5 <span class="unit">deals</span></div>
+      <div class="sub">2 Sorrells partnerships</div>
     </div>
     <div class="metric">
       <div class="label">Lost ARR</div>
-      <div class="value {{lost_arr_value_class}}">{{lost_arr_total_formatted}}</div>
-      <div class="sub">{{lost_arr_subtext}}</div>
+      <div class="value ">$15,700</div>
+      <div class="sub">Ritz London only</div>
     </div>
     <div class="metric">
       <div class="label">Top Loss Reason</div>
-      <div class="value" style="font-size: 16px;">{{lost_top_reason}}</div>
-      <div class="sub {{lost_reason_dq_class}}">{{lost_reason_subtext}}</div>
+      <div class="value" style="font-size: 16px;">Not tracked</div>
+      <div class="sub error">add Loss Reason field to Asana</div>
     </div>
     <div class="metric cash">
       <div class="label">Lost Onboarding</div>
-      <div class="value">{{lost_onboarding_total_formatted}}</div>
-      <div class="sub">{{lost_onb_subtext}}</div>
+      <div class="value">$177,800</div>
+      <div class="sub">2 of 5 valued · Ritz $150K + Jimmy Butler $27.8K</div>
     </div>
   </div>
 </div>
@@ -964,7 +964,7 @@ opacity: 0.6;
 <!-- DATA QUALITY ALERT -->
 
 <div class="alert-block">
-  <strong>DATA QUALITY:</strong> {{data_quality_summary}}
+  <strong>DATA QUALITY:</strong> Major data quality improvement this week: ARR now set on 16 of 34 open deals (47%), compared to zero last week. Onboarding likewise sits at 16 of 34 (47%). Pricing has clearly been entered for the Hospitality, Wine Storage, Cellar Builder, and Sommelier Managed channels. Retailer-Partner remains entirely unvalued (10 deals, zero ARR/onb), reflecting that channel's earlier-stage exploratory nature. No Loss Reason field exists on the project, so Closed Lost root causes still cannot be patterned. Bevrly moved back into Cold from Closed Lost — confirm intent.
 </div>
 
 <div class="section-head">
@@ -976,63 +976,108 @@ opacity: 0.6;
 <div class="funnel">
   <div class="stage-card has-most">
     <div class="stage-name">Cold</div>
-    <div class="stage-count">{{stage_cold_count}}</div>
-    <div class="stage-fill" style="width: {{stage_cold_fill_pct}}%;"></div>
+    <div class="stage-count">20</div>
+    <div class="stage-fill" style="width: 100%;"></div>
   </div>
   <div class="stage-card">
     <div class="stage-name">Warm</div>
-    <div class="stage-count">{{stage_warm_count}}</div>
-    <div class="stage-fill" style="width: {{stage_warm_fill_pct}}%;"></div>
+    <div class="stage-count">3</div>
+    <div class="stage-fill" style="width: 15%;"></div>
   </div>
   <div class="stage-card">
     <div class="stage-name">Qualified</div>
-    <div class="stage-count">{{stage_qualified_count}}</div>
-    <div class="stage-fill" style="width: {{stage_qualified_fill_pct}}%;"></div>
+    <div class="stage-count">2</div>
+    <div class="stage-fill" style="width: 10%;"></div>
   </div>
   <div class="stage-card">
     <div class="stage-name">Demo</div>
-    <div class="stage-count">{{stage_demo_count}}</div>
-    <div class="stage-fill" style="width: {{stage_demo_fill_pct}}%;"></div>
+    <div class="stage-count">5</div>
+    <div class="stage-fill" style="width: 25%;"></div>
   </div>
   <div class="stage-card">
     <div class="stage-name">Proposal</div>
-    <div class="stage-count">{{stage_proposal_count}}</div>
-    <div class="stage-fill" style="width: {{stage_proposal_fill_pct}}%;"></div>
+    <div class="stage-count">4</div>
+    <div class="stage-fill" style="width: 20%;"></div>
   </div>
   <div class="stage-card">
     <div class="stage-name">Stalled</div>
-    <div class="stage-count">{{stage_stalled_count}}</div>
-    <div class="stage-fill" style="width: {{stage_stalled_fill_pct}}%;"></div>
+    <div class="stage-count">5</div>
+    <div class="stage-fill" style="width: 25%;"></div>
   </div>
   <div class="stage-card">
     <div class="stage-name">Won</div>
-    <div class="stage-count">{{stage_won_count}}</div>
-    <div class="stage-fill" style="width: {{stage_won_fill_pct}}%;"></div>
+    <div class="stage-count">2</div>
+    <div class="stage-fill" style="width: 10%;"></div>
   </div>
   <div class="stage-card">
     <div class="stage-name">Lost</div>
-    <div class="stage-count">{{stage_lost_count}}</div>
-    <div class="stage-fill" style="width: {{stage_lost_fill_pct}}%;"></div>
+    <div class="stage-count">5</div>
+    <div class="stage-fill" style="width: 25%;"></div>
   </div>
 </div>
 
 <div class="section-head">
   <span class="section-num">ii</span>
   <span class="section-title">Open Pipeline by Channel</span>
-  <span class="section-meta">{{open_total_count}} Deals Across {{channels_with_deals_count}} Channels</span>
+  <span class="section-meta">34 Deals Across 6 Channels</span>
 </div>
 
 <div class="channel-grid">
-{{#channels}}
+
   <div class="channel-card">
-    <div class="name">{{channel_name}}</div>
+    <div class="name">Retailer-Partner</div>
     <div class="stats">
-      <div class="stat"><span class="num">{{deal_count}}</span><span class="lbl">Deals</span></div>
-      <div class="stat"><span class="num {{onboarding_value_class}}">{{onboarding_total_formatted}}</span><span class="lbl">Onboarding</span></div>
-      <div class="stat"><span class="num">{{valued_ratio}}</span><span class="lbl">Valued</span></div>
+      <div class="stat"><span class="num">10</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num muted">$0</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">0/10</span><span class="lbl">Valued</span></div>
     </div>
   </div>
-{{/channels}}
+
+  <div class="channel-card">
+    <div class="name">Hospitality</div>
+    <div class="stats">
+      <div class="stat"><span class="num">8</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$49.4K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">6/8</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Sommelier Managed</div>
+    <div class="stats">
+      <div class="stat"><span class="num">5</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$4.5K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">2/5</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Wine Storage</div>
+    <div class="stats">
+      <div class="stat"><span class="num">4</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$154.5K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">2/4</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Cellar Builder</div>
+    <div class="stats">
+      <div class="stat"><span class="num">4</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$11.2K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">4/4</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Reserve-Client Direct</div>
+    <div class="stats">
+      <div class="stat"><span class="num">2</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$5.2K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">2/2</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
 </div>
 
 <div class="section-head">
@@ -1046,19 +1091,61 @@ opacity: 0.6;
 <div class="panel">
   <div class="panel-title">
     Deals Needing Attention
-    <span class="meta">{{needs_attention_meta}}</span>
+    <span class="meta">Top 8 by Stage Velocity</span>
   </div>
-{{#needs_attention_deals}}
+
   <div class="deal-row">
-    <div class="name">{{deal_name}}{{#contact_name}} <span class="contact">· {{contact_name}}</span>{{/contact_name}}</div>
-    <div class="signal {{signal_class}}">{{signal_text}}</div>
-    <div class="meta-line">{{meta_line}}</div>
+    <div class="name">Sorrells Custom Wine Cellars <span class="contact">· Tim Lewis</span></div>
+    <div class="signal warm">Stalled · $4.5K onb</div>
+    <div class="meta-line">Cellar Builder · Sommeliers Path B | 10 clients | 2,000 bottles avg. Waiting on Tim for contract.</div>
   </div>
-{{/needs_attention_deals}}
+
+  <div class="deal-row">
+    <div class="name">Chai Consulting <span class="contact">· Maureen Downey</span></div>
+    <div class="signal warm">Stalled · $3.3K onb</div>
+    <div class="meta-line">Sommelier Managed · Sommeliers Path B | 5 clients | 5,000 bottles avg. Provide web app updates, prototype for Singapore.</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Crux Cavas <span class="contact">· Maria Belen Cocconi</span></div>
+    <div class="signal warm">Stalled · $2.2K onb</div>
+    <div class="meta-line">Cellar Builder · Sommeliers Path B | 5 clients | 2,000 bottles avg</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Harper's Club <span class="contact">· Chris Hoel</span></div>
+    <div class="signal warm">Stalled · $2.2K onb</div>
+    <div class="meta-line">Sommelier Managed · On pause, not interested in switching from CT. EOY/2027.</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Camper <span class="contact">· Greg</span></div>
+    <div class="signal warm">Stalled · $1.1K onb</div>
+    <div class="meta-line">Hospitality · Reserve Path A | 1 client | 1,500 bottles avg. Hold off until Q2 or Mostafa request.</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Addison by William Bradley <span class="contact">· Sean McGinness</span></div>
+    <div class="signal warm">Proposal · $22.4K onb</div>
+    <div class="meta-line">Hospitality · Proposal sent. Cellar 5,001-10,000 bottles.</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Sharon Heights Golf & Country Club <span class="contact">· Efrain Sanchez</span></div>
+    <div class="signal warm">Proposal · $13.2K onb</div>
+    <div class="meta-line">Hospitality · Proposal sent. Path A | Expected close 2026-11-30.</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Los Altos Golf & Country Club <span class="contact">· Andrew Sparling</span></div>
+    <div class="signal warm">Proposal · $7.5K onb</div>
+    <div class="meta-line">Hospitality · Proposal sent. Cellar 2,501-5,000 bottles.</div>
+  </div>
+
 </div>
 
 <div class="alert-block" style="background: rgba(156, 196, 160, 0.06); border-left-color: var(--positive);">
-  <strong style="color: var(--positive);">RULE LOGIC:</strong> {{rule_logic_explainer}}
+  <strong style="color: var(--positive);">RULE LOGIC:</strong> Deals shown crossed their stage thresholds (Cold/Warm 14d, Qualified 7d, Demo 10d, Proposal 14d, Stalled 21d). Sorted: Stalled first, then by stage progression (Proposal → Cold), then by onboarding value descending.
 </div>
 
 <!-- FOCUS -->
@@ -1066,12 +1153,22 @@ opacity: 0.6;
 <div class="focus">
   <h3>Top 3 Priorities — This Week</h3>
   <ol>
-{{#priorities}}
+
     <li>
-      {{title}}
-      <span class="why">{{why}}</span>
+      Run an introductory outreach pass to every deal in the pipeline.
+      <span class="why">With a new CEO seated, every existing prospect — Cold through Stalled — gets a fresh conversation. Goal is not to sell yet; goal is to reassess. After contact, deals that show real engagement get reclassified up the funnel, and deals that have gone cold get moved to Lost honestly. This dashboard tells a thin story today because most fields are inherited or generic. After this outreach cycle, the data reflects real conversations and the weekly brief becomes a genuine decision tool.</span>
     </li>
-{{/priorities}}
+
+    <li>
+      Focus net-new pipeline on Sommelier and Hospitality channels.
+      <span class="why">Hospitality (8 open, $49.4K onb) and Sommelier Managed (5 open, $4.5K onb) are where addressable volume lives — 38% of open deals between them. Sommelier Managed is the board's commercial hero, but only 1 of 5 deals there is currently valued. Adding qualified pipeline at the top of these two channels is the cleanest path to revenue beyond the single WeShip dependency.</span>
+    </li>
+
+    <li>
+      Resolve the five Stalled deals or move them to Lost.
+      <span class="why">Stalled now sits at 5 deals (up from 3 last week — Crux Cavas, Sorrells, and Chai joined Camper and Harper's). Combined onboarding is $13,406 of stuck value. The outreach pass above forces this decision: each stalled deal either gets a concrete next step or it moves to Lost. The pipeline shouldn't carry deals that aren't moving.</span>
+    </li>
+
   </ol>
 </div>
 
@@ -1080,7 +1177,7 @@ opacity: 0.6;
     <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
     <span class="footer-mark-text">Sales Pulse</span>
   </div>
-  <div class="footer-meta">{{footer_meta}}</div>
+  <div class="footer-meta">Source: Asana CellarEye Sales Pipeline · Manual render · v0.6</div>
 </footer>
 
 </div>
@@ -1102,7 +1199,7 @@ opacity: 0.6;
 <!-- Embedded deal data -->
 
 <script id="dealData" type="application/json">
-{{deal_data_json}}
+{"open": [{"name": "Palo Alto Hills Golf and Country Club", "first": "David", "last": null, "channel": "Hospitality", "arr": 1300, "onb": 2562.5, "stage": "Cold", "notes": "Reserve Path A | 1 client | 5,000 bottles avg"}, {"name": "Menlo Circus Club", "first": "Steffen", "last": "Mrowczynski", "channel": "Hospitality", "arr": 1300, "onb": 2562.5, "stage": "Cold", "notes": "Reserve Path A | 1 client | 5,000 bottles avg"}, {"name": "Omid Farokhzad (Revel Cellars - Mostafa's buddy)", "first": "Omid", "last": "Farokhzad", "channel": "Reserve-Client Direct", "arr": 600, "onb": 1375, "stage": "Cold", "notes": "Mostafa's buddy. Replied he would talk to Mostafa. No actual info about his cellar."}, {"name": "Cafe Vivant", "first": "Christian", "last": null, "channel": "Hospitality", "arr": 450, "onb": 1125, "stage": "Cold", "notes": "Reserve Path A | 1 client | 1,500 bottles avg"}, {"name": "Bevrly", "first": "Yaacov", "last": "Barselah", "channel": null, "arr": null, "onb": null, "stage": "Cold", "notes": "Stage: On Hold (was Demo Completed). Next Step: Mostafa in conversation with Yaacov."}, {"name": "Cellar Master Consulting - Marc Glassberg", "first": "Marc", "last": "Glassberg", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "OUTREACH APPROACH: LinkedIn introduction or warm referral through SF retailers"}, {"name": "Vintner's Collective - Garret Murphy", "first": "Garret", "last": "Murphy", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED OWNER. Represents ~20 small Napa producers. $7.3M revenue."}, {"name": "A Taste of Monterey - Britt Talbert", "first": "Britt", "last": "Talbert", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "HIGH-FIT WARM CONVERSATION. New owner with tech/military background."}, {"name": "Ferry Plaza Wine Merchant - Peter Granoff, MS", "first": "Peter", "last": "Granoff", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Master Sommelier and Tech Founder. Co-founded Virtual Vineyards (1994)."}, {"name": "The Sommelier Company - Jason Hartman (President)", "first": "Jason", "last": "Hartman", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "COMPETITIVE INTEL. Closest direct competitor pattern. M&A advisory background."}, {"name": "Draeger's Markets - Larry Ferguson (Store Director)", "first": "Larry", "last": "Ferguson", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Store director. Ask for wine department lead, do not pitch directly."}, {"name": "The Cheese Shop (Carmel) - Kent Torrey", "first": "Kent", "last": "Torrey", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "OWNER - Iconic Carmel cheese plus fine wine shop. 4.9 stars across 453 reviews."}, {"name": "ACME Fine Wines - David Stevens (Owner)", "first": "David", "last": "Stevens", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "OWNER - ACME Fine Wines. Co-runs with Karen Williams."}, {"name": "California Wine Merchant - Greg O'Flynn", "first": "Greg", "last": "O'Flynn", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED OWNER - 50+ year operator. First wine bar in SF."}, {"name": "UOVO - Pamela Moore (Director of BD)", "first": "Pamela", "last": "Moore", "channel": "Wine Storage", "arr": null, "onb": null, "stage": "Cold", "notes": "UOVO soft entry. Director of BD. Good entry before escalating to Page-Katz."}, {"name": "UOVO - Caroline Page-Katz", "first": "Caroline", "last": "Page-Katz", "channel": "Wine Storage", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Strategic C-Suite. President and COO of UOVO. From Christie's."}, {"name": "K&L Wine Merchants - Andrew Shaheen", "first": "Andrew", "last": "Shaheen", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Highest-leverage conversation. Previously VP at Vinfolio."}, {"name": "Biondivino - Ceri Smith", "first": "Ceri", "last": "Smith", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED OWNER - Italian wine specialist. Best Italian selection in NorCal."}, {"name": "ACME Fine Wines - Karen Williams (Founder)", "first": "Karen", "last": "Williams", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED FOUNDER - High-end curated Napa shop. Co-runs with David Stevens."}, {"name": "Enotrias - Melissa L. Smith", "first": "Melissa", "last": "Smith", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Court of Master Somms plus State Bar appraiser. Former K&L."}, {"name": "Nos Caves Vin", "first": "Jost", "last": "Lunstroth", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Warm", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "Vintage Cellars", "first": "Chris", "last": "Noel", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Warm", "notes": "Recommended by Dustin. Responded to emails with interest but no call yet. Reconnect when ready."}, {"name": "Remington Hotels", "first": "Ted", "last": "Peters", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Warm", "notes": "New deal added this week."}, {"name": "Winebank", "first": "Don", "last": "Fox", "channel": "Wine Storage", "arr": 6000, "onb": 4500, "stage": "Qualified", "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"}, {"name": "Drink with Me", "first": "Joshua", "last": "Plack", "channel": "Sommelier Managed", "arr": 3000, "onb": 2250, "stage": "Qualified", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "WeShip Express", "first": "Scott", "last": "Kennedy", "channel": "Wine Storage", "arr": 60000, "onb": 150000, "stage": "Demo", "notes": "DTC wine/spirits logistics. 400 clients via Eagle Rock acquisition. Plan to scale 10x. VP Tech Scott Kennedy. Evaluating CellarEye vs build-in-house."}, {"name": "Colgin Cellars", "first": "Brandon", "last": "Benelli", "channel": "Reserve-Client Direct", "arr": 2200, "onb": 3812.5, "stage": "Demo", "notes": "Reserve Path A | 1 client | 10,000 bottles avg"}, {"name": "Innovative Cellars", "first": "Sandy", "last": "Horwitz", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Demo", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "Meritage Wine Market", "first": "Dustin", "last": "Cano", "channel": "Sommelier Managed", "arr": 3000, "onb": 2250, "stage": "Demo", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg. Existing reseller for Manny + Ron."}, {"name": "The Spotted Duck", "first": "Jerry", "last": "Regester", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Demo", "notes": "On-site install completed early June 2026 in Pacific Grove."}, {"name": "Addison by William Bradley", "first": "Sean", "last": "McGinness", "channel": "Hospitality", "arr": 7500, "onb": 22400, "stage": "Proposal", "notes": "Proposal sent. Cellar 5,001-10,000 bottles."}, {"name": "Sharon Heights Golf & Country Club", "first": "Efrain", "last": "Sanchez", "channel": "Hospitality", "arr": 3300, "onb": 13200, "stage": "Proposal", "notes": "Proposal sent. Path A | Expected close 2026-11-30."}, {"name": "Los Altos Golf & Country Club", "first": "Andrew", "last": "Sparling", "channel": "Hospitality", "arr": 1500, "onb": 7500, "stage": "Proposal", "notes": "Proposal sent. Cellar 2,501-5,000 bottles."}, {"name": "Rosehill Wine Cellars", "first": "Jonathan", "last": "Gilkes", "channel": "Cellar Builder", "arr": 6000, "onb": 4500, "stage": "Proposal", "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"}], "won": [{"name": "Manny Machado (Meritage)", "first": "Manny", "last": "Machado", "channel": "Sommelier Managed", "arr": 129, "onb": 400, "stage": "Closed Won", "notes": "Install Completed. Payment received 2/11 and 2/17. Install completed by Dustin on 2/13."}, {"name": "Ron Montbleau (Meritage)", "first": "Ron", "last": "Montbleau", "channel": "Sommelier Managed", "arr": 129, "onb": 200, "stage": "Closed Won", "notes": "Install Completed. Follow up for user insights — feedback received from Dustin on scanning issues."}], "lost": [{"name": "The Ritz London (Sorrells)", "first": "Tim", "last": "Lewis", "channel": "Hospitality", "arr": 15700, "onb": 150000, "stage": "Closed Lost", "notes": "Reserve Path A | 1 client | 100,000 bottles | Custom dev included in proposal."}, {"name": "Jimmy Butler (Harper's)", "first": "Chris", "last": "Hoel", "channel": "Sommelier Managed", "arr": null, "onb": 27800, "stage": "Closed Lost", "notes": "On Hold. Last change 2/5/26."}, {"name": "Rockcliffe Hotel (Sorrells)", "first": "Tim", "last": "Lewis", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Prospect stage. Last change 1/21/26."}, {"name": "Revel Cellars", "first": "Jim", "last": "Cash", "channel": "Cellar Builder", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Demo Completed. Does Omid Farokhzad want to test system?"}, {"name": "Four Seasons George V", "first": "Antoine", "last": "Desmoulins", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Demo Completed. Cellar 10,001+. Next Step: Draft Proposal."}]}
 </script>
 
 <script>
