@@ -854,7 +854,7 @@ opacity: 0.6;
       <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
       <span class="pulse-label">Sales<br>Pulse</span>
     </div>
-    <h1>Pipeline Brief — <em>Saturday, June 6</em></h1>
+    <h1>Pipeline Brief — <em>{{render_date_long}}</em></h1>
   </div>
   <div class="header-right">
     <div class="stamp">v0.6 · Live Data</div>
@@ -864,7 +864,7 @@ opacity: 0.6;
 
 <div class="stage-banner">
   <div class="label">Pre-Revenue · Discovery Phase</div>
-  <div class="text">New CEO in seat; Spotted Duck install complete and live. Pricing now populated on 16 of 34 open deals (47%), but most pipeline data is inherited. This week's brief is a starting baseline — once the introductory outreach cycle is complete, the data will reflect real conversations and the weekly read becomes a genuine decision tool. Updates due Friday by noon.</div>
+  <div class="text">{{company_stage_text}}</div>
   <div class="countdown">T+5 days</div>
 </div>
 
@@ -964,7 +964,7 @@ opacity: 0.6;
 <!-- DATA QUALITY ALERT -->
 
 <div class="alert-block">
-  <strong>DATA QUALITY:</strong> Major data quality improvement this week: ARR now set on 16 of 34 open deals (47%), compared to zero last week. Onboarding likewise sits at 16 of 34 (47%). Pricing has clearly been entered for the Hospitality, Wine Storage, Cellar Builder, and Sommelier Managed channels. Retailer-Partner remains entirely unvalued (10 deals, zero ARR/onb), reflecting that channel's earlier-stage exploratory nature. No Loss Reason field exists on the project, so Closed Lost root causes still cannot be patterned. Bevrly moved back into Cold from Closed Lost — confirm intent.
+  <strong>DATA QUALITY:</strong> {{data_quality_summary}}
 </div>
 
 <div class="section-head">
