@@ -1,7 +1,7 @@
 <!--
   CellarEye Sales Pulse
-  Data pulled from Asana: Friday, June 26, 2026 at 14:30 PT
-  Source: Asana project "CellarEye Sales Pipeline"
+  Data pulled from Asana: Saturday, July 18, 2026 at 15:05 PT
+  Source: Asana project 'CellarEye Sales Pipeline'
 -->
 <!DOCTYPE html>
 
@@ -12,7 +12,7 @@
 <title>CellarEye — Sales Pulse</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #1A1424;
@@ -36,7 +36,7 @@
     background: var(--ink);
     color: var(--cream);
     font-family: 'Jost', sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14.5px;
     line-height: 1.55;
     letter-spacing: 0.012em;
@@ -216,11 +216,11 @@ align-items: flex-end;
 gap: 32px;
 }
 .header-left .eyebrow {
-font-size: 10px; font-weight: 600; letter-spacing: 0.32em;
+font-size: 10px; font-weight: 700; letter-spacing: 0.32em;
 text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
 }
 h1 {
-font-family: ‘Cormorant Garamond’, serif; font-weight: 600;
+font-family: ‘Cormorant Garamond’, serif; font-weight: 700;
 font-size: 38px; line-height: 1; color: var(--paper);
 letter-spacing: -0.005em;
 }
@@ -255,7 +255,7 @@ gap: 24px;
 }
 .stage-banner .label {
 font-family: ‘Cormorant Garamond’, serif;
-font-weight: 600;
+font-weight: 700;
 font-style: italic;
 font-size: 16px;
 color: var(--gold);
@@ -342,7 +342,7 @@ margin-bottom: 8px;
 }
 .metric .value {
 font-family: ‘Cormorant Garamond’, serif;
-font-weight: 600;
+font-weight: 700;
 font-size: 26px;
 line-height: 1;
 color: var(--paper);
@@ -354,7 +354,7 @@ opacity: 0.4;
 }
 .metric .value .unit {
 font-family: ‘Jost’, sans-serif;
-font-weight: 400;
+font-weight: 500;
 font-size: 13px;
 opacity: 0.55;
 margin-left: 4px;
@@ -381,7 +381,7 @@ line-height: 1.5;
 }
 .alert-block strong {
 color: var(--warning);
-font-weight: 600;
+font-weight: 700;
 letter-spacing: 0.05em;
 text-transform: uppercase;
 font-size: 10px;
@@ -405,7 +405,7 @@ opacity: 0.7;
 }
 .section-title {
 font-family: ‘Cormorant Garamond’, serif;
-font-weight: 600;
+font-weight: 700;
 font-size: 22px;
 color: var(--paper);
 }
@@ -448,7 +448,7 @@ margin-bottom: 8px;
 }
 .stage-card .stage-count {
 font-family: ‘Cormorant Garamond’, serif;
-font-weight: 600;
+font-weight: 700;
 font-size: 28px;
 color: var(--paper);
 line-height: 1;
@@ -492,7 +492,7 @@ flex-direction: column;
 }
 .channel-card .stat .num {
 font-family: ‘Cormorant Garamond’, serif;
-font-weight: 600;
+font-weight: 700;
 font-size: 18px;
 color: var(--paper);
 }
@@ -585,7 +585,7 @@ border-top: 1px solid var(--rule);
 }
 .focus h3 {
 font-family: ‘Cormorant Garamond’, serif;
-font-weight: 600;
+font-weight: 700;
 font-size: 22px;
 color: var(--paper);
 margin-bottom: 18px;
@@ -702,7 +702,7 @@ border-color: var(--gold);
 .drilldown h1 {
 font-family: ‘Cormorant Garamond’, serif;
 font-size: 38px;
-font-weight: 500;
+font-weight: 600;
 color: var(--cream);
 margin-bottom: 6px;
 letter-spacing: -0.01em;
@@ -735,7 +735,7 @@ flex-wrap: wrap;
 .deal-card-name {
 font-family: ‘Cormorant Garamond’, serif;
 font-size: 22px;
-font-weight: 600;
+font-weight: 700;
 color: var(--cream);
 line-height: 1.2;
 }
@@ -769,7 +769,7 @@ margin-bottom: 3px;
 .deal-field-value {
 font-size: 14px;
 color: var(--cream);
-font-weight: 400;
+font-weight: 500;
 }
 .deal-field-value.muted {
 color: var(--cream);
@@ -848,6 +848,70 @@ color: var(--gold);
 opacity: 0.6;
 }
 
+
+/* Target Accounts channel row */
+.ta-channel-funnel {
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+gap: 8px;
+padding: 16px 24px 20px;
+border-top: 1px solid var(--soft-rule);
+}
+.ta-card {
+background: rgba(244,237,226,0.025);
+border: 1px solid var(--soft-rule);
+border-radius: 2px;
+padding: 12px 8px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.ta-card.leader {
+background: rgba(200,184,154,0.08);
+border-color: rgba(200,184,154,0.3);
+}
+.ta-card .ta-name {
+font-size: 9px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.85;
+margin-bottom: 8px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.ta-card .ta-count {
+font-family: 'Cormorant Garamond', serif;
+font-weight: 700;
+font-size: 26px;
+color: var(--paper);
+line-height: 1;
+margin-bottom: 6px;
+}
+.ta-card .ta-sub {
+font-family: 'JetBrains Mono', monospace;
+font-size: 8.5px;
+letter-spacing: 0.05em;
+color: var(--cream);
+opacity: 0.55;
+white-space: nowrap;
+}
+.ta-card .ta-fill {
+position: absolute;
+bottom: 0; left: 0;
+height: 2px;
+background: var(--rose);
+opacity: 0.5;
+}
+/* Narrow screens: wrap 4x2 like the funnel */
+@media (max-width: 720px) {
+.ta-channel-funnel { grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 12px 16px 16px; }
+.ta-card { padding: 10px 4px; }
+.ta-card .ta-count { font-size: 22px; }
+.ta-card .ta-name { font-size: 8px; }
+.ta-card .ta-sub { font-size: 7.5px; }
+}
 </style>
 </head>
 <body>
@@ -859,18 +923,99 @@ opacity: 0.6;
       <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
       <span class="pulse-label">Sales<br>Pulse</span>
     </div>
-    <h1>Pipeline Brief — <em>Friday, June 26</em></h1>
+    <h1>Pipeline Brief — <em>Friday, July 17</em></h1>
   </div>
   <div class="header-right">
-    <div class="stamp">v0.6 · Live Data</div>
-    <div>Generated 22:30 PT · 46 deals tracked</div>
+    <div class="stamp">v0.9 · Live Data</div>
+    <div>Generated 15:05 PT · 50 deals tracked</div>
   </div>
 </header>
 
 <div class="stage-banner">
   <div class="label">Pre-Revenue · Discovery Phase</div>
-  <div class="text">Pipeline grew to 49 deals this week (+3 net new in Warm: Tedd Glennon, Pausa San Mateo, Bevrly returning). Spotted Duck install complete; WeShip Express ($60K ARR / $150K onb) remains the largest open opportunity. ARR populated on 16 of 37 open deals (43%). New "Sommelier Program" channel introduced. Most pipeline data is still inherited — outreach pass continues. Updates due Friday by noon.</div>
-  <div class="countdown">T+5 days</div>
+  <div class="text">Demo grew to 12 this week: Tedd Glennon and Pausa San Mateo moved in after the 7/10 meetings, and the proposal-stage deals (Addison, Sharon Heights, Los Altos, Rosehill) now sit in Demo pending decisions. New Warm entry: 1275 Collections (Geneva, ~100 customers, referred through Danielle). Chai Consulting moved to Lost. Separately, 104 Target Accounts are organized and structured outreach begins Monday. WeShip Express ($60K ARR / $150K onb) remains the largest open opportunity. Updates due Friday by noon.</div>
+  <div class="countdown">T+46 days</div>
+</div>
+
+<!-- ROW 0: TARGET ACCOUNTS (INBOUND LEADS) -->
+
+<div class="row-block">
+  <div class="row-label" style="background: rgba(61, 36, 86, 0.45);">
+    <span class="name">Target Accounts</span>
+    <span class="meta">Region Launch · Outreach Begins Mon 7/20</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Total Leads</div>
+      <div class="value">104 <span class="unit">accounts</span></div>
+      <div class="sub">organized in Asana project</div>
+    </div>
+    <div class="metric">
+      <div class="label">Added This Week</div>
+      <div class="value">104</div>
+      <div class="sub">initial target list built 7/15-7/16</div>
+    </div>
+    <div class="metric">
+      <div class="label">Qualified This Week</div>
+      <div class="value muted-value">0</div>
+      <div class="sub">outreach begins Monday</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Qual Rate</div>
+      <div class="value muted-value">0%</div>
+      <div class="sub">baseline starts week of 7/20</div>
+    </div>
+  </div>
+  <div class="ta-channel-funnel">
+    <div class="ta-card leader">
+      <div class="ta-name">Somm Program</div>
+      <div class="ta-count">84</div>
+      <div class="ta-sub">+84 · 0 qual</div>
+      <div class="ta-fill" style="width: 100%;"></div>
+    </div>
+    <div class="ta-card">
+      <div class="ta-name">Hospitality</div>
+      <div class="ta-count">16</div>
+      <div class="ta-sub">+16 · 0 qual</div>
+      <div class="ta-fill" style="width: 19%;"></div>
+    </div>
+    <div class="ta-card">
+      <div class="ta-name">Somm Managed</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card">
+      <div class="ta-name">Retailer</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card">
+      <div class="ta-name">Wine Storage</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card">
+      <div class="ta-name">Cellar Builder</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card">
+      <div class="ta-name">Reserve Direct</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card">
+      <div class="ta-name">DTC</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+  </div>
 </div>
 
 <!-- ROW 1: OPEN -->
@@ -969,7 +1114,7 @@ opacity: 0.6;
 <!-- DATA QUALITY ALERT -->
 
 <div class="alert-block">
-  <strong>DATA QUALITY:</strong> ARR set on 16 of 37 open deals (43%); Onboarding set on 16 of 37 (43%). Retailer-Partner remains entirely unvalued (10 deals, zero ARR/onb) — earlier-stage outreach. Duplicate detected: "Plack, Joshua — Drink With Me" (Qualified) is a duplicate of "Drink with Me" — needs merge. No Loss Reason field on the project; root causes still untrackable.
+  <strong>DATA QUALITY:</strong> ARR set on 17 of 39 open deals (44%); Onboarding set on 17 of 39 (44%). Retailer-Partner channel remains entirely unvalued (10 deals, zero ARR/onb). Proposal stage is empty after this week's board cleanup - former proposal deals now tracked in Demo. Joshua Plack duplicate in Qualified still needs merge. No Loss Reason field on the project.
 </div>
 
 <div class="section-head">
