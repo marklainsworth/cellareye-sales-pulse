@@ -650,7 +650,7 @@ color: var(--gold);
 border-bottom-color: var(--gold);
 }
 .clickable-count::after {
-content: “ ›”;
+content: " ›";
 color: var(--gold);
 opacity: 0.5;
 font-size: 0.7em;
@@ -866,6 +866,14 @@ text-align: center;
 position: relative;
 overflow: hidden;
 }
+.ta-card.ta-clickable {
+cursor: pointer;
+transition: border-color 0.2s ease, background 0.2s ease;
+}
+.ta-card.ta-clickable:hover {
+border-color: var(--gold);
+background: rgba(200,184,154,0.10);
+}
 .ta-card.leader {
 background: rgba(200,184,154,0.08);
 border-color: rgba(200,184,154,0.3);
@@ -967,49 +975,49 @@ opacity: 0.5;
     </div>
   </div>
   <div class="ta-channel-funnel">
-    <div class="ta-card leader">
+    <div class="ta-card leader ta-clickable" data-view="ta-sommelierprogram">
       <div class="ta-name">Somm Program</div>
       <div class="ta-count">84</div>
       <div class="ta-sub">+84 · 0 qual</div>
       <div class="ta-fill" style="width: 100%;"></div>
     </div>
-    <div class="ta-card">
+    <div class="ta-card ta-clickable" data-view="ta-hospitality">
       <div class="ta-name">Hospitality</div>
       <div class="ta-count">16</div>
       <div class="ta-sub">+16 · 0 qual</div>
       <div class="ta-fill" style="width: 19%;"></div>
     </div>
-    <div class="ta-card">
+    <div class="ta-card" >
       <div class="ta-name">Somm Managed</div>
       <div class="ta-count">0</div>
       <div class="ta-sub">+0 · 0 qual</div>
       <div class="ta-fill" style="width: 0%;"></div>
     </div>
-    <div class="ta-card">
+    <div class="ta-card" >
       <div class="ta-name">Retailer</div>
       <div class="ta-count">0</div>
       <div class="ta-sub">+0 · 0 qual</div>
       <div class="ta-fill" style="width: 0%;"></div>
     </div>
-    <div class="ta-card">
+    <div class="ta-card" >
       <div class="ta-name">Wine Storage</div>
       <div class="ta-count">0</div>
       <div class="ta-sub">+0 · 0 qual</div>
       <div class="ta-fill" style="width: 0%;"></div>
     </div>
-    <div class="ta-card">
+    <div class="ta-card" >
       <div class="ta-name">Cellar Builder</div>
       <div class="ta-count">0</div>
       <div class="ta-sub">+0 · 0 qual</div>
       <div class="ta-fill" style="width: 0%;"></div>
     </div>
-    <div class="ta-card">
+    <div class="ta-card" >
       <div class="ta-name">Reserve Direct</div>
       <div class="ta-count">0</div>
       <div class="ta-sub">+0 · 0 qual</div>
       <div class="ta-fill" style="width: 0%;"></div>
     </div>
-    <div class="ta-card">
+    <div class="ta-card" >
       <div class="ta-name">DTC</div>
       <div class="ta-count">0</div>
       <div class="ta-sub">+0 · 0 qual</div>
@@ -1352,9 +1360,14 @@ opacity: 0.5;
 {"open": [{"name": "Palo Alto Hills Golf and Country Club", "first": "David", "last": null, "channel": "Hospitality", "arr": 1300, "onb": 2562.5, "stage": "Cold", "notes": "Reserve Path A | 1 client | 5,000 bottles avg"}, {"name": "Menlo Circus Club", "first": "Steffen", "last": "Mrowczynski", "channel": "Hospitality", "arr": 1300, "onb": 2562.5, "stage": "Cold", "notes": "Reserve Path A | 1 client | 5,000 bottles avg"}, {"name": "Omid Farokhzad (Revel Cellars - Mostafa's buddy)", "first": "Omid", "last": "Farokhzad", "channel": "Reserve-Client Direct", "arr": 600, "onb": 1375, "stage": "Cold", "notes": "Mostafa's buddy. Replied he would talk to Mostafa. No actual info about his cellar."}, {"name": "Cafe Vivant", "first": "Christian", "last": null, "channel": "Hospitality", "arr": 450, "onb": 1125, "stage": "Cold", "notes": "Reserve Path A | 1 client | 1,500 bottles avg"}, {"name": "Bevrly", "first": "Yaacov", "last": "Barselah", "channel": null, "arr": null, "onb": null, "stage": "Cold", "notes": "Stage: On Hold (was Demo Completed). Next Step: Mostafa in conversation with Yaacov."}, {"name": "Cellar Master Consulting - Marc Glassberg", "first": "Marc", "last": "Glassberg", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "OUTREACH APPROACH: LinkedIn introduction or warm referral through SF retailers"}, {"name": "Vintner's Collective - Garret Murphy", "first": "Garret", "last": "Murphy", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED OWNER. Represents ~20 small Napa producers. $7.3M revenue."}, {"name": "A Taste of Monterey - Britt Talbert", "first": "Britt", "last": "Talbert", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "HIGH-FIT WARM CONVERSATION. New owner with tech/military background."}, {"name": "Ferry Plaza Wine Merchant - Peter Granoff, MS", "first": "Peter", "last": "Granoff", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Master Sommelier and Tech Founder. Co-founded Virtual Vineyards (1994)."}, {"name": "The Sommelier Company - Jason Hartman (President)", "first": "Jason", "last": "Hartman", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "COMPETITIVE INTEL. Closest direct competitor pattern. M&A advisory background."}, {"name": "Draeger's Markets - Larry Ferguson (Store Director)", "first": "Larry", "last": "Ferguson", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Store director. Ask for wine department lead, do not pitch directly."}, {"name": "The Cheese Shop (Carmel) - Kent Torrey", "first": "Kent", "last": "Torrey", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "OWNER - Iconic Carmel cheese plus fine wine shop. 4.9 stars across 453 reviews."}, {"name": "ACME Fine Wines - David Stevens (Owner)", "first": "David", "last": "Stevens", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "OWNER - ACME Fine Wines. Co-runs with Karen Williams."}, {"name": "California Wine Merchant - Greg O'Flynn", "first": "Greg", "last": "O'Flynn", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED OWNER - 50+ year operator. First wine bar in SF."}, {"name": "UOVO - Pamela Moore (Director of BD)", "first": "Pamela", "last": "Moore", "channel": "Wine Storage", "arr": null, "onb": null, "stage": "Cold", "notes": "UOVO soft entry. Director of BD. Good entry before escalating to Page-Katz."}, {"name": "UOVO - Caroline Page-Katz", "first": "Caroline", "last": "Page-Katz", "channel": "Wine Storage", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Strategic C-Suite. President and COO of UOVO. From Christie's."}, {"name": "K&L Wine Merchants - Andrew Shaheen", "first": "Andrew", "last": "Shaheen", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Highest-leverage conversation. Previously VP at Vinfolio."}, {"name": "Biondivino - Ceri Smith", "first": "Ceri", "last": "Smith", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED OWNER - Italian wine specialist. Best Italian selection in NorCal."}, {"name": "ACME Fine Wines - Karen Williams (Founder)", "first": "Karen", "last": "Williams", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "VERIFIED FOUNDER - High-end curated Napa shop. Co-runs with David Stevens."}, {"name": "Enotrias - Melissa L. Smith", "first": "Melissa", "last": "Smith", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "TIER 1 - Court of Master Somms plus State Bar appraiser. Former K&L."}, {"name": "Nos Caves Vin", "first": "Jost", "last": "Lunstroth", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Warm", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "Vintage Cellars", "first": "Chris", "last": "Noel", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Warm", "notes": "Recommended by Dustin. Responded to emails with interest but no call yet. Reconnect when ready."}, {"name": "Remington Hotels", "first": "Ted", "last": "Peters", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Warm", "notes": "New deal added this week."}, {"name": "Winebank", "first": "Don", "last": "Fox", "channel": "Wine Storage", "arr": 6000, "onb": 4500, "stage": "Qualified", "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"}, {"name": "Drink with Me", "first": "Joshua", "last": "Plack", "channel": "Sommelier Managed", "arr": 3000, "onb": 2250, "stage": "Qualified", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "WeShip Express", "first": "Scott", "last": "Kennedy", "channel": "Wine Storage", "arr": 60000, "onb": 150000, "stage": "Demo", "notes": "DTC wine/spirits logistics. 400 clients via Eagle Rock acquisition. Plan to scale 10x. VP Tech Scott Kennedy. Evaluating CellarEye vs build-in-house."}, {"name": "Colgin Cellars", "first": "Brandon", "last": "Benelli", "channel": "Reserve-Client Direct", "arr": 2200, "onb": 3812.5, "stage": "Demo", "notes": "Reserve Path A | 1 client | 10,000 bottles avg"}, {"name": "Innovative Cellars", "first": "Sandy", "last": "Horwitz", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Demo", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "Meritage Wine Market", "first": "Dustin", "last": "Cano", "channel": "Sommelier Managed", "arr": 3000, "onb": 2250, "stage": "Demo", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg. Existing reseller for Manny + Ron."}, {"name": "The Spotted Duck", "first": "Jerry", "last": "Regester", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Demo", "notes": "On-site install completed early June 2026 in Pacific Grove."}, {"name": "Addison by William Bradley", "first": "Sean", "last": "McGinness", "channel": "Hospitality", "arr": 7500, "onb": 22400, "stage": "Proposal", "notes": "Proposal sent. Cellar 5,001-10,000 bottles."}, {"name": "Sharon Heights Golf & Country Club", "first": "Efrain", "last": "Sanchez", "channel": "Hospitality", "arr": 3300, "onb": 13200, "stage": "Proposal", "notes": "Proposal sent. Path A | Expected close 2026-11-30."}, {"name": "Los Altos Golf & Country Club", "first": "Andrew", "last": "Sparling", "channel": "Hospitality", "arr": 1500, "onb": 7500, "stage": "Proposal", "notes": "Proposal sent. Cellar 2,501-5,000 bottles."}, {"name": "Rosehill Wine Cellars", "first": "Jonathan", "last": "Gilkes", "channel": "Cellar Builder", "arr": 6000, "onb": 4500, "stage": "Proposal", "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"}], "won": [{"name": "Manny Machado (Meritage)", "first": "Manny", "last": "Machado", "channel": "Sommelier Managed", "arr": 129, "onb": 400, "stage": "Closed Won", "notes": "Install Completed. Payment received 2/11 and 2/17. Install completed by Dustin on 2/13."}, {"name": "Ron Montbleau (Meritage)", "first": "Ron", "last": "Montbleau", "channel": "Sommelier Managed", "arr": 129, "onb": 200, "stage": "Closed Won", "notes": "Install Completed. Follow up for user insights — feedback received from Dustin on scanning issues."}], "lost": [{"name": "The Ritz London (Sorrells)", "first": "Tim", "last": "Lewis", "channel": "Hospitality", "arr": 15700, "onb": 150000, "stage": "Closed Lost", "notes": "Reserve Path A | 1 client | 100,000 bottles | Custom dev included in proposal."}, {"name": "Jimmy Butler (Harper's)", "first": "Chris", "last": "Hoel", "channel": "Sommelier Managed", "arr": null, "onb": 27800, "stage": "Closed Lost", "notes": "On Hold. Last change 2/5/26."}, {"name": "Rockcliffe Hotel (Sorrells)", "first": "Tim", "last": "Lewis", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Prospect stage. Last change 1/21/26."}, {"name": "Revel Cellars", "first": "Jim", "last": "Cash", "channel": "Cellar Builder", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Demo Completed. Does Omid Farokhzad want to test system?"}, {"name": "Four Seasons George V", "first": "Antoine", "last": "Desmoulins", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Demo Completed. Cellar 10,001+. Next Step: Draft Proposal."}]}
 </script>
 
+<script id="leadData" type="application/json">
+[{"business": "Remington Hospitality", "first": "Yvette", "last": "Mena", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Los Altos Golf and Country Club", "first": "Andrew", "last": "Sparling", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Palo Alto Hills Golf and Country Club", "first": "Ronald", "last": "Tse", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Krupp Brothers", "first": "Sarah", "last": "Krupp", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "San Francisco Giants", "first": "Evan", "last": "Goldstein", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Sequoyah Country Club", "first": "Sally", "last": "Alexander", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "San Francisco Magazine", "first": "Ian", "last": "White", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Pasatiempo Golf Club", "first": "Joshua", "last": "Christenson", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Saratoga Country Club", "first": "Dragisa", "last": "Milivojevic", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Presidio Golf Course", "first": "John", "last": "Dirks", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Golden State Warriors", "first": "Christopher", "last": "Goodyear", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Just Enough Wines", "first": "Carolyn", "last": "Morrice", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "The Olympic Club", "first": "David", "last": "Ezzo", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "The City Club of San Francisco", "first": "Victor", "last": "Lopez", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "TPC Monterey at Pasadera", "first": "Aaron", "last": "Shields", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Total Beverage Solution", "first": "Barclay", "last": "Webster", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Santa Rosa Golf and Country Club", "first": "Jose", "last": "Tobar", "channel": "Hospitality", "section": "Linkedin Outreach"}, {"business": "The Ritz-Carlton San Francisco", "first": "Arif", "last": "Kor", "channel": "Hospitality", "section": "Linkedin Outreach"}, {"business": "Waterbar", "first": "Jeremy", "last": "Croxton", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Paul Hobbs Wines", "first": "Drew", "last": "Munro", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Bin 415", "first": "Kelly", "last": "Evans", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Wellington Cellars", "first": "Marc", "last": "Mendoza", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Thomas Keller Restaurant Group", "first": "Curtis", "last": "Mouton", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Quince", "first": "Christie", "last": "Dufault", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Realm Cellars", "first": "Jacob", "last": "Brown", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Folio Fine Wine Partners", "first": "Tom", "last": "Markakis", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Waterbar", "first": "Valentina", "last": "Moya", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Saison Hospitality", "first": "Jeffrey", "last": "Harakal", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Slanted Door / Blue Plate", "first": "Phillip", "last": "Aquafresca", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Rosewood Sand Hill", "first": "Ken", "last": "Wagstaff", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Rubel", "last": "Zelaya", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce / Bacchus Management Group", "first": "Thomas", "last": "Laurel", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "The Hidden Vine / Lazy Bear", "first": "Emory", "last": "Etheridge", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Forbes Mill Steakhouse", "first": "Marc", "last": "Dumont", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Casanova Restaurant Carmel", "first": "Pyper", "last": "Witt", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "SingleThread", "first": "Jackson", "last": "Pudlo", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Soif Wine Bar and Merchants", "first": "Sarah", "last": "Snyder", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Plumed Horse", "first": "Joseph", "last": "Karakas", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Rosewood Sand Hill", "first": "Joseph", "last": "Busby", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "RH Palo Alto", "first": "Zachary", "last": "Jacques", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Morgan", "last": "Harris", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Foreign Cinema", "first": "Kristina", "last": "Pergamalis", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Sovino Wine Bar and Merchant", "first": "Claire", "last": "Sutton", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Farallon", "first": "Aaron", "last": "Young", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Court of Master Sommeliers Americas", "first": "Maria", "last": "Castelli", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Chez Noir Carmel", "first": "Zachary", "last": "Hicks", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Foreign Cinema", "first": "Nathan", "last": "Wilson", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Foreign Cinema", "first": "Sophie", "last": "Estrada", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Niku Steakhouse", "first": "Matt", "last": "Montrose", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Monterey Plaza Hotel and Spa", "first": "Sarah", "last": "Kabat-Marcy", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Caleb", "last": "McArthur", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Flour and Water Hospitality Group", "first": "Andrew", "last": "Manzo", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Cotogna", "first": "Tai", "last": "Maldonado", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Manresa", "first": "Scott", "last": "McKinney", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Plumed Horse", "first": "Juan", "last": "Leon", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Lazy Bear", "first": "Kaleb", "last": "Kiger", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Pampas Palo Alto", "first": "Kanoa", "last": "Willing", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "2802 Club", "first": "Maria", "last": "Andrienko", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Alexanders Steakhouse", "first": "Serene", "last": "Wu", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Alexanders Steakhouse", "first": "Alex", "last": "Hawes", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Jordan", "last": "Hobro", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "BottleCru", "first": "Lillian", "last": "Lim", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Adrian", "last": "Chan", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Cellar Master Consulting", "first": "Marc", "last": "Glassberg", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Mastros Restaurants", "first": "Nicholas", "last": "Tomas", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce", "first": "Sam", "last": "Tuttle", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce", "first": "Haley", "last": "Guild", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce", "first": "Michael", "last": "Baldonado", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Sean", "last": "Palmer", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Andrada", "last": "Cardenas", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Elizabeth", "last": "Nelson", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Angel", "last": "Rivera", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Waterbar", "first": "Brian", "last": "Henry", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Taemyung (Thomas)", "last": "Kim", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Waterbar", "first": "Daniel", "last": "Mendoza", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bluestem Brasserie", "first": "Danielle", "last": "Gornick", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "EventPowered", "first": "Debbie", "last": "Bacigalupi", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Roots of Peace", "first": "Joshua", "last": "Baker", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "La Mar SF", "first": "Oscar", "last": "Davila", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "JouJou SF", "first": "Gabriel", "last": "Barab", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Disney Cruise Line", "first": "Jeremy", "last": "Diard", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Birdsong", "first": "Zoe", "last": "Meinke", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "California Wine Merchant", "first": "Antonio", "last": "Vazquez", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "La Mar Cocina Peruana", "first": "Uri", "last": "Serrano-Baldwin", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "High Treason", "first": "Kristine", "last": "Hodsdon", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "The Tasting House Los Gatos", "first": "Taylor", "last": "Hildreth", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Boisset Collection", "first": "Diva", "last": "Poulos", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "ONE65 San Francisco", "first": "Louis", "last": "Boisset", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bev", "first": "Hank", "last": "On", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Wine.com", "first": "Madison", "last": "Pettit", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Acquerello", "first": "Anka", "last": "Batsukh", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Self-employed", "first": "Daisy", "last": "Barringer", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "The Motoring Club Los Angeles", "first": "Dylan", "last": "Smith", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Princess Cruises", "first": "Bekithemba", "last": "Sibanda", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Willard Hicks", "first": "Daniel", "last": "Saporito", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "El Paseo Mill Valley", "first": "Jojo", "last": "Gilbertson", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Estiatorio Milos", "first": "George", "last": "Tsolis", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Southern Glazers", "first": "Thomas", "last": "Koehorst", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Omakase Restaurant Group", "first": "Amy", "last": "Kunert", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Epic Roasthouse", "first": "Lisa", "last": "Dunn", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Le Papillon San Jose", "first": "Irne", "last": "Gonzalez", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Californios", "first": "Sera", "last": "Cambridge", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Tataki Sushi", "first": "Kristine", "last": "Kaehler", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "PABU", "first": "Mayuka", "last": "Yatomi", "channel": "Sommelier Program", "section": "Linkedin Outreach"}]
+</script>
+
 <script>
 (function() {
   var data = JSON.parse(document.getElementById('dealData').textContent);
+  var leads = JSON.parse(document.getElementById('leadData').textContent);
   var drilldown = document.getElementById('drilldown');
   var titleEl = document.getElementById('drilldownTitle');
   var subtitleEl = document.getElementById('drilldownSubtitle');
@@ -1365,6 +1378,16 @@ opacity: 0.5;
     won: { title: 'Closed Won', subtitle: 'Installed customers', deals: data.won },
     lost: { title: 'Closed Lost', subtitle: 'Deals that did not move forward', deals: data.lost }
   };
+
+  // Build lead views dynamically, one per channel that has leads
+  var leadViews = {};
+  leads.forEach(function(l) {
+    var key = 'ta-' + l.channel.toLowerCase().replace(/[^a-z0-9]+/g, '');
+    if (!leadViews[key]) {
+      leadViews[key] = { title: l.channel, subtitle: 'Target accounts for structured outreach', leads: [] };
+    }
+    leadViews[key].leads.push(l);
+  });
 
   function escapeHtml(s) {
     if (s === null || s === undefined) return '';
@@ -1399,18 +1422,45 @@ opacity: 0.5;
       '</div>';
   }
 
+  function renderLead(l) {
+    var contact = (l.first || '') + ' ' + (l.last || '');
+    contact = contact.trim() || '—';
+    var section = l.section || '<span class="muted">unset</span>';
+    return '' +
+      '<div class="deal-card">' +
+        '<div class="deal-card-head">' +
+          '<div class="deal-card-name">' + escapeHtml(l.business) + '</div>' +
+          '<div class="deal-card-stage">' + escapeHtml(l.section) + '</div>' +
+        '</div>' +
+        '<div class="deal-card-fields">' +
+          '<div><div class="deal-field-label">Contact</div><div class="deal-field-value">' + escapeHtml(contact) + '</div></div>' +
+          '<div><div class="deal-field-label">Channel</div><div class="deal-field-value">' + escapeHtml(l.channel) + '</div></div>' +
+        '</div>' +
+      '</div>';
+  }
+
   function showView(viewName) {
     var cfg = viewConfig[viewName];
-    if (!cfg) return;
-    titleEl.textContent = cfg.title;
-    subtitleEl.textContent = cfg.deals.length + ' deal' + (cfg.deals.length === 1 ? '' : 's') + ' · ' + cfg.subtitle;
-    if (cfg.deals.length === 0) {
-      contentEl.innerHTML = '<div class="empty-state">No deals in this view.</div>';
-    } else {
-      contentEl.innerHTML = cfg.deals.map(renderDeal).join('');
+    if (cfg) {
+      titleEl.textContent = cfg.title;
+      subtitleEl.textContent = cfg.deals.length + ' deal' + (cfg.deals.length === 1 ? '' : 's') + ' · ' + cfg.subtitle;
+      if (cfg.deals.length === 0) {
+        contentEl.innerHTML = '<div class="empty-state">No deals in this view.</div>';
+      } else {
+        contentEl.innerHTML = cfg.deals.map(renderDeal).join('');
+      }
+      drilldown.classList.add('active');
+      window.scrollTo(0, 0);
+      return;
     }
-    drilldown.classList.add('active');
-    window.scrollTo(0, 0);
+    var lcfg = leadViews[viewName];
+    if (lcfg) {
+      titleEl.textContent = lcfg.title + ' · Target Accounts';
+      subtitleEl.textContent = lcfg.leads.length + ' lead' + (lcfg.leads.length === 1 ? '' : 's') + ' · ' + lcfg.subtitle;
+      contentEl.innerHTML = lcfg.leads.map(renderLead).join('');
+      drilldown.classList.add('active');
+      window.scrollTo(0, 0);
+    }
   }
 
   function hideView() {
@@ -1428,6 +1478,14 @@ opacity: 0.5;
     });
   });
 
+  // Click handlers on Target Account channel cards
+  document.querySelectorAll('.ta-card.ta-clickable').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var view = el.getAttribute('data-view');
+      if (view) window.location.hash = view;
+    });
+  });
+
   // Back link
   document.getElementById('backLink').addEventListener('click', function(e) {
     e.preventDefault();
@@ -1437,7 +1495,7 @@ opacity: 0.5;
   // Hash routing (handles browser back button too)
   function handleHash() {
     var hash = window.location.hash.replace('#', '');
-    if (viewConfig[hash]) {
+    if (viewConfig[hash] || leadViews[hash]) {
       showView(hash);
     } else {
       hideView();
