@@ -1,0 +1,1504 @@
+<!--
+  CellarEye Sales Pulse
+  Data pulled from Asana: Friday, July 24, 2026 at 20:15 PT
+  Source: Asana project 'CellarEye Sales Pipeline'
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CellarEye — Sales Pulse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1A1424;
+    --plum: #2A1A3E;
+    --aubergine: #3D2456;
+    --bordeaux: #5C2A4A;
+    --rose: #C8A4B8;
+    --gold: #C8B89A;
+    --cream: #F4EDE2;
+    --paper: #FAF6EE;
+    --rule: rgba(200, 184, 154, 0.22);
+    --soft-rule: rgba(244, 237, 226, 0.10);
+    --positive: #9CC4A0;
+    --warning: #D4A574;
+    --neutral: #8B8B9E;
+    --muted: rgba(139, 139, 158, 0.6);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #1A1424; }
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    line-height: 1.55;
+    letter-spacing: 0.012em;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(92, 42, 74, 0.45), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(61, 36, 86, 0.4), transparent 60%);
+    background-attachment: fixed;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @media print {
+    html, body {
+      background: #1A1424 !important;
+      background-attachment: scroll !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .row-block, .panel, .alert-block, .stage-card, .channel-card, .stage-banner, .row-label, .panel-title, .metric.cash {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .wrap { padding: 24px 28px 32px !important; max-width: none !important; }
+    header { margin-bottom: 20px !important; padding-bottom: 16px !important; }
+    .stage-banner { margin-bottom: 22px !important; padding: 14px 18px !important; }
+    .row-block { margin-bottom: 12px !important; }
+    .row-label { padding: 10px 18px !important; }
+    .metric { padding: 14px 16px 16px !important; }
+    .alert-block { margin-bottom: 22px !important; padding: 10px 14px !important; }
+    .section-head { margin: 28px 0 14px !important; }
+    .funnel { margin-bottom: 22px !important; gap: 6px !important; }
+    .stage-card { padding: 10px 8px !important; }
+    .channel-grid { margin-bottom: 22px !important; gap: 8px !important; }
+    .channel-card { padding: 12px 14px !important; }
+    .deal-row { padding: 10px 18px !important; }
+    .focus { margin-top: 28px !important; padding-top: 20px !important; }
+    .focus ol li { padding: 8px 0 8px 32px !important; }
+    footer { margin-top: 32px !important; padding-top: 16px !important; }
+  }
+  @page { background: #1A1424; margin: 0; }
+
+/* Mobile responsive layout */
+@media (max-width: 720px) {
+.wrap { padding: 24px 16px 48px; }
+
+```
+/* Header: stack vertically, shrink type */
+header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+.header-right {
+  text-align: left;
+  width: 100%;
+}
+.header-logo img { height: 38px; }
+.header-logo .pulse-label { font-size: 9px; padding-left: 12px; }
+h1 { font-size: 28px; }
+
+/* Stage banner: stack the three pieces */
+.stage-banner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.stage-banner .text { text-align: left; font-size: 13px; }
+
+/* Metrics: 4 cols → 2x2 */
+.metrics-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.metric {
+  padding: 16px 14px;
+  border-right: 1px solid var(--soft-rule);
+  border-bottom: 1px solid var(--soft-rule);
+}
+.metric:nth-child(2n) { border-right: none; }
+.metric:nth-child(n+3) { border-bottom: none; }
+.metric .value { font-size: 22px; }
+
+/* Row labels: keep horizontal but tighten */
+.row-label {
+  padding: 12px 16px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.row-label .name { font-size: 16px; }
+.row-label .meta { font-size: 9px; }
+
+/* Funnel: 8 cols → 4 across, 2 rows */
+.funnel {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.stage-card { padding: 10px 6px; }
+.stage-card .stage-count { font-size: 22px; }
+.stage-card .stage-name { font-size: 9px; }
+
+/* Channels: 3 cols → 1 col */
+.channel-grid {
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* Section heads: allow meta to wrap */
+.section-head {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 32px 0 16px;
+}
+.section-title { font-size: 18px; }
+.section-meta {
+  margin-left: 0;
+  width: 100%;
+  font-size: 9px;
+}
+
+/* Deal rows in attention panel */
+.deal-row {
+  padding: 12px 16px;
+  grid-template-columns: 1fr;
+}
+.deal-row .signal {
+  justify-self: flex-start;
+  width: fit-content;
+}
+
+/* Panel title: tighten */
+.panel-title {
+  padding: 12px 16px;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 15px;
+}
+.panel-title .meta { font-size: 9px; }
+
+/* Focus list: smaller indent */
+.focus { margin-top: 32px; padding-top: 20px; }
+.focus h3 { font-size: 18px; margin-bottom: 12px; }
+.focus ol li { padding: 10px 0 10px 28px; font-size: 13px; }
+.focus ol li::before { font-size: 10px; }
+
+/* Footer: stack */
+footer {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+/* Drill-down: tighten */
+.drilldown-wrap { padding: 24px 16px 48px; }
+.drilldown h1 { font-size: 26px; }
+.drilldown .subtitle { font-size: 10px; margin-bottom: 24px; }
+.deal-card { padding: 16px 18px; }
+.deal-card-name { font-size: 18px; }
+.deal-card-fields { grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+```
+
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 56px 48px 96px; }
+
+header {
+border-bottom: 1px solid var(--rule);
+padding-bottom: 28px;
+margin-bottom: 36px;
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+gap: 32px;
+}
+.header-left .eyebrow {
+font-size: 10px; font-weight: 700; letter-spacing: 0.32em;
+text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+}
+h1 {
+font-family: ‘Cormorant Garamond’, serif; font-weight: 700;
+font-size: 38px; line-height: 1; color: var(--paper);
+letter-spacing: -0.005em;
+}
+h1 em { font-style: italic; color: var(--rose); }
+.header-right {
+text-align: right;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 11px;
+color: var(--cream);
+opacity: 0.65;
+letter-spacing: 0.05em;
+}
+.header-right .stamp {
+font-size: 10px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.85;
+margin-bottom: 4px;
+}
+
+.stage-banner {
+background: rgba(92, 42, 74, 0.20);
+border: 1px solid var(--rule);
+border-radius: 2px;
+padding: 18px 24px;
+margin-bottom: 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 24px;
+}
+.stage-banner .label {
+font-family: ‘Cormorant Garamond’, serif;
+font-weight: 700;
+font-style: italic;
+font-size: 16px;
+color: var(--gold);
+}
+.stage-banner .text {
+font-size: 13.5px;
+color: var(--cream);
+opacity: 0.85;
+flex: 1;
+text-align: center;
+}
+.stage-banner .countdown {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 11px;
+color: var(--rose);
+letter-spacing: 0.1em;
+}
+
+.row-block {
+margin-bottom: 18px;
+border: 1px solid var(--rule);
+border-radius: 2px;
+overflow: hidden;
+background: rgba(244, 237, 226, 0.02);
+}
+.row-label {
+padding: 14px 24px;
+background: rgba(92, 42, 74, 0.35);
+border-bottom: 1px solid var(--rule);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.row-label .name {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 18px;
+color: var(--paper);
+}
+.row-label .meta {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.75;
+}
+.row-label.open { background: rgba(61, 36, 86, 0.45); }
+.row-label.won { background: rgba(92, 42, 74, 0.55); }
+.row-label.lost { background: rgba(26, 20, 36, 0.7); }
+
+.metrics-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 0;
+}
+.metric {
+padding: 20px 22px 22px;
+border-right: 1px solid var(--soft-rule);
+}
+.metric:last-child { border-right: none; }
+.metric.cash {
+background: rgba(200, 184, 154, 0.04);
+position: relative;
+}
+.metric.cash::before {
+content: ‘CASH’;
+position: absolute;
+top: 8px;
+right: 12px;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 8px;
+color: var(--gold);
+letter-spacing: 0.18em;
+opacity: 0.7;
+}
+.metric .label {
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.85;
+margin-bottom: 8px;
+}
+.metric .value {
+font-family: ‘Cormorant Garamond’, serif;
+font-weight: 700;
+font-size: 26px;
+line-height: 1;
+color: var(--paper);
+margin-bottom: 6px;
+}
+.metric .value.muted-value {
+color: var(--cream);
+opacity: 0.4;
+}
+.metric .value .unit {
+font-family: ‘Jost’, sans-serif;
+font-weight: 500;
+font-size: 13px;
+opacity: 0.55;
+margin-left: 4px;
+}
+.metric .sub {
+font-size: 11px;
+color: var(--cream);
+opacity: 0.6;
+line-height: 1.4;
+}
+.metric .sub.positive { color: var(--positive); opacity: 0.85; }
+.metric .sub.warning { color: var(--warning); opacity: 0.85; }
+.metric .sub.error { color: #C97070; opacity: 0.85; }
+
+.alert-block {
+background: rgba(212, 165, 116, 0.06);
+border-left: 2px solid var(--warning);
+padding: 12px 18px;
+margin-bottom: 32px;
+font-size: 12.5px;
+color: var(--cream);
+opacity: 0.85;
+line-height: 1.5;
+}
+.alert-block strong {
+color: var(--warning);
+font-weight: 700;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+font-size: 10px;
+margin-right: 8px;
+}
+
+.section-head {
+display: flex;
+align-items: baseline;
+gap: 16px;
+margin: 48px 0 20px;
+padding-bottom: 8px;
+border-bottom: 1px solid var(--soft-rule);
+}
+.section-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 14px;
+color: var(--gold);
+opacity: 0.7;
+}
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-weight: 700;
+font-size: 22px;
+color: var(--paper);
+}
+.section-meta {
+margin-left: auto;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.7;
+}
+
+.funnel {
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+gap: 8px;
+margin-bottom: 32px;
+}
+.stage-card {
+background: rgba(244, 237, 226, 0.025);
+border: 1px solid var(--soft-rule);
+border-radius: 2px;
+padding: 14px 12px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.stage-card.has-most {
+background: rgba(200, 184, 154, 0.08);
+border-color: rgba(200, 184, 154, 0.3);
+}
+.stage-card .stage-name {
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.85;
+margin-bottom: 8px;
+}
+.stage-card .stage-count {
+font-family: ‘Cormorant Garamond’, serif;
+font-weight: 700;
+font-size: 28px;
+color: var(--paper);
+line-height: 1;
+}
+.stage-card .stage-fill {
+position: absolute;
+bottom: 0;
+left: 0;
+height: 2px;
+background: var(--rose);
+opacity: 0.5;
+}
+
+.channel-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+margin-bottom: 32px;
+}
+.channel-card {
+background: rgba(244, 237, 226, 0.025);
+border: 1px solid var(--soft-rule);
+border-radius: 2px;
+padding: 16px 18px;
+}
+.channel-card .name {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 16px;
+color: var(--paper);
+margin-bottom: 10px;
+}
+.channel-card .stats {
+display: flex;
+gap: 18px;
+align-items: baseline;
+}
+.channel-card .stat {
+display: flex;
+flex-direction: column;
+}
+.channel-card .stat .num {
+font-family: ‘Cormorant Garamond’, serif;
+font-weight: 700;
+font-size: 18px;
+color: var(--paper);
+}
+.channel-card .stat .num.muted { color: var(--cream); opacity: 0.4; }
+.channel-card .stat .lbl {
+font-size: 9px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.7;
+margin-top: 2px;
+}
+
+.panel {
+border: 1px solid var(--rule);
+border-radius: 2px;
+background: rgba(244, 237, 226, 0.02);
+margin-bottom: 24px;
+}
+.panel-title {
+padding: 14px 24px;
+background: rgba(92, 42, 74, 0.25);
+border-bottom: 1px solid var(--rule);
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+font-size: 17px;
+color: var(--paper);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.panel-title .meta {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.7;
+font-style: normal;
+}
+.deal-row {
+padding: 14px 24px;
+border-bottom: 1px solid var(--soft-rule);
+display: grid;
+grid-template-columns: 1fr auto;
+gap: 12px;
+align-items: center;
+}
+.deal-row:last-child { border-bottom: none; }
+.deal-row .name {
+font-size: 13.5px;
+color: var(--paper);
+}
+.deal-row .name .contact {
+color: var(--cream);
+opacity: 0.6;
+font-size: 12.5px;
+}
+.deal-row .signal {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+padding: 4px 10px;
+border-radius: 2px;
+background: rgba(200, 184, 154, 0.1);
+color: var(--gold);
+}
+.deal-row .signal.hot {
+background: rgba(212, 165, 116, 0.18);
+color: var(--warning);
+}
+.deal-row .signal.warm {
+background: rgba(200, 164, 184, 0.12);
+color: var(--rose);
+}
+.deal-row .meta-line {
+grid-column: 1 / -1;
+font-size: 11.5px;
+color: var(--cream);
+opacity: 0.65;
+font-style: italic;
+margin-top: 2px;
+}
+
+.focus {
+margin-top: 48px;
+padding-top: 32px;
+border-top: 1px solid var(--rule);
+}
+.focus h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-weight: 700;
+font-size: 22px;
+color: var(--paper);
+margin-bottom: 18px;
+}
+.focus ol {
+list-style: none;
+counter-reset: focus-counter;
+}
+.focus ol li {
+counter-increment: focus-counter;
+position: relative;
+padding: 12px 0 12px 36px;
+border-bottom: 1px solid var(--soft-rule);
+font-size: 14px;
+color: var(--paper);
+}
+.focus ol li:last-child { border-bottom: none; }
+.focus ol li::before {
+content: counter(focus-counter, decimal-leading-zero);
+position: absolute;
+left: 0;
+top: 12px;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 11px;
+color: var(--gold);
+opacity: 0.7;
+letter-spacing: 0.05em;
+}
+.focus ol li .why {
+display: block;
+margin-top: 4px;
+font-size: 12px;
+color: var(--cream);
+opacity: 0.65;
+font-style: italic;
+line-height: 1.5;
+}
+
+footer {
+margin-top: 64px;
+padding-top: 24px;
+border-top: 1px solid var(--rule);
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.6;
+}
+
+/* Drill-down clickable counts */
+.clickable-count {
+cursor: pointer;
+transition: color 0.2s ease;
+border-bottom: 1px dashed transparent;
+}
+.clickable-count:hover {
+color: var(--gold);
+border-bottom-color: var(--gold);
+}
+.clickable-count::after {
+content: " ›";
+color: var(--gold);
+opacity: 0.5;
+font-size: 0.7em;
+margin-left: 4px;
+vertical-align: middle;
+}
+
+/* Drill-down overlay */
+.drilldown {
+display: none;
+position: fixed;
+top: 0; left: 0; right: 0; bottom: 0;
+background: var(--ink);
+background-image:
+radial-gradient(ellipse 80% 50% at 50% -20%, rgba(92, 42, 74, 0.45), transparent 70%),
+radial-gradient(ellipse 60% 40% at 100% 100%, rgba(61, 36, 86, 0.4), transparent 60%);
+overflow-y: auto;
+z-index: 100;
+}
+.drilldown.active { display: block; }
+.drilldown-wrap {
+max-width: 1180px;
+margin: 0 auto;
+padding: 32px 48px 96px;
+}
+.back-link {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+color: var(--gold);
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+text-decoration: none;
+padding: 10px 16px 10px 12px;
+border: 1px solid var(--rule);
+border-radius: 4px;
+background: rgba(255,255,255,0.02);
+cursor: pointer;
+transition: all 0.2s ease;
+margin-bottom: 32px;
+}
+.back-link:hover {
+background: rgba(200, 184, 154, 0.08);
+border-color: var(--gold);
+}
+.back-arrow { font-size: 14px; }
+.drilldown h1 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 38px;
+font-weight: 600;
+color: var(--cream);
+margin-bottom: 6px;
+letter-spacing: -0.01em;
+}
+.drilldown .subtitle {
+color: var(--gold);
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+opacity: 0.7;
+margin-bottom: 36px;
+}
+.deal-card {
+background: rgba(255,255,255,0.025);
+border: 1px solid var(--rule);
+border-left: 3px solid var(--gold);
+border-radius: 4px;
+padding: 22px 26px;
+margin-bottom: 16px;
+}
+.deal-card-head {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+margin-bottom: 14px;
+gap: 16px;
+flex-wrap: wrap;
+}
+.deal-card-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 22px;
+font-weight: 700;
+color: var(--cream);
+line-height: 1.2;
+}
+.deal-card-stage {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(--gold);
+padding: 4px 10px;
+border: 1px solid var(--gold);
+border-radius: 2px;
+white-space: nowrap;
+opacity: 0.85;
+}
+.deal-card-fields {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 14px 24px;
+margin-bottom: 14px;
+}
+.deal-field-label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.65;
+margin-bottom: 3px;
+}
+.deal-field-value {
+font-size: 14px;
+color: var(--cream);
+font-weight: 500;
+}
+.deal-field-value.muted {
+color: var(--cream);
+opacity: 0.4;
+font-style: italic;
+}
+.deal-card-notes {
+border-top: 1px solid var(--rule);
+padding-top: 12px;
+font-size: 13px;
+color: var(--cream);
+opacity: 0.85;
+line-height: 1.55;
+font-style: italic;
+}
+.deal-card-notes-label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 9px;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.65;
+margin-bottom: 5px;
+font-style: normal;
+}
+.empty-state {
+text-align: center;
+padding: 60px 20px;
+color: var(--cream);
+opacity: 0.5;
+font-style: italic;
+}
+@media print {
+.drilldown, .clickable-count::after { display: none !important; }
+}
+
+/* Logo styles */
+.header-logo {
+display: flex;
+align-items: center;
+gap: 16px;
+margin-bottom: 8px;
+}
+.header-logo img {
+height: 52px;
+width: auto;
+display: block;
+}
+.header-logo .pulse-label {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 11px;
+letter-spacing: 0.28em;
+text-transform: uppercase;
+color: var(--gold);
+padding-left: 16px;
+border-left: 1px solid var(--rule);
+line-height: 1.4;
+}
+.footer-logo {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.footer-logo img {
+height: 22px;
+width: auto;
+display: block;
+opacity: 0.85;
+}
+.footer-logo .footer-mark-text {
+font-family: ‘JetBrains Mono’, monospace;
+font-size: 10px;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.6;
+}
+
+
+/* Target Accounts channel row */
+.ta-channel-funnel {
+display: grid;
+grid-template-columns: repeat(8, 1fr);
+gap: 8px;
+padding: 16px 24px 20px;
+border-top: 1px solid var(--soft-rule);
+}
+.ta-card {
+background: rgba(244,237,226,0.025);
+border: 1px solid var(--soft-rule);
+border-radius: 2px;
+padding: 12px 8px;
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.ta-card.ta-clickable {
+cursor: pointer;
+transition: border-color 0.2s ease, background 0.2s ease;
+}
+.ta-card.ta-clickable:hover {
+border-color: var(--gold);
+background: rgba(200,184,154,0.10);
+}
+.ta-card.leader {
+background: rgba(200,184,154,0.08);
+border-color: rgba(200,184,154,0.3);
+}
+.ta-card .ta-name {
+font-size: 9px;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(--gold);
+opacity: 0.85;
+margin-bottom: 8px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+.ta-card .ta-count {
+font-family: 'Cormorant Garamond', serif;
+font-weight: 700;
+font-size: 26px;
+color: var(--paper);
+line-height: 1;
+margin-bottom: 6px;
+}
+.ta-card .ta-sub {
+font-family: 'JetBrains Mono', monospace;
+font-size: 8.5px;
+letter-spacing: 0.05em;
+color: var(--cream);
+opacity: 0.55;
+white-space: nowrap;
+}
+.ta-card .ta-fill {
+position: absolute;
+bottom: 0; left: 0;
+height: 2px;
+background: var(--rose);
+opacity: 0.5;
+}
+/* Narrow screens: wrap 4x2 like the funnel */
+@media (max-width: 720px) {
+.ta-channel-funnel { grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 12px 16px 16px; }
+.ta-card { padding: 10px 4px; }
+.ta-card .ta-count { font-size: 22px; }
+.ta-card .ta-name { font-size: 8px; }
+.ta-card .ta-sub { font-size: 7.5px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="header-left">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
+      <span class="pulse-label">Sales<br>Pulse</span>
+    </div>
+    <h1>Pipeline Brief — <em>Friday, July 24</em></h1>
+  </div>
+  <div class="header-right">
+    <div class="stamp">v0.12 · Live Data</div>
+    <div>Generated 20:15 PT · 51 deals tracked</div>
+  </div>
+</header>
+
+<div class="stage-banner">
+  <div class="label">Pre-Revenue · Discovery Phase</div>
+  <div class="text">The Grove at Point Pinos enters Proposal: the Spotted Duck owners' second restaurant, opening late August after the Pebble Beach Concours. Mark built their website in exchange for platform onboarding. Pausa San Mateo moves to Proposal, with the proposal being delivered Tuesday or Wednesday. This week's focus was go-to-market infrastructure: the newsletter went out through HubSpot with much stronger results, pricing tiers and a full FAQ rebuild landed on cellareye.com, and outreach prep advanced on LinkedIn. WeShip Express ($60K ARR / $150K onb) remains the largest open opportunity. Updates due Friday by noon.</div>
+  <div class="countdown">T+53 days</div>
+</div>
+
+<!-- ROW 0: TARGET ACCOUNTS (INBOUND LEADS) -->
+
+<div class="row-block">
+  <div class="row-label" style="background: rgba(61, 36, 86, 0.45);">
+    <span class="name">Target Accounts</span>
+    <span class="meta">Region Launch · Structured Outreach Underway</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Total Leads</div>
+      <div class="value">104 <span class="unit">accounts</span></div>
+      <div class="sub">organized in Asana project</div>
+    </div>
+    <div class="metric">
+      <div class="label">Added This Week</div>
+      <div class="value">0</div>
+      <div class="sub">list built 7/15-7/16</div>
+    </div>
+    <div class="metric">
+      <div class="label">Qualified This Week</div>
+      <div class="value muted-value">0</div>
+      <div class="sub">first conversions pending</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Qual Rate</div>
+      <div class="value muted-value">0%</div>
+      <div class="sub">baseline building</div>
+    </div>
+  </div>
+  <div class="ta-channel-funnel">
+    <div class="ta-card leader ta-clickable" data-view="ta-sommelierprogram">
+      <div class="ta-name">Somm Program</div>
+      <div class="ta-count">86</div>
+      <div class="ta-sub">+86 · 0 qual</div>
+      <div class="ta-fill" style="width: 100%;"></div>
+    </div>
+    <div class="ta-card ta-clickable" data-view="ta-hospitality">
+      <div class="ta-name">Hospitality</div>
+      <div class="ta-count">18</div>
+      <div class="ta-sub">+18 · 0 qual</div>
+      <div class="ta-fill" style="width: 21%;"></div>
+    </div>
+    <div class="ta-card" >
+      <div class="ta-name">Somm Managed</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card" >
+      <div class="ta-name">Retailer</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card" >
+      <div class="ta-name">Wine Storage</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card" >
+      <div class="ta-name">Cellar Builder</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card" >
+      <div class="ta-name">Reserve Direct</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+    <div class="ta-card" >
+      <div class="ta-name">DTC</div>
+      <div class="ta-count">0</div>
+      <div class="ta-sub">+0 · 0 qual</div>
+      <div class="ta-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 1: OPEN -->
+
+<div class="row-block">
+  <div class="row-label open">
+    <span class="name">Open Pipeline</span>
+    <span class="meta">Cold · Warm · Qualified · Demo · Proposal</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Pipeline Total</div>
+      <div class="value clickable-count" data-view="open">40 <span class="unit">deals</span></div>
+      <div class="sub">across 5 stages · 7 channels</div>
+    </div>
+    <div class="metric">
+      <div class="label">Open ARR</div>
+      <div class="value ">$105,600</div>
+      <div class="sub warning">17 of 40 · 42% complete</div>
+    </div>
+    <div class="metric">
+      <div class="label">Conversion C→Q</div>
+      <div class="value">—</div>
+      <div class="sub">no closed cycles yet</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Onboarding in Pipeline</div>
+      <div class="value">$225,912</div>
+      <div class="sub warning">17 of 40 · 42% complete</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 2: WON -->
+
+<div class="row-block">
+  <div class="row-label won">
+    <span class="name">Closed Won</span>
+    <span class="meta">Signed · Onboarded</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Won Deals</div>
+      <div class="value clickable-count" data-view="won">2 <span class="unit">deals</span></div>
+      <div class="sub">via Meritage reseller (Dustin Cano)</div>
+    </div>
+    <div class="metric">
+      <div class="label">Signed ARR</div>
+      <div class="value ">$258</div>
+      <div class="sub">Manny + Ron annual subs</div>
+    </div>
+    <div class="metric">
+      <div class="label">Avg Deal Size</div>
+      <div class="value">$300</div>
+      <div class="sub">DTC collector tier</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Onboarding Booked</div>
+      <div class="value">$600</div>
+      <div class="sub positive">2 of 2 · 100% complete</div>
+    </div>
+  </div>
+</div>
+
+<!-- ROW 3: LOST -->
+
+<div class="row-block">
+  <div class="row-label lost">
+    <span class="name">Closed Lost</span>
+    <span class="meta">Pattern Detection · Loss Learning</span>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric">
+      <div class="label">Lost Deals</div>
+      <div class="value clickable-count" data-view="lost">6 <span class="unit">deals</span></div>
+      <div class="sub">Chai newly moved to Lost</div>
+    </div>
+    <div class="metric">
+      <div class="label">Lost ARR</div>
+      <div class="value ">$22,200</div>
+      <div class="sub">Ritz London + Chai</div>
+    </div>
+    <div class="metric">
+      <div class="label">Top Loss Reason</div>
+      <div class="value" style="font-size: 16px;">Not tracked</div>
+      <div class="sub error">add Loss Reason field to Asana</div>
+    </div>
+    <div class="metric cash">
+      <div class="label">Lost Onboarding</div>
+      <div class="value">$181,081</div>
+      <div class="sub">3 of 6 valued · Ritz $150K + Jimmy $27.8K + Chai $3.3K</div>
+    </div>
+  </div>
+</div>
+
+<!-- DATA QUALITY ALERT -->
+
+<div class="alert-block">
+  <strong>DATA QUALITY:</strong> ARR set on 17 of 40 open deals (42%); Onboarding on 17 of 40 (42%). Retailer-Partner remains entirely unvalued (10 deals, zero ARR/onb). The Grove at Point Pinos is the sole Proposal-stage deal (values TBD, opens late August). Joshua Plack duplicate in Qualified still needs merge. No Loss Reason field on the project.
+</div>
+
+<div class="section-head">
+  <span class="section-num">i</span>
+  <span class="section-title">Pipeline Funnel</span>
+  <span class="section-meta">Counts by Stage</span>
+</div>
+
+<div class="funnel">
+  <div class="stage-card has-most">
+    <div class="stage-name">Cold</div>
+    <div class="stage-count">19</div>
+    <div class="stage-fill" style="width: 100%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Warm</div>
+    <div class="stage-count">5</div>
+    <div class="stage-fill" style="width: 26%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Qualified</div>
+    <div class="stage-count">3</div>
+    <div class="stage-fill" style="width: 16%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Demo</div>
+    <div class="stage-count">11</div>
+    <div class="stage-fill" style="width: 58%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Proposal</div>
+    <div class="stage-count">2</div>
+    <div class="stage-fill" style="width: 11%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Stalled</div>
+    <div class="stage-count">3</div>
+    <div class="stage-fill" style="width: 16%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Won</div>
+    <div class="stage-count">2</div>
+    <div class="stage-fill" style="width: 11%;"></div>
+  </div>
+  <div class="stage-card">
+    <div class="stage-name">Lost</div>
+    <div class="stage-count">6</div>
+    <div class="stage-fill" style="width: 32%;"></div>
+  </div>
+</div>
+
+<div class="section-head">
+  <span class="section-num">ii</span>
+  <span class="section-title">Open Pipeline by Channel</span>
+  <span class="section-meta">40 Deals Across 7 Channels</span>
+</div>
+
+<div class="channel-grid">
+
+  <div class="channel-card">
+    <div class="name">Hospitality</div>
+    <div class="stats">
+      <div class="stat"><span class="num">11</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$50.5K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">7/11</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Retailer-Partner</div>
+    <div class="stats">
+      <div class="stat"><span class="num">10</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num muted">$0</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">0/10</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Sommelier Managed</div>
+    <div class="stats">
+      <div class="stat"><span class="num">7</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$4.5K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">2/7</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Wine Storage</div>
+    <div class="stats">
+      <div class="stat"><span class="num">4</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$154.5K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">2/4</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Cellar Builder</div>
+    <div class="stats">
+      <div class="stat"><span class="num">4</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$11.2K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">4/4</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Reserve-Client Direct</div>
+    <div class="stats">
+      <div class="stat"><span class="num">2</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num ">$5.2K</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">2/2</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+  <div class="channel-card">
+    <div class="name">Sommelier Program</div>
+    <div class="stats">
+      <div class="stat"><span class="num">1</span><span class="lbl">Deals</span></div>
+      <div class="stat"><span class="num muted">$0</span><span class="lbl">Onboarding</span></div>
+      <div class="stat"><span class="num">0/1</span><span class="lbl">Valued</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-head">
+  <span class="section-num">iii</span>
+  <span class="section-title">Where to Spend Time</span>
+  <span class="section-meta">Threshold-Based Attention</span>
+</div>
+
+<!-- DEALS NEEDING ATTENTION -->
+
+<div class="panel">
+  <div class="panel-title">
+    Deals Needing Attention
+    <span class="meta">Top 8 by Stage Velocity</span>
+  </div>
+
+    <div class="deal-row">
+    <div class="name">Crux Cavas <span class="contact">· Maria Belen Cocconi</span></div>
+    <div class="signal warm">Stalled · $2.2K onb</div>
+    <div class="meta-line">Cellar Builder · Sommeliers Path B</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Harper's Club <span class="contact">· Chris Hoel</span></div>
+    <div class="signal warm">Stalled · $2.2K onb</div>
+    <div class="meta-line">Sommelier Managed · On pause. Not switching from CT. EOY/2027.</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Sorrells Custom Wine Cellars <span class="contact">· Tim Lewis</span></div>
+    <div class="signal warm">Stalled · $4.5K onb</div>
+    <div class="meta-line">Cellar Builder · Waiting on Tim for contract.</div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">Pausa San Mateo <span class="contact">· Andrea Giuliani</span></div>
+    <div class="signal warm">Proposal · onb unset onb</div>
+    <div class="meta-line">Hospitality · Met 7/10. Chef-owner. Positive on digital wine menu; wants print list w/ QR. Proposal being delivered Tue/Wed </div>
+  </div>
+
+  <div class="deal-row">
+    <div class="name">The Grove at Point Pinos <span class="contact">· Jerry Regester</span></div>
+    <div class="signal warm">Proposal · onb unset onb</div>
+    <div class="meta-line">Hospitality · Second restaurant from Spotted Duck owners. Opens late August after Pebble Beach Concours. Mark built their we</div>
+  </div>
+
+</div>
+
+<div class="alert-block" style="background: rgba(156, 196, 160, 0.06); border-left-color: var(--positive);">
+  <strong style="color: var(--positive);">RULE LOGIC:</strong> Deals shown crossed their stage thresholds (Cold/Warm 14d, Qualified 7d, Demo 10d, Proposal 14d, Stalled 21d). Sorted: Stalled first, then by stage progression (Proposal → Cold), then by onboarding value descending.
+</div>
+
+<!-- FOCUS -->
+
+<div class="focus">
+  <h3>Top 3 Priorities — This Week</h3>
+  <ol>
+    <li>
+      Deliver the Pausa proposal and advance The Grove onboarding.
+      <span class="why">Two live Hospitality deals with the same momentum window. Pausa's Andrea gets his proposal Tuesday or Wednesday, the step that converts a warm demo into a signature. The Grove at Point Pinos, the Spotted Duck owners' second location, opens late August after the Pebble Beach Concours. Its website is already built and live. Both need concrete next steps this week while attention is high.</span>
+    </li>
+    <li>
+      Convert the go-to-market work into outbound motion.
+      <span class="why">This week put real infrastructure in place: the HubSpot newsletter performed noticeably better, cellareye.com now has updated pricing tiers and a rebuilt FAQ, and a Framer plan is set for the wider site refresh. Danielle prepped her LinkedIn profile for outreach and Mark is editing the company page copy this weekend. Since much of the 104-lead target list lives on LinkedIn, a credible company page is the gate to outreach being taken seriously. Finish the page, then start the touches.</span>
+    </li>
+    <li>
+      Resolve the three Stalled deals and merge the Joshua Plack duplicate.
+      <span class="why">Stalled holds at three (Crux Cavas, Harper's Club, Sorrells) with $9,000 of onboarding inert. Each needs a concrete next step or an honest move to Lost. The Plack duplicate in Qualified still distorts counts and should be merged before it muddies next Friday's numbers.</span>
+    </li>
+  </ol>
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="https://raw.githubusercontent.com/marklainsworth/cellareye-sales-pulse/main/templates/logo.png" alt="CellarEye">
+    <span class="footer-mark-text">Sales Pulse</span>
+  </div>
+  <div class="footer-meta">Source: Asana CellarEye Sales Pipeline · Manual render · v0.6</div>
+</footer>
+
+</div>
+
+<!-- Drill-down view -->
+
+<div class="drilldown" id="drilldown">
+  <div class="drilldown-wrap">
+    <a class="back-link" id="backLink" href="#">
+      <span class="back-arrow">←</span>
+      <span>Back to Brief</span>
+    </a>
+    <h1 id="drilldownTitle"></h1>
+    <div class="subtitle" id="drilldownSubtitle"></div>
+    <div id="drilldownContent"></div>
+  </div>
+</div>
+
+<!-- Embedded deal data -->
+
+<script id="dealData" type="application/json">
+{"open": [{"name": "Palo Alto Hills Golf and Country Club", "first": "David", "last": null, "channel": "Hospitality", "arr": 1300, "onb": 2562.5, "stage": "Cold", "notes": "Reserve Path A | 1 client | 5,000 bottles avg"}, {"name": "Menlo Circus Club", "first": "Steffen", "last": "Mrowczynski", "channel": "Hospitality", "arr": 1300, "onb": 2562.5, "stage": "Cold", "notes": "Reserve Path A | 1 client | 5,000 bottles avg"}, {"name": "Omid Farokhzad (Revel Cellars)", "first": "Omid", "last": "Farokhzad", "channel": "Reserve-Client Direct", "arr": 600, "onb": 1375, "stage": "Cold", "notes": "Mostafa's buddy. Wanted him to try CellarEye for a Revel Cellars testimonial."}, {"name": "Cafe Vivant", "first": "Christian", "last": null, "channel": "Hospitality", "arr": 450, "onb": 1125, "stage": "Cold", "notes": "Reserve Path A | 1 client | 1,500 bottles avg"}, {"name": "Cellar Master Consulting - Marc Glassberg", "first": "Marc", "last": "Glassberg", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "Tier 1 SF cellar consultant. LinkedIn intro or warm referral best path."}, {"name": "Vintner's Collective - Garret Murphy", "first": "Garret", "last": "Murphy", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Verified owner. Represents ~20 small Napa producers."}, {"name": "A Taste of Monterey - Britt Talbert", "first": "Britt", "last": "Talbert", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Verified owner - tech/ops background. High-fit."}, {"name": "Ferry Plaza Wine Merchant - Peter Granoff, MS", "first": "Peter", "last": "Granoff", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Master Sommelier and tech founder."}, {"name": "The Sommelier Company - Jason Hartman", "first": "Jason", "last": "Hartman", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "Closest competitor pattern. M&A advisory background."}, {"name": "Draeger's Markets - Larry Ferguson", "first": "Larry", "last": "Ferguson", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Store director. Ask for wine dept lead."}, {"name": "The Cheese Shop (Carmel) - Kent Torrey", "first": "Kent", "last": "Torrey", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Iconic Carmel institution."}, {"name": "ACME Fine Wines - David Stevens", "first": "David", "last": "Stevens", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Owner. Co-runs with Karen Williams."}, {"name": "California Wine Merchant - Greg O'Flynn", "first": "Greg", "last": "O'Flynn", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Verified owner. 50+ year operator."}, {"name": "UOVO - Pamela Moore", "first": "Pamela", "last": "Moore", "channel": "Wine Storage", "arr": null, "onb": null, "stage": "Cold", "notes": "Director of BD. Soft entry before Page-Katz."}, {"name": "UOVO - Caroline Page-Katz", "first": "Caroline", "last": "Page-Katz", "channel": "Wine Storage", "arr": null, "onb": null, "stage": "Cold", "notes": "President and COO of UOVO. C-suite conversation."}, {"name": "K&L Wine Merchants - Andrew Shaheen", "first": "Andrew", "last": "Shaheen", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Tier 1. Previously VP at Vinfolio."}, {"name": "Biondivino - Ceri Smith", "first": "Ceri", "last": "Smith", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Verified owner. Italian specialist."}, {"name": "ACME Fine Wines - Karen Williams", "first": "Karen", "last": "Williams", "channel": "Retailer-Partner", "arr": null, "onb": null, "stage": "Cold", "notes": "Verified founder."}, {"name": "Enotrias - Melissa L. Smith", "first": "Melissa", "last": "Smith", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Cold", "notes": "Court of Master Somms + State Bar appraiser."}, {"name": "Nos Caves Vin", "first": "Jost", "last": "Lunstroth", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Warm", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "Vintage Cellars", "first": "Chris", "last": "Noel", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Warm", "notes": "Recommended by Dustin. Interested but no call yet."}, {"name": "Bevrly", "first": "Yaacov", "last": "Barselah", "channel": null, "arr": null, "onb": null, "stage": "Warm", "notes": "Mostafa in conversation with Yaacov."}, {"name": "Remington Hotels", "first": "Ted", "last": "Peters", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Warm", "notes": "Active outreach in progress."}, {"name": "1275 Collections", "first": "Denis", "last": "Houles", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Warm", "notes": "Geneva. Referred by Danielle's contact. ~100 customers. Wants to test. Demo with Anthony and Mark when Denis returns to Geneva."}, {"name": "Winebank", "first": "Don", "last": "Fox", "channel": "Wine Storage", "arr": 6000, "onb": 4500, "stage": "Qualified", "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"}, {"name": "Drink with Me", "first": "Joshua", "last": "Plack", "channel": "Sommelier Managed", "arr": 3000, "onb": 2250, "stage": "Qualified", "notes": "Sommeliers Path B. Duplicate task needs merge."}, {"name": "Plack, Joshua - Drink With Me", "first": "Joshua", "last": "Plack", "channel": "Sommelier Managed", "arr": null, "onb": null, "stage": "Qualified", "notes": "DUPLICATE - merge with 'Drink with Me' above."}, {"name": "WeShip Express", "first": "Scott", "last": "Kennedy", "channel": "Wine Storage", "arr": 60000, "onb": 150000, "stage": "Demo", "notes": "400 clients via Eagle Rock acquisition. Plan to scale 10x. Evaluating CellarEye vs build-in-house."}, {"name": "Addison by William Bradley", "first": "Sean", "last": "McGinness", "channel": "Hospitality", "arr": 7500, "onb": 22400, "stage": "Demo", "notes": "Cellar 5,001-10,000 bottles."}, {"name": "Sharon Heights Golf & Country Club", "first": "Efrain", "last": "Sanchez", "channel": "Hospitality", "arr": 3300, "onb": 13200, "stage": "Demo", "notes": "Path A | CellarEye. Expected close 2026-11-30."}, {"name": "Los Altos Golf & Country Club", "first": "Andrew", "last": "Sparling", "channel": "Hospitality", "arr": 1500, "onb": 7500, "stage": "Demo", "notes": "Cellar 2,501-5,000 bottles."}, {"name": "Rosehill Wine Cellars", "first": "Jonathan", "last": "Gilkes", "channel": "Cellar Builder", "arr": 6000, "onb": 4500, "stage": "Demo", "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"}, {"name": "Colgin Cellars", "first": "Brandon", "last": "Benelli", "channel": "Reserve-Client Direct", "arr": 2200, "onb": 3812.5, "stage": "Demo", "notes": "Reserve Path A | 1 client | 10,000 bottles avg"}, {"name": "Innovative Cellars", "first": "Sandy", "last": "Horwitz", "channel": "Cellar Builder", "arr": 3000, "onb": 2250, "stage": "Demo", "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"}, {"name": "Meritage Wine Market", "first": "Dustin", "last": "Cano", "channel": "Sommelier Managed", "arr": 3000, "onb": 2250, "stage": "Demo", "notes": "Sommeliers Path B. Existing reseller for Manny + Ron."}, {"name": "Camper", "first": "Greg", "last": null, "channel": "Hospitality", "arr": 450, "onb": 1125, "stage": "Demo", "notes": "Reserve Path A | 1 client | 1,500 bottles avg"}, {"name": "The Spotted Duck", "first": "Jerry", "last": "Regester", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Demo", "notes": "Beta deployment live in Pacific Grove."}, {"name": "Tedd Glennon", "first": "Ted", "last": "Glennon", "channel": "Sommelier Program", "arr": null, "onb": null, "stage": "Demo", "notes": "Met 7/10. Asilomar Fine Wine. Evaluating. Interested in SOM + ambassador roles."}, {"name": "Pausa San Mateo", "first": "Andrea", "last": "Giuliani", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Proposal", "notes": "Met 7/10. Chef-owner. Positive on digital wine menu; wants print list w/ QR. Proposal being delivered Tue/Wed this week."}, {"name": "The Grove at Point Pinos", "first": "Jerry", "last": "Regester", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Proposal", "notes": "Second restaurant from Spotted Duck owners. Opens late August after Pebble Beach Concours. Mark built their website (thegrovepointpinos.com) free in exchange for platform onboarding at a fee."}], "won": [{"name": "Manny Machado (Meritage)", "first": "Manny", "last": "Machado", "channel": "Sommelier Managed", "arr": 129, "onb": 400, "stage": "Closed Won", "notes": "Install completed. Payment received 2/11 and 2/17."}, {"name": "Ron Montbleau (Meritage)", "first": "Ron", "last": "Montbleau", "channel": "Sommelier Managed", "arr": 129, "onb": 200, "stage": "Closed Won", "notes": "Install completed. Feedback via Dustin: scanning issues, missing CA valuations."}], "lost": [{"name": "The Ritz London (Sorrells)", "first": "Tim", "last": "Lewis", "channel": "Hospitality", "arr": 15700, "onb": 150000, "stage": "Closed Lost", "notes": "Reserve Path A | 100,000 bottles | Custom dev included."}, {"name": "Jimmy Butler (Harper's)", "first": "Chris", "last": "Hoel", "channel": "Sommelier Managed", "arr": null, "onb": 27800, "stage": "Closed Lost", "notes": "On Hold. Last change 2/5/26."}, {"name": "Chai Consulting", "first": "Maureen", "last": "Downey", "channel": "Sommelier Managed", "arr": 6500, "onb": 3281.25, "stage": "Closed Lost", "notes": "Moved from Stalled 7/14. Was prototype for Singapore."}, {"name": "Rockcliffe Hotel (Sorrells)", "first": "Tim", "last": "Lewis", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Prospect stage. Last change 1/21/26."}, {"name": "Revel Cellars", "first": "Jim", "last": "Cash", "channel": "Cellar Builder", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Demo completed."}, {"name": "Four Seasons George V", "first": "Antoine", "last": "Desmoulins", "channel": "Hospitality", "arr": null, "onb": null, "stage": "Closed Lost", "notes": "Demo completed. Cellar 10,001+."}]}
+</script>
+
+<script id="leadData" type="application/json">
+[{"business": "Remington Hospitality", "first": "Yvette", "last": "Mena", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Los Altos Golf and Country Club", "first": "Andrew", "last": "Sparling", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Palo Alto Hills Golf and Country Club", "first": "Ronald", "last": "Tse", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Krupp Brothers", "first": "Sarah", "last": "Krupp", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "San Francisco Giants", "first": "Evan", "last": "Goldstein", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Sequoyah Country Club", "first": "Sally", "last": "Alexander", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "San Francisco Magazine", "first": "Ian", "last": "White", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Pasatiempo Golf Club", "first": "Joshua", "last": "Christenson", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Saratoga Country Club", "first": "Dragisa", "last": "Milivojevic", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Presidio Golf Course", "first": "John", "last": "Dirks", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Golden State Warriors", "first": "Christopher", "last": "Goodyear", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Just Enough Wines", "first": "Carolyn", "last": "Morrice", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "The Olympic Club", "first": "David", "last": "Ezzo", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "The City Club of San Francisco", "first": "Victor", "last": "Lopez", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "TPC Monterey at Pasadera", "first": "Aaron", "last": "Shields", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Total Beverage Solution", "first": "Barclay", "last": "Webster", "channel": "Hospitality", "section": "Ready To Email"}, {"business": "Santa Rosa Golf and Country Club", "first": "Jose", "last": "Tobar", "channel": "Hospitality", "section": "Linkedin Outreach"}, {"business": "The Ritz-Carlton San Francisco", "first": "Arif", "last": "Kor", "channel": "Hospitality", "section": "Linkedin Outreach"}, {"business": "Waterbar", "first": "Jeremy", "last": "Croxton", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Paul Hobbs Wines", "first": "Drew", "last": "Munro", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Bin 415", "first": "Kelly", "last": "Evans", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Wellington Cellars", "first": "Marc", "last": "Mendoza", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Thomas Keller Restaurant Group", "first": "Curtis", "last": "Mouton", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Quince", "first": "Christie", "last": "Dufault", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Realm Cellars", "first": "Jacob", "last": "Brown", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Folio Fine Wine Partners", "first": "Tom", "last": "Markakis", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Waterbar", "first": "Valentina", "last": "Moya", "channel": "Sommelier Program", "section": "Ready To Email"}, {"business": "Saison Hospitality", "first": "Jeffrey", "last": "Harakal", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Slanted Door / Blue Plate", "first": "Phillip", "last": "Aquafresca", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Rosewood Sand Hill", "first": "Ken", "last": "Wagstaff", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Rubel", "last": "Zelaya", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce / Bacchus Management Group", "first": "Thomas", "last": "Laurel", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "The Hidden Vine / Lazy Bear", "first": "Emory", "last": "Etheridge", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Forbes Mill Steakhouse", "first": "Marc", "last": "Dumont", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Casanova Restaurant Carmel", "first": "Pyper", "last": "Witt", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "SingleThread", "first": "Jackson", "last": "Pudlo", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Soif Wine Bar and Merchants", "first": "Sarah", "last": "Snyder", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Plumed Horse", "first": "Joseph", "last": "Karakas", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Rosewood Sand Hill", "first": "Joseph", "last": "Busby", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "RH Palo Alto", "first": "Zachary", "last": "Jacques", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Morgan", "last": "Harris", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Foreign Cinema", "first": "Kristina", "last": "Pergamalis", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Sovino Wine Bar and Merchant", "first": "Claire", "last": "Sutton", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Farallon", "first": "Aaron", "last": "Young", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Court of Master Sommeliers Americas", "first": "Maria", "last": "Castelli", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Chez Noir Carmel", "first": "Zachary", "last": "Hicks", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Foreign Cinema", "first": "Nathan", "last": "Wilson", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Foreign Cinema", "first": "Sophie", "last": "Estrada", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Niku Steakhouse", "first": "Matt", "last": "Montrose", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Monterey Plaza Hotel and Spa", "first": "Sarah", "last": "Kabat-Marcy", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Caleb", "last": "McArthur", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Flour and Water Hospitality Group", "first": "Andrew", "last": "Manzo", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Cotogna", "first": "Tai", "last": "Maldonado", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Manresa", "first": "Scott", "last": "McKinney", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Plumed Horse", "first": "Juan", "last": "Leon", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Lazy Bear", "first": "Kaleb", "last": "Kiger", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Pampas Palo Alto", "first": "Kanoa", "last": "Willing", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "2802 Club", "first": "Maria", "last": "Andrienko", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Alexanders Steakhouse", "first": "Serene", "last": "Wu", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Alexanders Steakhouse", "first": "Alex", "last": "Hawes", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Jordan", "last": "Hobro", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "BottleCru", "first": "Lillian", "last": "Lim", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Adrian", "last": "Chan", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Cellar Master Consulting", "first": "Marc", "last": "Glassberg", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Mastros Restaurants", "first": "Nicholas", "last": "Tomas", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce", "first": "Sam", "last": "Tuttle", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce", "first": "Haley", "last": "Guild", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Spruce", "first": "Michael", "last": "Baldonado", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Sean", "last": "Palmer", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Andrada", "last": "Cardenas", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Elizabeth", "last": "Nelson", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Saison Hospitality", "first": "Angel", "last": "Rivera", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Waterbar", "first": "Brian", "last": "Henry", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bacchus Management Group", "first": "Taemyung (Thomas)", "last": "Kim", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Waterbar", "first": "Daniel", "last": "Mendoza", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bluestem Brasserie", "first": "Danielle", "last": "Gornick", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "EventPowered", "first": "Debbie", "last": "Bacigalupi", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Roots of Peace", "first": "Joshua", "last": "Baker", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "La Mar SF", "first": "Oscar", "last": "Davila", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "JouJou SF", "first": "Gabriel", "last": "Barab", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Disney Cruise Line", "first": "Jeremy", "last": "Diard", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Birdsong", "first": "Zoe", "last": "Meinke", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "California Wine Merchant", "first": "Antonio", "last": "Vazquez", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "La Mar Cocina Peruana", "first": "Uri", "last": "Serrano-Baldwin", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "High Treason", "first": "Kristine", "last": "Hodsdon", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "The Tasting House Los Gatos", "first": "Taylor", "last": "Hildreth", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Boisset Collection", "first": "Diva", "last": "Poulos", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "ONE65 San Francisco", "first": "Louis", "last": "Boisset", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Bev", "first": "Hank", "last": "On", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Wine.com", "first": "Madison", "last": "Pettit", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Acquerello", "first": "Anka", "last": "Batsukh", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Self-employed", "first": "Daisy", "last": "Barringer", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "The Motoring Club Los Angeles", "first": "Dylan", "last": "Smith", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Princess Cruises", "first": "Bekithemba", "last": "Sibanda", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Willard Hicks", "first": "Daniel", "last": "Saporito", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "El Paseo Mill Valley", "first": "Jojo", "last": "Gilbertson", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Estiatorio Milos", "first": "George", "last": "Tsolis", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Southern Glazers", "first": "Thomas", "last": "Koehorst", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Omakase Restaurant Group", "first": "Amy", "last": "Kunert", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Epic Roasthouse", "first": "Lisa", "last": "Dunn", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Le Papillon San Jose", "first": "Irne", "last": "Gonzalez", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Californios", "first": "Sera", "last": "Cambridge", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "Tataki Sushi", "first": "Kristine", "last": "Kaehler", "channel": "Sommelier Program", "section": "Linkedin Outreach"}, {"business": "PABU", "first": "Mayuka", "last": "Yatomi", "channel": "Sommelier Program", "section": "Linkedin Outreach"}]
+</script>
+
+<script>
+(function() {
+  var data = JSON.parse(document.getElementById('dealData').textContent);
+  var leads = JSON.parse(document.getElementById('leadData').textContent);
+  var drilldown = document.getElementById('drilldown');
+  var titleEl = document.getElementById('drilldownTitle');
+  var subtitleEl = document.getElementById('drilldownSubtitle');
+  var contentEl = document.getElementById('drilldownContent');
+
+  var viewConfig = {
+    open: { title: 'Open Pipeline', subtitle: 'Active deals across all stages', deals: data.open },
+    won: { title: 'Closed Won', subtitle: 'Installed customers', deals: data.won },
+    lost: { title: 'Closed Lost', subtitle: 'Deals that did not move forward', deals: data.lost }
+  };
+
+  // Build lead views dynamically, one per channel that has leads
+  var leadViews = {};
+  leads.forEach(function(l) {
+    var key = 'ta-' + l.channel.toLowerCase().replace(/[^a-z0-9]+/g, '');
+    if (!leadViews[key]) {
+      leadViews[key] = { title: l.channel, subtitle: 'Target accounts for structured outreach', leads: [] };
+    }
+    leadViews[key].leads.push(l);
+  });
+
+  function escapeHtml(s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, function(c) {
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function renderDeal(d) {
+    var contact = (d.first || '') + ' ' + (d.last || '');
+    contact = contact.trim() || '—';
+    var arr = d.arr ? '$' + d.arr.toLocaleString() : '<span class="muted">not set</span>';
+    var onb = d.onb ? '$' + d.onb.toLocaleString() : '<span class="muted">not set</span>';
+    var channel = d.channel || '<span class="muted">unset</span>';
+    var notes = d.notes ? escapeHtml(d.notes) : '<span class="muted">No notes recorded</span>';
+    return '' +
+      '<div class="deal-card">' +
+        '<div class="deal-card-head">' +
+          '<div class="deal-card-name">' + escapeHtml(d.name) + '</div>' +
+          '<div class="deal-card-stage">' + escapeHtml(d.stage) + '</div>' +
+        '</div>' +
+        '<div class="deal-card-fields">' +
+          '<div><div class="deal-field-label">Contact</div><div class="deal-field-value">' + escapeHtml(contact) + '</div></div>' +
+          '<div><div class="deal-field-label">Channel</div><div class="deal-field-value">' + channel + '</div></div>' +
+          '<div><div class="deal-field-label">ARR</div><div class="deal-field-value">' + arr + '</div></div>' +
+          '<div><div class="deal-field-label">Onboarding</div><div class="deal-field-value">' + onb + '</div></div>' +
+        '</div>' +
+        '<div class="deal-card-notes">' +
+          '<div class="deal-card-notes-label">Notes / Next Step</div>' +
+          notes +
+        '</div>' +
+      '</div>';
+  }
+
+  function renderLead(l) {
+    var contact = (l.first || '') + ' ' + (l.last || '');
+    contact = contact.trim() || '—';
+    var section = l.section || '<span class="muted">unset</span>';
+    return '' +
+      '<div class="deal-card">' +
+        '<div class="deal-card-head">' +
+          '<div class="deal-card-name">' + escapeHtml(l.business) + '</div>' +
+          '<div class="deal-card-stage">' + escapeHtml(l.section) + '</div>' +
+        '</div>' +
+        '<div class="deal-card-fields">' +
+          '<div><div class="deal-field-label">Contact</div><div class="deal-field-value">' + escapeHtml(contact) + '</div></div>' +
+          '<div><div class="deal-field-label">Channel</div><div class="deal-field-value">' + escapeHtml(l.channel) + '</div></div>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function showView(viewName) {
+    var cfg = viewConfig[viewName];
+    if (cfg) {
+      titleEl.textContent = cfg.title;
+      subtitleEl.textContent = cfg.deals.length + ' deal' + (cfg.deals.length === 1 ? '' : 's') + ' · ' + cfg.subtitle;
+      if (cfg.deals.length === 0) {
+        contentEl.innerHTML = '<div class="empty-state">No deals in this view.</div>';
+      } else {
+        contentEl.innerHTML = cfg.deals.map(renderDeal).join('');
+      }
+      drilldown.classList.add('active');
+      window.scrollTo(0, 0);
+      return;
+    }
+    var lcfg = leadViews[viewName];
+    if (lcfg) {
+      titleEl.textContent = lcfg.title + ' · Target Accounts';
+      subtitleEl.textContent = lcfg.leads.length + ' lead' + (lcfg.leads.length === 1 ? '' : 's') + ' · ' + lcfg.subtitle;
+      contentEl.innerHTML = lcfg.leads.map(renderLead).join('');
+      drilldown.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function hideView() {
+    drilldown.classList.remove('active');
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+
+  // Click handlers on the count cells
+  document.querySelectorAll('.clickable-count').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var view = el.getAttribute('data-view');
+      window.location.hash = view;
+    });
+  });
+
+  // Click handlers on Target Account channel cards
+  document.querySelectorAll('.ta-card.ta-clickable').forEach(function(el) {
+    el.addEventListener('click', function() {
+      var view = el.getAttribute('data-view');
+      if (view) window.location.hash = view;
+    });
+  });
+
+  // Back link
+  document.getElementById('backLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    hideView();
+  });
+
+  // Hash routing (handles browser back button too)
+  function handleHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (viewConfig[hash] || leadViews[hash]) {
+      showView(hash);
+    } else {
+      hideView();
+    }
+  }
+  window.addEventListener('hashchange', handleHash);
+  handleHash();
+
+  // ESC key closes drill-down
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && drilldown.classList.contains('active')) {
+      hideView();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
