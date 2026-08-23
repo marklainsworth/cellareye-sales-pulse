@@ -121,6 +121,29 @@ def split_mda(text: str):
 
 # --- metric computation ------------------------------------------------------
 
+# The drill-down script reads exactly these fields. Everything else the pull
+# collects (gid, modified_at, the comment bodies) is working data the page never
+# displays, and embedding it doubled the file for no visible benefit.
+DRILLDOWN_FIELDS = ("name", "first", "last", "channel", "arr", "onb", "stage", "notes")
+LEAD_FIELDS = ("business", "first", "last", "channel", "section")
+
+
+def drilldown_payload(deals: dict) -> dict:
+    """Embed only what the page shows. Notes prefer the summarised line."""
+    out = {}
+    for bucket, rows in deals.items():
+        out[bucket] = [
+            {f: (r.get("note_summary") or r.get("notes") or None) if f == "notes"
+             else r.get(f) for f in DRILLDOWN_FIELDS}
+            for r in rows
+        ]
+    return out
+
+
+def lead_payload(leads: list) -> list:
+    return [{f: l.get(f) for f in LEAD_FIELDS} for l in leads]
+
+
 def stage_counts(deals: dict) -> dict:
     counts = {s: 0 for s in config.FUNNEL_STAGES}
     for bucket in deals.values():
@@ -447,8 +470,8 @@ def build_context(deals: dict, leads: list, mda: str, render_date: date,
         "has_priorities": bool(priorities),
 
         # drill-down payloads
-        "deal_data_json": json.dumps(deals, ensure_ascii=False),
-        "lead_data_json": json.dumps(leads, ensure_ascii=False),
+        "deal_data_json": json.dumps(drilldown_payload(deals), ensure_ascii=False),
+        "lead_data_json": json.dumps(lead_payload(leads), ensure_ascii=False),
 
         "footer_meta": "Source: Asana CellarEye Sales Pipeline · Automated render · v%s" % version,
     }

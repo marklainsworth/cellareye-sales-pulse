@@ -22,6 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import checks        # noqa: E402
 import config        # noqa: E402
+import publish       # noqa: E402
 import pull_asana    # noqa: E402
 import render as render_mod  # noqa: E402
 import slack_gate as sg      # noqa: E402
@@ -109,13 +110,36 @@ def tick(env, state, test: bool):
         out = do_render(env, state, mda, test)
         if out is None:
             return state
-        link = "briefs/%s" % out.name
+
+        deals = json.loads((config.DATA_DIR / "deal_data_current.json").read_text(encoding="utf-8"))
+        counts = {k: len(v) for k, v in deals.items()}
+
         if test:
             sg.notify(env, state,
-                      ":white_check_mark: Test brief rendered: `%s`\n"
-                      "_Test run: latest.html untouched, nothing committed._" % link)
-        else:
-            sg.notify(env, state, ":white_check_mark: Pulse published: `%s`" % link)
+                      ":white_check_mark: Test brief rendered: `briefs/%s`\n"
+                      "_Test run: latest.html untouched, nothing committed, nothing pushed._"
+                      % out.name)
+            sg.clear_state()
+            log("done (test)")
+            return None
+
+        render_date = date.fromisoformat(state["render_date"])
+        try:
+            log("commit and push")
+            sha = publish.commit_and_push(out, render_date, counts)
+            log("pushed %s" % (sha or "nothing to commit"))
+        except RuntimeError as e:
+            log("publish failed: %s" % e)
+            sg.notify(env, state,
+                      ":x: The brief rendered and passed checks, but the push failed:\n"
+                      "```%s```\n_The file is on the Air at `briefs/%s`._" % (e, out.name))
+            sg.clear_state()
+            return None
+
+        log("waiting for the Action to mirror latest.html")
+        mirrored = publish.wait_for_mirror(out.name)
+        log("mirrored" if mirrored else "mirror not confirmed within the window")
+        publish.announce(env, state, out.name, sha, counts, mirrored, sg.notify)
         sg.clear_state()
         log("done")
         return None

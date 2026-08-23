@@ -31,6 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import checks      # noqa: E402
 import config      # noqa: E402
+import publish     # noqa: E402
 import pull_asana  # noqa: E402
 import render as render_mod  # noqa: E402
 import summarize   # noqa: E402
@@ -171,8 +172,21 @@ def main(argv=None):
         say("review", "open %s" % out)
         return 0
 
-    say("commit", "not wired yet")
-    say("notify", "not wired yet")
+    counts = {k: len(v) for k, v in deals.items()}
+    say("commit", "committing and pushing")
+    try:
+        sha = publish.commit_and_push(out, render_date, counts)
+    except RuntimeError as e:
+        say("FAILED", "push failed: %s" % e)
+        say("note", "the brief is on disk at %s" % out.relative_to(config.REPO_ROOT))
+        return 1
+    say("pushed", sha or "nothing to commit")
+
+    say("mirror", "waiting for the Action to update latest.html")
+    mirrored = publish.wait_for_mirror(out.name)
+    say("mirror", "done" if mirrored else "not confirmed yet, the dated link is live")
+    say("live", publish.LIVE_URL if mirrored else publish.dated_url(out.name))
+    say("notify", "Slack notification is sent by the gate path, not this one")
     return 0
 
 
