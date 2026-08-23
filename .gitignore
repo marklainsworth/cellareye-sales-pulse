@@ -6,3 +6,6 @@ data/notes_dump.md
 data/notes_dump.json
 data/lead_data_previous.json
 data/note_summaries.json
+
+# macOS
+.DS_Store
