@@ -101,13 +101,14 @@ def extract_published():
 def main():
     published, published_rows = extract_published()
 
-    deals = json.loads((ROOT / "data" / "deal_data_current.json").read_text(encoding="utf-8"))
-    leads = json.loads((ROOT / "data" / "lead_data_current.json").read_text(encoding="utf-8"))
-    # The recovered data file was rebuilt from this brief and lost the Stalled
-    # section. Restore it from the brief's own attention rows so the funnel and
-    # the project total can be checked. Reference fixture, not pull output.
-    deals["stalled"] = json.loads(
-        (ROOT / "tests" / "fixtures" / "stalled_2026_07_24.json").read_text(encoding="utf-8"))
+    # Frozen July snapshots. data/ now holds live pull output and moves every
+    # week; this test validates against history and must not follow it.
+    fx = ROOT / "tests" / "fixtures"
+    deals = json.loads((fx / "deal_data_2026_07_24.json").read_text(encoding="utf-8"))
+    leads = json.loads((fx / "lead_data_2026_07_24.json").read_text(encoding="utf-8"))
+    # That snapshot was recovered from the brief and lost its Stalled section.
+    # Restore it from the brief's own attention rows so the funnel reconciles.
+    deals["stalled"] = json.loads((fx / "stalled_2026_07_24.json").read_text(encoding="utf-8"))
     authored = json.loads(
         (ROOT / "tests" / "fixtures" / "authored_2026_07_24.json").read_text(encoding="utf-8"))
 

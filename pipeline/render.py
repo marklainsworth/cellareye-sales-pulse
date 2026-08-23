@@ -217,13 +217,17 @@ def attention_rows(deals: dict, as_of: date) -> tuple[list, str, str]:
     for d in flagged:
         onb = d.get("onb")
         contact = " ".join(x for x in (d.get("first"), d.get("last")) if x)
-        note = (d.get("notes") or "").strip()
+        # Prefer the summarised line written by pipeline/summarize.py. Fall back
+        # to the cleaned description when it has not run.
+        note = (d.get("note_summary") or d.get("notes") or "").strip()
         meta = no_em_dash(" · ".join(x for x in (d.get("channel"), note) if x)
                           or "no recent context recorded")
+        if d.get("needs_enrichment"):
+            meta += " · needs enrichment"
         rows.append({
             "deal_name": no_em_dash(d.get("name", "")),
             "deal_contact": contact or "—",
-            "deal_signal": "%s · %s" % (d.get("stage"), money_k(onb) + " onb" if onb else "onb unset"),
+            "deal_signal": "%s · %s" % (d.get("stage"), money_short(onb) + " onb" if onb else "onb unset"),
             # prompt/sales_pulse_prompt.md: Stalled warm, Proposal stuck warm, Demo hot.
             # The stylesheet only defines .hot and .warm, there is no .cold.
             "deal_signal_class": "hot" if d.get("stage") == "Demo" else "warm",
@@ -416,7 +420,13 @@ def build_context(deals: dict, leads: list, mda: str, render_date: date,
         # won
         "won_count": str(len(won)),
         "won_arr": money(total(won, "arr")),
-        "won_avg": money(total(won, "onb") / len(won)) if won else "—",
+        # Average across deals that actually carry a value, not across all won
+        # deals. Dividing by the raw count means closing a customer whose
+        # onboarding field is still empty makes average deal size fall, which
+        # reads as the business getting worse. The Won data quality line beside
+        # it reports the coverage.
+        "won_avg": (money(total(won, "onb") / valued(won, "onb"))
+                    if valued(won, "onb") else "—"),
         "won_onb": money(total(won, "onb")),
         "won_onb_dq": dq_text(valued(won, "onb"), len(won)),
 

@@ -1,730 +1,730 @@
 [
-  {
-    "business": "Remington Hospitality",
-    "first": "Yvette",
-    "last": "Mena",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Los Altos Golf and Country Club",
-    "first": "Andrew",
-    "last": "Sparling",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Palo Alto Hills Golf and Country Club",
-    "first": "Ronald",
-    "last": "Tse",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Krupp Brothers",
-    "first": "Sarah",
-    "last": "Krupp",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "San Francisco Giants",
-    "first": "Evan",
-    "last": "Goldstein",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Sequoyah Country Club",
-    "first": "Sally",
-    "last": "Alexander",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "San Francisco Magazine",
-    "first": "Ian",
-    "last": "White",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Pasatiempo Golf Club",
-    "first": "Joshua",
-    "last": "Christenson",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Saratoga Country Club",
-    "first": "Dragisa",
-    "last": "Milivojevic",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Presidio Golf Course",
-    "first": "John",
-    "last": "Dirks",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Golden State Warriors",
-    "first": "Christopher",
-    "last": "Goodyear",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Just Enough Wines",
-    "first": "Carolyn",
-    "last": "Morrice",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "The Olympic Club",
-    "first": "David",
-    "last": "Ezzo",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "The City Club of San Francisco",
-    "first": "Victor",
-    "last": "Lopez",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "TPC Monterey at Pasadera",
-    "first": "Aaron",
-    "last": "Shields",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Total Beverage Solution",
-    "first": "Barclay",
-    "last": "Webster",
-    "channel": "Hospitality",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Santa Rosa Golf and Country Club",
-    "first": "Jose",
-    "last": "Tobar",
-    "channel": "Hospitality",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "The Ritz-Carlton San Francisco",
-    "first": "Arif",
-    "last": "Kor",
-    "channel": "Hospitality",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Waterbar",
-    "first": "Jeremy",
-    "last": "Croxton",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Paul Hobbs Wines",
-    "first": "Drew",
-    "last": "Munro",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Bin 415",
-    "first": "Kelly",
-    "last": "Evans",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Wellington Cellars",
-    "first": "Marc",
-    "last": "Mendoza",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Thomas Keller Restaurant Group",
-    "first": "Curtis",
-    "last": "Mouton",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Quince",
-    "first": "Christie",
-    "last": "Dufault",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Realm Cellars",
-    "first": "Jacob",
-    "last": "Brown",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Folio Fine Wine Partners",
-    "first": "Tom",
-    "last": "Markakis",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Waterbar",
-    "first": "Valentina",
-    "last": "Moya",
-    "channel": "Sommelier Program",
-    "section": "Ready To Email"
-  },
-  {
-    "business": "Saison Hospitality",
-    "first": "Jeffrey",
-    "last": "Harakal",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Slanted Door / Blue Plate",
-    "first": "Phillip",
-    "last": "Aquafresca",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Rosewood Sand Hill",
-    "first": "Ken",
-    "last": "Wagstaff",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bacchus Management Group",
-    "first": "Rubel",
-    "last": "Zelaya",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Spruce / Bacchus Management Group",
-    "first": "Thomas",
-    "last": "Laurel",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "The Hidden Vine / Lazy Bear",
-    "first": "Emory",
-    "last": "Etheridge",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Forbes Mill Steakhouse",
-    "first": "Marc",
-    "last": "Dumont",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Casanova Restaurant Carmel",
-    "first": "Pyper",
-    "last": "Witt",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "SingleThread",
-    "first": "Jackson",
-    "last": "Pudlo",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Soif Wine Bar and Merchants",
-    "first": "Sarah",
-    "last": "Snyder",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Plumed Horse",
-    "first": "Joseph",
-    "last": "Karakas",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Rosewood Sand Hill",
-    "first": "Joseph",
-    "last": "Busby",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "RH Palo Alto",
-    "first": "Zachary",
-    "last": "Jacques",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Saison Hospitality",
-    "first": "Morgan",
-    "last": "Harris",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Foreign Cinema",
-    "first": "Kristina",
-    "last": "Pergamalis",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Sovino Wine Bar and Merchant",
-    "first": "Claire",
-    "last": "Sutton",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Farallon",
-    "first": "Aaron",
-    "last": "Young",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Court of Master Sommeliers Americas",
-    "first": "Maria",
-    "last": "Castelli",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Chez Noir Carmel",
-    "first": "Zachary",
-    "last": "Hicks",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Foreign Cinema",
-    "first": "Nathan",
-    "last": "Wilson",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Foreign Cinema",
-    "first": "Sophie",
-    "last": "Estrada",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Niku Steakhouse",
-    "first": "Matt",
-    "last": "Montrose",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Monterey Plaza Hotel and Spa",
-    "first": "Sarah",
-    "last": "Kabat-Marcy",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bacchus Management Group",
-    "first": "Caleb",
-    "last": "McArthur",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Flour and Water Hospitality Group",
-    "first": "Andrew",
-    "last": "Manzo",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Cotogna",
-    "first": "Tai",
-    "last": "Maldonado",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Manresa",
-    "first": "Scott",
-    "last": "McKinney",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Plumed Horse",
-    "first": "Juan",
-    "last": "Leon",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Lazy Bear",
-    "first": "Kaleb",
-    "last": "Kiger",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Pampas Palo Alto",
-    "first": "Kanoa",
-    "last": "Willing",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "2802 Club",
-    "first": "Maria",
-    "last": "Andrienko",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Alexanders Steakhouse",
-    "first": "Serene",
-    "last": "Wu",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Alexanders Steakhouse",
-    "first": "Alex",
-    "last": "Hawes",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bacchus Management Group",
-    "first": "Jordan",
-    "last": "Hobro",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "BottleCru",
-    "first": "Lillian",
-    "last": "Lim",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Saison Hospitality",
-    "first": "Adrian",
-    "last": "Chan",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Cellar Master Consulting",
-    "first": "Marc",
-    "last": "Glassberg",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Mastros Restaurants",
-    "first": "Nicholas",
-    "last": "Tomas",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Spruce",
-    "first": "Sam",
-    "last": "Tuttle",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Spruce",
-    "first": "Haley",
-    "last": "Guild",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Spruce",
-    "first": "Michael",
-    "last": "Baldonado",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bacchus Management Group",
-    "first": "Sean",
-    "last": "Palmer",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bacchus Management Group",
-    "first": "Andrada",
-    "last": "Cardenas",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Saison Hospitality",
-    "first": "Elizabeth",
-    "last": "Nelson",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Saison Hospitality",
-    "first": "Angel",
-    "last": "Rivera",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Waterbar",
-    "first": "Brian",
-    "last": "Henry",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bacchus Management Group",
-    "first": "Taemyung (Thomas)",
-    "last": "Kim",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Waterbar",
-    "first": "Daniel",
-    "last": "Mendoza",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bluestem Brasserie",
-    "first": "Danielle",
-    "last": "Gornick",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "EventPowered",
-    "first": "Debbie",
-    "last": "Bacigalupi",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Roots of Peace",
-    "first": "Joshua",
-    "last": "Baker",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "La Mar SF",
-    "first": "Oscar",
-    "last": "Davila",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "JouJou SF",
-    "first": "Gabriel",
-    "last": "Barab",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Disney Cruise Line",
-    "first": "Jeremy",
-    "last": "Diard",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Birdsong",
-    "first": "Zoe",
-    "last": "Meinke",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "California Wine Merchant",
-    "first": "Antonio",
-    "last": "Vazquez",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "La Mar Cocina Peruana",
-    "first": "Uri",
-    "last": "Serrano-Baldwin",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "High Treason",
-    "first": "Kristine",
-    "last": "Hodsdon",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "The Tasting House Los Gatos",
-    "first": "Taylor",
-    "last": "Hildreth",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Boisset Collection",
-    "first": "Diva",
-    "last": "Poulos",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "ONE65 San Francisco",
-    "first": "Louis",
-    "last": "Boisset",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Bev",
-    "first": "Hank",
-    "last": "On",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Wine.com",
-    "first": "Madison",
-    "last": "Pettit",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Acquerello",
-    "first": "Anka",
-    "last": "Batsukh",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Self-employed",
-    "first": "Daisy",
-    "last": "Barringer",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "The Motoring Club Los Angeles",
-    "first": "Dylan",
-    "last": "Smith",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Princess Cruises",
-    "first": "Bekithemba",
-    "last": "Sibanda",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Willard Hicks",
-    "first": "Daniel",
-    "last": "Saporito",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "El Paseo Mill Valley",
-    "first": "Jojo",
-    "last": "Gilbertson",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Estiatorio Milos",
-    "first": "George",
-    "last": "Tsolis",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Southern Glazers",
-    "first": "Thomas",
-    "last": "Koehorst",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Omakase Restaurant Group",
-    "first": "Amy",
-    "last": "Kunert",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Epic Roasthouse",
-    "first": "Lisa",
-    "last": "Dunn",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Le Papillon San Jose",
-    "first": "Irne",
-    "last": "Gonzalez",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Californios",
-    "first": "Sera",
-    "last": "Cambridge",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "Tataki Sushi",
-    "first": "Kristine",
-    "last": "Kaehler",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  },
-  {
-    "business": "PABU",
-    "first": "Mayuka",
-    "last": "Yatomi",
-    "channel": "Sommelier Program",
-    "section": "Linkedin Outreach"
-  }
+ {
+  "business": "Remington Hospitality - Yvette Mena",
+  "first": "Yvette",
+  "last": "Mena",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Los Altos Golf and Country Club - Andrew Sparling",
+  "first": "Andrew",
+  "last": "Sparling",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Palo Alto Hills Golf and Country Club - Ronald Tse",
+  "first": "Ronald",
+  "last": "Tse",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Krupp Brothers - Sarah Krupp",
+  "first": "Sarah",
+  "last": "Krupp",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "San Francisco Giants - Evan Goldstein, MS",
+  "first": "Evan",
+  "last": "Goldstein",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Sequoyah Country Club - Sally Alexander",
+  "first": "Sally",
+  "last": "Alexander",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "San Francisco Magazine - Ian White",
+  "first": "Ian",
+  "last": "White",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Pasatiempo Golf Club - Joshua Christenson",
+  "first": "Joshua",
+  "last": "Christenson",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Saratoga Country Club - Dragisa Milivojevic",
+  "first": "Dragisa",
+  "last": "Milivojevic",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Presidio Golf Course - John Dirks",
+  "first": "John",
+  "last": "Dirks",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Golden State Warriors - Christopher Goodyear",
+  "first": "Christopher",
+  "last": "Goodyear",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Just Enough Wines - Carolyn Morrice",
+  "first": "Carolyn",
+  "last": "Morrice",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "The Olympic Club - David Ezzo",
+  "first": "David",
+  "last": "Ezzo",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "The City Club of San Francisco - Victor Lopez",
+  "first": "Victor",
+  "last": "Lopez",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "TPC Monterey at Pasadera - Aaron Shields",
+  "first": "Aaron",
+  "last": "Shields",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Total Beverage Solution - Barclay Webster",
+  "first": "Barclay",
+  "last": "Webster",
+  "channel": "Hospitality",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Waterbar - Jeremy Croxton",
+  "first": "Jeremy",
+  "last": "Croxton",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Paul Hobbs Wines - Drew Munro",
+  "first": "Drew",
+  "last": "Munro",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Bin 415 - Kelly Evans",
+  "first": "Kelly",
+  "last": "Evans",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Wellington Cellars - Marc Mendoza",
+  "first": "Marc",
+  "last": "Mendoza",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Thomas Keller Restaurant Group - Curtis Mouton",
+  "first": "Curtis",
+  "last": "Mouton",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Quince - Christie Dufault",
+  "first": "Christie",
+  "last": "Dufault",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Realm Cellars - Jacob Brown",
+  "first": "Jacob",
+  "last": "Brown",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Folio Fine Wine Partners - Tom Markakis",
+  "first": "Tom",
+  "last": "Markakis",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Waterbar - Valentina Moya",
+  "first": "Valentina",
+  "last": "Moya",
+  "channel": "Sommelier Program",
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Saison Hospitality - Jeffrey Harakal",
+  "first": "Jeffrey",
+  "last": "Harakal",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Slanted Door / Blue Plate - Phillip Aquafresca",
+  "first": "Phillip",
+  "last": "Aquafresca",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Rosewood Sand Hill - Ken Wagstaff",
+  "first": "Ken",
+  "last": "Wagstaff",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bacchus Management Group - Rubel Zelaya",
+  "first": "Rubel",
+  "last": "Zelaya",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Spruce / Bacchus Management Group - Thomas Laurel",
+  "first": "Thomas",
+  "last": "Laurel",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "The Hidden Vine / Lazy Bear - Emory Etheridge",
+  "first": "Emory",
+  "last": "Etheridge",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Forbes Mill Steakhouse - Marc Dumont",
+  "first": "Marc",
+  "last": "Dumont",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Casanova Restaurant Carmel - Pyper Witt",
+  "first": "Pyper",
+  "last": "Witt",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "SingleThread - Jackson Pudlo",
+  "first": "Jackson",
+  "last": "Pudlo",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Santa Rosa Golf and Country Club - Jose Tobar",
+  "first": "Jose",
+  "last": "Tobar",
+  "channel": "Hospitality",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Soif Wine Bar and Merchants - Sarah Snyder",
+  "first": "Sarah",
+  "last": "Snyder",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "The Ritz-Carlton San Francisco - Arif Kor",
+  "first": "Arif",
+  "last": "Kor",
+  "channel": "Hospitality",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Plumed Horse - Joseph Karakas",
+  "first": "Joseph",
+  "last": "Karakas",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Rosewood Sand Hill - Joseph Busby",
+  "first": "Joseph",
+  "last": "Busby",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "RH Palo Alto - Zachary Jacques",
+  "first": "Zachary",
+  "last": "Jacques",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Saison Hospitality - Morgan Harris, MS",
+  "first": "Morgan",
+  "last": "Harris",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Foreign Cinema - Kristina Pergamalis",
+  "first": "Kristina",
+  "last": "Pergamalis",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Sovino Wine Bar and Merchant - Claire Sutton",
+  "first": "Claire",
+  "last": "Sutton",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Farallon - Aaron Young",
+  "first": "Aaron",
+  "last": "Young",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Court of Master Sommeliers Americas - Maria Castelli",
+  "first": "Maria",
+  "last": "Castelli",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Chez Noir Carmel - Zachary Hicks",
+  "first": "Zachary",
+  "last": "Hicks",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Foreign Cinema - Nathan Wilson",
+  "first": "Nathan",
+  "last": "Wilson",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Foreign Cinema - Sophie Estrada",
+  "first": "Sophie",
+  "last": "Estrada",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Niku Steakhouse - Matt Montrose",
+  "first": "Matt",
+  "last": "Montrose",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Monterey Plaza Hotel and Spa - Sarah Kabat-Marcy",
+  "first": "Sarah",
+  "last": "Kabat-Marcy",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bacchus Management Group - Caleb McArthur",
+  "first": "Caleb",
+  "last": "McArthur",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Flour and Water Hospitality Group - Andrew Manzo",
+  "first": "Aaron",
+  "last": "Manzo",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Cotogna - Tai Maldonado",
+  "first": "Tai",
+  "last": "Maldonado",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Manresa - Scott McKinney",
+  "first": "Scott",
+  "last": "McKinney",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Plumed Horse - Juan Leon",
+  "first": "Juan",
+  "last": "Leon",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Lazy Bear - Kaleb Kiger",
+  "first": "Kaleb",
+  "last": "Kiger",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Pampas Palo Alto - Kanoa Willing",
+  "first": "Kanoa",
+  "last": "Willing",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "2802 Club - Maria Andrienko",
+  "first": "Maria",
+  "last": "Andrienko",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Alexanders Steakhouse - Serene Wu",
+  "first": "Serene",
+  "last": "Wu",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Alexanders Steakhouse - Alex Hawes",
+  "first": "Alex",
+  "last": "Hawes",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bacchus Management Group - Jordan Hobro",
+  "first": "Jordan",
+  "last": "Hobro",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "BottleCru - Lillian Lim",
+  "first": "Lillian",
+  "last": "Lim",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Saison Hospitality - Adrian Chan",
+  "first": "Adrian",
+  "last": "Chan",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Cellar Master Consulting - Marc Glassberg",
+  "first": "Marc",
+  "last": "Glassberg",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Mastros Restaurants - Nicholas Tomas",
+  "first": "Nicholas",
+  "last": "Tomas",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Spruce - Sam Tuttle",
+  "first": "Sam",
+  "last": "Tuttle",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Spruce - Haley Guild",
+  "first": "Haley",
+  "last": "Guild",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Spruce - Michael Baldonado",
+  "first": "Michael",
+  "last": "Baldonado",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bacchus Management Group - Sean Palmer",
+  "first": "Sean",
+  "last": "Palmer",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bacchus Management Group - Andrada Cardenas",
+  "first": "Andrada",
+  "last": "Cardenas",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Saison Hospitality - Elizabeth Nelson",
+  "first": "Elizabeth",
+  "last": "Nelson",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Saison Hospitality - Angel Rivera",
+  "first": "Angel",
+  "last": "Rivera",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Waterbar - Brian Henry",
+  "first": "Brian",
+  "last": "Henry",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bacchus Management Group - Taemyung (Thomas) Kim",
+  "first": "Taemyung",
+  "last": "Kim",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Waterbar - Daniel Mendoza",
+  "first": "Daniel",
+  "last": "Mendoza",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bluestem Brasserie - Danielle Gornick",
+  "first": "Danielle",
+  "last": "Gornick",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "EventPowered - Debbie Bacigalupi",
+  "first": "Debbie",
+  "last": "Bacigalupi",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Roots of Peace - Joshua Baker",
+  "first": "Joshua",
+  "last": "Baker",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "La Mar SF - Oscar Davila",
+  "first": "Oscar",
+  "last": "Davila",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "JouJou SF - Gabriel Barab",
+  "first": "Gabriel",
+  "last": "Barab",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Disney Cruise Line - Jeremy Diard",
+  "first": "Jeremy",
+  "last": "Diard",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Birdsong - Zoe Meinke",
+  "first": "Zoe",
+  "last": "Meinke",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "California Wine Merchant - Antonio Vazquez",
+  "first": "Antonio",
+  "last": "Vazquez",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "La Mar Cocina Peruana - Uri Serrano-Baldwin",
+  "first": "Uri",
+  "last": "Serrano-Baldwin",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "High Treason - Kristine Hodsdon",
+  "first": "Kristine",
+  "last": "Hodsdon",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "The Tasting House Los Gatos - Taylor Hildreth",
+  "first": "Taylor",
+  "last": "Hildreth",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Boisset Collection - Diva Poulos",
+  "first": "Diva",
+  "last": "Poulos",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "ONE65 San Francisco - Louis Boisset",
+  "first": "Louis",
+  "last": "Boisset",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Bev - Hank On",
+  "first": "Hank",
+  "last": "On",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Wine.com - Madison Pettit",
+  "first": "Madison",
+  "last": "Pettit",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Acquerello - Anka Batsukh",
+  "first": "Anka",
+  "last": "Batsukh",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Self-employed - Daisy Barringer",
+  "first": "Daisy",
+  "last": "Barringer",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "The Motoring Club Los Angeles - Dylan Smith",
+  "first": "Dylan",
+  "last": "Smith",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Princess Cruises - Bekithemba Sibanda",
+  "first": "Bekithemba",
+  "last": "Sibanda",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Willard Hicks - Daniel Saporito",
+  "first": "Daniel",
+  "last": "Saporito",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "El Paseo Mill Valley - Jojo Gilbertson",
+  "first": "Jojo",
+  "last": "Gilbertson",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Estiatorio Milos - George Tsolis",
+  "first": "George",
+  "last": "Tsolis",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Southern Glazers - Thomas Koehorst",
+  "first": "Thomas",
+  "last": "Koehorst",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Omakase Restaurant Group - Amy Kunert",
+  "first": "Amy",
+  "last": "Kunert",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Epic Roasthouse - Lisa Dunn",
+  "first": "Lisa",
+  "last": "Dunn",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Le Papillon San Jose - Irne Gonzalez",
+  "first": "Irne",
+  "last": "Gonzalez",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Californios - Sera Cambridge",
+  "first": "Sera",
+  "last": "Cambridge",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Tataki Sushi - Kristine Kaehler",
+  "first": "Kristine",
+  "last": "Kaehler",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ },
+ {
+  "business": "PABU - Mayuka Yatomi",
+  "first": "Mayuka",
+  "last": "Yatomi",
+  "channel": "Sommelier Program",
+  "section": "Linkedin Outreach"
+ }
 ]

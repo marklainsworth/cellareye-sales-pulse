@@ -1,0 +1,488 @@
+{
+  "open": [
+    {
+      "name": "Palo Alto Hills Golf and Country Club",
+      "first": "David",
+      "last": null,
+      "channel": "Hospitality",
+      "arr": 1300,
+      "onb": 2562.5,
+      "stage": "Cold",
+      "notes": "Reserve Path A | 1 client | 5,000 bottles avg"
+    },
+    {
+      "name": "Menlo Circus Club",
+      "first": "Steffen",
+      "last": "Mrowczynski",
+      "channel": "Hospitality",
+      "arr": 1300,
+      "onb": 2562.5,
+      "stage": "Cold",
+      "notes": "Reserve Path A | 1 client | 5,000 bottles avg"
+    },
+    {
+      "name": "Omid Farokhzad (Revel Cellars)",
+      "first": "Omid",
+      "last": "Farokhzad",
+      "channel": "Reserve-Client Direct",
+      "arr": 600,
+      "onb": 1375,
+      "stage": "Cold",
+      "notes": "Mostafa's buddy. Wanted him to try CellarEye for a Revel Cellars testimonial."
+    },
+    {
+      "name": "Cafe Vivant",
+      "first": "Christian",
+      "last": null,
+      "channel": "Hospitality",
+      "arr": 450,
+      "onb": 1125,
+      "stage": "Cold",
+      "notes": "Reserve Path A | 1 client | 1,500 bottles avg"
+    },
+    {
+      "name": "Cellar Master Consulting - Marc Glassberg",
+      "first": "Marc",
+      "last": "Glassberg",
+      "channel": "Sommelier Managed",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Tier 1 SF cellar consultant. LinkedIn intro or warm referral best path."
+    },
+    {
+      "name": "Vintner's Collective - Garret Murphy",
+      "first": "Garret",
+      "last": "Murphy",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Verified owner. Represents ~20 small Napa producers."
+    },
+    {
+      "name": "A Taste of Monterey - Britt Talbert",
+      "first": "Britt",
+      "last": "Talbert",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Verified owner - tech/ops background. High-fit."
+    },
+    {
+      "name": "Ferry Plaza Wine Merchant - Peter Granoff, MS",
+      "first": "Peter",
+      "last": "Granoff",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Master Sommelier and tech founder."
+    },
+    {
+      "name": "The Sommelier Company - Jason Hartman",
+      "first": "Jason",
+      "last": "Hartman",
+      "channel": "Sommelier Managed",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Closest competitor pattern. M&A advisory background."
+    },
+    {
+      "name": "Draeger's Markets - Larry Ferguson",
+      "first": "Larry",
+      "last": "Ferguson",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Store director. Ask for wine dept lead."
+    },
+    {
+      "name": "The Cheese Shop (Carmel) - Kent Torrey",
+      "first": "Kent",
+      "last": "Torrey",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Iconic Carmel institution."
+    },
+    {
+      "name": "ACME Fine Wines - David Stevens",
+      "first": "David",
+      "last": "Stevens",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Owner. Co-runs with Karen Williams."
+    },
+    {
+      "name": "California Wine Merchant - Greg O'Flynn",
+      "first": "Greg",
+      "last": "O'Flynn",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Verified owner. 50+ year operator."
+    },
+    {
+      "name": "UOVO - Pamela Moore",
+      "first": "Pamela",
+      "last": "Moore",
+      "channel": "Wine Storage",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Director of BD. Soft entry before Page-Katz."
+    },
+    {
+      "name": "UOVO - Caroline Page-Katz",
+      "first": "Caroline",
+      "last": "Page-Katz",
+      "channel": "Wine Storage",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "President and COO of UOVO. C-suite conversation."
+    },
+    {
+      "name": "K&L Wine Merchants - Andrew Shaheen",
+      "first": "Andrew",
+      "last": "Shaheen",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Tier 1. Previously VP at Vinfolio."
+    },
+    {
+      "name": "Biondivino - Ceri Smith",
+      "first": "Ceri",
+      "last": "Smith",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Verified owner. Italian specialist."
+    },
+    {
+      "name": "ACME Fine Wines - Karen Williams",
+      "first": "Karen",
+      "last": "Williams",
+      "channel": "Retailer-Partner",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Verified founder."
+    },
+    {
+      "name": "Enotrias - Melissa L. Smith",
+      "first": "Melissa",
+      "last": "Smith",
+      "channel": "Sommelier Managed",
+      "arr": null,
+      "onb": null,
+      "stage": "Cold",
+      "notes": "Court of Master Somms + State Bar appraiser."
+    },
+    {
+      "name": "Nos Caves Vin",
+      "first": "Jost",
+      "last": "Lunstroth",
+      "channel": "Cellar Builder",
+      "arr": 3000,
+      "onb": 2250,
+      "stage": "Warm",
+      "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"
+    },
+    {
+      "name": "Vintage Cellars",
+      "first": "Chris",
+      "last": "Noel",
+      "channel": "Cellar Builder",
+      "arr": 3000,
+      "onb": 2250,
+      "stage": "Warm",
+      "notes": "Recommended by Dustin. Interested but no call yet."
+    },
+    {
+      "name": "Bevrly",
+      "first": "Yaacov",
+      "last": "Barselah",
+      "channel": null,
+      "arr": null,
+      "onb": null,
+      "stage": "Warm",
+      "notes": "Mostafa in conversation with Yaacov."
+    },
+    {
+      "name": "Remington Hotels",
+      "first": "Ted",
+      "last": "Peters",
+      "channel": "Hospitality",
+      "arr": null,
+      "onb": null,
+      "stage": "Warm",
+      "notes": "Active outreach in progress."
+    },
+    {
+      "name": "1275 Collections",
+      "first": "Denis",
+      "last": "Houles",
+      "channel": "Sommelier Managed",
+      "arr": null,
+      "onb": null,
+      "stage": "Warm",
+      "notes": "Geneva. Referred by Danielle's contact. ~100 customers. Wants to test. Demo with Anthony and Mark when Denis returns to Geneva."
+    },
+    {
+      "name": "Winebank",
+      "first": "Don",
+      "last": "Fox",
+      "channel": "Wine Storage",
+      "arr": 6000,
+      "onb": 4500,
+      "stage": "Qualified",
+      "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"
+    },
+    {
+      "name": "Drink with Me",
+      "first": "Joshua",
+      "last": "Plack",
+      "channel": "Sommelier Managed",
+      "arr": 3000,
+      "onb": 2250,
+      "stage": "Qualified",
+      "notes": "Sommeliers Path B. Duplicate task needs merge."
+    },
+    {
+      "name": "Plack, Joshua - Drink With Me",
+      "first": "Joshua",
+      "last": "Plack",
+      "channel": "Sommelier Managed",
+      "arr": null,
+      "onb": null,
+      "stage": "Qualified",
+      "notes": "DUPLICATE - merge with 'Drink with Me' above."
+    },
+    {
+      "name": "WeShip Express",
+      "first": "Scott",
+      "last": "Kennedy",
+      "channel": "Wine Storage",
+      "arr": 60000,
+      "onb": 150000,
+      "stage": "Demo",
+      "notes": "400 clients via Eagle Rock acquisition. Plan to scale 10x. Evaluating CellarEye vs build-in-house."
+    },
+    {
+      "name": "Addison by William Bradley",
+      "first": "Sean",
+      "last": "McGinness",
+      "channel": "Hospitality",
+      "arr": 7500,
+      "onb": 22400,
+      "stage": "Demo",
+      "notes": "Cellar 5,001-10,000 bottles."
+    },
+    {
+      "name": "Sharon Heights Golf & Country Club",
+      "first": "Efrain",
+      "last": "Sanchez",
+      "channel": "Hospitality",
+      "arr": 3300,
+      "onb": 13200,
+      "stage": "Demo",
+      "notes": "Path A | CellarEye. Expected close 2026-11-30."
+    },
+    {
+      "name": "Los Altos Golf & Country Club",
+      "first": "Andrew",
+      "last": "Sparling",
+      "channel": "Hospitality",
+      "arr": 1500,
+      "onb": 7500,
+      "stage": "Demo",
+      "notes": "Cellar 2,501-5,000 bottles."
+    },
+    {
+      "name": "Rosehill Wine Cellars",
+      "first": "Jonathan",
+      "last": "Gilkes",
+      "channel": "Cellar Builder",
+      "arr": 6000,
+      "onb": 4500,
+      "stage": "Demo",
+      "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"
+    },
+    {
+      "name": "Colgin Cellars",
+      "first": "Brandon",
+      "last": "Benelli",
+      "channel": "Reserve-Client Direct",
+      "arr": 2200,
+      "onb": 3812.5,
+      "stage": "Demo",
+      "notes": "Reserve Path A | 1 client | 10,000 bottles avg"
+    },
+    {
+      "name": "Innovative Cellars",
+      "first": "Sandy",
+      "last": "Horwitz",
+      "channel": "Cellar Builder",
+      "arr": 3000,
+      "onb": 2250,
+      "stage": "Demo",
+      "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"
+    },
+    {
+      "name": "Meritage Wine Market",
+      "first": "Dustin",
+      "last": "Cano",
+      "channel": "Sommelier Managed",
+      "arr": 3000,
+      "onb": 2250,
+      "stage": "Demo",
+      "notes": "Sommeliers Path B. Existing reseller for Manny + Ron."
+    },
+    {
+      "name": "Camper",
+      "first": "Greg",
+      "last": null,
+      "channel": "Hospitality",
+      "arr": 450,
+      "onb": 1125,
+      "stage": "Demo",
+      "notes": "Reserve Path A | 1 client | 1,500 bottles avg"
+    },
+    {
+      "name": "The Spotted Duck",
+      "first": "Jerry",
+      "last": "Regester",
+      "channel": "Hospitality",
+      "arr": null,
+      "onb": null,
+      "stage": "Demo",
+      "notes": "Beta deployment live in Pacific Grove."
+    },
+    {
+      "name": "Tedd Glennon",
+      "first": "Ted",
+      "last": "Glennon",
+      "channel": "Sommelier Program",
+      "arr": null,
+      "onb": null,
+      "stage": "Demo",
+      "notes": "Met 7/10. Asilomar Fine Wine. Evaluating. Interested in SOM + ambassador roles."
+    },
+    {
+      "name": "Pausa San Mateo",
+      "first": "Andrea",
+      "last": "Giuliani",
+      "channel": "Hospitality",
+      "arr": null,
+      "onb": null,
+      "stage": "Proposal",
+      "notes": "Met 7/10. Chef-owner. Positive on digital wine menu; wants print list w/ QR. Proposal being delivered Tue/Wed this week."
+    },
+    {
+      "name": "The Grove at Point Pinos",
+      "first": "Jerry",
+      "last": "Regester",
+      "channel": "Hospitality",
+      "arr": null,
+      "onb": null,
+      "stage": "Proposal",
+      "notes": "Second restaurant from Spotted Duck owners. Opens late August after Pebble Beach Concours. Mark built their website (thegrovepointpinos.com) free in exchange for platform onboarding at a fee."
+    }
+  ],
+  "won": [
+    {
+      "name": "Manny Machado (Meritage)",
+      "first": "Manny",
+      "last": "Machado",
+      "channel": "Sommelier Managed",
+      "arr": 129,
+      "onb": 400,
+      "stage": "Closed Won",
+      "notes": "Install completed. Payment received 2/11 and 2/17."
+    },
+    {
+      "name": "Ron Montbleau (Meritage)",
+      "first": "Ron",
+      "last": "Montbleau",
+      "channel": "Sommelier Managed",
+      "arr": 129,
+      "onb": 200,
+      "stage": "Closed Won",
+      "notes": "Install completed. Feedback via Dustin: scanning issues, missing CA valuations."
+    }
+  ],
+  "lost": [
+    {
+      "name": "The Ritz London (Sorrells)",
+      "first": "Tim",
+      "last": "Lewis",
+      "channel": "Hospitality",
+      "arr": 15700,
+      "onb": 150000,
+      "stage": "Closed Lost",
+      "notes": "Reserve Path A | 100,000 bottles | Custom dev included."
+    },
+    {
+      "name": "Jimmy Butler (Harper's)",
+      "first": "Chris",
+      "last": "Hoel",
+      "channel": "Sommelier Managed",
+      "arr": null,
+      "onb": 27800,
+      "stage": "Closed Lost",
+      "notes": "On Hold. Last change 2/5/26."
+    },
+    {
+      "name": "Chai Consulting",
+      "first": "Maureen",
+      "last": "Downey",
+      "channel": "Sommelier Managed",
+      "arr": 6500,
+      "onb": 3281.25,
+      "stage": "Closed Lost",
+      "notes": "Moved from Stalled 7/14. Was prototype for Singapore."
+    },
+    {
+      "name": "Rockcliffe Hotel (Sorrells)",
+      "first": "Tim",
+      "last": "Lewis",
+      "channel": "Hospitality",
+      "arr": null,
+      "onb": null,
+      "stage": "Closed Lost",
+      "notes": "Prospect stage. Last change 1/21/26."
+    },
+    {
+      "name": "Revel Cellars",
+      "first": "Jim",
+      "last": "Cash",
+      "channel": "Cellar Builder",
+      "arr": null,
+      "onb": null,
+      "stage": "Closed Lost",
+      "notes": "Demo completed."
+    },
+    {
+      "name": "Four Seasons George V",
+      "first": "Antoine",
+      "last": "Desmoulins",
+      "channel": "Hospitality",
+      "arr": null,
+      "onb": null,
+      "stage": "Closed Lost",
+      "notes": "Demo completed. Cellar 10,001+."
+    }
+  ]
+}

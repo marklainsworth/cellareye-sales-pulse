@@ -1,488 +1,1061 @@
 {
-  "open": [
+ "open": [
+  {
+   "gid": "1214617103006001",
+   "name": "Palo Alto Hills Golf and Country Club",
+   "first": "David",
+   "last": null,
+   "channel": "Hospitality",
+   "arr": 1300,
+   "onb": 2562.5,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.422Z",
+   "notes": "Reserve Path A | 1 client | 5,000 bottles avg",
+   "comments": [],
+   "note_summary": "Reserve Path A · 1 client, 5,000 bottles avg",
+   "needs_enrichment": true
+  },
+  {
+   "gid": "1214588517069610",
+   "name": "Menlo Circus Club",
+   "first": "Steffen",
+   "last": "Mrowczynski",
+   "channel": "Hospitality",
+   "arr": 1300,
+   "onb": 2562.5,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.445Z",
+   "notes": "Reserve Path A | 1 client | 5,000 bottles avg",
+   "comments": [],
+   "note_summary": "Reserve Path A club, 1 client, 5,000 bottles avg",
+   "needs_enrichment": true
+  },
+  {
+   "gid": "1214588402258497",
+   "name": "Omid Farokhzad (Revel Cellars - Mostafa's buddy)",
+   "first": "Omid",
+   "last": "Farokhzad",
+   "channel": "Reserve-Client Direct",
+   "arr": 600,
+   "onb": 1375,
+   "stage": "Cold",
+   "modified_at": "2026-05-07T18:44:32.518Z",
+   "notes": "Reserve Path A | 1 client | 2,000 bottles avg Mostafa's buddy. Very little contact. Replied he would talk to Mostafa. No actual info about his cellar or cellar size other than he had Revel Cellars build his cellar. Wanted him to try CellarEye so we have a case and testimonial to share with Revel Cellars from one of their existing customers.",
+   "comments": [],
+   "note_summary": "Reserve Path A, 1 client, 2,000 bottles avg · Mostafa's buddy, very little contact, said he would talk to Mostafa, Revel Cellars built his cellar, wanted as testimonial case",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588512681258",
+   "name": "Cafe Vivant",
+   "first": "Christian",
+   "last": null,
+   "channel": "Hospitality",
+   "arr": 450,
+   "onb": 1125,
+   "stage": "Cold",
+   "modified_at": "2026-07-17T18:51:07.096Z",
+   "notes": "Reserve Path A | 1 client | 1,500 bottles avg",
+   "comments": [
     {
-      "name": "Palo Alto Hills Golf and Country Club",
-      "first": "David",
-      "last": null,
-      "channel": "Hospitality",
-      "arr": 1300,
-      "onb": 2562.5,
-      "stage": "Cold",
-      "notes": "Reserve Path A | 1 client | 5,000 bottles avg"
-    },
-    {
-      "name": "Menlo Circus Club",
-      "first": "Steffen",
-      "last": "Mrowczynski",
-      "channel": "Hospitality",
-      "arr": 1300,
-      "onb": 2562.5,
-      "stage": "Cold",
-      "notes": "Reserve Path A | 1 client | 5,000 bottles avg"
-    },
-    {
-      "name": "Omid Farokhzad (Revel Cellars)",
-      "first": "Omid",
-      "last": "Farokhzad",
-      "channel": "Reserve-Client Direct",
-      "arr": 600,
-      "onb": 1375,
-      "stage": "Cold",
-      "notes": "Mostafa's buddy. Wanted him to try CellarEye for a Revel Cellars testimonial."
-    },
-    {
-      "name": "Cafe Vivant",
-      "first": "Christian",
-      "last": null,
-      "channel": "Hospitality",
-      "arr": 450,
-      "onb": 1125,
-      "stage": "Cold",
-      "notes": "Reserve Path A | 1 client | 1,500 bottles avg"
-    },
-    {
-      "name": "Cellar Master Consulting - Marc Glassberg",
-      "first": "Marc",
-      "last": "Glassberg",
-      "channel": "Sommelier Managed",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Tier 1 SF cellar consultant. LinkedIn intro or warm referral best path."
-    },
-    {
-      "name": "Vintner's Collective - Garret Murphy",
-      "first": "Garret",
-      "last": "Murphy",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Verified owner. Represents ~20 small Napa producers."
-    },
-    {
-      "name": "A Taste of Monterey - Britt Talbert",
-      "first": "Britt",
-      "last": "Talbert",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Verified owner - tech/ops background. High-fit."
-    },
-    {
-      "name": "Ferry Plaza Wine Merchant - Peter Granoff, MS",
-      "first": "Peter",
-      "last": "Granoff",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Master Sommelier and tech founder."
-    },
-    {
-      "name": "The Sommelier Company - Jason Hartman",
-      "first": "Jason",
-      "last": "Hartman",
-      "channel": "Sommelier Managed",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Closest competitor pattern. M&A advisory background."
-    },
-    {
-      "name": "Draeger's Markets - Larry Ferguson",
-      "first": "Larry",
-      "last": "Ferguson",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Store director. Ask for wine dept lead."
-    },
-    {
-      "name": "The Cheese Shop (Carmel) - Kent Torrey",
-      "first": "Kent",
-      "last": "Torrey",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Iconic Carmel institution."
-    },
-    {
-      "name": "ACME Fine Wines - David Stevens",
-      "first": "David",
-      "last": "Stevens",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Owner. Co-runs with Karen Williams."
-    },
-    {
-      "name": "California Wine Merchant - Greg O'Flynn",
-      "first": "Greg",
-      "last": "O'Flynn",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Verified owner. 50+ year operator."
-    },
-    {
-      "name": "UOVO - Pamela Moore",
-      "first": "Pamela",
-      "last": "Moore",
-      "channel": "Wine Storage",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Director of BD. Soft entry before Page-Katz."
-    },
-    {
-      "name": "UOVO - Caroline Page-Katz",
-      "first": "Caroline",
-      "last": "Page-Katz",
-      "channel": "Wine Storage",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "President and COO of UOVO. C-suite conversation."
-    },
-    {
-      "name": "K&L Wine Merchants - Andrew Shaheen",
-      "first": "Andrew",
-      "last": "Shaheen",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Tier 1. Previously VP at Vinfolio."
-    },
-    {
-      "name": "Biondivino - Ceri Smith",
-      "first": "Ceri",
-      "last": "Smith",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Verified owner. Italian specialist."
-    },
-    {
-      "name": "ACME Fine Wines - Karen Williams",
-      "first": "Karen",
-      "last": "Williams",
-      "channel": "Retailer-Partner",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Verified founder."
-    },
-    {
-      "name": "Enotrias - Melissa L. Smith",
-      "first": "Melissa",
-      "last": "Smith",
-      "channel": "Sommelier Managed",
-      "arr": null,
-      "onb": null,
-      "stage": "Cold",
-      "notes": "Court of Master Somms + State Bar appraiser."
-    },
-    {
-      "name": "Nos Caves Vin",
-      "first": "Jost",
-      "last": "Lunstroth",
-      "channel": "Cellar Builder",
-      "arr": 3000,
-      "onb": 2250,
-      "stage": "Warm",
-      "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"
-    },
-    {
-      "name": "Vintage Cellars",
-      "first": "Chris",
-      "last": "Noel",
-      "channel": "Cellar Builder",
-      "arr": 3000,
-      "onb": 2250,
-      "stage": "Warm",
-      "notes": "Recommended by Dustin. Interested but no call yet."
-    },
-    {
-      "name": "Bevrly",
-      "first": "Yaacov",
-      "last": "Barselah",
-      "channel": null,
-      "arr": null,
-      "onb": null,
-      "stage": "Warm",
-      "notes": "Mostafa in conversation with Yaacov."
-    },
-    {
-      "name": "Remington Hotels",
-      "first": "Ted",
-      "last": "Peters",
-      "channel": "Hospitality",
-      "arr": null,
-      "onb": null,
-      "stage": "Warm",
-      "notes": "Active outreach in progress."
-    },
-    {
-      "name": "1275 Collections",
-      "first": "Denis",
-      "last": "Houles",
-      "channel": "Sommelier Managed",
-      "arr": null,
-      "onb": null,
-      "stage": "Warm",
-      "notes": "Geneva. Referred by Danielle's contact. ~100 customers. Wants to test. Demo with Anthony and Mark when Denis returns to Geneva."
-    },
-    {
-      "name": "Winebank",
-      "first": "Don",
-      "last": "Fox",
-      "channel": "Wine Storage",
-      "arr": 6000,
-      "onb": 4500,
-      "stage": "Qualified",
-      "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"
-    },
-    {
-      "name": "Drink with Me",
-      "first": "Joshua",
-      "last": "Plack",
-      "channel": "Sommelier Managed",
-      "arr": 3000,
-      "onb": 2250,
-      "stage": "Qualified",
-      "notes": "Sommeliers Path B. Duplicate task needs merge."
-    },
-    {
-      "name": "Plack, Joshua - Drink With Me",
-      "first": "Joshua",
-      "last": "Plack",
-      "channel": "Sommelier Managed",
-      "arr": null,
-      "onb": null,
-      "stage": "Qualified",
-      "notes": "DUPLICATE - merge with 'Drink with Me' above."
-    },
-    {
-      "name": "WeShip Express",
-      "first": "Scott",
-      "last": "Kennedy",
-      "channel": "Wine Storage",
-      "arr": 60000,
-      "onb": 150000,
-      "stage": "Demo",
-      "notes": "400 clients via Eagle Rock acquisition. Plan to scale 10x. Evaluating CellarEye vs build-in-house."
-    },
-    {
-      "name": "Addison by William Bradley",
-      "first": "Sean",
-      "last": "McGinness",
-      "channel": "Hospitality",
-      "arr": 7500,
-      "onb": 22400,
-      "stage": "Demo",
-      "notes": "Cellar 5,001-10,000 bottles."
-    },
-    {
-      "name": "Sharon Heights Golf & Country Club",
-      "first": "Efrain",
-      "last": "Sanchez",
-      "channel": "Hospitality",
-      "arr": 3300,
-      "onb": 13200,
-      "stage": "Demo",
-      "notes": "Path A | CellarEye. Expected close 2026-11-30."
-    },
-    {
-      "name": "Los Altos Golf & Country Club",
-      "first": "Andrew",
-      "last": "Sparling",
-      "channel": "Hospitality",
-      "arr": 1500,
-      "onb": 7500,
-      "stage": "Demo",
-      "notes": "Cellar 2,501-5,000 bottles."
-    },
-    {
-      "name": "Rosehill Wine Cellars",
-      "first": "Jonathan",
-      "last": "Gilkes",
-      "channel": "Cellar Builder",
-      "arr": 6000,
-      "onb": 4500,
-      "stage": "Demo",
-      "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg"
-    },
-    {
-      "name": "Colgin Cellars",
-      "first": "Brandon",
-      "last": "Benelli",
-      "channel": "Reserve-Client Direct",
-      "arr": 2200,
-      "onb": 3812.5,
-      "stage": "Demo",
-      "notes": "Reserve Path A | 1 client | 10,000 bottles avg"
-    },
-    {
-      "name": "Innovative Cellars",
-      "first": "Sandy",
-      "last": "Horwitz",
-      "channel": "Cellar Builder",
-      "arr": 3000,
-      "onb": 2250,
-      "stage": "Demo",
-      "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg"
-    },
-    {
-      "name": "Meritage Wine Market",
-      "first": "Dustin",
-      "last": "Cano",
-      "channel": "Sommelier Managed",
-      "arr": 3000,
-      "onb": 2250,
-      "stage": "Demo",
-      "notes": "Sommeliers Path B. Existing reseller for Manny + Ron."
-    },
-    {
-      "name": "Camper",
-      "first": "Greg",
-      "last": null,
-      "channel": "Hospitality",
-      "arr": 450,
-      "onb": 1125,
-      "stage": "Demo",
-      "notes": "Reserve Path A | 1 client | 1,500 bottles avg"
-    },
-    {
-      "name": "The Spotted Duck",
-      "first": "Jerry",
-      "last": "Regester",
-      "channel": "Hospitality",
-      "arr": null,
-      "onb": null,
-      "stage": "Demo",
-      "notes": "Beta deployment live in Pacific Grove."
-    },
-    {
-      "name": "Tedd Glennon",
-      "first": "Ted",
-      "last": "Glennon",
-      "channel": "Sommelier Program",
-      "arr": null,
-      "onb": null,
-      "stage": "Demo",
-      "notes": "Met 7/10. Asilomar Fine Wine. Evaluating. Interested in SOM + ambassador roles."
-    },
-    {
-      "name": "Pausa San Mateo",
-      "first": "Andrea",
-      "last": "Giuliani",
-      "channel": "Hospitality",
-      "arr": null,
-      "onb": null,
-      "stage": "Proposal",
-      "notes": "Met 7/10. Chef-owner. Positive on digital wine menu; wants print list w/ QR. Proposal being delivered Tue/Wed this week."
-    },
-    {
-      "name": "The Grove at Point Pinos",
-      "first": "Jerry",
-      "last": "Regester",
-      "channel": "Hospitality",
-      "arr": null,
-      "onb": null,
-      "stage": "Proposal",
-      "notes": "Second restaurant from Spotted Duck owners. Opens late August after Pebble Beach Concours. Mark built their website (thegrovepointpinos.com) free in exchange for platform onboarding at a fee."
+     "at": "2026-07-16T18:51:37.506Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Talk to Jason or Charlie.  Mostafa spoke to them."
     }
-  ],
-  "won": [
+   ],
+   "note_summary": "Reserve Path A, 1 client, 1,500 bottles avg · route in through Jason or Charlie, Mostafa has spoken to them",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591261111004",
+   "name": "Cellar Master Consulting - Marc Glassberg",
+   "first": "Marc",
+   "last": "Glassberg",
+   "channel": "Sommelier Managed",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.429Z",
+   "notes": "TIER 1 - MARQUEE SOMMELIER AND CELLAR CONSULTANT Owner and Wine Consultant at Cellar Master Consulting, San Francisco. 25+ years in Michelin-starred service. CAREER ARC: Cellar Master Consulting since 2008. Prior: Wine Director at State Bird Provisions, Sommelier at Quince and Gary Danko, Captain at Ritz-Carlton SF Dining Room and Aureole NYC. WHY THIS MATTERS: Builds and manages multi-million-dollar private cellars across SF. Either the highest-value partner or the sharpest critic in the SF advisor segment. LINKEDIN: linkedin.com/in/marc-glassberg-12706131 OUTREACH APPROACH: Email-direct unlikely to land. Best path is LinkedIn introduction or warm referral through one of the SF retailers (Ferry Plaza, Biondivino) who likely cross-paths with him.",
+   "comments": [
     {
-      "name": "Manny Machado (Meritage)",
-      "first": "Manny",
-      "last": "Machado",
-      "channel": "Sommelier Managed",
-      "arr": 129,
-      "onb": 400,
-      "stage": "Closed Won",
-      "notes": "Install completed. Payment received 2/11 and 2/17."
+     "at": "2026-05-06T22:49:45.648Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT (LinkedIn approach recommended over direct email)\\n\\nSubject: SF private cellars and a tool worth a look\\n\\nMarc,\\n\\nMark Ainsworth here, CEO of CellarEye. I came across your work managing private cellars across SF and wanted to reach out directly.\\n\\nThe operators I respect most in the cellar advisory space tend to be the ones who have already built or borrowed their own systems to keep client collections organized. CellarEye is the platform side of that work: bottle-level inventory, provenance tracking, valuation, and client-facing reporting, with a sommelier-managed channel built specifically for advisors who run cellars on behalf of collectors.\\n\\nI would value 20 minutes of your time, on or off the record, to hear what is actually missing from the tools you use today and where the platform side of cellar advisory is heading. Happy to come to you.\\n\\nMark Ainsworth\\nCEO, CellarEye\\nmark@cellareye.com"
     },
     {
-      "name": "Ron Montbleau (Meritage)",
-      "first": "Ron",
-      "last": "Montbleau",
-      "channel": "Sommelier Managed",
-      "arr": 129,
-      "onb": 200,
-      "stage": "Closed Won",
-      "notes": "Install completed. Feedback via Dustin: scanning issues, missing CA valuations."
+     "at": "2026-05-06T22:53:27.916Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT (LinkedIn approach recommended over direct email - this is the cleaned version)\nSubject: SF private cellars and a tool worth a look\n\nMarc,\n\nMark Ainsworth here, CEO of CellarEye. I came across your work managing private cellars across SF and wanted to reach out directly.\n\nThe operators I respect most in the cellar advisory space tend to be the ones who have already built or borrowed their own systems to keep client collections organized. CellarEye is the platform side of that work: bottle-level inventory, provenance tracking, valuation, and client-facing reporting, with a sommelier-managed channel built specifically for advisors who run cellars on behalf of collectors.\n\nI would value 20 minutes of your time, on or off the record, to hear what is actually missing from the tools you use today and where the platform side of cellar advisory is heading. Happy to come to you.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
     }
-  ],
-  "lost": [
+   ],
+   "note_summary": "SF sommelier and cellar consultant, 25+ years Michelin-starred service, builds multi-million-dollar private cellars · cold email drafted 2026-05-06, LinkedIn or retailer referral the recommended path, no outreach sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591206623853",
+   "name": "Vintner's Collective - Garret Murphy",
+   "first": "Garret",
+   "last": "Murphy",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.388Z",
+   "notes": "VERIFIED OWNER - AUTHOR AND OPERATOR Owner / Managing Partner at Vintner's Collective since 2002. Downtown Napa. Author of The Gentleman Farmer. WHY THIS MATTERS: Represents ~20 small Napa producers. One of the oldest and best tasting rooms in downtown Napa. Apollo lists $7.3M revenue, 15 employees. LINKEDIN: linkedin.com/in/garret-murphy-66697412 OUTREACH APPROACH: Note correct first-name spelling: Garret (single t), not Garrett. Email is on a different domain (vcnv.com) than the public website (vintnerscollective.com).",
+   "comments": [
     {
-      "name": "The Ritz London (Sorrells)",
-      "first": "Tim",
-      "last": "Lewis",
-      "channel": "Hospitality",
-      "arr": 15700,
-      "onb": 150000,
-      "stage": "Closed Lost",
-      "notes": "Reserve Path A | 100,000 bottles | Custom dev included."
-    },
-    {
-      "name": "Jimmy Butler (Harper's)",
-      "first": "Chris",
-      "last": "Hoel",
-      "channel": "Sommelier Managed",
-      "arr": null,
-      "onb": 27800,
-      "stage": "Closed Lost",
-      "notes": "On Hold. Last change 2/5/26."
-    },
-    {
-      "name": "Chai Consulting",
-      "first": "Maureen",
-      "last": "Downey",
-      "channel": "Sommelier Managed",
-      "arr": 6500,
-      "onb": 3281.25,
-      "stage": "Closed Lost",
-      "notes": "Moved from Stalled 7/14. Was prototype for Singapore."
-    },
-    {
-      "name": "Rockcliffe Hotel (Sorrells)",
-      "first": "Tim",
-      "last": "Lewis",
-      "channel": "Hospitality",
-      "arr": null,
-      "onb": null,
-      "stage": "Closed Lost",
-      "notes": "Prospect stage. Last change 1/21/26."
-    },
-    {
-      "name": "Revel Cellars",
-      "first": "Jim",
-      "last": "Cash",
-      "channel": "Cellar Builder",
-      "arr": null,
-      "onb": null,
-      "stage": "Closed Lost",
-      "notes": "Demo completed."
-    },
-    {
-      "name": "Four Seasons George V",
-      "first": "Antoine",
-      "last": "Desmoulins",
-      "channel": "Hospitality",
-      "arr": null,
-      "onb": null,
-      "stage": "Closed Lost",
-      "notes": "Demo completed. Cellar 10,001+."
+     "at": "2026-05-06T22:51:43.434Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: Twenty Napa producers and one inventory system\n\nGarret,\n\nMark Ainsworth here, CEO of CellarEye. Vintner's Collective sits in an unusual spot in the Napa retail landscape: representing roughly twenty small producers under one roof is operationally complex in ways most outsiders underestimate.\n\nCellarEye is the platform layer for fine wine retailers, with bottle-level inventory, allocation tracking, and customer history built in. The producer-collective model, where each bottle has a story and a relationship behind it, is exactly where generic POS tools fall short.\n\nTwenty minutes is what I am asking for, on or off the record. Happy to come to Main Street whenever works.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
     }
-  ]
+   ],
+   "note_summary": "Napa producer collective since 2002 representing ~20 small producers, $7.3M revenue, 15 employees · cold email drafted 2026-05-06, not yet sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591272412630",
+   "name": "A Taste of Monterey - Britt Talbert",
+   "first": "Britt",
+   "last": "Talbert",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.434Z",
+   "notes": "VERIFIED OWNER - BRAND NEW, TECH/OPS BACKGROUND, NO WINE INDUSTRY BIASES Owner at A Taste of Monterey since June 2025. Co-founder of Salsa Media LLC. Pacific Grove resident. CAREER ARC: US Navy 1992-2013 (S-3B Viking Naval Flight Officer, Deputy CIO Naval Air Forces Pacific). Then Dell Senior Program Manager, GM Senior Program Manager (Information Security and Transformation PMO), KPMG-style consulting, Knowledge Point. Just bought A Taste of Monterey June 2025. WHY THIS MATTERS: Brand new owner with non-traditional wine background. Came from tech/military/operations - not the wine industry. Likely highly receptive to operational tools and platform conversations. Exactly the buyer profile that needs CellarEye and does not have legacy biases. LINKEDIN: linkedin.com/in/britttalbert PERSONAL EMAIL: bctalbert@gmail.com OUTREACH APPROACH: HIGH-FIT WARM CONVERSATION. Lead with welcome-to-the-business framing and offer to share what tools other operators in the segment use.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:52:22.905Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: Welcome to the wine business\n\nBritt,\n\nMark Ainsworth here, CEO of CellarEye. Congratulations on taking over A Taste of Monterey. Coming into the wine industry from a Navy and Dell and GM background gives you something most operators in this space do not have: a clear-eyed view of how operational tools should actually work, without the legacy baggage that traps people who have only ever known wine retail tooling.\n\nThat is why I am writing. CellarEye is bottle-level inventory and customer history built for fine wine retailers, and we are quietly looking for operators who care about getting the platform decisions right early, before the patterns calcify.\n\nI am not pitching at you cold. I am asking for 20 minutes of operator-to-operator conversation, on or off the record. The most valuable thing you could give me is your honest read on what you walked into and what you need. Happy to come to Cannery Row.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Cannery Row wine retailer, owner since June 2025 from a Navy, Dell and GM tech/ops background · cold email drafted 2026-05-06 asking for 20 minutes, no reply logged",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591261508423",
+   "name": "Ferry Plaza Wine Merchant - Peter Granoff, MS",
+   "first": "Peter",
+   "last": "Granoff",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.463Z",
+   "notes": "TIER 1 - MASTER SOMMELIER AND TECH FOUNDER Owner/Partner at Ferry Plaza Wine Merchant. Master Sommelier. Co-Founder of Virtual Vineyards (1994), the first wine e-commerce site in the world. OWNS: Ferry Plaza Wine Merchant, Oxbow Cheese and Wine Merchant (Napa), Mission Bay Wine and Cheese (SF), and Custom Wine Sourcing, Inc (mgmt company). CAREER ARC: Custom Wine Sourcing 2002-present. Co-founded Virtual Vineyards 1994-2001. MS credential. WHY THIS MATTERS: One of the few Master Sommeliers who is also a tech founder. He will grasp the CellarEye pitch faster than almost anyone on the list. LINKEDIN: linkedin.com/in/petergranoffms OUTREACH APPROACH: Apollo did not surface a verified business email; personal email captured. Lead with Virtual Vineyards / fellow-builder framing.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:50:22.648Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: From Virtual Vineyards to what comes next\n\nPeter,\n\nMark Ainsworth here, CEO of CellarEye. I am writing because of a piece of your background I keep returning to: you co-founded the first wine e-commerce site in 1994. Most of the people in our space have not built anything from a blank page. You have.\n\nCellarEye is bottle-level inventory and valuation, built for retailers, sommeliers, and direct collectors, with a private-client tier and a sommelier-managed channel for advisors. We are at the stage where the right operator perspective is worth more than another round of feature-list feedback.\n\nI would value 20 minutes whenever it suits you. Happy to come to the Ferry Building or anywhere else.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Master Sommelier and co-founder of Virtual Vineyards (1994), owns Ferry Plaza Wine Merchant plus Oxbow Cheese and Wine Merchant and Mission Bay Wine and Cheese · cold email drafted 2026-05-06, not yet sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591473287144",
+   "name": "The Sommelier Company - Jason Hartman (President)",
+   "first": "Jason",
+   "last": "Hartman",
+   "channel": "Sommelier Managed",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.453Z",
+   "notes": "COMPETITIVE INTEL - PRESIDENT WITH M&A BACKGROUND President at The Sommelier Company since October 2024. Huntington Beach HQ but covers Bay Area through SF/local sommelier team. CAREER ARC: KPMG US Director, Deal Advisory (2019-2024). Audit Senior Associate at RSM US. Former co-owner of Grandma's French Fries restaurant. WHY THIS MATTERS: The Sommelier Company is the closest direct competitor pattern in the list - full-service cellar mgmt, appraisals, expert witness work, virtual tastings. Hartman's M&A advisory background suggests this firm may be on a build-or-be-acquired trajectory. Treat as competitive intel / partnership exploration, not pure sales. LINKEDIN: linkedin.com/in/jason-hartman-b0255161 OUTREACH APPROACH: Verified email available. Position as peer-to-peer operator conversation. Could go anywhere - competition, partnership, or eventual M&A discussion.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:52:44.062Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT (Treat as competitive intel / partnership conversation, not pure sales)\nSubject: A peer-to-peer note from CellarEye\n\nJason,\n\nMark Ainsworth here, CEO of CellarEye. The Sommelier Company and CellarEye sit in adjacent corners of the same market, and I think it is worth a candid conversation, founder-CEO to president, while it is still early enough to map out where we naturally complement and where we naturally compete.\n\nCellarEye is the platform layer for cellar inventory, valuation, and reporting, sold to retailers, sommelier-led advisors, and direct collectors. Your team's full-service model and our platform model are different bets on the same problem space, and the operators we both serve will benefit from clarity on what each side does best.\n\nYour background in deal advisory at KPMG suggests you would not find this conversation strange. I would welcome 30 minutes whenever it works. Virtual is fine.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Full-service cellar management competitor (appraisals, expert witness, virtual tastings), president is ex-KPMG deal advisory · cold email drafted 2026-05-06 proposing peer-to-peer partnership call, not yet sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591473310225",
+   "name": "Draeger's Markets - Larry Ferguson (Store Director)",
+   "first": "Larry",
+   "last": "Ferguson",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.409Z",
+   "notes": "STORE DIRECTOR - DIFFERENT SALES MOTION Store Director at Draeger's Markets since May 2022. San Francisco resident. CAREER ARC: Berkeley Bowl Marketplace General Manager. New Leaf Community Markets Operations Manager. Self-employed independent contractor 2017-2022. WHY THIS MATTERS: Store director, not wine department buyer specifically - but the right person to make the introduction to whoever runs the wine program. Grocery-store wine departments are an unusual sales motion; treat as account introduction, not direct ICP. LINKEDIN: linkedin.com/in/larry-ferguson-4651a81a PERSONAL EMAIL: larferg@comcast.net OUTREACH APPROACH: Verified business email plus personal email. Ask for the wine department lead in opening note, do not pitch directly.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:52:32.830Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT (Use as referral request, not direct pitch)\nSubject: Quick referral request for Draeger's wine program\n\nLarry,\n\nMark Ainsworth here, CEO of CellarEye. I am working on a project that I think would be relevant to whoever runs the wine program at Draeger's, and I wanted to come through the front door rather than try to find them by guesswork.\n\nCellarEye is bottle-level inventory and customer-history software built for fine wine retailers and the collectors who buy from them. Specialty grocers with serious wine programs are a category we work with carefully, because the operational picture is different from a pure-play wine shop.\n\nCould you point me to the right person, or let me know what the best way is to make that introduction? Happy to share more context first if useful.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Store Director at Draeger's Markets since May 2022, ex Berkeley Bowl GM · referral request drafted 2026-05-06 asking Larry to point to the wine program lead, not a direct pitch",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591261508486",
+   "name": "The Cheese Shop (Carmel) - Kent Torrey",
+   "first": "Kent",
+   "last": "Torrey",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.628Z",
+   "notes": "OWNER - ICONIC CARMEL INSTITUTION Owner at The Cheese Shop Inc., Carmel-by-the-Sea. AOL email suggests longtime industry person. WHY THIS MATTERS: Iconic Carmel cheese plus fine wine shop. $20 wine and cheese pairing tastings. 4.9 stars across 453 reviews. Tourist-heavy with serious local clientele. LINKEDIN: linkedin.com/in/kent-torrey-66b2b92a OUTREACH APPROACH: Personal email captured (rkenttorrey@aol.com). Use info@thecheeseshopinc.com for business approach, personal email for direct.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:52:12.000Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: Carmel cheese, Carmel wine, and the inventory layer underneath\n\nKent,\n\nMark Ainsworth here, CEO of CellarEye. The Cheese Shop is one of the most beloved retail destinations on the entire Monterey Peninsula, and the wine and cheese pairing flight you offer is a small operational masterpiece.\n\nCellarEye is the platform layer for fine wine retailers, with bottle-level inventory and customer history built for shops where the wine program is a real part of the business but not the only part. We work especially well for operators where allocation, gifting, and shipping all need to live in one place.\n\nI would welcome 20 minutes whenever it works. Happy to come to Carmel.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Iconic Carmel cheese and fine wine shop, 4.9 stars across 453 reviews, $20 pairing tastings · cold email drafted 2026-05-06, not yet sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591261410389",
+   "name": "ACME Fine Wines - David Stevens (Owner)",
+   "first": "David",
+   "last": "Stevens",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.647Z",
+   "notes": "OWNER - ACME FINE WINES Owner at ACME Fine Wines, St. Helena. WHY THIS MATTERS: Co-runs the operation with Karen Williams (Founder, who has a verified email). Together, the leadership team behind one of Napa's most respected curated retailers. LINKEDIN: linkedin.com/in/david-stevens-5aa5086 OUTREACH APPROACH: No verified email surfaced. Reach via Karen Williams (verified email) and ask for David, or use info@acmefinewines.com.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:52:02.801Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT (No verified email; reach via info@acmefinewines.com or through Karen Williams)\nSubject: ACME Fine Wines, owner-to-owner conversation\n\nDavid,\n\nMark Ainsworth here, CEO of CellarEye. I reached out separately to Karen, but wanted to write to you directly as well, because the operational view from your seat is often a different read than from the founder seat.\n\nCellarEye is bottle-level inventory and customer-history infrastructure built for fine wine retailers. Allocation tracking, cult and limited-release mailing list management, and reporting that ties customer relationships to actual buying behavior. The right kind of platform makes that operational job easier; the wrong kind makes it worse.\n\nI would welcome 20 minutes whenever it works, joint with Karen or separately. Happy to come to St. Helena.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Owner at ACME Fine Wines, St. Helena, co-runs one of Napa's respected curated retailers with founder Karen Williams · cold email drafted 2026-05-06, no verified email, reach via Karen or info@",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591272436732",
+   "name": "California Wine Merchant - Greg O'Flynn",
+   "first": "Greg",
+   "last": "O'Flynn",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.497Z",
+   "notes": "VERIFIED OWNER - 50+ YEAR OPERATOR Owner at California Wine Merchant since 1974. Marina district SF. WHY THIS MATTERS: Founder, full stop - first wine bar in SF. Five decades of relationships with collectors and producers. Wine club plus retail plus bar; integrated operation. LINKEDIN: linkedin.com/in/greg-o-flynn-43a4156 PERSONAL EMAIL: gregoflynn@gmail.com OUTREACH APPROACH: Both work and personal emails verified. 50+ year operator - speak to the long view. Some service complaints in recent reviews; owner-direct outreach likely best path.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:51:09.182Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: 50 years of California Wine Merchant and where the platform side is heading\n\nGreg,\n\nMark Ainsworth here, CEO of CellarEye. After 50 years on Chestnut Street, you have seen every wine technology fad and survived all of them. That perspective is worth more than most.\n\nCellarEye is bottle-level inventory and valuation built for fine wine retailers and the collectors who buy from them. Wine club, retail, and bar in one operation like yours is exactly the kind of integrated business where a single source of truth on inventory, pricing, and customer history pays back the fastest.\n\nI would welcome 20 minutes whenever it works. Happy to come to the Marina. The most useful thing for me would be your honest read on what is missing from the tools small fine wine retailers actually have available today.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "SF Marina wine bar, retail and club, founder-owned since 1974 · cold email drafted 2026-05-06 to Greg O'Flynn, no reply logged yet",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591473423194",
+   "name": "UOVO - Pamela Moore (Director of BD)",
+   "first": "Pamela",
+   "last": "Moore",
+   "channel": "Wine Storage",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.509Z",
+   "notes": "UOVO SOFT ENTRY - DIRECTOR OF BUSINESS DEVELOPMENT Director of Business Development at UOVO since September 2023. Dallas, TX (covers Southern markets). CAREER ARC: VP Sales at Displays Fine Art Services (2021-2023). General Manager at Displays before that. Co-Owner of Dobbs Medical Sales (2005-2012). WHY THIS MATTERS: Useful operational contact at UOVO - non-C-suite door, more accessible than Page-Katz for early conversations. Texas base means she covers their southern markets but has full picture of the BD pipeline. LINKEDIN: linkedin.com/in/pamela-moore-93526111b OUTREACH APPROACH: Verified email. Good soft entry into UOVO before escalating to Page-Katz. Lead with curiosity about BD initiatives, not pitch.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:53:14.497Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT (Soft entry to UOVO before escalating to Page-Katz)\nSubject: A note from CellarEye, curious about UOVO BD priorities\n\nPamela,\n\nMark Ainsworth here, CEO of CellarEye. I am reaching out across the country with what I hope is a quick, useful note rather than a sales pitch.\n\nCellarEye is a platform for cellar inventory, valuation, and customer history, serving retailers, sommelier-led advisors, and direct collectors. UOVO has built one of the most credible operations in fine art and wine logistics, and the BD function is where the strategy meets the operators we both end up serving.\n\nI am not asking for a meeting today. I would value 15 minutes by phone whenever it works to listen to how UOVO thinks about the platform versus services line in this category, and to share what we are seeing on our side. If the conversation is better had at a different level inside UOVO, your guidance on that would be welcome too.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "UOVO Director of BD since September 2023, Dallas TX covering Southern markets, non-C-suite soft entry ahead of Page-Katz · cold email drafted 2026-05-06, no reply logged",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591473237966",
+   "name": "UOVO - Caroline Page-Katz",
+   "first": "Caroline",
+   "last": "Page-Katz",
+   "channel": "Wine Storage",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.491Z",
+   "notes": "TIER 1 - STRATEGIC C-SUITE (COMPETITOR / PARTNER / ACQUIRER) President and COO, Board Member at UOVO. NYC-based. UOVO has 240 employees, $69.9M revenue, with a Napa wine division. CAREER ARC: Christie's VP of Logistics and Special Collections (2008-2015). Joined UOVO 2015 as VP Special Projects. COO from 2016, President and COO from 2021. Promoted to Board Member 2025. WHY THIS MATTERS: UOVO is a 240-person fine art and wine storage logistics firm with insurance and museum partnerships. Page-Katz came from Christie's; she understands collectors, valuation, and the appraisal market deeply. C-suite caliber conversation. LINKEDIN: linkedin.com/in/caroline-page-katz-8027833 OUTREACH APPROACH: Treat as competitor mapping / strategic partnership conversation, not standard sales prospect. Soft entry through Pamela Moore (BD director) may be more accessible first step.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:50:49.194Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: A note from CellarEye, peer to peer\n\nCaroline,\n\nMark Ainsworth here, CEO of CellarEye. I wanted to reach out directly rather than through a side door because the conversation I am hoping to have is best had at your level.\n\nUOVO has built a remarkable operation in fine art and wine logistics, and the wine division specifically sits at an interesting intersection with what we are building. CellarEye is the platform layer for cellar inventory, valuation, and reporting, sold to retailers, sommelier-led advisors, and direct collectors. There are real points of overlap and at least as many of natural complement.\n\nI am not pitching, at least not yet. I would value 30 minutes to share what we are seeing and to listen to how UOVO thinks about the platform versus services line in this category. Happy to come to New York, or to do it virtually.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "NYC fine art and wine storage firm, 240 employees, $69.9M revenue with a Napa wine division · cold email drafted to the President and COO, peer to peer, not yet sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591473454505",
+   "name": "K&L Wine Merchants - Andrew Shaheen",
+   "first": "Andrew",
+   "last": "Shaheen",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.629Z",
+   "notes": "TIER 1 - HIGHEST-LEVERAGE CONVERSATION ON THE LIST VP of Private Client Services at K&L Wine Merchants. Joined June 2025. Previously VP Sales/Buying US at Vinfolio and FINE+RARE - exact CellarEye competitive space. CAREER ARC: Vinfolio/FINE+RARE VP Sales and Buying US (2022-2025). Winebow District Manager. Marciano Estate Sales/Mktg Director. Owner of GATHER Wines and Shaheen Wine Consulting. Two stints at Kimberly Jones Selections. Wine sales and Bordeaux futures buyer at The Wine House. WHY THIS MATTERS: He knows the collector platform landscape better than nearly anyone in NorCal retail. Just took over private client services at the largest fine wine retailer on the Peninsula. Both a primary buyer and strategic intelligence asset. LINKEDIN: linkedin.com/in/andrew-shaheen-58b0a48 OUTREACH APPROACH: Verified business email plus personal email (andrewshaheen@yahoo.com). Lead with Vinfolio-aware framing - what he saw work and what didn't, what K&L private clients are asking for that current tools don't deliver.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:50:00.031Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: K&L Private Client Services and the platform layer underneath\n\nAndrew,\n\nMark Ainsworth here, CEO of CellarEye. Congratulations on the move to K&L; the timing is interesting given how much the collector platform space has shifted in the past 18 months.\n\nYou saw the inside of Vinfolio and FINE+RARE through a period of real change in that segment. CellarEye is a different bet on the same problem space: bottle-level inventory and valuation built for retailers, sommelier-led advisors, and direct collectors, with a private-client tier designed for accounts that need real reporting and provenance discipline rather than spreadsheet exports.\n\nI would value a candid conversation, peer to peer. Happy to come to Redwood City. Twenty minutes, no deck, just a working operator's read on what private client services actually need from a platform.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "VP Private Client Services at K&L Wine Merchants, ex Vinfolio and FINE+RARE VP Sales/Buying US · cold email drafted 2026-05-06, Vinfolio-aware framing, no reply logged",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591261179130",
+   "name": "Biondivino - Ceri Smith",
+   "first": "Ceri",
+   "last": "Smith",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.630Z",
+   "notes": "VERIFIED OWNER - ITALIAN WINE SPECIALIST Owner at Biondivino since 2006. Russian Hill SF. Owns Ceri Smith Selections (CSS) wholesale/import brand alongside the shop. WHY THIS MATTERS: Reviewers call this the best Italian wine selection in NorCal. Wine club plus private clients. Has wholesale/import side that may be its own strategic conversation. LINKEDIN: linkedin.com/in/ceri-smith-ab1376 PERSONAL EMAILS: smith.ceri@gmail.com / cerismith@hotmail.com / biondivino@gmail.com OUTREACH APPROACH: Verified business email plus three personal emails available. Italian heritage angle could resonate.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:51:27.121Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: Italian wine collectors and the inventory problem\n\nCeri,\n\nMark Ainsworth here, CEO of CellarEye. Biondivino is consistently named the best Italian wine selection in NorCal, and the wine club model you have built is a quiet template for what specialty retail should look like.\n\nCellarEye is the platform layer for fine wine retailers and the collectors who buy from them. Bottle-level inventory, provenance tracking, and customer-facing reporting. For a shop with both retail and a wholesale or import side like Ceri Smith Selections, the tooling decisions matter twice over.\n\nI would welcome 20 minutes to share what we are building and to listen to how you think about inventory and customer history across the two operations. Happy to come to Russian Hill.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Italian wine specialist, owner of Biondivino in Russian Hill SF since 2006, plus Ceri Smith Selections wholesale/import brand · cold email drafted 2026-05-06, not yet sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591342736953",
+   "name": "ACME Fine Wines - Karen Williams (Founder)",
+   "first": "Karen",
+   "last": "Williams",
+   "channel": "Retailer-Partner",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.634Z",
+   "notes": "VERIFIED FOUNDER - HIGH-END CURATED NAPA SHOP Founder at ACME Fine Wines since 2003. St. Helena. Co-runs with David Stevens (Owner). WHY THIS MATTERS: 4.8-star high-end curated Napa shop. Ships nationally. Strong collector clientele. LINKEDIN: linkedin.com/in/karen-williams-bb7a432a9 OUTREACH APPROACH: Verified email. Primary point of contact for ACME - David Stevens does not have a verified email surfaced. Consider asking for both in opening note.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:51:53.254Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: ACME Fine Wines and the platform underneath\n\nKaren,\n\nMark Ainsworth here, CEO of CellarEye. ACME has built one of the most respected curated retail operations in St. Helena, with a national shipping business and a real collector clientele. The kind of shop that gets named by name when collectors talk about who they trust.\n\nCellarEye is bottle-level inventory and customer-history infrastructure built for fine wine retailers exactly like ACME. Allocation tracking, mailing list management for cult and limited-release bottles, and reporting that ties customer relationships to actual buying patterns over time.\n\nI would welcome 20 minutes to share what we are seeing and to listen to where ACME wants the platform side to be in two years. Happy to come to St. Helena. If David should be part of the conversation I would be glad to have you both.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "High-end curated Napa shop in St. Helena since 2003, 4.8 stars, ships nationally to collectors · cold email drafted 2026-05-06 to founder Karen Williams, no reply logged",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214591342736892",
+   "name": "Enotrias - Melissa L. Smith",
+   "first": "Melissa",
+   "last": "Smith",
+   "channel": "Sommelier Managed",
+   "arr": null,
+   "onb": null,
+   "stage": "Cold",
+   "modified_at": "2026-06-24T20:32:47.489Z",
+   "notes": "TIER 1 - MARQUEE SOMMELIER AND WINE APPRAISER Founder of Enotrias Elite Sommelier Services. Court of Master Sommeliers certified. CA State Bar MCLE Single Activity Provider for wine valuation since 2017. CAREER ARC: Enotrias since 2011. Former Head Sommelier and Sake Buyer at K&L Wine Merchants. Past stints at The Sea by Alexander's Steakhouse, Hakkasan, Wine Spectator Greystone, Terra Restaurant. RECOGNITION: Forbes and Robb Report featured. Creator of Wine Collecting Master Class. WHY THIS MATTERS: Built her own proprietary cellar inventory software. Court of Master Somms plus State Bar appraiser is a rare double-credential. Insurance and estate appraisal channel unlock. LINKEDIN: linkedin.com/in/themelissasmith OUTREACH APPROACH: Verified email available. Direct email is appropriate. Note her former K&L role gives her a network across nearly every name on this list.",
+   "comments": [
+    {
+     "at": "2026-05-06T22:50:13.020Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "PROPOSED COLD EMAIL DRAFT\nSubject: A platform layer for the appraisal channel\n\nMelissa,\n\nMark Ainsworth here, CEO of CellarEye. Your work at the intersection of sommelier services, valuation, and the State Bar MCLE channel stood out to me for an obvious reason: those three together are exactly where most platforms fall short.\n\nCellarEye is the inventory and provenance layer beneath that kind of practice. Bottle-level tracking, USPAP-friendly valuation outputs, and reporting clients can actually share with insurance carriers and counsel. We have a sommelier-managed channel for advisors who run cellars on behalf of collectors, with the unit economics built around how that work actually gets done.\n\nI would welcome 20 minutes to hear how you assemble appraisal records today and where the friction sits, on or off the record. Happy to come to you.\n\nMark Ainsworth\nCEO, CellarEye\nmark@cellareye.com"
+    }
+   ],
+   "note_summary": "Court of Master Sommeliers certified appraiser, CA State Bar MCLE provider since 2017, founder of Enotrias since 2011 · cold email drafted 2026-05-06, not yet sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588402361421",
+   "name": "Nos Caves Vin",
+   "first": "Jost",
+   "last": "Lunstroth",
+   "channel": "Cellar Builder",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Warm",
+   "modified_at": "2026-06-23T14:56:13.256Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:13.230Z",
+     "by": "Danielle",
+     "text": "Jost Lunstroth, Houston-based wine collection consultant. Extended his subscription and actively showing CellarEye to clients. Interested in the partner program."
+    }
+   ],
+   "note_summary": "Houston-based wine collection consultant serving 5 clients, 2,000 bottles avg · extended his subscription, actively showing CellarEye to clients, interested in the partner program",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588401959859",
+   "name": "Vintage Cellars",
+   "first": "Chris",
+   "last": "Noel",
+   "channel": "Cellar Builder",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Warm",
+   "modified_at": "2026-06-23T14:56:14.567Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg Recommended by Dustin who has a relationship with them. They have responded to emails with interest but haven't been able to get a call on the calendar yet. Once we are ready, they will be a good one to reconnect with.",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:14.550Z",
+     "by": "Danielle",
+     "text": "Robb + Chris Noel (owner), intro through Dustin. Both expressed interest and want to be looped in on any future call."
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · intro through Dustin to Robb and Chris Noel (owner), both interested and want looping in on any future call",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588532154184",
+   "name": "Bevrly",
+   "first": "Yaacov",
+   "last": "Barselah",
+   "channel": null,
+   "arr": null,
+   "onb": null,
+   "stage": "Warm",
+   "modified_at": "2026-06-25T23:54:02.692Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Business Development Stage (sheet): On Hold (was Demo Completed) Last Stage Change: 1/14/26 Deal Size: ● Phase: - Next Step: Mostafa is in conversation with Yaacov.",
+   "comments": [
+    {
+     "at": "2026-06-25T23:38:33.607Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Mark and Yaacov will meet in Manhattan for drinks on Saturday 6/27 for drinks."
+    }
+   ],
+   "note_summary": "Business Development segment, on hold since 1/14/26 after demo completed · Mostafa in conversation with Yaacov, Mark and Yaacov meeting in Manhattan for drinks Saturday 6/27",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1215470588854390",
+   "name": "Remington Hotels",
+   "first": "Ted",
+   "last": "Peters",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Warm",
+   "modified_at": "2026-06-24T20:22:56.979Z",
+   "notes": "",
+   "comments": [
+    {
+     "at": "2026-06-07T05:26:04.772Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Ted was Mark's best man in his first wedding.  They worked together at Ritz Carlton.  Mark shared comps of live menu and the Hospitality Module.  He originally said we were to small of an outfit for them. When he saw the menu and the backend.  He said \"oh, we need to take a look at this.\"  When its built and ready let me know so we can see the full demo."
+    },
+    {
+     "at": "2026-06-24T20:22:56.948Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Spoke with Ted on Fathers day via text.  His last message was.  \"Need to jump on a call and you can walk me through it all.\""
+    }
+   ],
+   "note_summary": "Ted, Mark's former Ritz Carlton colleague, saw live menu comps and the Hospitality Module backend · asked for a call walkthrough, full demo once built",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1216608808300432",
+   "name": "1275 Collections",
+   "first": "Denis",
+   "last": "Houles",
+   "channel": "Sommelier Managed",
+   "arr": null,
+   "onb": null,
+   "stage": "Warm",
+   "modified_at": "2026-07-15T22:04:29.839Z",
+   "notes": "Based in Geneva. Referred by Danielle's contact. Danielle had a call with Denis on 9/15/26. Company has around 100 clustomers. Looking for a system for their customers to manage wine for residential cellars. They also store wine offsite at their warehouse. Mostly stacked boxes/cases. They want to possibly test it. When Denis returns to Geneva in about 1-2 weeks, schedule a call for a demo call with Anthony and Mark.",
+   "comments": [],
+   "note_summary": "Geneva-based, around 100 customers, wants residential cellar management for clients plus offsite warehouse storage (mostly stacked boxes/cases) · demo call with Anthony and Mark to be scheduled when Denis returns in 1-2 weeks",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1216967482446813",
+   "name": "VinoVault RVA - Clay Harris",
+   "first": null,
+   "last": null,
+   "channel": null,
+   "arr": null,
+   "onb": null,
+   "stage": "Warm",
+   "modified_at": "2026-07-28T22:10:43.531Z",
+   "notes": "INBOUND WEBSITE INQUIRY Clay Harris submitted the CellarEye \"Contact Us\" form on 7/28/26. Private wine storage facility (VinoVault RVA) looking for inventory management solution. Contact: Clay Harris Email: vinovaultrva@gmail.com Phone: 804-357-2549 Message: \"Hello, I'd like to learn if CellarEye would be a useful solution for inventory management at our private wine storage facility.\" STATUS: Replied 7/28/26 (Danielle) - intro email sent covering recent CellarEye updates for wine storage facilities.",
+   "comments": [],
+   "note_summary": "Private wine storage facility (VinoVault RVA) in Richmond · inbound website inquiry 7/28/26 asking if CellarEye fits their inventory management, Danielle replied same day with intro email",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588513919565",
+   "name": "Winebank",
+   "first": "Don",
+   "last": "Fox",
+   "channel": "Wine Storage",
+   "arr": 6000,
+   "onb": 4500,
+   "stage": "Qualified",
+   "modified_at": "2026-07-15T22:27:43.739Z",
+   "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:11.631Z",
+     "by": "Danielle",
+     "text": "Don Fox is open to CellarEye brochures and signage at the WineBank entrance."
+    },
+    {
+     "at": "2026-07-14T22:26:12.690Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Willing to let us market the app to customers who store at the Winebank.  Once the new mark is finalized, we can do signage and flyers."
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 10 clients, 2,000 bottles avg · Don Fox willing to let us market the app to Winebank storage customers, signage and flyers once the new mark is finalized",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588513226286",
+   "name": "WeShip Express",
+   "first": "Scott",
+   "last": "Kennedy",
+   "channel": "Wine Storage",
+   "arr": 60000,
+   "onb": 150000,
+   "stage": "Demo",
+   "modified_at": "2026-06-23T14:56:04.857Z",
+   "notes": "Reserve Path A | 400 clients | 500 bottles avg | Onboarding TBD Opportunity Overview WeShip is a leading DTC wine/spirits logistics & fulfillment company. Recently acquired Eagle Rock Fulfillment (Napa) - a private wine storage business with ~400 clients and ~10,000 cases stored at ~$10-15/case/month. Plan is to scale this model 10x across all existing WeShip fulfillment locations nationally - making this a high-value partnership opportunity. Key Contact: Scott Kennedy, VP of Technology | Founder: Marc Goodfriend What They Need Modern UI for private storage clients - inventory visibility, wine selection for shipping, no warehouse imagery exposed. Evaluating CellarEye vs. building in-house; also comparing CellarTracker, Invintory. Current systems are antiquated. Timing Faster the better. Open to phased rollout.",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:04.831Z",
+     "by": "Danielle",
+     "text": "Tech review done with Scott Kennedy (VP Tech). Weighing CellarEye vs. building in-house for ~400 private storage clients after the Eagle Rock acquisition."
+    }
+   ],
+   "note_summary": "DTC wine/spirits logistics firm, recently acquired Eagle Rock Fulfillment (~400 private storage clients, ~10,000 cases) · tech review done with VP Tech, weighing CellarEye vs building in-house",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588533447535",
+   "name": "Sharon Heights Golf & Country Club",
+   "first": "Efrain",
+   "last": "Sanchez",
+   "channel": "Hospitality",
+   "arr": 3300,
+   "onb": 13200,
+   "stage": "Demo",
+   "modified_at": "2026-07-20T22:13:50.184Z",
+   "notes": "Based on proposal sent to client",
+   "comments": [
+    {
+     "at": "2026-06-25T23:43:52.481Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "here was the presention for the meeting."
+    },
+    {
+     "at": "2026-07-18T21:59:17.447Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Mark, Danielle & Anthone met with Efrain.  He says they are still interested.  Wants to talk to Chef Jerry at the Spotted Duck and ask how it is working.  He closed the meeting with answering my comment that it would shave a lot of time out of his routine with all the time saving features and he replied, \"No, its going to make a lot more work for me.\"  so it leads us to believe he doesn't see the full value, yet."
+    }
+   ],
+   "note_summary": "Golf and country club, proposal sent · Efrain still interested, wants to check with Chef Jerry at the Spotted Duck, said the features would make more work for him, so value not yet clear",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588533426912",
+   "name": "Los Altos Golf & Country Club",
+   "first": "Andrew",
+   "last": "Sparling",
+   "channel": "Hospitality",
+   "arr": 1500,
+   "onb": 7500,
+   "stage": "Demo",
+   "modified_at": "2026-07-18T21:52:32.082Z",
+   "notes": "Based on proposal sent to client",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:03.048Z",
+     "by": "Danielle",
+     "text": "Andrew Sparling, Wine & Beverage Director. Connected through Nader Sadrzadeh. Original proposal: Y1 $9,000 / Y2+ $1,500/yr. New calculator: Y1 ~$17,863 / Y2+ ~$14,500. Pricing is significantly higher than original, especially on recurring. Let's discuss before going back to him."
+    }
+   ],
+   "note_summary": "Country club, proposal sent · new calculator pricing (Y1 ~$17,863 / Y2+ ~$14,500) far above original Y1 $9,000 / Y2+ $1,500, internal discussion needed before going back to Andrew Sparling",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588517538161",
+   "name": "Rosehill Wine Cellars",
+   "first": "Jonathan",
+   "last": "Gilkes",
+   "channel": "Cellar Builder",
+   "arr": 6000,
+   "onb": 4500,
+   "stage": "Demo",
+   "modified_at": "2026-07-18T21:52:32.021Z",
+   "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-06-22T16:04:14.616Z",
+     "by": "Danielle",
+     "text": "<body><strong>📄 Proposal Deck (Canva)</strong><br/><a href=\"https://www.canva.com/design/DAHDml7eojE/Sw6wAmXaDDz0b2L/edit\" data-asana-dynamic=\"false\">Rosehill x CellarEye (latest version)</a></body>"
+    },
+    {
+     "at": "2026-06-23T14:56:01.406Z",
+     "by": "Danielle",
+     "text": "Jonathan Gilkes + Alex. B2B reseller model targeting 80-120 custom cellar installs/yr. Awaiting feedback post-testing."
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 10 clients, 2,000 bottles avg · Jonathan Gilkes and Alex, B2B reseller model targeting 80-120 custom cellar installs/yr, awaiting feedback post-testing",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588515652326",
+   "name": "Colgin Cellars",
+   "first": "Brandon",
+   "last": "Benelli",
+   "channel": "Reserve-Client Direct",
+   "arr": 2200,
+   "onb": 3812.5,
+   "stage": "Demo",
+   "modified_at": "2026-06-23T14:56:08.213Z",
+   "notes": "Reserve Path A | 1 client | 10,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:08.188Z",
+     "by": "Danielle",
+     "text": "Onsite visit with Brandon had a mixed response. Ran into issues with our system working with their double deep and very high racks. Proposal sent."
+    }
+   ],
+   "note_summary": "Reserve Path A, 1 client, 10,000 bottles avg · onsite visit with Brandon got a mixed response, system had issues with their double deep and very high racks, proposal sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588513835040",
+   "name": "Drink with Me",
+   "first": "Joshua",
+   "last": "Plack",
+   "channel": "Sommelier Managed",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Demo",
+   "modified_at": "2026-08-06T20:28:38.869Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-08-06T20:28:25.392Z",
+     "by": "Danielle",
+     "text": "Call on 8/6/ with Joshua and Jeremy. They are interested in possibly being ambassadors for us but they want to know how we will bring them more customers and what the partnership structure would look beyond the standard commissions. Joshua mentioned he needs to be able to present this to Chamath as a partnership that will help them grow. Mark is going to do a 1-1 call after doing a little more research on Drink with Me.  \n\nJeremeny mentioned the last time he was at Yar's he didn't have time to use CellarEye because he isn't familiar enough with it and he needed to move fast.\n\nWe also offered to Jeremy to help him onsite the next time he is town organziing Yar's cellar which is currently set up with a combination of vison tech and smartstickers.  Yar may want to switchover to smartstickers however he invested a lot of $ into the camera system so if he hasn't been happy with it and wants to remove it we may need to discuss best way to keep him happy. TBD"
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · Joshua and Jeremy interested in ambassador roles, want partnership structure beyond standard commissions, Mark doing 1-1 call after researching them",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588402610985",
+   "name": "Innovative Cellars",
+   "first": "Sandy",
+   "last": "Horwitz",
+   "channel": "Cellar Builder",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Demo",
+   "modified_at": "2026-05-07T18:37:20.618Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg",
+   "needs_enrichment": true
+  },
+  {
+   "gid": "1214588732398811",
+   "name": "Meritage Wine Market",
+   "first": "Dustin",
+   "last": "Cano",
+   "channel": "Sommelier Managed",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Demo",
+   "modified_at": "2026-08-19T21:13:51.344Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-08-07T21:47:53.038Z",
+     "by": "Danielle",
+     "text": "Call with Dustin\nReviewed the new pricing structure and Reserve pricing calculator. Shared the Spotted Duck wine list and latest web app version. Discussed the Somm program and SommCon.\n\nDiscussed Ron’s market values. We increased the market value coverage from 70% to 80% and are testing ways to fill the remaining gaps. Dustin trusts Wine-Searcher the most, particularly when filtering for currently available California market values rather than using preset values. Ron’s cellar is currently showing around $450K in market value with approximately 20% of values still missing. Dustin believes the true value is closer to $750K.\n\nDustin will share our newsletter with his subscribers, and we will feature him in ours as well.\n\nDustin shared that Marc Barmazel will be installing a new 10K-capacity cellar and would like to use CellarEye instead of CellarTracker. We also briefly discussed Addison.\n\nNext Steps / Afterthoughts\n    Coordinate newsletters and cross-promotions.\n    Set Dustin up with a Somm Manager account.\n    Present how we’d like to feature Dustin’s profile as part of our Somm program. Explore how we can also support his new restaurant channel. He is a strong example of a retailer, private collector cellar consultant, and hospitality wine consultant.\n    Dustin is planning to attend SommCon with us. Revisit and coordinate once we have a clearer plan.\n    Discuss whether we can convert more of his current cellars from CellarTracker to CellarEye, or if it makes sense to leave them as is."
+    },
+    {
+     "at": "2026-08-18T20:56:03.940Z",
+     "by": "Danielle",
+     "text": "Had call today.....\n\nCellar Conversion Strategy & Customer Outreach — Dustin (Meritage)\nAug 18, 2026 | Attendees: Dustin, Mark, Danielle\n\nSummary:\nDiscussed the Mark Barmazel investor cellar opportunity, the economics of converting Dustin's existing 10 clients, and a plan for new client acquisition via enewsletter and retail display. Also, discussed potential event at shop around SommCon.\n\n- Mark Barmazel: offer to come from Mostafa/CellarEye (not Dustin) once he signs with a cellar construction company; still a ways out, two companies bidding. His ~7 homes are already on CellarTracker. Pivoting from camera install (only 60-70% coverage) to 3D mapping.\n- Existing 10 clients: labor cost, not software resistance, is the real barrier. A 4,000-bottle cellar runs roughly 3 days x 2 people x $75/hr, about $3,600. Scaled across the top 10 clients, that's an estimated 10-15 days of labor, or $20-30K total to convert. A reimbursement model was floated but wasn't enough to offset lost wine-sales time. Decision: don't push mass conversion right now, focus on new client acquisition instead.\n- Campaign plan: email blast to the Santa Barbara + San Diego list (Friday/Saturday send), audience includes both consumers, somms and restaurants, promo offer TBD (leaning 6 months free for CellarTracker converts, 3 months for new users, through year end), need a retail display kit for Dustin's shop, priority personal outreach to investors (Jay Flatley, Omid?, Mark Barmazel), and a possible SommCon demo event at Dustin's shop.\n\nNext steps:\n1. Create an email introducing CellarEye (Fri/Sat send, video or updated website link); leads route through Dustin first, then to Danielle\n2. Finalize promo offer terms (6 months/3 months, through EOY)\n3. Create a retail display kit for Dustin's shop\n4. Plan SommCon demo event at Dustin's location, Mark has bagel friend who may cater, possibly do an event with Addison\n5. Figure out subscription for Marc B., per Anthony was supposed to be included as part of his investment"
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · mass conversion of 10 clients shelved on labor cost ($20-30K), pivoting to new client acquisition via Aug email blast and retail display",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588732186569",
+   "name": "Camper",
+   "first": "Greg",
+   "last": null,
+   "channel": "Hospitality",
+   "arr": 450,
+   "onb": 1125,
+   "stage": "Demo",
+   "modified_at": "2026-07-20T21:55:52.542Z",
+   "notes": "Reserve Path A | 1 client | 1,500 bottles avg",
+   "comments": [
+    {
+     "at": "2026-07-18T21:51:40.565Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Greg sent me updated files.  Mark needs to reach out to see how he would like it presented."
+    }
+   ],
+   "note_summary": "Reserve Path A, 1 client, 1,500 bottles avg · Greg sent updated files, Mark to reach out on how he wants it presented",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1215968666300621",
+   "name": "Plack, Joshua — Drink With Me",
+   "first": "Joshua",
+   "last": "Plack",
+   "channel": "Sommelier Managed",
+   "arr": null,
+   "onb": null,
+   "stage": "Demo",
+   "modified_at": "2026-08-06T20:28:50.198Z",
+   "notes": "Joshua Plack, Advanced Sommelier. Based in Truckee, CA. Manages Yar's CellarEye account alongside Jeremy Reed. Active Premium subscriber. Connected through Mostafa. Opportunity for somm/brand ambassador partnership with potential to bring 5-20 serious collectors. Drink With Me website: https://www.drinkwithme.com",
+   "comments": [],
+   "note_summary": "Advanced Sommelier in Truckee, CA, active Premium subscriber managing Yar's account with Jeremy Reed · potential somm/brand ambassador partnership that could bring 5-20 serious collectors",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1215470588854397",
+   "name": "The Spotted Duck",
+   "first": "Jerry",
+   "last": "Regester",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Demo",
+   "modified_at": "2026-06-26T00:01:11.380Z",
+   "notes": "The Spotted Duck - Pacific Grove. Beta deployment site. Chef/owner: Jerry Regester. Merged from duplicate task 1216016965299612 (was in Warm) on 2026-06-25.",
+   "comments": [
+    {
+     "at": "2026-06-07T05:25:57.402Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "We are doing the beta launch of the digital menus here.  Started 6/4 soft rollout.  Saturday night was busy.  The client was glad we convinced him to put a QR code on the menu.  People used both the tablet and the QR code.  Lots of positive feedback from customers and the waitstaff.  Discussed putting plate icon next to each wine and then list the dishes it pairs with.  So if a customer wants a wine and then will select thier entree from there.  Reverse pairing"
+    }
+   ],
+   "note_summary": "Pacific Grove restaurant, chef/owner Jerry Regester · beta digital menu site, soft rollout started 6/4, positive customer and waitstaff feedback, discussing reverse pairing plate icons",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1216016965299599",
+   "name": "Tedd Glennon",
+   "first": "Ted",
+   "last": "Glennon",
+   "channel": "Sommelier Program",
+   "arr": null,
+   "onb": null,
+   "stage": "Demo",
+   "modified_at": "2026-07-11T03:17:51.061Z",
+   "notes": "Meeting 7/10/26 (Granola) BACKGROUND & INTEREST - Follow-up call, ~1 hour - Access granted today with full provisions and rights - Interested in two roles: SOM participant AND ambassador/sales promoter - Unclear whether this was a sales call or a comp conversation ROLE & COMPENSATION DISCUSSION - Ted may want some form of compensation for promoting the app and bringing in other SOMs - CellarEye stance: grassroots only, no full marketing spend right now - Small budget currently - Strategy: people they know, get them interested, sign up their clients, generate fee revenue - Bigger spend possible once revenue grows EVALUATION PHASE - Ted to use the app for ~1 week - Not yet a revenue customer; still in evaluation NEXT STEP: Reconnect with Ted in ~1 week to review his experience and determine next steps on ambassador/sales role.",
+   "comments": [
+    {
+     "at": "2026-06-24T20:26:56.178Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "My be first Somm ambassador.  https://app.asana.com/1/1214587766552282/profile/1214586897687228 can you background check with Maureen?"
+    }
+   ],
+   "note_summary": "Sommelier prospect, granted full access 7/10/26, interested in both SOM participant and ambassador roles · evaluating app for ~1 week, not yet a revenue customer, ambassador compensation unresolved",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1217735589121085",
+   "name": "Bottles Puerto Rico",
+   "first": "Brendan",
+   "last": "Steenhuisen",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Demo",
+   "modified_at": "2026-08-21T22:46:55.207Z",
+   "notes": "Hospitality demo call completed. Contact: Brendan Steenhuisen. WhatsApp: 939-365-0492.",
+   "comments": [
+    {
+     "at": "2026-08-21T20:56:13.909Z",
+     "by": "Danielle",
+     "text": "Call Notes\n\nBrendan manages 4+ outlets (~12,000 bottles). No real inventory system today — quarterly Excel tracking, eyeballing inventory for purchases. Performs audit 1x/quarter doesn't track daily or monthly. Previous inventory vendor (Restaurant365) was $7-8K/mo with no usable output. Head office just signed Thrive/Clover POS, rollout is shaky so far.\n\nBiggest interest: wine list QR/tablet module.\n\nMain concerns: scale of inventory setup (12k bottles, multi-outlet) and no POS integration yet.\n\nNext steps:\n- Send demo to play around with\n- Share pricing range for collectors \n- maybe ship smartstickers for his cellar"
+    }
+   ],
+   "note_summary": "4+ outlets, ~12,000 bottles, no inventory system beyond quarterly Excel · demo call done, wants wine list QR/tablet module, send demo and collector pricing, POS integration still open",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588401412965",
+   "name": "Addison by William Bradley",
+   "first": "Sean",
+   "last": "McGinness",
+   "channel": "Hospitality",
+   "arr": 7500,
+   "onb": 22400,
+   "stage": "Proposal",
+   "modified_at": "2026-08-17T22:53:59.181Z",
+   "notes": "Based on proposal sent to client",
+   "comments": [
+    {
+     "at": "2026-06-23T14:55:51.791Z",
+     "by": "Danielle",
+     "text": "Sean McGinness, 8-10K bottles, 3 Michelin stars. Big pain point is inventory audits running 15-20 hrs/month with 3 sommeliers. Original proposal: Y1 ~$22,500 / Y2+ ~$7,500. New calculator: Y1 ~$20,963 / Y2+ ~$15,400. Y2+ is now 2x higher due to menu module being priced separately, so instead of getting more attractive the pricing went up. Let's discuss before updating."
+    },
+    {
+     "at": "2026-08-06T23:02:56.639Z",
+     "by": "Danielle",
+     "text": "Call today 8/6\nIntro to Mark, web app & restaurant menu update call\nSean (Addison):\n    ~10,000 bottle inventory, ~$100K/month wine spend, 5 sommeliers\n    Procurement is honestly a mess right now, manual handoffs across Birch Street, Silverware POS, internal systems\n    Monthly physical inventory count is brutal for them\n    Most of the pain is clerical error, not the program itself\nHow we fit:\n    Strong fit on inventory management and menu printing, could start soon\n    Silverware API is read-only for now, we can pull nightly depletion reports and flag POS mismatches, but can't write back yet\n    Full write-integration is more of a phase 2/3 thing, pending a Birch Street capabilities. Not a dealbreaker for Sean\n    Heads up: Birch Street's been messy before. Anthony hit complications looking into it previously\n    Sean's skipping the AI/digital menu, just wants the print option. Makes sense given 5 sommeliers and Michelin-level service\nPricing:\n    Note:  Sean already approved the original proposal, $22,500 total (screenshot attached for reference)\n    Current pricing has shifted since Mark joined\n    Connectors/custom dev likely one-time fees on top\nNext steps:\n    Mark: dig into Birch Street API modules and connectors. Rick may be able to help\n    Danielle: plan a follow-up call, plan to bring in Addison's accounting department on the the following call after we meet with Sean one more time\n    Sean's stressing a real sense of urgency on his end"
+    }
+   ],
+   "note_summary": "3 Michelin star restaurant, ~10,000 bottles, ~$100K/month wine spend, 5 sommeliers · Strong fit on inventory and print menus, Sean approved original $22,500 proposal but pricing has shifted, follow-up call planned",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1216877124187763",
+   "name": "The Grove at Point Pinos",
+   "first": "Jerry",
+   "last": "Regester",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Proposal",
+   "modified_at": "2026-07-25T03:12:01.703Z",
+   "notes": "Second restaurant from the owners of The Spotted Duck (Jerry Regester). Opening third or fourth week of August 2026, right after the Concours d'Elegance at Pebble Beach. DEAL STRUCTURE: In exchange for getting them onto the CellarEye platform at a second restaurant at a fee, Mark built their website for free (thegrovepointpinos.com). CHANNEL: Hospitality. Same ownership as Spotted Duck, so warm and high-trust. Proposal to follow. CONTACT: Jerry Regester | jerry@thegrovepointpinos.com | +1 (831) 269-9097",
+   "comments": [],
+   "note_summary": "Second restaurant from The Spotted Duck owners (Jerry Regester), opening third or fourth week of August 2026 · website built free in exchange for platform fee, proposal to follow",
+   "needs_enrichment": false
+  }
+ ],
+ "stalled": [
+  {
+   "gid": "1214588517386719",
+   "name": "Sorrells Custom Wine Cellars",
+   "first": "Tim",
+   "last": "Lewis",
+   "channel": "Cellar Builder",
+   "arr": 6000,
+   "onb": 4500,
+   "stage": "Stalled",
+   "modified_at": "2026-05-07T20:56:32.329Z",
+   "notes": "Sommeliers Path B | 10 clients | 2,000 bottles avg",
+   "comments": [],
+   "note_summary": "Sommeliers Path B · 10 clients, 2,000 bottles avg",
+   "needs_enrichment": true
+  },
+  {
+   "gid": "1214588516735159",
+   "name": "Crux Cavas",
+   "first": "Maria",
+   "last": "Belen Cocconi",
+   "channel": "Cellar Builder",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Stalled",
+   "modified_at": "2026-05-08T01:39:22.111Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg",
+   "needs_enrichment": true
+  },
+  {
+   "gid": "1214588533232641",
+   "name": "Harper's Club",
+   "first": "Chris",
+   "last": "Hoel",
+   "channel": "Sommelier Managed",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Stalled",
+   "modified_at": "2026-07-15T22:28:19.870Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-07-14T22:23:29.127Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "fatigued, follow up once web utility is fully baked with reporting"
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · fatigued, follow up once web utility is fully baked with reporting",
+   "needs_enrichment": false
+  }
+ ],
+ "won": [
+  {
+   "gid": "1214588401178393",
+   "name": "Manny Machado (Meritage)",
+   "first": "Manny",
+   "last": "Machado",
+   "channel": "Sommelier Managed",
+   "arr": 129,
+   "onb": 400,
+   "stage": "Closed Won",
+   "modified_at": "2026-05-08T01:39:22.108Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Collectors - Direct Stage (sheet): Install Completed (was Pending Contract) Last Stage Change: 2/17/26 Deal Size: ● Phase: 3 Next Step: Payment received on 2/11 & 2/17, Install completed by Dustin on 2/13",
+   "comments": [],
+   "note_summary": "Collectors direct segment, Meritage · install completed by Dustin on 2/13, payments received 2/11 and 2/17, Phase 3",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588517429824",
+   "name": "Ron Montbleau (Meritage)",
+   "first": "Ron",
+   "last": "Montbleau",
+   "channel": "Sommelier Managed",
+   "arr": 129,
+   "onb": 200,
+   "stage": "Closed Won",
+   "modified_at": "2026-07-20T22:06:07.339Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Collectors - Partner Stage (sheet): Install Completed Last Stage Change: 1/6/26 Deal Size: ● Phase: 3 Next Step: Follow up for user insights - already received feedback from Dustin about scanning issues, missing valuations for CA wines, and special wine list fields",
+   "comments": [
+    {
+     "at": "2026-07-18T21:50:51.010Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "We are working on Ron's wine values.  We need to close the gap."
+    }
+   ],
+   "note_summary": "Collectors segment, install completed, Phase 3 · working through Ron's wine valuations to close the gap, plus feedback on scanning issues and special wine list fields",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1216056878249657",
+   "name": "Pausa San Mateo",
+   "first": "Andrea",
+   "last": "Giuliani",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Closed Won",
+   "modified_at": "2026-08-19T19:14:45.533Z",
+   "notes": "Meeting 7/10/26 (Granola) MEETING OVERVIEW - Demo and feedback session with Andrea Giuliani at Pausa, San Mateo - Danielle and Anthony attended and helped highlight app benefits FEEDBACK & REACTIONS - Andrea responded positively: found the app easy to use - Particularly liked the digital wine menu feature - Preferred format: print wine list with QR code at the bottom that links to additional tasting notes for guests OUTCOME - Not expected to close on this meeting, but Andrea is keen to move forward - Wants a pitch to the rest of his management team (3 others) - He is the chef-owner, so has decision-making authority NEXT STEP: Schedule and confirm team pitch at Pausa. Andrea suggested possibly Wednesday next week - confirm the date and arrange to present to his full management team.",
+   "comments": [
+    {
+     "at": "2026-07-18T21:54:27.294Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Second meeting on Friday went great.  They want us to send a proposal.  They are excited to do it.  They will send menu files this week and then the inventory file at the end of the month.  We still need to lock down the bottle depletion method."
+    },
+    {
+     "at": "2026-08-18T19:08:45.404Z",
+     "by": "Danielle",
+     "text": "Next mtg:  nventory audit and training onsite at Pausa with their entire management team on 8/24"
+    }
+   ],
+   "note_summary": "Chef-owner Andrea Giuliani's San Mateo restaurant, liked the digital wine menu at demo · proposal requested, inventory audit and onsite training with full management team 8/24",
+   "needs_enrichment": false
+  }
+ ],
+ "lost": [
+  {
+   "gid": "1214588513749664",
+   "name": "The Ritz London (Sorrells)",
+   "first": "Tim",
+   "last": "Lewis",
+   "channel": "Hospitality",
+   "arr": 15700,
+   "onb": 150000,
+   "stage": "Closed Lost",
+   "modified_at": "2026-05-08T01:39:22.021Z",
+   "notes": "Reserve Path A | 1 client | 100,000 bottles | Onboarding TBD Est onboarding based on proposal sent including custom development",
+   "comments": [],
+   "note_summary": "Reserve Path A, 1 client, 100,000 bottles · onboarding TBD, estimate based on proposal sent including custom development",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588514012027",
+   "name": "Jimmy Butler (Harper's)",
+   "first": "Chris",
+   "last": "Hoel",
+   "channel": "Sommelier Managed",
+   "arr": null,
+   "onb": 27800,
+   "stage": "Closed Lost",
+   "modified_at": "2026-05-06T22:05:24.771Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Collectors - Partner Stage (sheet): On Hold Last Stage Change: 2/5/26 Deal Size: ●●● Phase: - Next Step: -",
+   "comments": [],
+   "note_summary": "Collectors segment deal imported from Pipeline_2/25 · On Hold since last stage change 2/5/26, no phase or next step recorded",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588517358011",
+   "name": "Chai Consulting",
+   "first": "Maureen",
+   "last": "Downey",
+   "channel": "Sommelier Managed",
+   "arr": 6500,
+   "onb": 3281.25,
+   "stage": "Closed Lost",
+   "modified_at": "2026-07-14T22:20:51.935Z",
+   "notes": "Sommeliers Path B | 5 clients | 5,000 bottles avg",
+   "comments": [],
+   "note_summary": "Sommeliers Path B consultancy, 5 clients averaging 5,000 bottles · no comments recorded",
+   "needs_enrichment": true
+  },
+  {
+   "gid": "1214588401503184",
+   "name": "Rockcliffe Hotel (Sorrells)",
+   "first": "Tim",
+   "last": "Lewis",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Closed Lost",
+   "modified_at": "2026-05-08T01:39:22.131Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Hospitality - Partner Stage (sheet): Prospect Last Stage Change: 1/21/26 Deal Size: ●●● Phase: 0 Next Step: -",
+   "comments": [],
+   "note_summary": "Hospitality prospect, deal size ●●● · imported from Pipeline_2/25, Phase 0, last stage change 1/21/26",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588402401487",
+   "name": "Revel Cellars",
+   "first": "Jim",
+   "last": "Cash",
+   "channel": "Cellar Builder",
+   "arr": null,
+   "onb": null,
+   "stage": "Closed Lost",
+   "modified_at": "2026-05-07T20:50:27.005Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Cellar Builder Stage (sheet): Demo Completed Last Stage Change: 12/2/25 Deal Size: ●●● Phase: 0 Next Step: Does Omid Farokhzad want to test system and give positive review to Revel?",
+   "comments": [],
+   "note_summary": "Imported from Pipeline_2/25, Cellar Builder segment · Demo completed 12/2/25, Phase 0, next step is whether Omid Farokhzad will test the system and give Revel a positive review",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588517181310",
+   "name": "Four Seasons George V",
+   "first": "Antoine",
+   "last": "Desmoulins",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Closed Lost",
+   "modified_at": "2026-05-08T01:39:22.008Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Hospitality - Direct Stage (sheet): Demo Completed (was New Lead) Last Stage Change: 2/12/26 Deal Size: ●●● Phase: 0 Next Step: Draft Proposal",
+   "comments": [],
+   "note_summary": "Four Seasons George V, hospitality direct segment · demo completed 2/12/26, next step is draft proposal",
+   "needs_enrichment": false
+  }
+ ]
 }
