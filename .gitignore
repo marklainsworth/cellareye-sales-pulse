@@ -10,5 +10,8 @@ data/lead_data_previous.json
 data/note_summaries.json
 data/gate_state.json
 
+# rehearsal output, never part of the archive
+briefs/test-*.html
+
 # macOS
 .DS_Store
