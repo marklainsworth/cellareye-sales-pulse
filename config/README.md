@@ -9,16 +9,31 @@ transcript and has to be rotated.
 | `asana.env` | `ASANA_TOKEN` | Asana > Settings > Apps > Developer > Personal access token |
 | `slack.env` | `SLACK_BOT_TOKEN`, `SLACK_CHANNEL_ID`, `SLACK_USER_ID` | see `slack.env.example` |
 
-## Slack, one thing to be careful about
+## Two Slack apps, deliberately
 
-The Pulse reuses the existing `lgv_daily_brief` app rather than creating a new
-one. Adding the `channels:history` scope requires reinstalling the app, and
-**reinstalling issues a new bot token and invalidates the old one**.
+The Pulse has its own Slack app, **Sales Pulse Bot** (App ID `A0BS83JVCLU`),
+separate from the daily brief's `lgv_daily_brief` app. Both live in the LGV
+workspace and both are fine there.
 
-The daily brief authenticates with that token. So after reinstalling:
+They are kept separate on purpose. Adding a scope to a Slack app requires
+reinstalling it, and reinstalling issues a new bot token that invalidates the
+old one. If the two systems shared an app, every scope change to the Pulse
+would silently break the 5am daily brief until its token was updated too.
 
-1. Copy the new `xoxb-` token into BOTH
-   `lgv-ops/config/slack.env` and `cellareye-sales-pulse/config/slack.env`.
-2. Run the daily brief's dry run and confirm it still posts, before walking away.
+So: **the daily brief's app and token are never touched by work in this repo.**
+`lgv-ops/config/slack.env` is not ours to edit. If the Pulse needs a new Slack
+capability, add the scope to Sales Pulse Bot and reinstall that app only.
 
-Miss step 1 and the 5am brief fails silently the next morning.
+### Scopes on Sales Pulse Bot
+
+| Scope | Why |
+|---|---|
+| `chat:write` | post the gate prompt, the board summary, and the finished link |
+| `channels:history` | read your replies in the `#sales-pulse` thread |
+
+That is the complete list. `channels:read` and `users:read` are deliberately
+not requested: the channel ID and user ID are pinned in `slack.env` instead, so
+the bot cannot enumerate the workspace.
+
+The bot must be a member of `#sales-pulse`. Slack will not serve channel
+history to a bot that is not in the channel, scope or no scope.
