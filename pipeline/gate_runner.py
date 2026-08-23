@@ -22,6 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import checks        # noqa: E402
 import config        # noqa: E402
+import nudge         # noqa: E402
 import publish       # noqa: E402
 import pull_asana    # noqa: E402
 import render as render_mod  # noqa: E402
@@ -185,6 +186,14 @@ def main(argv=None):
         render_date = date.fromisoformat(a.date) if a.date else date.today()
         state = sg.open_gate(env, render_date, test=a.test)
         log("gate opened, ts %s" % state["gate_ts"])
+        # Out-of-band buzz. Best effort: the Slack message is the real artefact,
+        # and a failed nudge must never stop a gate from opening.
+        try:
+            team = sg.api("auth.test", env, {}).get("team_id", "")
+        except sg.SlackError:
+            team = ""
+        sent, detail = nudge.pulse_ready(team, env["SLACK_CHANNEL_ID"])
+        log("nudge: %s" % detail)
         return 0
 
     if not state:
