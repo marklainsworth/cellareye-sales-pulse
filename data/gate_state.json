@@ -1,0 +1,11 @@
+{
+ "gate_ts": "1787517450.457099",
+ "step": "ask_mda",
+ "opened_at": 1787517450.538545,
+ "render_date": "2026-08-23",
+ "test": true,
+ "consumed": [
+  "1787517801.135589"
+ ],
+ "pulled_at": "13:43 PT"
+}

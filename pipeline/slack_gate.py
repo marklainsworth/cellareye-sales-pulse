@@ -183,8 +183,12 @@ def is_stale(state: dict) -> bool:
 
 # --- opening the gate --------------------------------------------------------
 
+# The prompt @-mentions Mark deliberately. Slack iOS does not reliably surface a
+# plain channel message until the app is opened, and a gate he does not see on
+# Friday afternoon is a gate that does not fire. Mentions get notification
+# priority. SLACK_USER_ID is substituted at post time.
 READY_TEXT = (
-    "*Sales Pulse, {date}*\n"
+    "<@{user}> *Sales Pulse, {date}*\n"
     "Ready to run? Reply *yes* once the Asana board is current.\n"
     "_Answering yes pulls Asana fresh at that moment, so the brief reflects the "
     "board as it stands when you reply, not now._\n"
@@ -193,9 +197,11 @@ READY_TEXT = (
 
 
 def open_gate(env: dict, render_date, test: bool = False) -> dict:
-    header = "*Sales Pulse, {date}*" if not test else "*Sales Pulse, {date}  (TEST RUN)*"
-    text = READY_TEXT.replace("*Sales Pulse, {date}*", header)
-    ts = post(env, text.format(date=render_date.strftime("%A, %B %-d")))
+    header = ("<@{user}> *Sales Pulse, {date}*" if not test
+              else "<@{user}> *Sales Pulse, {date}  (TEST RUN)*")
+    text = READY_TEXT.replace("<@{user}> *Sales Pulse, {date}*", header)
+    ts = post(env, text.format(user=env["SLACK_USER_ID"],
+                               date=render_date.strftime("%A, %B %-d")))
     # test-ness is recorded here, not taken from the poller's argv. A gate opened
     # as a test can never be completed as a real publish by a tick that forgot
     # the flag.
