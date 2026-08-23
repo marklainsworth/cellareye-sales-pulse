@@ -32,7 +32,7 @@ GATE_TTL_SECONDS = 6 * 60 * 60      # a gate older than this has gone stale
 POLL_TIMEOUT = 25
 
 # Conversation steps. The gate walks these in order and never skips one.
-ASK_READY, ASK_CONFIRM, ASK_MDA, DONE = "ask_ready", "ask_confirm", "ask_mda", "done"
+ASK_READY, ASK_MDA, DONE = "ask_ready", "ask_mda", "done"
 
 AFFIRMATIVE = {"y", "yes", "ready", "yep", "yup", "go", "ok", "okay", "run it"}
 NEGATIVE = {"n", "no", "not yet", "notyet", "later", "stop", "cancel", "abort"}
@@ -85,40 +85,64 @@ def api(method: str, env: dict, payload: dict | None = None, params: dict | None
 
 
 def post(env: dict, text: str, thread_ts: str | None = None) -> str:
+    """Post to the channel, keeping the gate conversation threaded.
+
+    reply_broadcast matters more than it looks. A plain threaded reply shows in
+    the channel only as a small "1 reply" link under the parent, which is easy
+    to miss on a phone, and the whole point of this gate is that Mark sees it
+    while away from the machine. Broadcasting keeps the thread tidy AND puts
+    every question in the channel where he is actually looking.
+    """
     payload = {"channel": env["SLACK_CHANNEL_ID"], "text": text}
     if thread_ts:
         payload["thread_ts"] = thread_ts
+        payload["reply_broadcast"] = True
     return api("chat.postMessage", env, payload)["ts"]
 
 
 # --- identity ----------------------------------------------------------------
 
-def accepted_replies(env: dict, gate_ts: str) -> list:
-    """Replies in this thread that genuinely came from Mark.
+def _is_mark(m: dict, env: dict, gate_ts: str) -> bool:
+    """Certification: did a live person, specifically Mark, write this?
 
-    Six conditions, all required:
       author is the configured user      not anyone else
       no bot_id                          a bot token cannot post without one
-      no subtype                         excludes joins, edits, file shares
-      in this gate's thread              not loose in the channel
+      no subtype                         excludes joins, topic changes, edits
       posted after the prompt            not an older message
       text is non-empty
+
+    Note what is NOT required: that it be a threaded reply. Answering in the
+    channel is the natural thing to do from a phone, and only one gate is ever
+    open at a time, so a message from Mark after the prompt is unambiguous.
+    Insisting on a thread would add a tap every week and buy no certification.
     """
-    body = api("conversations.replies", env, params={
-        "channel": env["SLACK_CHANNEL_ID"], "ts": gate_ts, "limit": 200})
-    out = []
-    for m in body.get("messages", []):
-        if m.get("user") != env["SLACK_USER_ID"]:
+    if m.get("user") != env["SLACK_USER_ID"]:
+        return False
+    if m.get("bot_id") or m.get("subtype"):
+        return False
+    if float(m.get("ts", 0)) <= float(gate_ts):
+        return False
+    return bool((m.get("text") or "").strip())
+
+
+def accepted_replies(env: dict, gate_ts: str) -> list:
+    """Everything Mark has said since the prompt, in the thread or the channel."""
+    seen, out = set(), []
+    for method, params in (
+        ("conversations.replies",
+         {"channel": env["SLACK_CHANNEL_ID"], "ts": gate_ts, "limit": 200}),
+        ("conversations.history",
+         {"channel": env["SLACK_CHANNEL_ID"], "oldest": gate_ts, "limit": 200}),
+    ):
+        try:
+            body = api(method, env, params=params)
+        except SlackError:
             continue
-        if m.get("bot_id") or m.get("subtype"):
-            continue
-        if m.get("thread_ts") != gate_ts:
-            continue
-        if float(m.get("ts", 0)) <= float(gate_ts):
-            continue
-        if not (m.get("text") or "").strip():
-            continue
-        out.append({"ts": m["ts"], "text": m["text"].strip()})
+        for m in body.get("messages", []):
+            if m["ts"] in seen or not _is_mark(m, env, gate_ts):
+                continue
+            seen.add(m["ts"])
+            out.append({"ts": m["ts"], "text": m["text"].strip()})
     out.sort(key=lambda m: float(m["ts"]))
     return out
 
@@ -161,7 +185,7 @@ def is_stale(state: dict) -> bool:
 
 READY_TEXT = (
     "*Sales Pulse, {date}*\n"
-    "Ready to run? Reply *yes* in this thread once the Asana board is current.\n"
+    "Ready to run? Reply *yes* once the Asana board is current.\n"
     "_Answering yes pulls Asana fresh at that moment, so the brief reflects the "
     "board as it stands when you reply, not now._\n"
     "Reply *not yet* to stand down."
@@ -184,17 +208,9 @@ def open_gate(env: dict, render_date, test: bool = False) -> dict:
 
 # --- advancing the conversation ----------------------------------------------
 
-BOARD_TEMPLATE = (
-    "Pulled Asana just now. Here is what the board says:\n"
-    "```\n{summary}\n```\n"
-    "If that is true, reply with the *total deal count* to confirm.\n"
-    "_Typing the number is the confirmation: it means you looked at live data, "
-    "not that you remembered updating the board._"
-)
-
 MDA_TEXT = (
-    "Confirmed.\n\n"
-    "*MD&A for this week?* Reply in this thread: what moved, what is top of mind, "
+    "Pulled Asana just now: {pulled}\n\n"
+    "*MD&A for this week?* Reply here: what moved, what is top of mind, "
     "what we are doing about it.\n"
     "Number any priorities (1. 2. 3.) and they become the Priorities list; the "
     "prose above them fills the banner.\n"
@@ -202,8 +218,16 @@ MDA_TEXT = (
 )
 
 
+def pull_line(deals: dict, leads: list) -> str:
+    """One line of context inside the MD&A prompt. Informational, not a gate."""
+    c = {k: len(v) for k, v in deals.items()}
+    return ("%d deals (open %d, stalled %d, won %d, lost %d), %d leads"
+            % (sum(c.values()), c.get("open", 0), c.get("stalled", 0),
+               c.get("won", 0), c.get("lost", 0), len(leads)))
+
+
 def board_summary(deals: dict, leads: list, previous: dict | None = None) -> tuple[str, int]:
-    """The evidence Mark confirms against. Returns (text, total_deal_count)."""
+    """Kept for the Slack notification after publish, not used as a gate."""
     counts = {k: len(v) for k, v in deals.items()}
     total = sum(counts.values())
     thin = sum(1 for d in sum(deals.values(), []) if d.get("needs_enrichment"))
@@ -231,16 +255,8 @@ def board_summary(deals: dict, leads: list, previous: dict | None = None) -> tup
     return "\n".join(lines), total
 
 
-def ask_confirm(env: dict, state: dict, summary: str, total: int) -> dict:
-    post(env, BOARD_TEMPLATE.format(summary=summary), thread_ts=state["gate_ts"])
-    state["step"] = ASK_CONFIRM
-    state["expect"] = str(total)
-    write_state(state)
-    return state
-
-
-def ask_mda(env: dict, state: dict) -> dict:
-    post(env, MDA_TEXT, thread_ts=state["gate_ts"])
+def ask_mda(env: dict, state: dict, pulled: str = "") -> dict:
+    post(env, MDA_TEXT.format(pulled=pulled), thread_ts=state["gate_ts"])
     state["step"] = ASK_MDA
     write_state(state)
     return state

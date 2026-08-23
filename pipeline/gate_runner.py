@@ -33,7 +33,7 @@ def log(msg: str) -> None:
 
 
 def do_pull(env, state):
-    """Fresh pull, then show Mark the board and ask him to confirm it."""
+    """Fresh pull on yes, then straight to the MD&A. Two prompts, no third."""
     log("pull: fetching Asana")
     previous = None
     cur = config.DATA_DIR / "deal_data_current.json"
@@ -54,9 +54,9 @@ def do_pull(env, state):
     deals = json.loads(cur.read_text(encoding="utf-8"))
 
     state["pulled_at"] = datetime.now().strftime("%H:%M PT")
-    summary, total = sg.board_summary(deals, leads, previous)
-    log("pull: %d deals, %d leads" % (total, len(leads)))
-    return sg.ask_confirm(env, state, summary, total)
+    line = sg.pull_line(deals, leads)
+    log("pull: %s" % line)
+    return sg.ask_mda(env, state, pulled=line)
 
 
 def do_render(env, state, mda, test):
@@ -103,19 +103,6 @@ def tick(env, state, test: bool):
             sg.notify(env, state, "Reply *yes* when the board is current, or *not yet* to stand down.")
             return state
         return do_pull(env, state)
-
-    if state["step"] == sg.ASK_CONFIRM:
-        if kind == "no":
-            sg.notify(env, state, "Stood down. Nothing published.")
-            sg.clear_state()
-            return None
-        typed = "".join(ch for ch in msg["text"] if ch.isdigit())
-        if typed != state.get("expect"):
-            sg.notify(env, state,
-                      "That does not match. Reply with the *total deal count* shown above, "
-                      "or *not yet* to stand down.")
-            return state
-        return sg.ask_mda(env, state)
 
     if state["step"] == sg.ASK_MDA:
         mda = "" if msg["text"].strip().lower() in ("skip", "none", "-") else msg["text"]
