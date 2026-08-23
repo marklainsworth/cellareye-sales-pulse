@@ -1,5 +1,6 @@
-# Asana personal access token, never committed
-config/asana.env
+# Every credential file under config/, never committed.
+# Broader than naming each one, so a new *.env cannot be added unprotected.
+config/*.env
 
 # pull artefacts
 data/notes_dump.md
