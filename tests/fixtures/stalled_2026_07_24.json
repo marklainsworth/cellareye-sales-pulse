@@ -1,0 +1,11 @@
+[
+  {"name": "Crux Cavas", "first": "Maria Belen", "last": "Cocconi",
+   "channel": "Cellar Builder", "arr": null, "onb": 2250, "stage": "Stalled",
+   "notes": "Sommeliers Path B"},
+  {"name": "Harper's Club", "first": "Chris", "last": "Hoel",
+   "channel": "Sommelier Managed", "arr": null, "onb": 2250, "stage": "Stalled",
+   "notes": "On pause. Not switching from CT. EOY/2027."},
+  {"name": "Sorrells Custom Wine Cellars", "first": "Tim", "last": "Lewis",
+   "channel": "Cellar Builder", "arr": null, "onb": 4500, "stage": "Stalled",
+   "notes": "Waiting on Tim for contract."}
+]

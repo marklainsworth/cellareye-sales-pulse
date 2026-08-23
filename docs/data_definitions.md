@@ -48,14 +48,18 @@ ARR runs the company. Onboarding pays bills today. They are not interchangeable.
 
 ## Channel definitions
 
-| Channel | What it means |
-|---|---|
-| Sommelier Managed | Sold to and through professional sommeliers managing client cellars |
-| Reserve-Client Direct | Direct individual collectors, often Mostafa's network |
-| Cellar Builder | Companies who build wine cellars for clients (partner channel) |
-| Hospitality | Restaurants, hotels, golf clubs, private clubs |
-| Wine Storage | Storage facilities and logistics partners |
-| Retailer-Partner | Wine retailers, both standalone shops and grocery wine programs |
+All 8 channels are always displayed on the brief, including any sitting at zero.
+
+| Channel | Short name (Target Accounts cards) | What it means |
+|---|---|---|
+| Sommelier Program | Somm Program | Sommeliers enrolled through the CellarEye program (lead-heavy channel) |
+| Hospitality | Hospitality | Restaurants, hotels, golf clubs, private clubs |
+| Sommelier Managed | Somm Managed | Sold to and through professional sommeliers managing client cellars |
+| Retailer-Partner | Retailer | Wine retailers, both standalone shops and grocery wine programs |
+| Wine Storage | Wine Storage | Storage facilities and logistics partners |
+| Cellar Builder | Cellar Builder | Companies who build wine cellars for clients (partner channel) |
+| Reserve-Client Direct | Reserve Direct | Direct individual collectors, often Mostafa's network |
+| Direct to Consumer | DTC | Individual buyers with no partner or somm intermediary |
 
 Channel field controls implementation/onboarding context. It does NOT determine pricing.
 
@@ -71,10 +75,50 @@ A deal is flagged for attention when it has been sitting in its current stage lo
 
 **Cap:** Maximum 8 deals shown.
 
+**This rule is canonical.** `SALES_PULSE_BUILD_SPEC.md` section 5 proposes a simplified
+"Stalled plus Proposal" list. That is superseded: use the thresholds above. The pull must
+therefore request `modified_at` on every task.
+
 **Sort order:**
 1. Stalled deals first (decision overdue)
 2. Then by stage progression (Proposal → Demo → Qualified → Warm → Cold)
 3. Within stage, by Onboarding value descending
+
+## Deal counting
+
+### total_deals_count
+
+`total_deals_count` is the raw number of tasks in the Sales Pipeline project, across all
+eight sections:
+
+```
+total_deals_count = open + stalled + won + lost
+                  = (Cold + Warm + Qualified + Demo + Proposal) + Stalled + Closed Won + Closed Lost
+```
+
+Rules:
+
+- **Includes** Stalled, Closed Won and Closed Lost. It is a project total, not a pipeline total.
+- **Includes** known duplicates. The count is raw so that the funnel reconciles: the eight
+  stage counts must sum to `total_deals_count` exactly. Suppressing duplicates here would
+  break that check.
+- Duplicates are surfaced in `data_quality_summary` instead, never silently removed.
+
+As of 2026-07-24: 40 open + 3 stalled + 2 won + 6 lost = **51**, of which one is a known
+duplicate (see below), so 50 distinct deals.
+
+Note that `data/deal_data_current.json` carries no `stalled` array. It was recovered from the
+published brief and that section was lost in recovery, so it totals 48, not 51. The three
+Stalled deals are reconstructed in `tests/fixtures/stalled_2026_07_24.json` for the golden
+test. The first live pull will supply them properly.
+
+### Known duplicate
+
+Joshua Plack appears twice in Qualified, as `Drink with Me` (onboarding 2250) and
+`Plack, Joshua - Drink With Me` (onboarding unset). This inflates Qualified by one.
+The two task GIDs must be confirmed against these two task names before any code keys on
+them. Until the tasks are merged in Asana, the duplicate is called out in
+`data_quality_summary`.
 
 ## Data quality flags
 
@@ -85,6 +129,9 @@ The dashboard color-codes data quality on revenue metrics:
 - **Red** (error): <50% of deals have the value assigned
 
 The "DATA QUALITY" alert at the top of the dashboard summarizes the major hygiene issues found in this week's render.
+
+**These thresholds are canonical.** `SALES_PULSE_BUILD_SPEC.md` section 5 proposes a single
+40% cutoff. That is superseded: use the three tiers above.
 
 ## Loss Reason field (planned for v0.6)
 
@@ -165,3 +212,7 @@ For anyone building automation against this project, the relevant Asana GIDs:
 - Hospitality: `1214587337205109`
 - Wine Storage: `1214588235873023`
 - Retailer-Partner: `1214588439226165`
+- Sommelier Program: `1216016965299601`
+- Direct to Consumer: **TBD, look up at build time.** The Channel enum reports 8 options
+  but only 7 GIDs have been captured. `pull_asana.py` must resolve this one live and
+  this line must be filled in before the first real run.
