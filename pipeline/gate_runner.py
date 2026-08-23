@@ -30,6 +30,16 @@ import slack_gate as sg      # noqa: E402
 import summarize     # noqa: E402
 
 
+class PublishUnverified(RuntimeError):
+    """The brief was pushed but the live URL is not serving it.
+
+    Raised so the process exits non-zero. Under launchd the exit code is the
+    only signal anyone sees: nobody is watching the Slack message at 3pm on a
+    Friday, and a job that announces a failure and then exits 0 is a job that
+    reports success to the scheduler.
+    """
+
+
 def log(msg: str) -> None:
     print("[%s] %s" % (datetime.now().strftime("%H:%M:%S"), msg), flush=True)
 
@@ -138,11 +148,17 @@ def tick(env, state, test: bool):
             sg.clear_state()
             return None
 
-        log("waiting for the Action to mirror latest.html")
-        mirrored = publish.wait_for_mirror(out.name)
-        log("mirrored" if mirrored else "mirror not confirmed within the window")
-        publish.announce(env, state, out.name, sha, counts, mirrored, sg.notify)
+        # The marker must be unique to this run. The pull timestamp is, and it
+        # appears in the HTML comment at the top of every render.
+        marker = "pulled %s" % state.get("pulled_at", "")
+        log("verifying the live URL is serving this run")
+        verified, detail = publish.wait_for_mirror(out.name, marker)
+        log("live: %s" % detail)
+        publish.announce(env, state, out.name, sha, counts, verified, detail, sg.notify)
         sg.clear_state()
+        if not verified:
+            log("done, but the publish is UNVERIFIED")
+            raise PublishUnverified(detail)
         log("done")
         return None
 
@@ -218,6 +234,9 @@ def main(argv=None):
     test = bool(state.get("test")) or a.test
     try:
         tick(env, state, test=test)
+    except PublishUnverified as e:
+        log("exiting non-zero: %s" % e)
+        return 1
     except sg.SlackError as e:
         log("slack error: %s" % e)
         return 1

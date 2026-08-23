@@ -9,9 +9,12 @@ do not match that glob, which is what keeps a rehearsal off the live link.
 """
 from __future__ import annotations
 
+import re
 import subprocess
 import sys
 import time
+import urllib.error
+import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -54,45 +57,84 @@ def commit_and_push(brief: Path, render_date, counts: dict) -> str:
                counts.get("won", 0), counts.get("lost", 0)))
     git("commit", "-m", subject, "-m", body)
     sha = git("rev-parse", "--short", "HEAD")
+
+    # The mirror Action commits latest.html on GitHub's side, so origin is
+    # almost always ahead of us by the time the next run pushes. Two consecutive
+    # runs needed this by hand. Rebase onto it rather than merging, to keep the
+    # brief history linear.
+    git("fetch", "origin", "main")
+    behind = git("rev-list", "--count", "HEAD..origin/main", check=False)
+    if behind and behind != "0":
+        git("rebase", "origin/main")
+        sha = git("rev-parse", "--short", "HEAD")
     git("push", "origin", "main")
     return sha
 
 
-def wait_for_mirror(brief_name: str, timeout: int = 240) -> bool:
-    """Wait for the Action to copy the dated brief to latest.html.
+def fetch_live(url: str, timeout: int = 20) -> str:
+    req = urllib.request.Request(url, headers={
+        "Cache-Control": "no-cache", "Pragma": "no-cache",
+        "User-Agent": "cellareye-sales-pulse/verify"})
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.read().decode("utf-8", "replace")
+    except (urllib.error.URLError, urllib.error.HTTPError):
+        return ""
 
-    Polls the remote rather than the local clone, since the Action commits on
-    GitHub's side. Returns False on timeout rather than raising: a brief that is
-    published but not yet mirrored is a delay, not a failure.
+
+def wait_for_mirror(brief_name: str, marker: str, timeout: int = 300) -> tuple[bool, str]:
+    """Confirm the LIVE site is serving this brief. Returns (verified, detail).
+
+    Git state is not proof of publication. On 2026-08-23 the mirror Action ran
+    correctly, latest.html matched the dated brief in git, and the site was
+    still serving a month-old cached build because every Pages build had been
+    failing. The old check reported success and Slack announced a link that was
+    live but wrong.
+
+    So this fetches the served HTML and looks for a marker unique to this run,
+    the pull timestamp. Anything less can be satisfied by a stale cache.
     """
     deadline = time.time() + timeout
+    last = "no response from the live URL"
     while time.time() < deadline:
         time.sleep(15)
-        try:
-            git("fetch", "origin", "main", check=False)
-            head = git("rev-parse", "origin/main", check=False)
-            latest = git("show", "%s:briefs/latest.html" % head, check=False)
-            dated = git("show", "%s:briefs/%s" % (head, brief_name), check=False)
-            if latest and dated and latest == dated:
-                return True
-        except RuntimeError:
-            pass
-    return False
+        html = fetch_live(LIVE_URL)
+        if not html:
+            last = "live URL unreachable"
+            continue
+        if marker in html:
+            return True, "live URL is serving this run (%s)" % marker
+        m = re.search(r"Generated ([^<]{0,40})", html)
+        last = "live URL still serving %s" % (m.group(1).strip() if m else "older content")
+    return False, last
 
 
 def announce(env, gate_state, brief_name: str, sha: str, counts: dict,
-             mirrored: bool, notify_fn) -> None:
+             verified: bool, detail: str, notify_fn) -> None:
+    """Announce the truth. An unverified publish is reported as a failure.
+
+    The brief is committed and pushed either way; what is uncertain is whether
+    anyone can read it. Saying "published" when the live URL serves something
+    else is the failure this whole check exists to prevent.
+    """
     total = sum(counts.values())
-    lines = [
-        ":white_check_mark: *Sales Pulse published*",
-        "%s" % (LIVE_URL if mirrored else dated_url(brief_name)),
-        "",
-        "%d deals: open %d, stalled %d, won %d, lost %d"
-        % (total, counts.get("open", 0), counts.get("stalled", 0),
-           counts.get("won", 0), counts.get("lost", 0)),
-    ]
-    if sha:
-        lines.append("_commit %s_" % sha)
-    if not mirrored:
-        lines.append("_latest.html has not mirrored yet; the dated link above is live now._")
+    counts_line = ("%d deals: open %d, stalled %d, won %d, lost %d"
+                   % (total, counts.get("open", 0), counts.get("stalled", 0),
+                      counts.get("won", 0), counts.get("lost", 0)))
+    if verified:
+        lines = [":white_check_mark: *Sales Pulse published*", LIVE_URL, "", counts_line]
+        if sha:
+            lines.append("_commit %s_" % sha)
+    else:
+        lines = [
+            ":x: *Sales Pulse publish NOT confirmed*",
+            "The brief is committed and pushed%s, but the live URL is not serving it."
+            % ((" as %s" % sha) if sha else ""),
+            "```%s```" % detail,
+            "Check the Pages build: "
+            "https://github.com/marklainsworth/cellareye-sales-pulse/deployments",
+            "",
+            "Direct file link, may also be stale: " + dated_url(brief_name),
+            counts_line,
+        ]
     notify_fn(env, gate_state, "\n".join(lines))

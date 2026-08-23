@@ -182,11 +182,15 @@ def main(argv=None):
         return 1
     say("pushed", sha or "nothing to commit")
 
-    say("mirror", "waiting for the Action to update latest.html")
-    mirrored = publish.wait_for_mirror(out.name)
-    say("mirror", "done" if mirrored else "not confirmed yet, the dated link is live")
-    say("live", publish.LIVE_URL if mirrored else publish.dated_url(out.name))
-    say("notify", "Slack notification is sent by the gate path, not this one")
+    marker = "pulled %s" % pulled_at
+    say("verify", "checking the live URL is serving this run")
+    verified, detail = publish.wait_for_mirror(out.name, marker)
+    say("live", detail)
+    if not verified:
+        say("FAILED", "committed and pushed, but the live URL is not serving it")
+        say("check", "https://github.com/marklainsworth/cellareye-sales-pulse/deployments")
+        return 1
+    say("live", publish.LIVE_URL)
     return 0
 
 
