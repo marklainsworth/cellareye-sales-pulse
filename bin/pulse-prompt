@@ -1,8 +1,11 @@
 #!/bin/bash
-# Fired by launchd at Friday 15:00. Notifies only; it never runs the Pulse.
-# The run is interactive by design (Mark's yes, then his MD&A), and a launchd
-# job cannot wait for a human.
+# Fired by launchd at Friday 15:00. Opens the Slack gate and exits.
+#
+# It posts to #sales-pulse rather than raising a macOS notification: the Air
+# lives in the casita and Mark is frequently on the road, so a local
+# notification would be invisible exactly when it matters. It does NOT run the
+# Pulse. Mark answers in the thread from wherever he is, and bin/pulse-gate
+# picks the reply up on its next tick.
 set -euo pipefail
-MSG="Board updated and ready to run the Pulse? Answering yes pulls Asana fresh, right now."
-/usr/bin/osascript -e "display notification \"${MSG}\" with title \"CellarEye Sales Pulse\" sound name \"Glass\""
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] prompt fired"
+cd "$(dirname "$0")/.."
+exec /usr/bin/env python3 -m pipeline.gate_runner --open "$@"

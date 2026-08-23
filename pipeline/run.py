@@ -1,9 +1,19 @@
-"""The Sales Pulse orchestrator. Two prompts, then it runs on its own.
+"""The Sales Pulse orchestrator, local terminal path.
+
+This is the fallback for when Mark is at the machine. The production path is
+Slack, because the Air lives in the casita and Mark is usually not next to it:
+
+    bin/pulse-prompt                   opens the gate in #sales-pulse
+    bin/pulse-gate                     one tick, launchd runs it every 60s
+    python -m pipeline.gate_runner --status
+
+Both paths share the same pull, summarise, render and checks. Only the way the
+two questions get asked differs.
 
     python -m pipeline.run --test     rehearsal: writes briefs/test-<date>.html,
                                       never touches latest.html, never commits,
                                       never notifies
-    python -m pipeline.run            the real Friday run
+    python -m pipeline.run            the real Friday run, from this machine
 
 The gate is the point. Only Mark certifies that the board is true, and the pull
 happens when he says yes, never from a stale 3:00 snapshot. There is no second
@@ -51,7 +61,9 @@ def ask_ready() -> bool:
     if not sys.stdin.isatty():
         raise SystemExit(
             "run.py needs a terminal. The gate cannot be answered by a pipe.\n"
-            "Run it directly in a shell, not through a script or a scheduler.")
+            "To answer remotely, use the Slack path instead:\n"
+            "  bin/pulse-prompt      opens the gate in #sales-pulse\n"
+            "  bin/pulse-gate        reads your reply")
     answer = input(READY_PROMPT).strip().lower()
     return answer in ("y", "yes")
 
