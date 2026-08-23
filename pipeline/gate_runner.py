@@ -72,7 +72,8 @@ def do_render(env, state, mda, test):
                             state.get("pulled_at", ""), template=tpl)
 
     failures, warnings, lines = checks.run_all(
-        html, tpl, deals, leads, mda, render_date, strict_friday=not test)
+        html, tpl, deals, leads, mda, render_date,
+        strict_friday=not (test or state.get("allow_any_day")))
     for ln in lines:
         log(ln.rstrip())
     if failures:
@@ -154,6 +155,10 @@ def main(argv=None):
     p.add_argument("--status", action="store_true", help="show state, change nothing")
     p.add_argument("--close", action="store_true", help="abandon an open gate")
     p.add_argument("--test", action="store_true", help="render to the test path, never publish")
+    p.add_argument("--allow-any-day", action="store_true",
+                   help="publish on a day that is not Friday. Explicit by design: the "
+                        "Friday check exists to catch cadence drift, so bypassing it "
+                        "should be a decision, never a default.")
     p.add_argument("--date", help="render date YYYY-MM-DD")
     a = p.parse_args(argv)
 
@@ -185,6 +190,11 @@ def main(argv=None):
             return 0
         render_date = date.fromisoformat(a.date) if a.date else date.today()
         state = sg.open_gate(env, render_date, test=a.test)
+        if a.allow_any_day:
+            # recorded on the gate, not read from a later tick's argv, so the
+            # override cannot be lost or accidentally acquired mid-run
+            state["allow_any_day"] = True
+            sg.write_state(state)
         log("gate opened, ts %s" % state["gate_ts"])
         # Out-of-band buzz. Best effort: the Slack message is the real artefact,
         # and a failed nudge must never stop a gate from opening.
