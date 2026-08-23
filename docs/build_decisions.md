@@ -143,3 +143,60 @@ Found while building the golden test. The renderer deliberately does not reprodu
    count.
 
 All three are consistent with the brief having been assembled by hand.
+
+## Scheduling
+
+Verified on the Air 2026-08-23 rather than assumed.
+
+The daily brief is a launchd agent, `~/Library/LaunchAgents/com.lgv.dailybrief.plist`,
+`StartCalendarInterval` at 05:00, `RunAtLoad` false, with `PATH` and `HOME` set explicitly
+because launchd gives a job almost no PATH. No tmux and no caffeinate anywhere in lgv-ops.
+
+**launchd does not wake a sleeping Mac.** A missed `StartCalendarInterval` job runs once on
+the next wake, late. The daily brief fires on time for a different reason: `pmset -g custom`
+shows `sleep 0` on AC power, so the Air never idle-sleeps while plugged in. On battery it is
+`sleep 1`, one minute. `pmset -g sched` lists no wake events on the brief's behalf. Two
+consecutive runs both started at exactly 05:00:05, which confirms it.
+
+So the working arrangement is: plugged in, lid open, sleep disabled on AC.
+
+The Pulse mirrors that plist with `Weekday 5, Hour 15, Minute 0`, and adds a real hardware
+wake, `sudo pmset repeat wake F 14:55:00`. The daily brief runs seven days a week so a missed
+morning self-corrects; the Pulse is weekly, so a missed Friday waits a week. `pmset repeat`
+holds one repeating schedule machine-wide and none was set.
+
+**The job fires the prompt, not the run.** The Pulse is interactive by design and launchd
+cannot wait for a human. `bin/pulse-prompt` notifies; Mark starts the run when he answers.
+Because the pull happens at yes rather than at 3:00, a late trigger costs nothing in data
+freshness. That tolerance is a property of the design, not luck.
+
+## Notes: description and comments
+
+Corrected 2026-08-23 after checking live. The description field is not where the working
+notes live. Confirmed on Bottles Puerto Rico: its description is one thin line while
+Danielle's actual call summary (4 outlets, ~12k bottles, no current system, wants the
+QR/tablet module, next steps) is a comment posted 8/21. Going forward Mark and Danielle put
+the real notes in the comment thread.
+
+`pull_asana.py` therefore stores both, verbatim:
+
+- **description**, run through a cleaning pass: strip the leading emoji and the
+  `Calculator:` prefix, flatten to one line, convert em and en dashes. `Based on ...` is
+  preserved, only `Calculator:` is stripped, since the former carries meaning.
+- **comments**, the two most recent per deal, filtered to `resource_subtype == comment_added`.
+
+The spread is real. Crux Cavas has a Calculator line and no comments at all; Meritage has a
+Calculator line and three substantial threads; the Cold prospects carry long research
+write-ups in the description and no comments.
+
+Choosing which reaches the brief, and summarising it to a tight line, is a render-time
+decision and is deliberately not made in the pull. Not wired until Mark has seen the dump.
+
+`data/deal_notes.json` stays an optional override keyed by task GID. It is not required to
+exist; the default is the live cleaned description plus the summarised recent comment.
+
+## Golden test scope
+
+Excluded from byte comparison, each by design: the `<style>` block (the curly-quote fix
+changed it), and both `_json` payloads plus `deal_meta`, because the notes they carry are
+summarised from live comments and so are nondeterministic.

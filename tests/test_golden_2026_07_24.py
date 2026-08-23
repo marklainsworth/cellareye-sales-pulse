@@ -117,6 +117,9 @@ def main():
 
     failures, diverged, checked = [], [], 0
     for key in sorted(published):
+        # _json payloads carry the notes field, which is now summarised from live
+        # Asana comments and is therefore nondeterministic. Excluded by design,
+        # the same way the <style> block is.
         if key in RETIRED or key.endswith("_json"):
             continue
         checked += 1
@@ -127,6 +130,10 @@ def main():
             diverged.append((key, got, want))
         else:
             failures.append((key, got, want))
+
+    # attention rows carry deal_meta, which is built from the notes field and so
+    # is excluded for the same reason. The rule that selects the rows is checked
+    # through attention_meta above.
 
     # channel rows must match exactly, order included
     for i, (got, want) in enumerate(zip(ctx["channels"], published_rows["channels"])):

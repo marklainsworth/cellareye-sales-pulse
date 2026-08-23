@@ -1,0 +1,7 @@
+# Asana personal access token, never committed
+config/asana.env
+
+# pull artefacts
+data/notes_dump.md
+data/notes_dump.json
+data/lead_data_previous.json

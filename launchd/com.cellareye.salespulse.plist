@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.cellareye.salespulse</string>
+
+  <!-- Fires the PROMPT, not the run. The Pulse is interactive by design: it
+       needs Mark's yes and his MD&amp;A. A launchd job cannot wait for a human,
+       and a process sitting all day waiting is exactly what laptop sleep
+       kills. So this notifies, and Mark starts the run when he answers. -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/marklucianoainsworth/lgv/cellareye-sales-pulse/bin/pulse-prompt</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/marklucianoainsworth/lgv/cellareye-sales-pulse</string>
+
+  <!-- launchd gives a job almost no PATH. Copied from com.lgv.dailybrief,
+       where leaving it out meant a 5am failure with "command not found". -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/Users/marklucianoainsworth/.local/bin:/Users/marklucianoainsworth/lgv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key><string>/Users/marklucianoainsworth</string>
+    <key>PYTHONWARNINGS</key><string>ignore</string>
+    <key>LANG</key><string>en_US.UTF-8</string>
+  </dict>
+
+  <!-- Friday 15:00 local. Weekday 5 is Friday. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>5</integer>
+    <key>Hour</key><integer>15</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <!-- Do not fire on load. Installing this should never prompt. -->
+  <key>RunAtLoad</key><false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/marklucianoainsworth/lgv/logs/pulse.launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/marklucianoainsworth/lgv/logs/pulse.launchd.err.log</string>
+
+  <key>ProcessType</key><string>Background</string>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+#!/bin/bash
+# Fired by launchd at Friday 15:00. Notifies only; it never runs the Pulse.
+# The run is interactive by design (Mark's yes, then his MD&A), and a launchd
+# job cannot wait for a human.
+set -euo pipefail
+MSG="Board updated and ready to run the Pulse? Answering yes pulls Asana fresh, right now."
+/usr/bin/osascript -e "display notification \"${MSG}\" with title \"CellarEye Sales Pulse\" sound name \"Glass\""
+echo "[$(date '+%Y-%m-%d %H:%M:%S')] prompt fired"

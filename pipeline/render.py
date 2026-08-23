@@ -50,6 +50,30 @@ def dq_class(filled: int, total: int) -> str:
     return "error"
 
 
+def no_em_dash(text: str) -> str:
+    """House style: no em dashes in Mark-visible copy. Asana names and notes carry
+    them, so anything sourced from Asana passes through here."""
+    if not text:
+        return text
+    t = re.sub(r"\s*\u2014\s*", " - ", text)     # em dash becomes a spaced hyphen
+    return re.sub(r"\u2013", "-", t)              # en dash becomes a hyphen
+
+
+def money_short(value) -> str:
+    """150000 -> '$150K', 27800 -> '$27.8K'. Drops a trailing .0, for subtexts."""
+    v = value or 0
+    if v == 0:
+        return "$0"
+    t = "%.1f" % (v / 1000.0)
+    return "$%sK" % (t[:-2] if t.endswith(".0") else t)
+
+
+def short_name(name: str) -> str:
+    """'The Ritz London (Sorrells)' -> 'Ritz London'. For inline lists."""
+    n = re.split(r"\s+[(\u2014-]\s*", name.strip(), maxsplit=1)[0]
+    return re.sub(r"^The\s+", "", n).strip() or name.strip()
+
+
 def slug(channel: str) -> str:
     return "ta-" + re.sub(r"[^a-z0-9]", "", channel.lower())
 
@@ -194,9 +218,10 @@ def attention_rows(deals: dict, as_of: date) -> tuple[list, str, str]:
         onb = d.get("onb")
         contact = " ".join(x for x in (d.get("first"), d.get("last")) if x)
         note = (d.get("notes") or "").strip()
-        meta = " · ".join(x for x in (d.get("channel"), note) if x) or "no recent context recorded"
+        meta = no_em_dash(" · ".join(x for x in (d.get("channel"), note) if x)
+                          or "no recent context recorded")
         rows.append({
-            "deal_name": d.get("name", ""),
+            "deal_name": no_em_dash(d.get("name", "")),
             "deal_contact": contact or "—",
             "deal_signal": "%s · %s" % (d.get("stage"), money_k(onb) + " onb" if onb else "onb unset"),
             # prompt/sales_pulse_prompt.md: Stalled warm, Proposal stuck warm, Demo hot.
@@ -215,6 +240,80 @@ def attention_rows(deals: dict, as_of: date) -> tuple[list, str, str]:
                "Demo 10d, Proposal 14d, Stalled 21d). Sorted: Stalled first, then by stage "
                "progression (Proposal → Cold), then by onboarding value descending.")
     return rows, meta, why
+
+
+# --- generated subtexts ------------------------------------------------------
+#
+# These nine strings used to be authored by hand each week. They are number
+# restatements, so they are generated from the data. run.py may still override
+# any of them; judgment belongs in the MD&A, not here.
+
+def _lead_sections(leads: list) -> str:
+    by = {}
+    for l in leads:
+        by[l.get("section") or "unsectioned"] = by.get(l.get("section") or "unsectioned", 0) + 1
+    return " · ".join("%d %s" % (n, s) for s, n in sorted(by.items(), key=lambda kv: -kv[1]))
+
+
+def generated_subtexts(deals: dict, leads: list, channels: list, ta: list,
+                       counts: dict) -> dict:
+    open_deals, lost = deals.get("open", []), deals.get("lost", [])
+    active_ta = [r for r in ta if int(r["ch_count"])]
+    lead_total = len(leads)
+
+    lost_valued = [d for d in lost if d.get("onb") is not None]
+    lost_valued.sort(key=lambda d: -(d.get("onb") or 0))
+    lost_arr_named = [short_name(d["name"]) for d in lost if d.get("arr") is not None]
+
+    return {
+        "ta_meta": "%d leads · %d of %d channels active" % (
+            lead_total, len(active_ta), len(ta)),
+        "ta_total_subtext": _lead_sections(leads) or "organized in Asana project",
+        "ta_added_subtext": "no prior pull to compare",
+        "ta_qual_subtext": "no leads converted yet",
+        "ta_rate_subtext": "baseline building",
+        "lost_subtext": "%d closed lost to date" % len(lost),
+        "lost_arr_subtext": (" + ".join(lost_arr_named) if lost_arr_named
+                             else "none assigned to lost"),
+        "lost_onb_subtext": ("%d of %d valued · %s" % (
+            len(lost_valued), len(lost),
+            " + ".join("%s %s" % (short_name(d["name"]), money_short(d["onb"]))
+                       for d in lost_valued[:3]))
+            if lost_valued else "none valued"),
+        "data_quality_summary": _quality_summary(deals, channels, counts),
+    }
+
+
+def _quality_summary(deals: dict, channels: list, counts: dict) -> str:
+    """The factual base. Judgment goes in the MD&A, never here."""
+    open_deals = deals.get("open", [])
+    n = len(open_deals)
+    parts = []
+
+    arr_n = sum(1 for d in open_deals if d.get("arr") is not None)
+    onb_n = sum(1 for d in open_deals if d.get("onb") is not None)
+    parts.append("ARR set on %d of %d open deals (%d%%); Onboarding on %d of %d (%d%%)."
+                 % (arr_n, n, pct(arr_n, n), onb_n, n, pct(onb_n, n)))
+
+    unvalued = [c for c in channels if c["channel_onb"] == "$0"]
+    if unvalued:
+        named = ["%s (%s deal%s)" % (c["channel_name"], c["channel_deals"],
+                                     "" if c["channel_deals"] == "1" else "s")
+                 for c in unvalued]
+        joined = named[0] if len(named) == 1 else ", ".join(named[:-1]) + " and " + named[-1]
+        parts.append("%s entirely unvalued." % joined)
+
+    no_channel = sum(1 for d in open_deals if not d.get("channel"))
+    if no_channel:
+        parts.append("%d open deal%s carries no Channel." % (
+            no_channel, "" if no_channel == 1 else "s"))
+
+    for label, tasks in getattr(config, "DUPLICATE_TASKS", {}).items():
+        parts.append("%s appears twice (%s) and still needs a merge."
+                     % (label, ", ".join(no_em_dash(t[1]) for t in tasks)))
+
+    parts.append("No Loss Reason field on the project.")
+    return " ".join(parts)
 
 
 # --- template engine ---------------------------------------------------------
@@ -266,7 +365,7 @@ AUTHORED_DEFAULTS = {
 def build_context(deals: dict, leads: list, mda: str, render_date: date,
                   pull_time: str, authored: dict | None = None,
                   version: str | None = None) -> dict:
-    authored = {**AUTHORED_DEFAULTS, **(authored or {})}
+    authored = {k: v for k, v in (authored or {}).items()}
     version = version or config.version()
 
     open_deals = deals.get("open", [])
@@ -346,7 +445,10 @@ def build_context(deals: dict, leads: list, mda: str, render_date: date,
     for stage, key in config.STAGE_KEYS.items():
         ctx["stage_%s_count" % key] = str(counts[stage])
         ctx["stage_%s_fill" % key] = str(pct(counts[stage], top))
-    ctx.update(authored)
+    generated = generated_subtexts(deals, leads, channels, ta, counts)
+    ctx.update({k: v for k, v in generated.items() if v})
+    # anything explicitly authored still wins over the generated version
+    ctx.update({k: v for k, v in authored.items() if v})
     return ctx
 
 
