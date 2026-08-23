@@ -1,6 +1,7 @@
 # Every credential file under config/, never committed.
 # Broader than naming each one, so a new *.env cannot be added unprotected.
 config/*.env
+config/NEW_TOPIC.txt
 
 # pull artefacts
 data/notes_dump.md
