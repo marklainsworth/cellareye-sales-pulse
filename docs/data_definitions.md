@@ -114,11 +114,16 @@ test. The first live pull will supply them properly.
 
 ### Known duplicate
 
-Joshua Plack appears twice in Qualified, as `Drink with Me` (onboarding 2250) and
-`Plack, Joshua - Drink With Me` (onboarding unset). This inflates Qualified by one.
-The two task GIDs must be confirmed against these two task names before any code keys on
-them. Until the tasks are merged in Asana, the duplicate is called out in
-`data_quality_summary`.
+Joshua Plack appears twice. Both task GIDs confirmed live 2026-08-23:
+
+| GID | Task name | Section | ARR | Onboarding |
+|---|---|---|---|---|
+| `1214588513835040` | Drink with Me | Demo | 3000 | 2250 |
+| `1215968666300621` | Plack, Joshua — Drink With Me | Demo | unset | unset |
+
+Both sat in Qualified on 2026-07-24 and have since moved to Demo, so the inflation follows
+them between stages rather than sitting on one. Until they are merged in Asana the duplicate
+is called out in `data_quality_summary`.
 
 ## Data quality flags
 
@@ -213,6 +218,6 @@ For anyone building automation against this project, the relevant Asana GIDs:
 - Wine Storage: `1214588235873023`
 - Retailer-Partner: `1214588439226165`
 - Sommelier Program: `1216016965299601`
-- Direct to Consumer: **TBD, look up at build time.** The Channel enum reports 8 options
-  but only 7 GIDs have been captured. `pull_asana.py` must resolve this one live and
-  this line must be filled in before the first real run.
+- Direct to Consumer: `1214587337205110`
+
+All 8 verified live 2026-08-23 against the project's `custom_field_settings`.

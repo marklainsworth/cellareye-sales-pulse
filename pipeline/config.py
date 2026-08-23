@@ -53,8 +53,7 @@ FIELDS = {
     "business_name": "1216016965299619",
 }
 
-# Direct to Consumer's option GID is still unresolved. pull_asana.py must look it
-# up live and this table must be completed before the first real run.
+# Verified live 2026-08-23 against the project's custom_field_settings.
 CHANNEL_OPTION_GIDS = {
     "Sommelier Managed": "1214587337205106",
     "Reserve-Client Direct": "1214587337205107",
@@ -63,7 +62,7 @@ CHANNEL_OPTION_GIDS = {
     "Retailer-Partner": "1214588439226165",
     "Wine Storage": "1214588235873023",
     "Sommelier Program": "1216016965299601",
-    "Direct to Consumer": None,  # TBD, resolve live
+    "Direct to Consumer": "1214587337205110",
 }
 
 # --- Taxonomy ----------------------------------------------------------------
@@ -119,3 +118,15 @@ MDA_PENDING = "Commentary pending."
 # --- Slack -------------------------------------------------------------------
 
 SLACK_CHANNEL = None  # set before wiring notifications
+
+# --- Known data defects ------------------------------------------------------
+
+# Joshua Plack exists twice. Verified live 2026-08-23: both tasks now sit in Demo
+# (they were in Qualified on 7/24). Until they are merged in Asana this inflates
+# whichever stage holds them by one, and it is called out in data_quality_summary.
+DUPLICATE_TASKS = {
+    "Joshua Plack": [
+        ("1214588513835040", "Drink with Me"),
+        ("1215968666300621", "Plack, Joshua \u2014 Drink With Me"),
+    ],
+}
