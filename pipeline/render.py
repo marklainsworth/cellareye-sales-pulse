@@ -80,42 +80,87 @@ def slug(channel: str) -> str:
 
 # --- MD&A --------------------------------------------------------------------
 
-NUMBERED = re.compile(r"^\s*(\d+)[.)]\s+(.*)$")
+# Dictated commentary does not produce a markdown list. Speaking "one, do this,
+# two, do that" comes back as one paragraph with "2.)" and "3.)" sitting inline,
+# and the first item often carries no marker at all. So markers are found
+# anywhere, not just at line start.
+INLINE_MARKER = re.compile(r"(?<![\d.$])([1-9])\s*[.)]+[\s)]+")
+# A phrase that announces the list, so the banner can be cut before it even when
+# the first item is unnumbered.
+CUE = re.compile(r"(?:^|[.!?]\s+)([^.!?]*\bpriorit\w*\b[^.!?]*?)(?=\s|$)", re.I)
+CUE_STRIP = re.compile(r"^(?:the\s+)?priorit\w*\s*(?:were|are|is|for)?\s*"
+                       r"(?:the\s+following\s+week|the\s+following|this\s+week|"
+                       r"next\s+week|for\s+the\s+week)?\s*[:,-]?\s*", re.I)
+
+
+def _split_marked(text: str):
+    """Return [segment, ...] split on inline numeric markers, or [] if not a list."""
+    marks = [(m.start(), m.end(), int(m.group(1))) for m in INLINE_MARKER.finditer(text)]
+    # Two markers minimum, and they must ascend. One stray "2." in prose is not a list.
+    if len(marks) < 2:
+        return []
+    nums = [n for _, _, n in marks]
+    if nums != sorted(nums) or len(set(nums)) != len(nums):
+        return []
+    segs, prev_end = [], None
+    for i, (a, b, _) in enumerate(marks):
+        if prev_end is None:
+            segs.append(text[:a])          # whatever precedes the first marker
+        else:
+            segs.append(text[prev_end:a])
+        prev_end = b
+    segs.append(text[prev_end:])
+    return [s.strip() for s in segs]
 
 
 def split_mda(text: str):
-    """Split one commentary block into banner prose and numbered priorities.
+    """Split one commentary block into banner prose and priorities.
 
-    Everything before the first numbered line becomes the banner. Each numbered
-    line becomes a priority, split on the first colon into title and why.
+    Handles both shapes: a typed markdown list with markers at line start, and
+    dictated prose where the markers land mid-sentence.
     Returns (banner_text, [{'priority_title', 'priority_why'}, ...]).
     """
-    text = (text or "").strip()
+    text = " ".join((text or "").split("\n"))
+    text = re.sub(r"\s{2,}", " ", text).strip()
     if not text:
         return config.MDA_PENDING, []
 
-    lines = text.split("\n")
-    first = next((i for i, ln in enumerate(lines) if NUMBERED.match(ln)), None)
-    if first is None:
-        return " ".join(ln.strip() for ln in lines if ln.strip()), []
+    segs = _split_marked(text)
+    if not segs:
+        return text, []
 
-    banner = " ".join(ln.strip() for ln in lines[:first] if ln.strip())
-    priorities, current = [], None
-    for ln in lines[first:]:
-        m = NUMBERED.match(ln)
-        if m:
-            current = m.group(2).strip()
-            priorities.append(current)
-        elif ln.strip() and priorities:
-            priorities[-1] += " " + ln.strip()
+    lead = segs[0]
+    items = segs[1:]
+
+    # If the lead ends with a phrase announcing the list, the text after that
+    # phrase is the first, unnumbered priority.
+    cue = None
+    for m in CUE.finditer(lead):
+        cue = m
+    if cue:
+        banner = lead[:cue.start(1)].strip()
+        first = CUE_STRIP.sub("", lead[cue.start(1):]).strip()
+        if first:
+            items.insert(0, first)
+    else:
+        banner = lead
 
     out = []
-    for item in priorities:
+    for item in items:
+        item = item.strip().strip(".").strip()
+        if not item:
+            continue
         title, sep, why = item.partition(":")
-        out.append({
-            "priority_title": (title.strip() + ("." if not sep and not title.strip().endswith(".") else "")) if not sep else title.strip() + ".",
-            "priority_why": why.strip(),
-        })
+        if sep:
+            out.append({"priority_title": title.strip() + ".",
+                        "priority_why": why.strip()})
+        else:
+            # No colon, which dictation rarely produces. Use the first sentence
+            # as the title and the rest as the reason.
+            parts = re.split(r"(?<=[.!?])\s+", item, maxsplit=1)
+            head = parts[0].rstrip(".")
+            out.append({"priority_title": head + ".",
+                        "priority_why": parts[1].strip() if len(parts) > 1 else ""})
     return (banner or config.MDA_PENDING), out
 
 
