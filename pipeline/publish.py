@@ -48,8 +48,18 @@ def commit_and_push(brief: Path, render_date, counts: dict) -> str:
     existing = [p for p in paths if (config.REPO_ROOT / p).exists()]
     git("add", *existing)
 
-    if not git("diff", "--cached", "--name-only"):
-        return ""                      # nothing changed, nothing to push
+    staged = git("diff", "--cached", "--name-only")
+    if not staged:
+        # Nothing staged is not the same as nothing to push. If the brief was
+        # already committed by some other route, the commit still has to reach
+        # origin or the live URL never updates and verification fails for a
+        # reason that looks like a CDN problem.
+        git("fetch", "origin", "main")
+        ahead = git("rev-list", "--count", "origin/main..HEAD", check=False)
+        if ahead and ahead != "0":
+            git("push", "origin", "main")
+            return git("rev-parse", "--short", "HEAD")
+        return ""
 
     total = sum(counts.values())
     subject = "Sales Pulse %s" % render_date.isoformat()
