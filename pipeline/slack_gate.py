@@ -183,12 +183,13 @@ def is_stale(state: dict) -> bool:
 
 # --- opening the gate --------------------------------------------------------
 
-# The prompt @-mentions Mark deliberately. Slack iOS does not reliably surface a
-# plain channel message until the app is opened, and a gate he does not see on
-# Friday afternoon is a gate that does not fire. Mentions get notification
-# priority. SLACK_USER_ID is substituted at post time.
+# No @-mention. It was added when Slack was the only way to reach Mark on a
+# Friday, but Slack suppresses mobile push while he looks active on desktop, so
+# it never reliably did the job. ntfy handles the alert now, on its own channel.
+# The mention's only remaining effect was to file every run in his Activity tab
+# and, because a mention auto-follows the thread, every bot reply after it too.
 READY_TEXT = (
-    "<@{user}> *Sales Pulse, {date}*\n"
+    "*Sales Pulse, {date}*\n"
     "Ready to run? Reply *yes* once the Asana board is current.\n"
     "_Answering yes pulls Asana fresh at that moment, so the brief reflects the "
     "board as it stands when you reply, not now._\n"
@@ -197,11 +198,10 @@ READY_TEXT = (
 
 
 def open_gate(env: dict, render_date, test: bool = False) -> dict:
-    header = ("<@{user}> *Sales Pulse, {date}*" if not test
-              else "<@{user}> *Sales Pulse, {date}  (TEST RUN)*")
-    text = READY_TEXT.replace("<@{user}> *Sales Pulse, {date}*", header)
-    ts = post(env, text.format(user=env["SLACK_USER_ID"],
-                               date=render_date.strftime("%A, %B %-d")))
+    header = ("*Sales Pulse, {date}*" if not test
+              else "*Sales Pulse, {date}  (TEST RUN)*")
+    text = READY_TEXT.replace("*Sales Pulse, {date}*", header)
+    ts = post(env, text.format(date=render_date.strftime("%A, %B %-d")))
     # test-ness is recorded here, not taken from the poller's argv. A gate opened
     # as a test can never be completed as a real publish by a tick that forgot
     # the flag.
