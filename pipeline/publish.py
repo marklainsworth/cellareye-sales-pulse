@@ -37,6 +37,24 @@ def git(*args, check=True):
     return r.stdout.strip()
 
 
+def _rebase_and_push() -> str:
+    """Land HEAD on origin/main. Used by both paths, because both need it.
+
+    The mirror Action commits latest.html on GitHub's side, so origin is almost
+    always ahead by the time the next run pushes. Rebase rather than merge, to
+    keep the brief history linear.
+    """
+    git("fetch", "origin", "main")
+    behind = git("rev-list", "--count", "HEAD..origin/main", check=False)
+    if behind and behind != "0":
+        git("rebase", "origin/main")
+    ahead = git("rev-list", "--count", "origin/main..HEAD", check=False)
+    if not ahead or ahead == "0":
+        return ""
+    git("push", "origin", "main")
+    return git("rev-parse", "--short", "HEAD")
+
+
 def commit_and_push(brief: Path, render_date, counts: dict) -> str:
     """Commit the brief plus the data snapshot it was built from, and push.
 
@@ -53,13 +71,10 @@ def commit_and_push(brief: Path, render_date, counts: dict) -> str:
         # Nothing staged is not the same as nothing to push. If the brief was
         # already committed by some other route, the commit still has to reach
         # origin or the live URL never updates and verification fails for a
-        # reason that looks like a CDN problem.
-        git("fetch", "origin", "main")
-        ahead = git("rev-list", "--count", "origin/main..HEAD", check=False)
-        if ahead and ahead != "0":
-            git("push", "origin", "main")
-            return git("rev-parse", "--short", "HEAD")
-        return ""
+        # reason that looks like a CDN problem. This path needs the same rebase
+        # as the other one: origin is usually ahead by the Action's mirror
+        # commit, and pushing without rebasing is rejected non-fast-forward.
+        return _rebase_and_push()
 
     total = sum(counts.values())
     subject = "Sales Pulse %s" % render_date.isoformat()
@@ -67,19 +82,7 @@ def commit_and_push(brief: Path, render_date, counts: dict) -> str:
             % (total, counts.get("open", 0), counts.get("stalled", 0),
                counts.get("won", 0), counts.get("lost", 0)))
     git("commit", "-m", subject, "-m", body)
-    sha = git("rev-parse", "--short", "HEAD")
-
-    # The mirror Action commits latest.html on GitHub's side, so origin is
-    # almost always ahead of us by the time the next run pushes. Two consecutive
-    # runs needed this by hand. Rebase onto it rather than merging, to keep the
-    # brief history linear.
-    git("fetch", "origin", "main")
-    behind = git("rev-list", "--count", "HEAD..origin/main", check=False)
-    if behind and behind != "0":
-        git("rebase", "origin/main")
-        sha = git("rev-parse", "--short", "HEAD")
-    git("push", "origin", "main")
-    return sha
+    return _rebase_and_push()
 
 
 def fetch_live(url: str, timeout: int = 20) -> str:
