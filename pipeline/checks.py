@@ -15,6 +15,81 @@ from datetime import date
 import config
 
 
+# --- contamination -----------------------------------------------------------
+#
+# The stylesheet has been silently broken twice by non-CSS text pasted into it:
+# curly quotes, which invalidated 30 font-family rules, and markdown code
+# fences, which killed the mobile block. Both shipped in published briefs and
+# both were found by eye, weeks apart. Once is bad luck. Twice is a pattern, and
+# this is about to run unattended.
+#
+# Inside <style> the rules are strict, because nothing but CSS belongs there.
+# Across the whole document only a code fence is flagged, since prose pulled
+# from Asana legitimately contains hashes, asterisks, dashes and quotes.
+
+STYLE_CONTAMINANTS = [
+    (re.compile(r"`"),                    "backtick (markdown code fence)"),
+    (re.compile(r"[\u2018\u2019\u201c\u201d]"), "curly quote"),
+    (re.compile(r"^\s*\d+[|\t]"),          "line-number artifact (cat -n or NN| paste)"),
+    (re.compile(r"^\s*#{1,6}\s"),          "markdown heading"),
+    # "* {" is the CSS universal selector, "*/" closes a comment; a markdown
+    # bullet is never followed by a brace.
+    (re.compile(r"^\s*[-*+]\s+(?!\{)"),   "markdown bullet"),
+    (re.compile(r"<"),                    "stray HTML"),
+]
+DOC_CONTAMINANTS = [
+    (re.compile(r"```"), "markdown code fence"),
+]
+
+
+def _style_span(html: str):
+    a = html.find("<style>")
+    b = html.find("</style>")
+    return (a + len("<style>"), b) if a != -1 and b != -1 else (None, None)
+
+
+def no_contaminants(html: str):
+    """Fail on anything in the output that is not meant to be there.
+
+    Reports line numbers against the whole document so a hit can be found
+    directly in the rendered file.
+    """
+    hits = []
+    a, b = _style_span(html)
+    lines = html.split("\n")
+    # the <style> and </style> tag lines are boundaries, not style content
+    style_first = html[:a].count("\n") + 1 if a is not None else -1
+    style_last = html[:b].count("\n") - 1 if b is not None else -1
+
+    for i, line in enumerate(lines):
+        in_style = style_first <= i <= style_last
+        for pattern, label in (STYLE_CONTAMINANTS if in_style else DOC_CONTAMINANTS):
+            if pattern.search(line):
+                where = "<style>" if in_style else "body"
+                hits.append("line %d in %s: %s -> %s"
+                            % (i + 1, where, label, line.strip()[:60]))
+                break
+        if len(hits) >= 6:
+            hits.append("... further hits not listed")
+            break
+    return (not hits), ("; ".join(hits) if hits else "none")
+
+
+def css_braces_balanced(html: str):
+    a, b = _style_span(html)
+    if a is None:
+        return True, "no style block"
+    depth = 0
+    for ch in html[a:b]:
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth < 0:
+                return False, "unbalanced: a closing brace with no opener"
+    return (depth == 0), ("balanced" if depth == 0 else "unbalanced: %d unclosed rule(s)" % depth)
+
+
 # --- template checks (run against templates/sales_pulse.html) ----------------
 
 def template_no_baked_data(tpl: str):
@@ -99,6 +174,8 @@ def run_all(html: str, tpl: str, deals: dict, leads: list, mda: str,
         ("template: no curly quotes in CSS", template_no_curly_quotes_in_css(tpl), True),
         ("template: no dash in var()", template_no_endash_in_var(tpl), True),
         ("output: no unresolved placeholders", no_unresolved_placeholders(html), True),
+        ("output: no contaminants", no_contaminants(html), True),
+        ("output: CSS braces balanced", css_braces_balanced(html), True),
         ("output: JSON blocks parse", json_blocks_parse(html), True),
         ("output: deal counts reconcile", counts_reconcile(html, deals), True),
         ("output: lead total matches", lead_total_matches(html, leads), True),

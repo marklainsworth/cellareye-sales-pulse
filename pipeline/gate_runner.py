@@ -30,6 +30,15 @@ import slack_gate as sg      # noqa: E402
 import summarize     # noqa: E402
 
 
+class ChecksFailed(RuntimeError):
+    """An integrity check failed, so nothing was written.
+
+    Raised so the process exits non-zero. Until now a failed check posted an
+    abort to Slack and then returned 0, which told launchd the run succeeded.
+    Checks could never actually block anything unattended.
+    """
+
+
 class PublishUnverified(RuntimeError):
     """The brief was pushed but the live URL is not serving it.
 
@@ -89,7 +98,7 @@ def do_render(env, state, mda, test):
     if failures:
         sg.notify(env, state, ":x: Aborted. %d integrity check(s) failed, nothing written:\n%s"
                   % (len(failures), "\n".join("- " + f for f in failures)))
-        return None
+        raise ChecksFailed("; ".join(failures))
 
     name = ("test-%s.html" if test else "%s.html") % render_date.isoformat()
     out = config.BRIEFS_DIR / name
@@ -234,6 +243,10 @@ def main(argv=None):
     test = bool(state.get("test")) or a.test
     try:
         tick(env, state, test=test)
+    except ChecksFailed as e:
+        log("exiting non-zero, checks failed: %s" % e)
+        sg.clear_state()
+        return 1
     except PublishUnverified as e:
         log("exiting non-zero: %s" % e)
         return 1

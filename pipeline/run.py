@@ -156,6 +156,8 @@ def main(argv=None):
     if failures:
         print()
         say("ABORTED", "%d check(s) failed, nothing written" % len(failures))
+        for f in failures:
+            say("  failed", f)
         return 1
     if warnings:
         say("checks", "%d warning(s), continuing" % len(warnings))
