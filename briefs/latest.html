@@ -1,4 +1,4 @@
-<!-- pulled 17:49 PT · rendered for 2026-08-23 · pipeline v0.13 -->
+<!-- pulled 18:12 PT · rendered for 2026-08-23 · pipeline v0.13 -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -75,176 +75,11 @@
   @page { background: #1A1424; margin: 0; }
 
 /* Mobile responsive layout */
-@media (max-width: 720px) {
-.wrap { padding: 24px 16px 48px; }
 
-/* Header: stack vertically, shrink type */
-header {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  padding-bottom: 20px;
-  margin-bottom: 24px;
-}
-.header-right {
-  text-align: left;
-  width: 100%;
-}
-.header-logo img { height: 38px; }
-.header-logo .pulse-label { font-size: 9px; padding-left: 12px; }
-h1 { font-size: 28px; }
-
-/* Stage banner: stack the three pieces */
-.stage-banner {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 14px 16px;
-  margin-bottom: 28px;
-  text-align: left;
-}
-.stage-banner .text { text-align: left; font-size: 13px; }
-
-/* Metrics: 4 cols → 2x2 */
-.metrics-grid {
-  grid-template-columns: 1fr 1fr;
-}
-.metric {
-  padding: 16px 14px;
-  border-right: 1px solid var(--soft-rule);
-  border-bottom: 1px solid var(--soft-rule);
-}
-.metric:nth-child(2n) { border-right: none; }
-.metric:nth-child(n+3) { border-bottom: none; }
-.metric .value { font-size: 22px; }
-
-/* Row labels: keep horizontal but tighten */
-.row-label {
-  padding: 12px 16px;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.row-label .name { font-size: 16px; }
-.row-label .meta { font-size: 9px; }
-
-/* Funnel: 8 cols → 4 across, 2 rows. The labels stay full words; the cards
-   get the width instead. */
-.funnel {
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-}
-.stage-card { padding: 10px 6px; min-width: 0; }
-.stage-card .stage-count { font-size: 22px; }
-.stage-card .stage-name {
-  font-size: 9px;
-  white-space: nowrap;
-  overflow: visible;
-  text-overflow: clip;
-  letter-spacing: 0.06em;
-}
-
-/* Nothing may exceed the viewport. Grid and flex children default to
-   min-width:auto, which refuses to shrink below their content and is what
-   pushed the fourth metric off the right edge. */
-.wrap, .row-block, .metrics-grid, .funnel, .channel-grid, .panel {
-  max-width: 100%;
-  min-width: 0;
-}
-.metric, .channel-card, .ta-card, .deal-row { min-width: 0; }
-
-/* The drill-down is a fixed, full-viewport layer. display:none should be
-   enough, but iOS Safari has been seen compositing such a layer through when
-   the page also scrolls horizontally, which is what the ghosted Won values and
-   deal card at the top of the page look like. Belt and braces while inactive. */
-.drilldown:not(.active) {
-  visibility: hidden;
-  pointer-events: none;
-}
-.metric .value, .metric .label, .metric .sub,
-.deal-row .name, .deal-row .meta-line {
-  overflow-wrap: anywhere;
-}
-
-/* Channels: 3 cols → 1 col */
-.channel-grid {
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
-/* Section heads: allow meta to wrap */
-.section-head {
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 32px 0 16px;
-}
-.section-title { font-size: 18px; }
-.section-meta {
-  margin-left: 0;
-  width: 100%;
-  font-size: 9px;
-}
-
-/* Deal rows in attention panel */
-.deal-row {
-  padding: 12px 16px;
-  grid-template-columns: 1fr;
-}
-.deal-row .signal {
-  justify-self: flex-start;
-  width: fit-content;
-}
-
-/* Panel title: tighten */
-.panel-title {
-  padding: 12px 16px;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: 15px;
-}
-.panel-title .meta { font-size: 9px; }
-
-/* Focus list: smaller indent */
-.focus { margin-top: 32px; padding-top: 20px; }
-.focus h3 { font-size: 18px; margin-bottom: 12px; }
-.focus ol li { padding: 10px 0 10px 28px; font-size: 13px; }
-.focus ol li::before { font-size: 10px; }
-
-/* Footer: stack */
-footer {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: 40px;
-  padding-top: 20px;
-}
-
-/* Drill-down: tighten */
-.drilldown-wrap { padding: 24px 16px 48px; }
-.drilldown h1 { font-size: 26px; }
-.drilldown .subtitle { font-size: 10px; margin-bottom: 24px; }
-.deal-card { padding: 16px 18px; }
-.deal-card-name { font-size: 18px; }
-.deal-card-fields { grid-template-columns: 1fr 1fr; gap: 10px 16px; }
-
-}
 
 /* Phones narrower than ~430px: metric rows go single column. Two columns
    still clipped the wider currency values on a 390px viewport. */
-@media (max-width: 430px) {
-  .metrics-grid { grid-template-columns: 1fr; }
-  .metric {
-    border-right: none;
-    border-bottom: 1px solid var(--soft-rule);
-    padding: 14px 16px;
-  }
-  .metric:last-child { border-bottom: none; }
-  .metric .value { font-size: 20px; }
 
-  /* Funnel: 4 across is tight at this width, go 2 across over 4 rows so the
-     labels keep their full words. */
-  .funnel { grid-template-columns: repeat(2, 1fr); }
-  .stage-card .stage-name { font-size: 10px; }
-}
 
 .wrap { max-width: 1180px; margin: 0 auto; padding: 56px 48px 96px; }
 
@@ -956,12 +791,209 @@ background: var(--rose);
 opacity: 0.5;
 }
 /* Narrow screens: wrap 4x2 like the funnel */
+
+/* ---------------------------------------------------------------
+   Mobile overrides live at the END of the stylesheet on purpose.
+   A media query adds no specificity, so a later desktop rule with the
+   same selector wins at every width. These blocks used to sit above the
+   desktop rules, which silently reverted every mobile fix: .funnel was
+   set to 4 columns here and back to 8 three hundred lines later.
+   Narrower breakpoints come after wider ones for the same reason.
+   --------------------------------------------------------------- */
+
 @media (max-width: 720px) {
 .ta-channel-funnel { grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 12px 16px 16px; }
 .ta-card { padding: 10px 4px; }
 .ta-card .ta-count { font-size: 22px; }
 .ta-card .ta-name { font-size: 8px; }
 .ta-card .ta-sub { font-size: 7.5px; }
+}
+
+@media (max-width: 720px) {
+.wrap { padding: 24px 16px 48px; }
+
+/* Header: stack vertically, shrink type */
+header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+.header-right {
+  text-align: left;
+  width: 100%;
+}
+.header-logo img { height: 38px; }
+.header-logo .pulse-label { font-size: 9px; padding-left: 12px; }
+h1 { font-size: 28px; }
+
+/* Stage banner: stack the three pieces */
+.stage-banner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.stage-banner .text { text-align: left; font-size: 13px; }
+
+/* Metrics: 4 cols → 2x2 */
+.metrics-grid {
+  grid-template-columns: 1fr 1fr;
+}
+.metric {
+  padding: 16px 14px;
+  border-right: 1px solid var(--soft-rule);
+  border-bottom: 1px solid var(--soft-rule);
+}
+.metric:nth-child(2n) { border-right: none; }
+.metric:nth-child(n+3) { border-bottom: none; }
+.metric .value { font-size: 22px; }
+
+/* Row labels: keep horizontal but tighten */
+.row-label {
+  padding: 12px 16px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.row-label .name { font-size: 16px; }
+.row-label .meta { font-size: 9px; }
+
+/* Funnel: 8 cols → 4 across, 2 rows. The labels stay full words; the cards
+   get the width instead. */
+.funnel {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.stage-card { padding: 10px 6px; min-width: 0; }
+.stage-card .stage-count { font-size: 22px; }
+.stage-card .stage-name {
+  font-size: 9px;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  letter-spacing: 0.06em;
+}
+
+/* Nothing may exceed the viewport. Grid and flex children default to
+   min-width:auto, which refuses to shrink below their content and is what
+   pushed the fourth metric off the right edge. */
+.wrap, .row-block, .metrics-grid, .funnel, .channel-grid, .panel {
+  max-width: 100%;
+  min-width: 0;
+}
+.metric, .channel-card, .ta-card, .deal-row { min-width: 0; overflow: hidden; }
+
+/* A grid child defaults to min-width:auto and refuses to shrink below its
+   content, which is how card contents escaped sideways. Every nested flex or
+   grid inside a card needs the same treatment or the overflow just moves
+   one level down. */
+.channel-card .stats { min-width: 0; flex-wrap: wrap; gap: 4px 10px; }
+.channel-card .stat { min-width: 0; }
+.channel-card .name,
+.channel-card .stat .num,
+.channel-card .stat .lbl { min-width: 0; overflow-wrap: anywhere; }
+
+/* The drill-down is a fixed, full-viewport layer. display:none should be
+   enough, but iOS Safari has been seen compositing such a layer through when
+   the page also scrolls horizontally, which is what the ghosted Won values and
+   deal card at the top of the page look like. Belt and braces while inactive. */
+.drilldown:not(.active) {
+  visibility: hidden;
+  pointer-events: none;
+}
+.metric .value, .metric .label, .metric .sub,
+.deal-row .name, .deal-row .meta-line {
+  overflow-wrap: anywhere;
+}
+
+/* Channels: 3 cols → 2. Each card carries a name plus three number/label
+   pairs, and three columns is too narrow for that on a phone: the content
+   overflowed sideways and collided with the neighbouring card. */
+.channel-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Section heads: allow meta to wrap */
+.section-head {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 32px 0 16px;
+}
+.section-title { font-size: 18px; }
+.section-meta {
+  margin-left: 0;
+  width: 100%;
+  font-size: 9px;
+}
+
+/* Deal rows in attention panel */
+.deal-row {
+  padding: 12px 16px;
+  grid-template-columns: 1fr;
+}
+.deal-row .signal {
+  justify-self: flex-start;
+  width: fit-content;
+}
+
+/* Panel title: tighten */
+.panel-title {
+  padding: 12px 16px;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 15px;
+}
+.panel-title .meta { font-size: 9px; }
+
+/* Focus list: smaller indent */
+.focus { margin-top: 32px; padding-top: 20px; }
+.focus h3 { font-size: 18px; margin-bottom: 12px; }
+.focus ol li { padding: 10px 0 10px 28px; font-size: 13px; }
+.focus ol li::before { font-size: 10px; }
+
+/* Footer: stack */
+footer {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+/* Drill-down: tighten */
+.drilldown-wrap { padding: 24px 16px 48px; }
+.drilldown h1 { font-size: 26px; }
+.drilldown .subtitle { font-size: 10px; margin-bottom: 24px; }
+.deal-card { padding: 16px 18px; }
+.deal-card-name { font-size: 18px; }
+.deal-card-fields { grid-template-columns: 1fr 1fr; gap: 10px 16px; }
+
+}
+
+@media (max-width: 430px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+  .metric {
+    border-right: none;
+    border-bottom: 1px solid var(--soft-rule);
+    padding: 14px 16px;
+  }
+  .metric:last-child { border-bottom: none; }
+  .metric .value { font-size: 20px; }
+
+  /* Funnel: 4 across is tight at this width, go 2 across over 4 rows so the
+     labels keep their full words. */
+  .funnel { grid-template-columns: repeat(2, 1fr); }
+  .stage-card .stage-name { font-size: 10px; }
+
+  /* Channels: one per row. Two columns still collided the dollar figures
+     against the labels at 390px. Seven full-width rows instead. */
+  .channel-grid { grid-template-columns: 1fr; }
+  .channel-card { padding: 12px 16px; }
+  .channel-card .stats { flex-wrap: nowrap; gap: 0 18px; }
 }
 </style>
 </head>
@@ -978,7 +1010,7 @@ opacity: 0.5;
   </div>
   <div class="header-right">
     <div class="stamp">v0.13 · Live Data</div>
-    <div>Generated 17:49 PT · 53 deals tracked</div>
+    <div>Generated 18:12 PT · 53 deals tracked</div>
   </div>
 </header>
 
