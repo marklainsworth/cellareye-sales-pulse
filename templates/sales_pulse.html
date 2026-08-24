@@ -77,7 +77,6 @@
 @media (max-width: 720px) {
 .wrap { padding: 24px 16px 48px; }
 
-```
 /* Header: stack vertically, shrink type */
 header {
   flex-direction: column;
@@ -127,14 +126,43 @@ h1 { font-size: 28px; }
 .row-label .name { font-size: 16px; }
 .row-label .meta { font-size: 9px; }
 
-/* Funnel: 8 cols → 4 across, 2 rows */
+/* Funnel: 8 cols → 4 across, 2 rows. The labels stay full words; the cards
+   get the width instead. */
 .funnel {
   grid-template-columns: repeat(4, 1fr);
   gap: 6px;
 }
-.stage-card { padding: 10px 6px; }
+.stage-card { padding: 10px 6px; min-width: 0; }
 .stage-card .stage-count { font-size: 22px; }
-.stage-card .stage-name { font-size: 9px; }
+.stage-card .stage-name {
+  font-size: 9px;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
+  letter-spacing: 0.06em;
+}
+
+/* Nothing may exceed the viewport. Grid and flex children default to
+   min-width:auto, which refuses to shrink below their content and is what
+   pushed the fourth metric off the right edge. */
+.wrap, .row-block, .metrics-grid, .funnel, .channel-grid, .panel {
+  max-width: 100%;
+  min-width: 0;
+}
+.metric, .channel-card, .ta-card, .deal-row { min-width: 0; }
+
+/* The drill-down is a fixed, full-viewport layer. display:none should be
+   enough, but iOS Safari has been seen compositing such a layer through when
+   the page also scrolls horizontally, which is what the ghosted Won values and
+   deal card at the top of the page look like. Belt and braces while inactive. */
+.drilldown:not(.active) {
+  visibility: hidden;
+  pointer-events: none;
+}
+.metric .value, .metric .label, .metric .sub,
+.deal-row .name, .deal-row .meta-line {
+  overflow-wrap: anywhere;
+}
 
 /* Channels: 3 cols → 1 col */
 .channel-grid {
@@ -196,9 +224,27 @@ footer {
 .deal-card { padding: 16px 18px; }
 .deal-card-name { font-size: 18px; }
 .deal-card-fields { grid-template-columns: 1fr 1fr; gap: 10px 16px; }
-```
 
 }
+
+/* Phones narrower than ~430px: metric rows go single column. Two columns
+   still clipped the wider currency values on a 390px viewport. */
+@media (max-width: 430px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+  .metric {
+    border-right: none;
+    border-bottom: 1px solid var(--soft-rule);
+    padding: 14px 16px;
+  }
+  .metric:last-child { border-bottom: none; }
+  .metric .value { font-size: 20px; }
+
+  /* Funnel: 4 across is tight at this width, go 2 across over 4 rows so the
+     labels keep their full words. */
+  .funnel { grid-template-columns: repeat(2, 1fr); }
+  .stage-card .stage-name { font-size: 10px; }
+}
+
 .wrap { max-width: 1180px; margin: 0 auto; padding: 56px 48px 96px; }
 
 header {
