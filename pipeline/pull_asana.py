@@ -293,7 +293,7 @@ def render_dump(dump: list) -> str:
     """Human-readable spread: cleaned description and every comment, per deal."""
     lines = ["# Asana notes dump", "",
              "For each deal: the cleaned description, then the comment thread.",
-             "Summarisation is not wired yet. This is what it would draw from.", ""]
+             "This is the raw material the summariser compresses.", ""]
     by_stage = {}
     for d in dump:
         by_stage.setdefault(d["stage"] or "no section", []).append(d)

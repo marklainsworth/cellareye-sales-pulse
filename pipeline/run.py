@@ -188,6 +188,7 @@ def main(argv=None):
     say("verify", "checking the live URL is serving this run")
     verified, detail = publish.wait_for_mirror(out.name, marker)
     say("live", detail)
+    say("notify", publish.announce_standalone(out.name, sha, counts, verified, detail))
     if not verified:
         say("FAILED", "committed and pushed, but the live URL is not serving it")
         say("check", "https://github.com/marklainsworth/cellareye-sales-pulse/deployments")

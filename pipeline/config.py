@@ -115,9 +115,7 @@ DQ_TIERS = [(80, "positive"), (50, "warning"), (0, "error")]
 COMPANY_STAGE_LABEL = "This Week's Pulse"  # fixed banner label
 MDA_PENDING = "Commentary pending."
 
-# --- Slack -------------------------------------------------------------------
-
-SLACK_CHANNEL = None  # set before wiring notifications
+# Slack credentials and the channel id live in config/slack.env, not here.
 
 # --- Known data defects ------------------------------------------------------
 

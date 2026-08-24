@@ -120,6 +120,36 @@ def wait_for_mirror(brief_name: str, marker: str, timeout: int | None = None) ->
     return False, last
 
 
+def announce_standalone(brief_name: str, sha: str, counts: dict,
+                        verified: bool, detail: str) -> str:
+    """Notify from the terminal path, which has no gate thread to reply into.
+
+    Posts to the channel and fires the same out-of-band nudge, so a run started
+    at the machine lands in the same place as one driven from Slack. Best
+    effort: the brief is already published, and failing to announce it must not
+    be reported as a failure to publish it.
+    """
+    import slack_gate as sg
+    import nudge
+    try:
+        env = sg.load_env()
+    except sg.SlackError as e:
+        return "not sent (%s)" % e
+    sent = []
+    try:
+        announce(env, None, brief_name, sha, counts, verified, detail,
+                 lambda _e, _s, text: sg.post(env, text))
+        sent.append("slack")
+    except sg.SlackError as e:
+        sent.append("slack failed: %s" % e)
+    if verified:
+        ok, d = nudge.send("Sales Pulse published",
+                           "%d deals. Tap to read." % sum(counts.values()),
+                           click=LIVE_URL, priority="default", tags="wine_glass")
+        sent.append("nudge " + ("sent" if ok else d))
+    return ", ".join(sent)
+
+
 def announce(env, gate_state, brief_name: str, sha: str, counts: dict,
              verified: bool, detail: str, notify_fn) -> None:
     """Announce the truth. An unverified publish is reported as a failure.
