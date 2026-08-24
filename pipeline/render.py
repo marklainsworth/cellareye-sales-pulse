@@ -88,9 +88,11 @@ INLINE_MARKER = re.compile(r"(?<![\d.$])([1-9])\s*[.)]+[\s)]+")
 # A phrase that announces the list, so the banner can be cut before it even when
 # the first item is unnumbered.
 CUE = re.compile(r"(?:^|[.!?]\s+)([^.!?]*\bpriorit\w*\b[^.!?]*?)(?=\s|$)", re.I)
-CUE_STRIP = re.compile(r"^(?:the\s+)?priorit\w*\s*(?:were|are|is|for)?\s*"
-                       r"(?:the\s+following\s+week|the\s+following|this\s+week|"
-                       r"next\s+week|for\s+the\s+week)?\s*[:,-]?\s*", re.I)
+CUE_STRIP = re.compile(
+    r"^(?:my|our|the)?\s*priorit\w*\s*"
+    r"(?:this\s+week|next\s+week|for\s+the\s+week)?\s*"
+    r"(?:were|are|is|will\s+be)?\s*"
+    r"(?:the\s+following\s+week|the\s+following)?\s*[:,-]?\s*", re.I)
 
 
 def _split_marked(text: str):
