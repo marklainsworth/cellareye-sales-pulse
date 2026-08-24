@@ -22,6 +22,7 @@ import config  # noqa: E402
 
 PAGES = "https://marklainsworth.github.io/cellareye-sales-pulse"
 LIVE_URL = PAGES + "/briefs/latest.html"
+MIRROR_TIMEOUT = 300   # seconds to wait for the live URL; module-level so tests can shorten it
 
 
 def dated_url(name: str) -> str:
@@ -82,7 +83,7 @@ def fetch_live(url: str, timeout: int = 20) -> str:
         return ""
 
 
-def wait_for_mirror(brief_name: str, marker: str, timeout: int = 300) -> tuple[bool, str]:
+def wait_for_mirror(brief_name: str, marker: str, timeout: int | None = None) -> tuple[bool, str]:
     """Confirm the LIVE site is serving this brief. Returns (verified, detail).
 
     Git state is not proof of publication. On 2026-08-23 the mirror Action ran
@@ -94,7 +95,7 @@ def wait_for_mirror(brief_name: str, marker: str, timeout: int = 300) -> tuple[b
     So this fetches the served HTML and looks for a marker unique to this run,
     the pull timestamp. Anything less can be satisfied by a stale cache.
     """
-    deadline = time.time() + timeout
+    deadline = time.time() + (MIRROR_TIMEOUT if timeout is None else timeout)
     last = "no response from the live URL"
     while time.time() < deadline:
         time.sleep(15)

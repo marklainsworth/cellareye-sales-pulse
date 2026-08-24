@@ -15,3 +15,6 @@ briefs/test-*.html
 
 # macOS
 .DS_Store
+
+# test scratch dirs
+tmp*/
