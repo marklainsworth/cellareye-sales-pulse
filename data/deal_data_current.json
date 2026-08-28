@@ -816,21 +816,21 @@
    "arr": 7500,
    "onb": 22400,
    "stage": "Proposal",
-   "modified_at": "2026-08-17T22:53:59.181Z",
+   "modified_at": "2026-08-28T17:35:05.779Z",
    "notes": "Based on proposal sent to client",
    "comments": [
-    {
-     "at": "2026-06-23T14:55:51.791Z",
-     "by": "Danielle",
-     "text": "Sean McGinness, 8-10K bottles, 3 Michelin stars. Big pain point is inventory audits running 15-20 hrs/month with 3 sommeliers. Original proposal: Y1 ~$22,500 / Y2+ ~$7,500. New calculator: Y1 ~$20,963 / Y2+ ~$15,400. Y2+ is now 2x higher due to menu module being priced separately, so instead of getting more attractive the pricing went up. Let's discuss before updating."
-    },
     {
      "at": "2026-08-06T23:02:56.639Z",
      "by": "Danielle",
      "text": "Call today 8/6\nIntro to Mark, web app & restaurant menu update call\nSean (Addison):\n    ~10,000 bottle inventory, ~$100K/month wine spend, 5 sommeliers\n    Procurement is honestly a mess right now, manual handoffs across Birch Street, Silverware POS, internal systems\n    Monthly physical inventory count is brutal for them\n    Most of the pain is clerical error, not the program itself\nHow we fit:\n    Strong fit on inventory management and menu printing, could start soon\n    Silverware API is read-only for now, we can pull nightly depletion reports and flag POS mismatches, but can't write back yet\n    Full write-integration is more of a phase 2/3 thing, pending a Birch Street capabilities. Not a dealbreaker for Sean\n    Heads up: Birch Street's been messy before. Anthony hit complications looking into it previously\n    Sean's skipping the AI/digital menu, just wants the print option. Makes sense given 5 sommeliers and Michelin-level service\nPricing:\n    Note:  Sean already approved the original proposal, $22,500 total (screenshot attached for reference)\n    Current pricing has shifted since Mark joined\n    Connectors/custom dev likely one-time fees on top\nNext steps:\n    Mark: dig into Birch Street API modules and connectors. Rick may be able to help\n    Danielle: plan a follow-up call, plan to bring in Addison's accounting department on the the following call after we meet with Sean one more time\n    Sean's stressing a real sense of urgency on his end"
+    },
+    {
+     "at": "2026-08-28T17:35:05.779Z",
+     "by": "Danielle",
+     "text": "Followed up with Sean today via email. Waiting on response to Mark's email regarding their accounting system and process and requested to set up a call with accounting team."
     }
    ],
-   "note_summary": "3 Michelin star restaurant, ~10,000 bottles, ~$100K/month wine spend, 5 sommeliers · Strong fit on inventory and print menus, Sean approved original $22,500 proposal but pricing has shifted, follow-up call planned",
+   "note_summary": "Michelin restaurant, ~10,000 bottle inventory, ~$100K/month wine spend, 5 sommeliers · $22,500 proposal approved, awaiting Sean's reply on accounting systems and a call with his accounting team",
    "needs_enrichment": false
   },
   {
@@ -948,21 +948,21 @@
    "arr": null,
    "onb": null,
    "stage": "Closed Won",
-   "modified_at": "2026-08-19T19:14:45.533Z",
+   "modified_at": "2026-08-28T19:13:49.451Z",
    "notes": "Meeting 7/10/26 (Granola) MEETING OVERVIEW - Demo and feedback session with Andrea Giuliani at Pausa, San Mateo - Danielle and Anthony attended and helped highlight app benefits FEEDBACK & REACTIONS - Andrea responded positively: found the app easy to use - Particularly liked the digital wine menu feature - Preferred format: print wine list with QR code at the bottom that links to additional tasting notes for guests OUTCOME - Not expected to close on this meeting, but Andrea is keen to move forward - Wants a pitch to the rest of his management team (3 others) - He is the chef-owner, so has decision-making authority NEXT STEP: Schedule and confirm team pitch at Pausa. Andrea suggested possibly Wednesday next week - confirm the date and arrange to present to his full management team.",
    "comments": [
-    {
-     "at": "2026-07-18T21:54:27.294Z",
-     "by": "Mark Luciano Ainsworth",
-     "text": "Second meeting on Friday went great.  They want us to send a proposal.  They are excited to do it.  They will send menu files this week and then the inventory file at the end of the month.  We still need to lock down the bottle depletion method."
-    },
     {
      "at": "2026-08-18T19:08:45.404Z",
      "by": "Danielle",
      "text": "Next mtg:  nventory audit and training onsite at Pausa with their entire management team on 8/24"
+    },
+    {
+     "at": "2026-08-28T19:13:49.450Z",
+     "by": "Danielle",
+     "text": "Emailed intro to WineBank x Pausa for the possibility of Pausa storing wine at their facility."
     }
    ],
-   "note_summary": "Chef-owner Andrea Giuliani's San Mateo restaurant, liked the digital wine menu at demo · proposal requested, inventory audit and onsite training with full management team 8/24",
+   "note_summary": "San Mateo restaurant, chef-owner Andrea Giuliani has decision authority, liked digital wine menu · onsite inventory audit and management team training 8/24, intro'd to WineBank for wine storage",
    "needs_enrichment": false
   }
  ],
