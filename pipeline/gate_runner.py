@@ -368,6 +368,22 @@ def main(argv=None):
     except sg.SlackError as e:
         log("slack error: %s" % e)
         return 1
+    except SystemExit as e:
+        # SystemExit inherits BaseException, NOT Exception, so the catch-all
+        # below never saw it. pull_asana raises it for a 401, a 4xx or a
+        # missing token, which meant those failures exited non-zero having
+        # posted NOTHING to Slack and left the gate open to expire six hours
+        # later. Silent, and the least recoverable class of failure there is.
+        # Terminal by nature: no retry fixes a credential.
+        log("terminal: %s" % e)
+        try:
+            sg.notify(env, state,
+                      ":x: The Pulse run stopped on an unrecoverable error. "
+                      "Nothing published.\n```%s```" % e)
+        except sg.SlackError:
+            pass
+        sg.clear_state()
+        return 1
     except Exception as exc:
         log("unexpected failure:\n%s" % traceback.format_exc())
         # RECOVERABLE UNLESS PROVEN OTHERWISE. If a step was in flight and the
