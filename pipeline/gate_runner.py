@@ -30,6 +30,36 @@ import slack_gate as sg      # noqa: E402
 import summarize     # noqa: E402
 
 
+# HOW MANY TICKS A RECOVERABLE FAILURE GETS. The poller runs every 60s, so
+# this is about five minutes of retrying inside a six-hour TTL. The bound
+# matters as much as the retry: 2026-08-28 took 4m32s to fail on a degraded
+# network, so a single slow failure has to fit inside the budget with room to
+# spare, and a genuinely dead endpoint still has to stop.
+MAX_RESUME_ATTEMPTS = 5
+
+# TERMINAL. Everything not named here is treated as recoverable, and that
+# asymmetry is deliberate. Retrying a dead end costs five minutes and five log
+# lines. Clearing the gate on a transient error costs the week's Pulse, which
+# is exactly what happened on 2026-08-28: a novel exception reached the
+# catch-all and was treated as fatal. A denylist fails safe; an allowlist of
+# known-transient errors fails the way that Friday failed.
+#
+# These are the ones a retry cannot help:
+#   ChecksFailed  deterministic, same data and template give the same failure
+#   SystemExit    pull_asana raises it for 401, 4xx and a missing token
+#   the rest      programming errors, deterministic by construction
+TERMINAL_EXCEPTIONS = (TypeError, AttributeError, NameError, ImportError,
+                       SyntaxError, IndentationError)
+
+
+class ResumeExhausted(RuntimeError):
+    """A recoverable error kept recurring until the attempt cap ran out.
+
+    At that point it is not transient any more, whatever it looked like at
+    first, so the gate closes and the run exits non-zero.
+    """
+
+
 class ChecksFailed(RuntimeError):
     """An integrity check failed, so nothing was written.
 
@@ -51,6 +81,31 @@ class PublishUnverified(RuntimeError):
 
 def log(msg: str) -> None:
     print("[%s] %s" % (datetime.now().strftime("%H:%M:%S"), msg), flush=True)
+
+
+def _is_terminal(exc) -> bool:
+    return isinstance(exc, (ChecksFailed, TERMINAL_EXCEPTIONS))
+
+
+def _mark(state, action, **payload):
+    """Record what was in flight, so the next tick can re-run it.
+
+    PRESERVING STATE IS NOT ENOUGH ON ITS OWN. sg.consume() writes the reply's
+    timestamp into consumed[] on disk BEFORE the step runs, so after a crash
+    next_reply() will never hand that reply back. A gate that survived without
+    this marker would sit at its current step, doing nothing, until the TTL
+    expired six hours later. The marker is what makes the retry real.
+    """
+    state["resume"] = dict(action=action, **payload)
+    state.setdefault("attempts", 0)
+    sg.write_state(state)
+
+
+def _unmark(state):
+    """The step got through. Forget the marker and the attempt count."""
+    state.pop("resume", None)
+    state.pop("attempts", None)
+    sg.write_state(state)
 
 
 def do_pull(env, state):
@@ -107,7 +162,104 @@ def do_render(env, state, mda, test):
     return out
 
 
+def _run_pull(env, state):
+    """The pull, marked so a crash inside it can be re-run next tick."""
+    _mark(state, "pull")
+    out = do_pull(env, state)
+    _unmark(state)
+    return out
+
+
+def _run_render(env, state, mda, test):
+    """Render, check, publish, marked as ONE unit.
+
+    Resuming re-renders from the same data and re-enters commit_and_push. That
+    is safe, and deliberately so: if a previous attempt already committed, then
+    `git add` stages nothing, `staged` comes back empty, and publish goes
+    straight to rebase-and-push. The retry lands the EXISTING commit rather
+    than writing a second one for the same brief.
+    """
+    _mark(state, "render", mda=mda)
+    out = do_render(env, state, mda, test)
+    if out is None:
+        return state
+
+    deals = json.loads((config.DATA_DIR / "deal_data_current.json").read_text(encoding="utf-8"))
+    counts = {k: len(v) for k, v in deals.items()}
+
+    if test:
+        sg.notify(env, state,
+                  ":white_check_mark: Test brief rendered: `briefs/%s`\n"
+                  "_Test run: latest.html untouched, nothing committed, nothing pushed._"
+                  % out.name)
+        sg.clear_state()
+        log("done (test)")
+        return None
+
+    render_date = date.fromisoformat(state["render_date"])
+    # A push failure is RECOVERABLE now, not the end of the run. It is usually
+    # the network or the rebase race against the mirror Action, and the retry
+    # re-pushes the commit that already exists. The attempt cap is what stops a
+    # genuinely rejected push from retrying forever.
+    log("commit and push")
+    sha = publish.commit_and_push(out, render_date, counts)
+    log("pushed %s" % (sha or "nothing to commit"))
+
+    # The marker must be unique to this run. The pull timestamp is, and it
+    # appears in the HTML comment at the top of every render.
+    marker = "pulled %s" % state.get("pulled_at", "")
+    log("verifying the live URL is serving this run")
+    verified, detail = publish.wait_for_mirror(out.name, marker)
+    log("live: %s" % detail)
+    publish.announce(env, state, out.name, sha, counts, verified, detail, sg.notify)
+    sg.clear_state()
+    if not verified:
+        log("done, but the publish is UNVERIFIED")
+        raise PublishUnverified(detail)
+    log("done")
+    return None
+
+
+def _resume(env, state, test):
+    """Re-run the step a recoverable failure interrupted.
+
+    This runs BEFORE next_reply(), because the reply that started the step was
+    consumed and written to disk before the crash. Waiting for a new one would
+    mean waiting forever.
+    """
+    action = (state.get("resume") or {}).get("action")
+    n = state.get("attempts", 0) + 1
+    if n > MAX_RESUME_ATTEMPTS:
+        log("resume: giving up on %s after %d attempts" % (action, MAX_RESUME_ATTEMPTS))
+        sg.notify(env, state,
+                  ":x: The Pulse run kept failing at the *%s* step and gave up "
+                  "after %d attempts. Nothing published, and the gate is closed."
+                  % (action, MAX_RESUME_ATTEMPTS))
+        sg.clear_state()
+        raise ResumeExhausted("%s failed %d times" % (action, MAX_RESUME_ATTEMPTS))
+
+    state["attempts"] = n
+    sg.write_state(state)
+    log("resume: retrying %s, attempt %d of %d" % (action, n, MAX_RESUME_ATTEMPTS))
+
+    if action == "pull":
+        return _run_pull(env, state)
+    if action == "render":
+        return _run_render(env, state, (state["resume"] or {}).get("mda", ""), test)
+
+    log("resume: unknown action %r, clearing" % action)
+    sg.clear_state()
+    return None
+
+
 def tick(env, state, test: bool):
+    # RESUME FIRST. A recoverable failure left a step half-done, and the reply
+    # that triggered it is already in consumed[], so next_reply() will never
+    # return it again. Without this the gate would idle at its own step until
+    # the TTL expired.
+    if state.get("resume"):
+        return _resume(env, state, test)
+
     msg = sg.next_reply(env, state)
     if not msg:
         return state
@@ -124,52 +276,11 @@ def tick(env, state, test: bool):
         if kind != "yes":
             sg.notify(env, state, "Reply *yes* when the board is current, or *not yet* to stand down.")
             return state
-        return do_pull(env, state)
+        return _run_pull(env, state)
 
     if state["step"] == sg.ASK_MDA:
         mda = "" if msg["text"].strip().lower() in ("skip", "none", "-") else msg["text"]
-        out = do_render(env, state, mda, test)
-        if out is None:
-            return state
-
-        deals = json.loads((config.DATA_DIR / "deal_data_current.json").read_text(encoding="utf-8"))
-        counts = {k: len(v) for k, v in deals.items()}
-
-        if test:
-            sg.notify(env, state,
-                      ":white_check_mark: Test brief rendered: `briefs/%s`\n"
-                      "_Test run: latest.html untouched, nothing committed, nothing pushed._"
-                      % out.name)
-            sg.clear_state()
-            log("done (test)")
-            return None
-
-        render_date = date.fromisoformat(state["render_date"])
-        try:
-            log("commit and push")
-            sha = publish.commit_and_push(out, render_date, counts)
-            log("pushed %s" % (sha or "nothing to commit"))
-        except RuntimeError as e:
-            log("publish failed: %s" % e)
-            sg.notify(env, state,
-                      ":x: The brief rendered and passed checks, but the push failed:\n"
-                      "```%s```\n_The file is on the Air at `briefs/%s`._" % (e, out.name))
-            sg.clear_state()
-            return None
-
-        # The marker must be unique to this run. The pull timestamp is, and it
-        # appears in the HTML comment at the top of every render.
-        marker = "pulled %s" % state.get("pulled_at", "")
-        log("verifying the live URL is serving this run")
-        verified, detail = publish.wait_for_mirror(out.name, marker)
-        log("live: %s" % detail)
-        publish.announce(env, state, out.name, sha, counts, verified, detail, sg.notify)
-        sg.clear_state()
-        if not verified:
-            log("done, but the publish is UNVERIFIED")
-            raise PublishUnverified(detail)
-        log("done")
-        return None
+        return _run_render(env, state, mda, test)
 
     return state
 
@@ -250,11 +361,39 @@ def main(argv=None):
     except PublishUnverified as e:
         log("exiting non-zero: %s" % e)
         return 1
+    except ResumeExhausted as e:
+        # _resume already posted and closed the gate.
+        log("exiting non-zero: %s" % e)
+        return 1
     except sg.SlackError as e:
         log("slack error: %s" % e)
         return 1
-    except Exception:
+    except Exception as exc:
         log("unexpected failure:\n%s" % traceback.format_exc())
+        # RECOVERABLE UNLESS PROVEN OTHERWISE. If a step was in flight and the
+        # error is not on the terminal list, the gate SURVIVES with its resume
+        # marker and the next tick, 60 seconds later, re-runs the step. On
+        # 2026-08-28 this exact path cleared the gate on a connection reset
+        # that had already stopped happening by the time the next tick came
+        # round, and cost the week's Pulse.
+        state = sg.read_state() or state
+        if state.get("resume") and not _is_terminal(exc):
+            attempts = state.get("attempts", 0)
+            log("recoverable (%s); gate preserved, retrying next tick "
+                "(%d of %d used)"
+                % (type(exc).__name__, attempts, MAX_RESUME_ATTEMPTS))
+            if attempts == 0:
+                # Say it once, on the first stumble. The retries are quiet:
+                # five near-identical messages in the thread would train Mark
+                # to stop reading them.
+                try:
+                    sg.notify(env, state,
+                              ":warning: Hit a transient error (`%s`) and will "
+                              "retry automatically. Nothing published yet."
+                              % type(exc).__name__)
+                except sg.SlackError:
+                    pass
+            return 1
         try:
             sg.notify(env, state, ":x: The Pulse run hit an error and stopped. Nothing published.")
         except sg.SlackError:
