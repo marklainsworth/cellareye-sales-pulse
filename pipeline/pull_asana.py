@@ -21,6 +21,7 @@ summarising it, is a render-time decision and is deliberately not made here.
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import os
 import re
@@ -103,6 +104,35 @@ def get(path: str, token: str, **params) -> list:
                     time.sleep(2 ** attempt)
                     continue
                 raise SystemExit("Asana unreachable: %s" % e)
+            # THE READ, NOT THE CONNECT. urlopen() wraps connection-phase
+            # failures in URLError, and the two arms above cover those. This
+            # one covers what happens AFTER urlopen has returned, while
+            # r.read() is pulling the body off the socket: there the error
+            # arrives unwrapped, and ConnectionResetError is a sibling of
+            # URLError under OSError rather than a subclass of it, so neither
+            # handler above ever sees it.
+            #
+            # That is the exact gap that killed the 2026-08-28 Pulse run: a
+            # reset at Errno 54 during the body read of /projects/{id}/tasks
+            # went straight past a retry loop built to survive it.
+            #
+            # http.client.HTTPException (IncompleteRead, RemoteDisconnected)
+            # and JSONDecodeError ride along because they are the same event
+            # wearing different clothes: a half-delivered response.
+            #
+            # ORDER MATTERS. URLError IS an OSError subclass, so this arm has
+            # to sit below it or it would swallow unreachable-host errors and
+            # report them as read failures.
+            except (OSError, http.client.HTTPException,
+                    json.JSONDecodeError) as e:
+                if attempt < RETRIES - 1:
+                    time.sleep(2 ** attempt)
+                    continue
+                # Bounded, and loud at the bound. A retry loop with no cap
+                # would turn a dead endpoint into a silent hang.
+                raise SystemExit(
+                    "Asana read failed on %s after %d attempts: %s: %s"
+                    % (path, RETRIES, type(e).__name__, e))
         out.extend(body.get("data", []))
         offset = (body.get("next_page") or {}).get("offset")
         if not offset:
