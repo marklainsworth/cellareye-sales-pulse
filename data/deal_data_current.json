@@ -948,21 +948,21 @@
    "arr": null,
    "onb": null,
    "stage": "Closed Won",
-   "modified_at": "2026-08-28T19:13:49.451Z",
+   "modified_at": "2026-09-02T00:54:20.055Z",
    "notes": "Meeting 7/10/26 (Granola) MEETING OVERVIEW - Demo and feedback session with Andrea Giuliani at Pausa, San Mateo - Danielle and Anthony attended and helped highlight app benefits FEEDBACK & REACTIONS - Andrea responded positively: found the app easy to use - Particularly liked the digital wine menu feature - Preferred format: print wine list with QR code at the bottom that links to additional tasting notes for guests OUTCOME - Not expected to close on this meeting, but Andrea is keen to move forward - Wants a pitch to the rest of his management team (3 others) - He is the chef-owner, so has decision-making authority NEXT STEP: Schedule and confirm team pitch at Pausa. Andrea suggested possibly Wednesday next week - confirm the date and arrange to present to his full management team.",
    "comments": [
     {
-     "at": "2026-08-18T19:08:45.404Z",
+     "at": "2026-08-31T22:31:07.660Z",
      "by": "Danielle",
-     "text": "Next mtg:  nventory audit and training onsite at Pausa with their entire management team on 8/24"
+     "text": "Added Pausa's Reserve Collection inventory to their account as a new rack, \"Reserve Collection.\" There may be some duplicate bottles, but we can clean those up during the next audit. Images are missing for an estimated 10-15 wines. Used the new import feature on the web app instead of having Anthony spend time matching inventory manually.\n\nAlso changed the cellar image for \"Transfer Location\" to be on brand for Pausa."
     },
     {
-     "at": "2026-08-28T19:13:49.450Z",
+     "at": "2026-09-01T00:44:35.420Z",
      "by": "Danielle",
-     "text": "Emailed intro to WineBank x Pausa for the possibility of Pausa storing wine at their facility."
+     "text": "Emailed Steven to get Pausa's assets so Anthony can use these to build menu templates."
     }
    ],
-   "note_summary": "San Mateo restaurant, chef-owner Andrea Giuliani has decision authority, liked digital wine menu · onsite inventory audit and management team training 8/24, intro'd to WineBank for wine storage",
+   "note_summary": "San Mateo restaurant, chef-owner Andrea Giuliani has decision authority · positive demo, wants team pitch to 3 managers; Reserve Collection inventory imported, assets requested for menu templates",
    "needs_enrichment": false
   }
  ],
