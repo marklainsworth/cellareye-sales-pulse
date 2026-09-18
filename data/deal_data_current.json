@@ -429,27 +429,6 @@
    "needs_enrichment": false
   },
   {
-   "gid": "1214588532154184",
-   "name": "Bevrly",
-   "first": "Yaacov",
-   "last": "Barselah",
-   "channel": null,
-   "arr": null,
-   "onb": null,
-   "stage": "Warm",
-   "modified_at": "2026-06-25T23:54:02.692Z",
-   "notes": "Imported from Pipeline_2/25. Segment: Business Development Stage (sheet): On Hold (was Demo Completed) Last Stage Change: 1/14/26 Deal Size: ● Phase: - Next Step: Mostafa is in conversation with Yaacov.",
-   "comments": [
-    {
-     "at": "2026-06-25T23:38:33.607Z",
-     "by": "Mark Luciano Ainsworth",
-     "text": "Mark and Yaacov will meet in Manhattan for drinks on Saturday 6/27 for drinks."
-    }
-   ],
-   "note_summary": "Business Development segment, on hold since 1/14/26 after demo completed · Mostafa in conversation with Yaacov, Mark and Yaacov meeting in Manhattan for drinks Saturday 6/27",
-   "needs_enrichment": false
-  },
-  {
    "gid": "1215470588854390",
    "name": "Remington Hotels",
    "first": "Ted",
@@ -532,50 +511,24 @@
    "needs_enrichment": false
   },
   {
-   "gid": "1214588513226286",
-   "name": "WeShip Express",
-   "first": "Scott",
-   "last": "Kennedy",
-   "channel": "Wine Storage",
-   "arr": 60000,
-   "onb": 150000,
-   "stage": "Demo",
-   "modified_at": "2026-06-23T14:56:04.857Z",
-   "notes": "Reserve Path A | 400 clients | 500 bottles avg | Onboarding TBD Opportunity Overview WeShip is a leading DTC wine/spirits logistics & fulfillment company. Recently acquired Eagle Rock Fulfillment (Napa) - a private wine storage business with ~400 clients and ~10,000 cases stored at ~$10-15/case/month. Plan is to scale this model 10x across all existing WeShip fulfillment locations nationally - making this a high-value partnership opportunity. Key Contact: Scott Kennedy, VP of Technology | Founder: Marc Goodfriend What They Need Modern UI for private storage clients - inventory visibility, wine selection for shipping, no warehouse imagery exposed. Evaluating CellarEye vs. building in-house; also comparing CellarTracker, Invintory. Current systems are antiquated. Timing Faster the better. Open to phased rollout.",
-   "comments": [
-    {
-     "at": "2026-06-23T14:56:04.831Z",
-     "by": "Danielle",
-     "text": "Tech review done with Scott Kennedy (VP Tech). Weighing CellarEye vs. building in-house for ~400 private storage clients after the Eagle Rock acquisition."
-    }
-   ],
-   "note_summary": "DTC wine/spirits logistics firm, recently acquired Eagle Rock Fulfillment (~400 private storage clients, ~10,000 cases) · tech review done with VP Tech, weighing CellarEye vs building in-house",
-   "needs_enrichment": false
-  },
-  {
-   "gid": "1214588533447535",
-   "name": "Sharon Heights Golf & Country Club",
-   "first": "Efrain",
-   "last": "Sanchez",
+   "gid": "1218649319074650",
+   "name": "Hard Rock Hotel Vegas",
+   "first": "Luke",
+   "last": "Forzano",
    "channel": "Hospitality",
-   "arr": 3300,
-   "onb": 13200,
-   "stage": "Demo",
-   "modified_at": "2026-07-20T22:13:50.184Z",
-   "notes": "Based on proposal sent to client",
+   "arr": null,
+   "onb": null,
+   "stage": "Qualified",
+   "modified_at": "2026-09-18T22:33:39.363Z",
+   "notes": "",
    "comments": [
     {
-     "at": "2026-06-25T23:43:52.481Z",
+     "at": "2026-09-18T22:33:39.362Z",
      "by": "Mark Luciano Ainsworth",
-     "text": "here was the presention for the meeting."
-    },
-    {
-     "at": "2026-07-18T21:59:17.447Z",
-     "by": "Mark Luciano Ainsworth",
-     "text": "Mark, Danielle & Anthone met with Efrain.  He says they are still interested.  Wants to talk to Chef Jerry at the Spotted Duck and ask how it is working.  He closed the meeting with answering my comment that it would shave a lot of time out of his routine with all the time saving features and he replied, \"No, its going to make a lot more work for me.\"  so it leads us to believe he doesn't see the full value, yet."
+     "text": "They open in 18 mths.  He wants us to do a demo right after SommCon and when most of the modules are complete."
     }
    ],
-   "note_summary": "Golf and country club, proposal sent · Efrain still interested, wants to check with Chef Jerry at the Spotted Duck, said the features would make more work for him, so value not yet clear",
+   "note_summary": "Las Vegas hotel opening in 18 mths · wants a demo right after SommCon, once most modules are complete",
    "needs_enrichment": false
   },
   {
@@ -626,48 +579,6 @@
    "needs_enrichment": false
   },
   {
-   "gid": "1214588515652326",
-   "name": "Colgin Cellars",
-   "first": "Brandon",
-   "last": "Benelli",
-   "channel": "Reserve-Client Direct",
-   "arr": 2200,
-   "onb": 3812.5,
-   "stage": "Demo",
-   "modified_at": "2026-06-23T14:56:08.213Z",
-   "notes": "Reserve Path A | 1 client | 10,000 bottles avg",
-   "comments": [
-    {
-     "at": "2026-06-23T14:56:08.188Z",
-     "by": "Danielle",
-     "text": "Onsite visit with Brandon had a mixed response. Ran into issues with our system working with their double deep and very high racks. Proposal sent."
-    }
-   ],
-   "note_summary": "Reserve Path A, 1 client, 10,000 bottles avg · onsite visit with Brandon got a mixed response, system had issues with their double deep and very high racks, proposal sent",
-   "needs_enrichment": false
-  },
-  {
-   "gid": "1214588513835040",
-   "name": "Drink with Me",
-   "first": "Joshua",
-   "last": "Plack",
-   "channel": "Sommelier Managed",
-   "arr": 3000,
-   "onb": 2250,
-   "stage": "Demo",
-   "modified_at": "2026-08-06T20:28:38.869Z",
-   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
-   "comments": [
-    {
-     "at": "2026-08-06T20:28:25.392Z",
-     "by": "Danielle",
-     "text": "Call on 8/6/ with Joshua and Jeremy. They are interested in possibly being ambassadors for us but they want to know how we will bring them more customers and what the partnership structure would look beyond the standard commissions. Joshua mentioned he needs to be able to present this to Chamath as a partnership that will help them grow. Mark is going to do a 1-1 call after doing a little more research on Drink with Me.  \n\nJeremeny mentioned the last time he was at Yar's he didn't have time to use CellarEye because he isn't familiar enough with it and he needed to move fast.\n\nWe also offered to Jeremy to help him onsite the next time he is town organziing Yar's cellar which is currently set up with a combination of vison tech and smartstickers.  Yar may want to switchover to smartstickers however he invested a lot of $ into the camera system so if he hasn't been happy with it and wants to remove it we may need to discuss best way to keep him happy. TBD"
-    }
-   ],
-   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · Joshua and Jeremy interested in ambassador roles, want partnership structure beyond standard commissions, Mark doing 1-1 call after researching them",
-   "needs_enrichment": false
-  },
-  {
    "gid": "1214588402610985",
    "name": "Innovative Cellars",
    "first": "Sandy",
@@ -681,110 +592,6 @@
    "comments": [],
    "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg",
    "needs_enrichment": true
-  },
-  {
-   "gid": "1214588732398811",
-   "name": "Meritage Wine Market",
-   "first": "Dustin",
-   "last": "Cano",
-   "channel": "Sommelier Managed",
-   "arr": 3000,
-   "onb": 2250,
-   "stage": "Demo",
-   "modified_at": "2026-08-19T21:13:51.344Z",
-   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
-   "comments": [
-    {
-     "at": "2026-08-07T21:47:53.038Z",
-     "by": "Danielle",
-     "text": "Call with Dustin\nReviewed the new pricing structure and Reserve pricing calculator. Shared the Spotted Duck wine list and latest web app version. Discussed the Somm program and SommCon.\n\nDiscussed Ron’s market values. We increased the market value coverage from 70% to 80% and are testing ways to fill the remaining gaps. Dustin trusts Wine-Searcher the most, particularly when filtering for currently available California market values rather than using preset values. Ron’s cellar is currently showing around $450K in market value with approximately 20% of values still missing. Dustin believes the true value is closer to $750K.\n\nDustin will share our newsletter with his subscribers, and we will feature him in ours as well.\n\nDustin shared that Marc Barmazel will be installing a new 10K-capacity cellar and would like to use CellarEye instead of CellarTracker. We also briefly discussed Addison.\n\nNext Steps / Afterthoughts\n    Coordinate newsletters and cross-promotions.\n    Set Dustin up with a Somm Manager account.\n    Present how we’d like to feature Dustin’s profile as part of our Somm program. Explore how we can also support his new restaurant channel. He is a strong example of a retailer, private collector cellar consultant, and hospitality wine consultant.\n    Dustin is planning to attend SommCon with us. Revisit and coordinate once we have a clearer plan.\n    Discuss whether we can convert more of his current cellars from CellarTracker to CellarEye, or if it makes sense to leave them as is."
-    },
-    {
-     "at": "2026-08-18T20:56:03.940Z",
-     "by": "Danielle",
-     "text": "Had call today.....\n\nCellar Conversion Strategy & Customer Outreach — Dustin (Meritage)\nAug 18, 2026 | Attendees: Dustin, Mark, Danielle\n\nSummary:\nDiscussed the Mark Barmazel investor cellar opportunity, the economics of converting Dustin's existing 10 clients, and a plan for new client acquisition via enewsletter and retail display. Also, discussed potential event at shop around SommCon.\n\n- Mark Barmazel: offer to come from Mostafa/CellarEye (not Dustin) once he signs with a cellar construction company; still a ways out, two companies bidding. His ~7 homes are already on CellarTracker. Pivoting from camera install (only 60-70% coverage) to 3D mapping.\n- Existing 10 clients: labor cost, not software resistance, is the real barrier. A 4,000-bottle cellar runs roughly 3 days x 2 people x $75/hr, about $3,600. Scaled across the top 10 clients, that's an estimated 10-15 days of labor, or $20-30K total to convert. A reimbursement model was floated but wasn't enough to offset lost wine-sales time. Decision: don't push mass conversion right now, focus on new client acquisition instead.\n- Campaign plan: email blast to the Santa Barbara + San Diego list (Friday/Saturday send), audience includes both consumers, somms and restaurants, promo offer TBD (leaning 6 months free for CellarTracker converts, 3 months for new users, through year end), need a retail display kit for Dustin's shop, priority personal outreach to investors (Jay Flatley, Omid?, Mark Barmazel), and a possible SommCon demo event at Dustin's shop.\n\nNext steps:\n1. Create an email introducing CellarEye (Fri/Sat send, video or updated website link); leads route through Dustin first, then to Danielle\n2. Finalize promo offer terms (6 months/3 months, through EOY)\n3. Create a retail display kit for Dustin's shop\n4. Plan SommCon demo event at Dustin's location, Mark has bagel friend who may cater, possibly do an event with Addison\n5. Figure out subscription for Marc B., per Anthony was supposed to be included as part of his investment"
-    }
-   ],
-   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · mass conversion of 10 clients shelved on labor cost ($20-30K), pivoting to new client acquisition via Aug email blast and retail display",
-   "needs_enrichment": false
-  },
-  {
-   "gid": "1214588732186569",
-   "name": "Camper",
-   "first": "Greg",
-   "last": null,
-   "channel": "Hospitality",
-   "arr": 450,
-   "onb": 1125,
-   "stage": "Demo",
-   "modified_at": "2026-07-20T21:55:52.542Z",
-   "notes": "Reserve Path A | 1 client | 1,500 bottles avg",
-   "comments": [
-    {
-     "at": "2026-07-18T21:51:40.565Z",
-     "by": "Mark Luciano Ainsworth",
-     "text": "Greg sent me updated files.  Mark needs to reach out to see how he would like it presented."
-    }
-   ],
-   "note_summary": "Reserve Path A, 1 client, 1,500 bottles avg · Greg sent updated files, Mark to reach out on how he wants it presented",
-   "needs_enrichment": false
-  },
-  {
-   "gid": "1215968666300621",
-   "name": "Plack, Joshua — Drink With Me",
-   "first": "Joshua",
-   "last": "Plack",
-   "channel": "Sommelier Managed",
-   "arr": null,
-   "onb": null,
-   "stage": "Demo",
-   "modified_at": "2026-08-06T20:28:50.198Z",
-   "notes": "Joshua Plack, Advanced Sommelier. Based in Truckee, CA. Manages Yar's CellarEye account alongside Jeremy Reed. Active Premium subscriber. Connected through Mostafa. Opportunity for somm/brand ambassador partnership with potential to bring 5-20 serious collectors. Drink With Me website: https://www.drinkwithme.com",
-   "comments": [],
-   "note_summary": "Advanced Sommelier in Truckee, CA, active Premium subscriber managing Yar's account with Jeremy Reed · potential somm/brand ambassador partnership that could bring 5-20 serious collectors",
-   "needs_enrichment": false
-  },
-  {
-   "gid": "1215470588854397",
-   "name": "The Spotted Duck",
-   "first": "Jerry",
-   "last": "Regester",
-   "channel": "Hospitality",
-   "arr": null,
-   "onb": null,
-   "stage": "Demo",
-   "modified_at": "2026-06-26T00:01:11.380Z",
-   "notes": "The Spotted Duck - Pacific Grove. Beta deployment site. Chef/owner: Jerry Regester. Merged from duplicate task 1216016965299612 (was in Warm) on 2026-06-25.",
-   "comments": [
-    {
-     "at": "2026-06-07T05:25:57.402Z",
-     "by": "Mark Luciano Ainsworth",
-     "text": "We are doing the beta launch of the digital menus here.  Started 6/4 soft rollout.  Saturday night was busy.  The client was glad we convinced him to put a QR code on the menu.  People used both the tablet and the QR code.  Lots of positive feedback from customers and the waitstaff.  Discussed putting plate icon next to each wine and then list the dishes it pairs with.  So if a customer wants a wine and then will select thier entree from there.  Reverse pairing"
-    }
-   ],
-   "note_summary": "Pacific Grove restaurant, chef/owner Jerry Regester · beta digital menu site, soft rollout started 6/4, positive customer and waitstaff feedback, discussing reverse pairing plate icons",
-   "needs_enrichment": false
-  },
-  {
-   "gid": "1216016965299599",
-   "name": "Tedd Glennon",
-   "first": "Ted",
-   "last": "Glennon",
-   "channel": "Sommelier Program",
-   "arr": null,
-   "onb": null,
-   "stage": "Demo",
-   "modified_at": "2026-07-11T03:17:51.061Z",
-   "notes": "Meeting 7/10/26 (Granola) BACKGROUND & INTEREST - Follow-up call, ~1 hour - Access granted today with full provisions and rights - Interested in two roles: SOM participant AND ambassador/sales promoter - Unclear whether this was a sales call or a comp conversation ROLE & COMPENSATION DISCUSSION - Ted may want some form of compensation for promoting the app and bringing in other SOMs - CellarEye stance: grassroots only, no full marketing spend right now - Small budget currently - Strategy: people they know, get them interested, sign up their clients, generate fee revenue - Bigger spend possible once revenue grows EVALUATION PHASE - Ted to use the app for ~1 week - Not yet a revenue customer; still in evaluation NEXT STEP: Reconnect with Ted in ~1 week to review his experience and determine next steps on ambassador/sales role.",
-   "comments": [
-    {
-     "at": "2026-06-24T20:26:56.178Z",
-     "by": "Mark Luciano Ainsworth",
-     "text": "My be first Somm ambassador.  https://app.asana.com/1/1214587766552282/profile/1214586897687228 can you background check with Maureen?"
-    }
-   ],
-   "note_summary": "Sommelier prospect, granted full access 7/10/26, interested in both SOM participant and ambassador roles · evaluating app for ~1 week, not yet a revenue customer, ambassador compensation unresolved",
-   "needs_enrichment": false
   },
   {
    "gid": "1217735589121085",
@@ -842,14 +649,67 @@
    "arr": null,
    "onb": null,
    "stage": "Proposal",
-   "modified_at": "2026-07-25T03:12:01.703Z",
+   "modified_at": "2026-09-18T22:29:05.182Z",
    "notes": "Second restaurant from the owners of The Spotted Duck (Jerry Regester). Opening third or fourth week of August 2026, right after the Concours d'Elegance at Pebble Beach. DEAL STRUCTURE: In exchange for getting them onto the CellarEye platform at a second restaurant at a fee, Mark built their website for free (thegrovepointpinos.com). CHANNEL: Hospitality. Same ownership as Spotted Duck, so warm and high-trust. Proposal to follow. CONTACT: Jerry Regester | jerry@thegrovepointpinos.com | +1 (831) 269-9097",
-   "comments": [],
-   "note_summary": "Second restaurant from The Spotted Duck owners (Jerry Regester), opening third or fourth week of August 2026 · website built free in exchange for platform fee, proposal to follow",
+   "comments": [
+    {
+     "at": "2026-09-18T22:29:05.181Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Exploring a new concept where we don't do inventory; they just scan one bottle and use the Hospitality/Menu module."
+    }
+   ],
+   "note_summary": "Second restaurant from The Spotted Duck owners (Jerry Regester), opening late August 2026, warm ownership · exploring a no-inventory concept, one bottle scan plus the Hospitality/Menu module",
    "needs_enrichment": false
   }
  ],
  "stalled": [
+  {
+   "gid": "1214588513226286",
+   "name": "WeShip Express",
+   "first": "Scott",
+   "last": "Kennedy",
+   "channel": "Wine Storage",
+   "arr": 60000,
+   "onb": 150000,
+   "stage": "Stalled",
+   "modified_at": "2026-09-18T22:23:31.672Z",
+   "notes": "Reserve Path A | 400 clients | 500 bottles avg | Onboarding TBD Opportunity Overview WeShip is a leading DTC wine/spirits logistics & fulfillment company. Recently acquired Eagle Rock Fulfillment (Napa) - a private wine storage business with ~400 clients and ~10,000 cases stored at ~$10-15/case/month. Plan is to scale this model 10x across all existing WeShip fulfillment locations nationally - making this a high-value partnership opportunity. Key Contact: Scott Kennedy, VP of Technology | Founder: Marc Goodfriend What They Need Modern UI for private storage clients - inventory visibility, wine selection for shipping, no warehouse imagery exposed. Evaluating CellarEye vs. building in-house; also comparing CellarTracker, Invintory. Current systems are antiquated. Timing Faster the better. Open to phased rollout.",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:04.831Z",
+     "by": "Danielle",
+     "text": "Tech review done with Scott Kennedy (VP Tech). Weighing CellarEye vs. building in-house for ~400 private storage clients after the Eagle Rock acquisition."
+    }
+   ],
+   "note_summary": "DTC wine/spirits logistics firm, recently acquired Eagle Rock Fulfillment (~400 private storage clients, ~10,000 cases) · tech review done with VP Tech, weighing CellarEye vs building in-house",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588533447535",
+   "name": "Sharon Heights Golf & Country Club",
+   "first": "Efrain",
+   "last": "Sanchez",
+   "channel": "Hospitality",
+   "arr": 3300,
+   "onb": 13200,
+   "stage": "Stalled",
+   "modified_at": "2026-09-18T22:24:29.644Z",
+   "notes": "Based on proposal sent to client",
+   "comments": [
+    {
+     "at": "2026-06-25T23:43:52.481Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "here was the presention for the meeting."
+    },
+    {
+     "at": "2026-07-18T21:59:17.447Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Mark, Danielle & Anthone met with Efrain.  He says they are still interested.  Wants to talk to Chef Jerry at the Spotted Duck and ask how it is working.  He closed the meeting with answering my comment that it would shave a lot of time out of his routine with all the time saving features and he replied, \"No, its going to make a lot more work for me.\"  so it leads us to believe he doesn't see the full value, yet."
+    }
+   ],
+   "note_summary": "Golf and country club, proposal sent · Efrain still interested, wants to check with Chef Jerry at the Spotted Duck, said the features would make more work for him, so value not yet clear",
+   "needs_enrichment": false
+  },
   {
    "gid": "1214588517386719",
    "name": "Sorrells Custom Wine Cellars",
@@ -864,6 +724,48 @@
    "comments": [],
    "note_summary": "Sommeliers Path B · 10 clients, 2,000 bottles avg",
    "needs_enrichment": true
+  },
+  {
+   "gid": "1214588515652326",
+   "name": "Colgin Cellars",
+   "first": "Brandon",
+   "last": "Benelli",
+   "channel": "Reserve-Client Direct",
+   "arr": 2200,
+   "onb": 3812.5,
+   "stage": "Stalled",
+   "modified_at": "2026-09-18T22:29:24.419Z",
+   "notes": "Reserve Path A | 1 client | 10,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-06-23T14:56:08.188Z",
+     "by": "Danielle",
+     "text": "Onsite visit with Brandon had a mixed response. Ran into issues with our system working with their double deep and very high racks. Proposal sent."
+    }
+   ],
+   "note_summary": "Reserve Path A, 1 client, 10,000 bottles avg · onsite visit with Brandon got a mixed response, system had issues with their double deep and very high racks, proposal sent",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588513835040",
+   "name": "Drink with Me",
+   "first": "Joshua",
+   "last": "Plack",
+   "channel": "Sommelier Managed",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Stalled",
+   "modified_at": "2026-09-18T22:23:06.786Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-08-06T20:28:25.392Z",
+     "by": "Danielle",
+     "text": "Call on 8/6/ with Joshua and Jeremy. They are interested in possibly being ambassadors for us but they want to know how we will bring them more customers and what the partnership structure would look beyond the standard commissions. Joshua mentioned he needs to be able to present this to Chamath as a partnership that will help them grow. Mark is going to do a 1-1 call after doing a little more research on Drink with Me.  \n\nJeremeny mentioned the last time he was at Yar's he didn't have time to use CellarEye because he isn't familiar enough with it and he needed to move fast.\n\nWe also offered to Jeremy to help him onsite the next time he is town organziing Yar's cellar which is currently set up with a combination of vison tech and smartstickers.  Yar may want to switchover to smartstickers however he invested a lot of $ into the camera system so if he hasn't been happy with it and wants to remove it we may need to discuss best way to keep him happy. TBD"
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · Joshua and Jeremy interested in ambassador roles, want partnership structure beyond standard commissions, Mark doing 1-1 call after researching them",
+   "needs_enrichment": false
   },
   {
    "gid": "1214588516735159",
@@ -900,9 +802,118 @@
    ],
    "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · fatigued, follow up once web utility is fully baked with reporting",
    "needs_enrichment": false
+  },
+  {
+   "gid": "1216016965299599",
+   "name": "Tedd Glennon",
+   "first": "Ted",
+   "last": "Glennon",
+   "channel": "Sommelier Program",
+   "arr": null,
+   "onb": null,
+   "stage": "Stalled",
+   "modified_at": "2026-09-18T22:30:08.840Z",
+   "notes": "Meeting 7/10/26 (Granola) BACKGROUND & INTEREST - Follow-up call, ~1 hour - Access granted today with full provisions and rights - Interested in two roles: SOM participant AND ambassador/sales promoter - Unclear whether this was a sales call or a comp conversation ROLE & COMPENSATION DISCUSSION - Ted may want some form of compensation for promoting the app and bringing in other SOMs - CellarEye stance: grassroots only, no full marketing spend right now - Small budget currently - Strategy: people they know, get them interested, sign up their clients, generate fee revenue - Bigger spend possible once revenue grows EVALUATION PHASE - Ted to use the app for ~1 week - Not yet a revenue customer; still in evaluation NEXT STEP: Reconnect with Ted in ~1 week to review his experience and determine next steps on ambassador/sales role.",
+   "comments": [
+    {
+     "at": "2026-06-24T20:26:56.178Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "My be first Somm ambassador.  https://app.asana.com/1/1214587766552282/profile/1214586897687228 can you background check with Maureen?"
+    }
+   ],
+   "note_summary": "Sommelier prospect, granted full access 7/10/26, interested in both SOM participant and ambassador roles · evaluating app for ~1 week, not yet a revenue customer, ambassador compensation unresolved",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588532154184",
+   "name": "Bevrly",
+   "first": "Yaacov",
+   "last": "Barselah",
+   "channel": null,
+   "arr": null,
+   "onb": null,
+   "stage": "Stalled",
+   "modified_at": "2026-09-18T22:24:53.181Z",
+   "notes": "Imported from Pipeline_2/25. Segment: Business Development Stage (sheet): On Hold (was Demo Completed) Last Stage Change: 1/14/26 Deal Size: ● Phase: - Next Step: Mostafa is in conversation with Yaacov.",
+   "comments": [
+    {
+     "at": "2026-06-25T23:38:33.607Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Mark and Yaacov will meet in Manhattan for drinks on Saturday 6/27 for drinks."
+    }
+   ],
+   "note_summary": "Business Development segment, on hold since 1/14/26 after demo completed · Mostafa in conversation with Yaacov, Mark and Yaacov meeting in Manhattan for drinks Saturday 6/27",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1215968666300621",
+   "name": "Plack, Joshua — Drink With Me",
+   "first": "Joshua",
+   "last": "Plack",
+   "channel": "Sommelier Managed",
+   "arr": null,
+   "onb": null,
+   "stage": "Stalled",
+   "modified_at": "2026-09-18T22:23:17.976Z",
+   "notes": "Joshua Plack, Advanced Sommelier. Based in Truckee, CA. Manages Yar's CellarEye account alongside Jeremy Reed. Active Premium subscriber. Connected through Mostafa. Opportunity for somm/brand ambassador partnership with potential to bring 5-20 serious collectors. Drink With Me website: https://www.drinkwithme.com",
+   "comments": [],
+   "note_summary": "Advanced Sommelier in Truckee, CA, active Premium subscriber managing Yar's account with Jeremy Reed · potential somm/brand ambassador partnership that could bring 5-20 serious collectors",
+   "needs_enrichment": false
   }
  ],
  "won": [
+  {
+   "gid": "1214588732398811",
+   "name": "Meritage Wine Market",
+   "first": "Dustin",
+   "last": "Cano",
+   "channel": "Sommelier Managed",
+   "arr": 3000,
+   "onb": 2250,
+   "stage": "Closed Won",
+   "modified_at": "2026-09-18T22:29:46.814Z",
+   "notes": "Sommeliers Path B | 5 clients | 2,000 bottles avg",
+   "comments": [
+    {
+     "at": "2026-08-07T21:47:53.038Z",
+     "by": "Danielle",
+     "text": "Call with Dustin\nReviewed the new pricing structure and Reserve pricing calculator. Shared the Spotted Duck wine list and latest web app version. Discussed the Somm program and SommCon.\n\nDiscussed Ron’s market values. We increased the market value coverage from 70% to 80% and are testing ways to fill the remaining gaps. Dustin trusts Wine-Searcher the most, particularly when filtering for currently available California market values rather than using preset values. Ron’s cellar is currently showing around $450K in market value with approximately 20% of values still missing. Dustin believes the true value is closer to $750K.\n\nDustin will share our newsletter with his subscribers, and we will feature him in ours as well.\n\nDustin shared that Marc Barmazel will be installing a new 10K-capacity cellar and would like to use CellarEye instead of CellarTracker. We also briefly discussed Addison.\n\nNext Steps / Afterthoughts\n    Coordinate newsletters and cross-promotions.\n    Set Dustin up with a Somm Manager account.\n    Present how we’d like to feature Dustin’s profile as part of our Somm program. Explore how we can also support his new restaurant channel. He is a strong example of a retailer, private collector cellar consultant, and hospitality wine consultant.\n    Dustin is planning to attend SommCon with us. Revisit and coordinate once we have a clearer plan.\n    Discuss whether we can convert more of his current cellars from CellarTracker to CellarEye, or if it makes sense to leave them as is."
+    },
+    {
+     "at": "2026-08-18T20:56:03.940Z",
+     "by": "Danielle",
+     "text": "Had call today.....\n\nCellar Conversion Strategy & Customer Outreach — Dustin (Meritage)\nAug 18, 2026 | Attendees: Dustin, Mark, Danielle\n\nSummary:\nDiscussed the Mark Barmazel investor cellar opportunity, the economics of converting Dustin's existing 10 clients, and a plan for new client acquisition via enewsletter and retail display. Also, discussed potential event at shop around SommCon.\n\n- Mark Barmazel: offer to come from Mostafa/CellarEye (not Dustin) once he signs with a cellar construction company; still a ways out, two companies bidding. His ~7 homes are already on CellarTracker. Pivoting from camera install (only 60-70% coverage) to 3D mapping.\n- Existing 10 clients: labor cost, not software resistance, is the real barrier. A 4,000-bottle cellar runs roughly 3 days x 2 people x $75/hr, about $3,600. Scaled across the top 10 clients, that's an estimated 10-15 days of labor, or $20-30K total to convert. A reimbursement model was floated but wasn't enough to offset lost wine-sales time. Decision: don't push mass conversion right now, focus on new client acquisition instead.\n- Campaign plan: email blast to the Santa Barbara + San Diego list (Friday/Saturday send), audience includes both consumers, somms and restaurants, promo offer TBD (leaning 6 months free for CellarTracker converts, 3 months for new users, through year end), need a retail display kit for Dustin's shop, priority personal outreach to investors (Jay Flatley, Omid?, Mark Barmazel), and a possible SommCon demo event at Dustin's shop.\n\nNext steps:\n1. Create an email introducing CellarEye (Fri/Sat send, video or updated website link); leads route through Dustin first, then to Danielle\n2. Finalize promo offer terms (6 months/3 months, through EOY)\n3. Create a retail display kit for Dustin's shop\n4. Plan SommCon demo event at Dustin's location, Mark has bagel friend who may cater, possibly do an event with Addison\n5. Figure out subscription for Marc B., per Anthony was supposed to be included as part of his investment"
+    }
+   ],
+   "note_summary": "Sommeliers Path B, 5 clients, 2,000 bottles avg · mass conversion of 10 clients shelved on labor cost ($20-30K), pivoting to new client acquisition via Aug email blast and retail display",
+   "needs_enrichment": false
+  },
+  {
+   "gid": "1214588732186569",
+   "name": "Camper",
+   "first": "Greg",
+   "last": null,
+   "channel": "Hospitality",
+   "arr": 450,
+   "onb": 1125,
+   "stage": "Closed Won",
+   "modified_at": "2026-09-18T22:26:27.946Z",
+   "notes": "Reserve Path A | 1 client | 1,500 bottles avg",
+   "comments": [
+    {
+     "at": "2026-09-11T22:52:13.392Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "We will present Scope next week and see if it is a green light."
+    },
+    {
+     "at": "2026-09-18T22:26:27.946Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "Recent demo to Camper/Greg he loved the new design and wants to use it.  Danielle will start onboarding.  Should go live Oct 1."
+    }
+   ],
+   "note_summary": "Reserve Path A, 1 client, 1,500 bottles avg · demo landed well with Greg, Danielle starting onboarding, targeting Oct 1 go-live",
+   "needs_enrichment": false
+  },
   {
    "gid": "1214588401178393",
    "name": "Manny Machado (Meritage)",
@@ -940,6 +951,27 @@
    "needs_enrichment": false
   },
   {
+   "gid": "1215470588854397",
+   "name": "The Spotted Duck",
+   "first": "Jerry",
+   "last": "Regester",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Closed Won",
+   "modified_at": "2026-09-18T22:23:58.728Z",
+   "notes": "The Spotted Duck - Pacific Grove. Beta deployment site. Chef/owner: Jerry Regester. Merged from duplicate task 1216016965299612 (was in Warm) on 2026-06-25.",
+   "comments": [
+    {
+     "at": "2026-06-07T05:25:57.402Z",
+     "by": "Mark Luciano Ainsworth",
+     "text": "We are doing the beta launch of the digital menus here.  Started 6/4 soft rollout.  Saturday night was busy.  The client was glad we convinced him to put a QR code on the menu.  People used both the tablet and the QR code.  Lots of positive feedback from customers and the waitstaff.  Discussed putting plate icon next to each wine and then list the dishes it pairs with.  So if a customer wants a wine and then will select thier entree from there.  Reverse pairing"
+    }
+   ],
+   "note_summary": "Pacific Grove restaurant, chef/owner Jerry Regester · beta digital menu site, soft rollout started 6/4, positive customer and waitstaff feedback, discussing reverse pairing plate icons",
+   "needs_enrichment": false
+  },
+  {
    "gid": "1216056878249657",
    "name": "Pausa San Mateo",
    "first": "Andrea",
@@ -948,21 +980,21 @@
    "arr": null,
    "onb": null,
    "stage": "Closed Won",
-   "modified_at": "2026-09-02T00:54:20.055Z",
+   "modified_at": "2026-09-18T22:13:07.688Z",
    "notes": "Meeting 7/10/26 (Granola) MEETING OVERVIEW - Demo and feedback session with Andrea Giuliani at Pausa, San Mateo - Danielle and Anthony attended and helped highlight app benefits FEEDBACK & REACTIONS - Andrea responded positively: found the app easy to use - Particularly liked the digital wine menu feature - Preferred format: print wine list with QR code at the bottom that links to additional tasting notes for guests OUTCOME - Not expected to close on this meeting, but Andrea is keen to move forward - Wants a pitch to the rest of his management team (3 others) - He is the chef-owner, so has decision-making authority NEXT STEP: Schedule and confirm team pitch at Pausa. Andrea suggested possibly Wednesday next week - confirm the date and arrange to present to his full management team.",
    "comments": [
     {
-     "at": "2026-08-31T22:31:07.660Z",
+     "at": "2026-09-11T22:58:26.045Z",
      "by": "Danielle",
-     "text": "Added Pausa's Reserve Collection inventory to their account as a new rack, \"Reserve Collection.\" There may be some duplicate bottles, but we can clean those up during the next audit. Images are missing for an estimated 10-15 wines. Used the new import feature on the web app instead of having Anthony spend time matching inventory manually.\n\nAlso changed the cellar image for \"Transfer Location\" to be on brand for Pausa."
+     "text": "Danielle & Mark meeting Pausa team on Tuesday 9/15 at 12:30 to present first version of digital and printed menu."
     },
     {
-     "at": "2026-09-01T00:44:35.420Z",
+     "at": "2026-09-17T22:08:03.957Z",
      "by": "Danielle",
-     "text": "Emailed Steven to get Pausa's assets so Anthony can use these to build menu templates."
+     "text": "Turned on all 27 Reserve Wine List wines on the restaurant menu and tagged them with the \"Reserve Collection\" structure header on the restaurant management page."
     }
    ],
-   "note_summary": "San Mateo restaurant, chef-owner Andrea Giuliani has decision authority · positive demo, wants team pitch to 3 managers; Reserve Collection inventory imported, assets requested for menu templates",
+   "note_summary": "San Mateo restaurant, chef-owner Andrea Giuliani has decision authority · 9/15 team menu presentation, all 27 Reserve Wine List wines now live and tagged Reserve Collection",
    "needs_enrichment": false
   }
  ],
