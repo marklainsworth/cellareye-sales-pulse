@@ -532,6 +532,21 @@
    "needs_enrichment": false
   },
   {
+   "gid": "1218845114428953",
+   "name": "Clement/Sheraton/Westin",
+   "first": "Mark",
+   "last": "Ayers",
+   "channel": "Hospitality",
+   "arr": null,
+   "onb": null,
+   "stage": "Qualified",
+   "modified_at": "2026-09-24T18:53:34.103Z",
+   "notes": "",
+   "comments": [],
+   "note_summary": "no notes recorded",
+   "needs_enrichment": true
+  },
+  {
    "gid": "1214588533426912",
    "name": "Los Altos Golf & Country Club",
    "first": "Andrew",
@@ -854,10 +869,16 @@
    "arr": null,
    "onb": null,
    "stage": "Stalled",
-   "modified_at": "2026-09-18T22:23:17.976Z",
+   "modified_at": "2026-09-28T19:20:51.363Z",
    "notes": "Joshua Plack, Advanced Sommelier. Based in Truckee, CA. Manages Yar's CellarEye account alongside Jeremy Reed. Active Premium subscriber. Connected through Mostafa. Opportunity for somm/brand ambassador partnership with potential to bring 5-20 serious collectors. Drink With Me website: https://www.drinkwithme.com",
-   "comments": [],
-   "note_summary": "Advanced Sommelier in Truckee, CA, active Premium subscriber managing Yar's account with Jeremy Reed · potential somm/brand ambassador partnership that could bring 5-20 serious collectors",
+   "comments": [
+    {
+     "at": "2026-09-28T19:20:51.363Z",
+     "by": "Danielle",
+     "text": "9/28: Emailed Joshua and Jeremy to check in. Offered to help add NFCs to Yar's cellar, or to meet up next time Jeremy is in town."
+    }
+   ],
+   "note_summary": "Advanced Sommelier in Truckee, CA, manages Yar's account with Jeremy Reed, Premium subscriber, potential partner bringing 5-20 collectors · Danielle checked in 9/28, offered NFC help or a meetup",
    "needs_enrichment": false
   }
  ],
@@ -897,21 +918,21 @@
    "arr": 450,
    "onb": 1125,
    "stage": "Closed Won",
-   "modified_at": "2026-09-18T22:26:27.946Z",
+   "modified_at": "2026-09-29T19:37:52.583Z",
    "notes": "Reserve Path A | 1 client | 1,500 bottles avg",
    "comments": [
-    {
-     "at": "2026-09-11T22:52:13.392Z",
-     "by": "Mark Luciano Ainsworth",
-     "text": "We will present Scope next week and see if it is a green light."
-    },
     {
      "at": "2026-09-18T22:26:27.946Z",
      "by": "Mark Luciano Ainsworth",
      "text": "Recent demo to Camper/Greg he loved the new design and wants to use it.  Danielle will start onboarding.  Should go live Oct 1."
+    },
+    {
+     "at": "2026-09-28T19:21:58.397Z",
+     "by": "Danielle",
+     "text": "9/28: Waiting on Greg to scan bottles. Offered to help this week to keep things moving forward. Mark needs to send Greg the agreement/pricing structure."
     }
    ],
-   "note_summary": "Reserve Path A, 1 client, 1,500 bottles avg · demo landed well with Greg, Danielle starting onboarding, targeting Oct 1 go-live",
+   "note_summary": "Reserve Path A, 1 client, 1,500 bottles avg · Greg loved the new design, onboarding started, live Oct 1 target, waiting on Greg to scan bottles and Mark to send agreement/pricing",
    "needs_enrichment": false
   },
   {
@@ -980,21 +1001,21 @@
    "arr": null,
    "onb": null,
    "stage": "Closed Won",
-   "modified_at": "2026-09-18T22:13:07.688Z",
+   "modified_at": "2026-10-02T04:27:07.680Z",
    "notes": "Meeting 7/10/26 (Granola) MEETING OVERVIEW - Demo and feedback session with Andrea Giuliani at Pausa, San Mateo - Danielle and Anthony attended and helped highlight app benefits FEEDBACK & REACTIONS - Andrea responded positively: found the app easy to use - Particularly liked the digital wine menu feature - Preferred format: print wine list with QR code at the bottom that links to additional tasting notes for guests OUTCOME - Not expected to close on this meeting, but Andrea is keen to move forward - Wants a pitch to the rest of his management team (3 others) - He is the chef-owner, so has decision-making authority NEXT STEP: Schedule and confirm team pitch at Pausa. Andrea suggested possibly Wednesday next week - confirm the date and arrange to present to his full management team.",
    "comments": [
-    {
-     "at": "2026-09-11T22:58:26.045Z",
-     "by": "Danielle",
-     "text": "Danielle & Mark meeting Pausa team on Tuesday 9/15 at 12:30 to present first version of digital and printed menu."
-    },
     {
      "at": "2026-09-17T22:08:03.957Z",
      "by": "Danielle",
      "text": "Turned on all 27 Reserve Wine List wines on the restaurant menu and tagged them with the \"Reserve Collection\" structure header on the restaurant management page."
+    },
+    {
+     "at": "2026-09-28T19:20:55.565Z",
+     "by": "Danielle",
+     "text": "9/28: Sent Pausa the digital menu and print version to review. Planning to bring iPads by Wed 9/30, hoping to go live or start testing this week or by Mon 10/5."
     }
    ],
-   "note_summary": "San Mateo restaurant, chef-owner Andrea Giuliani has decision authority · 9/15 team menu presentation, all 27 Reserve Wine List wines now live and tagged Reserve Collection",
+   "note_summary": "Chef-owner Andrea Giuliani's San Mateo restaurant, liked the digital wine menu at demo · 27 Reserve wines live, menus sent 9/28, iPads Wed 9/30, testing or live by Mon 10/5",
    "needs_enrichment": false
   }
  ],

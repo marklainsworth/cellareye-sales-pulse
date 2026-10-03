@@ -175,6 +175,20 @@
   "section": "Ready To Email"
  },
  {
+  "business": "Rojas",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Ready To Email"
+ },
+ {
+  "business": "Village Pub",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Ready To Email"
+ },
+ {
   "business": "Saison Hospitality - Jeffrey Harakal",
   "first": "Jeffrey",
   "last": "Harakal",
@@ -726,5 +740,61 @@
   "last": "Yatomi",
   "channel": "Sommelier Program",
   "section": "Linkedin Outreach"
+ },
+ {
+  "business": "Flee Street Cafe",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
+ },
+ {
+  "business": "Zola Palo Alto",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
+ },
+ {
+  "business": "Taverna",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
+ },
+ {
+  "business": "Mayhaus",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
+ },
+ {
+  "business": "Vina Enoteca",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
+ },
+ {
+  "business": "Shalizar",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
+ },
+ {
+  "business": "Park James Oak & Violet",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
+ },
+ {
+  "business": "",
+  "first": null,
+  "last": null,
+  "channel": null,
+  "section": "Restaurants"
  }
 ]
